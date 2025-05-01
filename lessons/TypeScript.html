@@ -1,0 +1,1111 @@
+<!-- COURSE BREAKDOWN
+Lessons 1–10: TypeScript basics (syntax, variables, types, operators).
+Lessons 11–20: Control flow, functions, interfaces, arrays, objects.
+Lessons 21–30: Classes, modules, generics, error handling, async/await.
+Lessons 31–40: Advanced types, decorators, file handling, JSON, promises.
+Lessons 41–50: Advanced topics (React, Redux, Node.js, Express, testing).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeScript</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <h1>TypeScript</h1>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Explore 50 progressive TypeScript lessons to master statically typed JavaScript for web and server-side development. Each lesson provides clear explanations and examples to build your coding skills. Start your journey to creating robust TypeScript applications today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is TypeScript?</summary>
+                    <div class="item-content">
+                        <h2>Introduction to TypeScript</h2>
+                        <p>TypeScript is a superset of JavaScript, adding static types to enhance code reliability and maintainability. Developed by Microsoft, it’s widely used in frameworks like React and Node.js applications. TypeScript compiles to plain JavaScript, ensuring compatibility across browsers and environments.</p>
+                        <pre>
+console.log("Hello, World!");
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: Variables and Constants</summary>
+                    <div class="item-content">
+                        <h2>Variables and Constants</h2>
+                        <p>TypeScript uses `let` for mutable variables and `const` for read-only constants, with explicit type annotations. Type inference automatically assigns types when initialized. Variables and constants are foundational for storing data in TypeScript.</p>
+                        <pre>
+let name: string = "Alice";
+const age: number = 25;
+console.log(`${name} is ${age}`);
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice is 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: Basic Types</summary>
+                    <div class="item-content">
+                        <h2>TypeScript Basic Types</h2>
+                        <p>TypeScript supports types like `number`, `string`, `boolean`, `array`, and `object`. Type annotations ensure type safety at compile time. Understanding types is key to leveraging TypeScript’s static typing.</p>
+                        <pre>
+const num: number = 42;
+const pi: number = 3.14;
+const flag: boolean = true;
+console.log(num, pi, flag);
+                        </pre>
+                        <div class="example">
+                            <p>Output: 42 3.14 true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Arithmetic Operators</summary>
+                    <div class="item-content">
+                        <h2>Arithmetic Operations</h2>
+                        <p>TypeScript provides arithmetic operators like `+`, `-`, `*`, `/`, and `%` for numbers. Type checking prevents operations on incompatible types. These operators are essential for numerical computations.</p>
+                        <pre>
+const a: number = 10;
+const b: number = 3;
+console.log(a + b, a % b);
+                        </pre>
+                        <div class="example">
+                            <p>Output: 13 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Comparison Operators</summary>
+                    <div class="item-content">
+                        <h2>Comparison Operators</h2>
+                        <p>TypeScript’s comparison operators (`==`, `===`, `!=`, `!==`, `>`, `<`, `>=`, `<=`) return `boolean` values. Strict equality (`===`) checks type and value. Comparisons drive conditional logic in TypeScript.</p>
+                        <pre>
+const x: number = 5;
+const y: number = 10;
+console.log(x < y, x === y);
+                        </pre>
+                        <div class="example">
+                            <p>Output: true false</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Logical Operators</summary>
+                    <div class="item-content">
+                        <h2>Logical Operators</h2>
+                        <p>TypeScript’s logical operators `&&`, `||`, and `!` combine or invert boolean expressions. They short-circuit for efficiency, evaluating only as needed. Logical operators are crucial for complex conditions.</p>
+                        <pre>
+const a: boolean = true;
+const b: boolean = false;
+console.log(a && b, a || b);
+                        </pre>
+                        <div class="example">
+                            <p>Output: false true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: Strings</summary>
+                    <div class="item-content">
+                        <h2>Working with Strings</h2>
+                        <p>Strings in TypeScript are created with quotes and support template literals with `${}`. They are immutable and Unicode-compliant. Strings are central to text handling in TypeScript.</p>
+                        <pre>
+const greeting: string = "Hello";
+const name: string = "World";
+console.log(`${greeting}, ${name}!`);
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: String Methods</summary>
+                    <div class="item-content">
+                        <h2>String Methods</h2>
+                        <p>TypeScript’s `String` object provides methods like `toUpperCase()`, `startsWith()`, and `replace()`. These methods are type-safe and efficient. String methods enable powerful text manipulation.</p>
+                        <pre>
+const text: string = "  typescript  ";
+console.log(text.trim().toUpperCase());
+                        </pre>
+                        <div class="example">
+                            <p>Output: TYPESCRIPT</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: Arrays</summary>
+                    <div class="item-content">
+                        <h2>Working with Arrays</h2>
+                        <p>Arrays in TypeScript are typed collections, created with `[]` or `Array<T>`. They support methods like `push()` and `splice()`. Arrays are versatile for managing ordered data.</p>
+                        <pre>
+const fruits: string[] = ["apple", "banana", "cherry"];
+console.log(fruits[1]);
+                        </pre>
+                        <div class="example">
+                            <p>Output: banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: Objects</summary>
+                    <div class="item-content">
+                        <h2>Objects</h2>
+                        <p>Objects in TypeScript are key-value stores, typed with interfaces or type aliases. They support optional properties with `?`. Objects are ideal for structured data.</p>
+                        <pre>
+const ages: { [key: string]: number } = { Alice: 25, Bob: 30 };
+console.log(ages["Alice"]);
+                        </pre>
+                        <div class="example">
+                            <p>Output: 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: If Statements</summary>
+                    <div class="item-content">
+                        <h2>Conditional Statements</h2>
+                        <p>TypeScript’s `if` statements evaluate conditions, supporting `else if` and `else`. They require boolean expressions, ensuring clarity. Conditionals are essential for decision-making.</p>
+                        <pre>
+const age: number = 18;
+if (age >= 18) {
+    console.log("Adult");
+} else {
+    console.log("Minor");
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Adult</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: Switch Statements</summary>
+                    <div class="item-content">
+                        <h2>Switch Statements</h2>
+                        <p>TypeScript’s `switch` statement matches values against cases, requiring `break` to avoid fall-through. It supports type narrowing for type safety. Switch statements are useful for multi-way branching.</p>
+                        <pre>
+const day: number = 1;
+switch (day) {
+    case 1:
+        console.log("Monday");
+        break;
+    default:
+        console.log("Other");
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Monday</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: For Loops</summary>
+                    <div class="item-content">
+                        <h2>For Loops</h2>
+                        <p>TypeScript’s `for` loops iterate over arrays or ranges with `for...of` or `for...in`. They’re type-safe, preventing index errors. For loops are idiomatic for iteration.</p>
+                        <pre>
+for (let i: number = 0; i < 3; i++) {
+    console.log(i);
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: While Loops</summary>
+                    <div class="item-content">
+                        <h2>While Loops</h2>
+                        <p>TypeScript’s `while` and `do-while` loops execute while a condition is true. `do-while` guarantees at least one iteration. While loops are useful for dynamic iteration.</p>
+                        <pre>
+let i: number = 0;
+while (i < 3) {
+    console.log(i);
+    i++;
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: Break and Continue</summary>
+                    <div class="item-content">
+                        <h2>Loop Control</h2>
+                        <p>The `break` statement exits a loop, while `continue` skips to the next iteration. Both work in `for` and `while` loops. These controls manage iteration flow in TypeScript.</p>
+                        <pre>
+for (let i: number = 0; i < 5; i++) {
+    if (i === 3) break;
+    console.log(i);
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: Functions</summary>
+                    <div class="item-content">
+                        <h2>Defining Functions</h2>
+                        <p>Functions in TypeScript are declared with parameter and return type annotations. They support default parameters and arrow functions. Functions promote modular, reusable code.</p>
+                        <pre>
+function greet(name: string): string {
+    return `Hello, ${name}!`;
+}
+console.log(greet("Alice"));
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: Optional Types</summary>
+                    <div class="item-content">
+                        <h2>Optional Types</h2>
+                        <p>TypeScript allows optional types with `| undefined` or `| null`, requiring explicit checks. The optional chaining operator `?.` safely accesses properties. Optional types prevent runtime errors.</p>
+                        <pre>
+let name: string | undefined = "Alice";
+console.log(name?.length ?? 0);
+                        </pre>
+                        <div class="example">
+                            <p>Output: 5</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: Optional Chaining</summary>
+                    <div class="item-content">
+                        <h2>Optional Chaining</h2>
+                        <p>TypeScript’s optional chaining `?.` accesses properties or methods on potentially undefined values, returning `undefined` if nullish. It simplifies safe navigation of complex objects. Optional chaining is widely used in TypeScript apps.</p>
+                        <pre>
+interface Person {
+    name?: string;
+}
+const person: Person = { name: null };
+console.log(person.name?.toUpperCase() ?? "No name");
+                        </pre>
+                        <div class="example">
+                            <p>Output: No name</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: Interfaces</summary>
+                    <div class="item-content">
+                        <h2>Interfaces</h2>
+                        <p>Interfaces in TypeScript define contracts for objects, specifying properties and methods. They support optional properties and extensibility. Interfaces are key for type-safe object-oriented programming.</p>
+                        <pre>
+interface Dog {
+    name: string;
+    bark(): string;
+}
+const dog: Dog = {
+    name: "Buddy",
+    bark: () => `${dog.name} says Woof!`
+};
+console.log(dog.bark());
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy says Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Classes</summary>
+                    <div class="item-content">
+                        <h2>Classes</h2>
+                        <p>Classes in TypeScript are blueprints for objects, supporting properties, methods, and access modifiers. They use constructor syntax for initialization. Classes are essential for object-oriented TypeScript.</p>
+                        <pre>
+class Animal {
+    constructor(public name: string) {}
+}
+const animal = new Animal("Leo");
+console.log(animal.name);
+                        </pre>
+                        <div class="example">
+                            <p>Output: Leo</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Inheritance</summary>
+                    <div class="item-content">
+                        <h2>Inheritance</h2>
+                        <p>TypeScript classes support inheritance with `extends`, inheriting properties and methods. The `super` keyword calls parent constructors or methods. Inheritance organizes related classes hierarchically.</p>
+                        <pre>
+class Animal {
+    speak(): string { return "Sound"; }
+}
+class Dog extends Animal {
+    speak(): string {
+        return `${super.speak()}: Woof!`;
+    }
+}
+const dog = new Dog();
+console.log(dog.speak());
+                        </pre>
+                        <div class="example">
+                            <p>Output: Sound: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Abstract Classes</summary>
+                    <div class="item-content">
+                        <h2>Abstract Classes</h2>
+                        <p>Abstract classes in TypeScript cannot be instantiated and define methods that subclasses must implement. They use the `abstract` keyword for methods and classes. Abstract classes ensure consistent behavior across subclasses.</p>
+                        <pre>
+abstract class Speaker {
+    abstract speak(): string;
+}
+class Dog extends Speaker {
+    speak(): string { return "Woof!"; }
+}
+const dog = new Dog();
+console.log(dog.speak());
+                        </pre>
+                        <div class="example">
+                            <p>Output: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Error Handling</summary>
+                    <div class="item-content">
+                        <h2>Error Handling</h2>
+                        <p>TypeScript uses `try-catch` for exceptions, with `throw` to raise errors. Type annotations can specify error types. Error handling ensures robust TypeScript programs.</p>
+                        <pre>
+try {
+    throw new Error("Invalid");
+} catch (e: unknown) {
+    console.log(`Error: ${(e as Error).message}`);
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Error: Invalid</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: Arrow Functions</summary>
+                    <div class="item-content">
+                        <h2>Arrow Functions</h2>
+                        <p>Arrow functions in TypeScript provide concise syntax and lexical `this` binding. They’re often used in callbacks and functional programming. Arrow functions enhance code readability.</p>
+                        <pre>
+const greet = (name: string): string => `Hello, ${name}!`;
+console.log(greet("Alice"));
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: Array Methods</summary>
+                    <div class="item-content">
+                        <h2>Array Methods</h2>
+                        <p>TypeScript’s array methods like `map`, `filter`, and `reduce` process collections functionally. They maintain type safety with generics. These methods promote concise, expressive code.</p>
+                        <pre>
+const numbers: number[] = [1, 2, 3];
+const doubled = numbers.map(n => n * 2);
+console.log(doubled);
+                        </pre>
+                        <div class="example">
+                            <p>Output: [2, 4, 6]</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: Enums</summary>
+                    <div class="item-content">
+                        <h2>Enums</h2>
+                        <p>Enums in TypeScript define a set of named constants, supporting numeric or string values. They improve code readability and type safety. Enums are useful for fixed sets of values.</p>
+                        <pre>
+enum Direction {
+    North,
+    South,
+    East,
+    West
+}
+const dir: Direction = Direction.North;
+console.log(dir);
+                        </pre>
+                        <div class="example">
+                            <p>Output: 0</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: Union Types</summary>
+                    <div class="item-content">
+                        <h2>Union Types</h2>
+                        <p>Union types in TypeScript allow a value to be one of several types, using `|`. They require type narrowing with checks or assertions. Union types are versatile for flexible typing.</p>
+                        <pre>
+type Barcode = { kind: "UPC"; number: number } | { kind: "QR"; code: string };
+const code: Barcode = { kind: "QR", code: "xyz" };
+console.log(code.code);
+                        </pre>
+                        <div class="example">
+                            <p>Output: xyz</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: Generics</summary>
+                    <div class="item-content">
+                        <h2>Generics</h2>
+                        <p>Generics in TypeScript allow reusable code with type safety, using `<T>`. They support constraints with `extends`. Generics enhance flexibility in functions and classes.</p>
+                        <pre>
+function swap<T>(a: T, b: T): [T, T] {
+    return [b, a];
+}
+const [x, y] = swap(1, 2);
+console.log(x, y);
+                        </pre>
+                        <div class="example">
+                            <p>Output: 2 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Type Assertions</summary>
+                    <div class="item-content">
+                        <h2>Type Assertions</h2>
+                        <p>Type assertions in TypeScript override the compiler’s type inference, using `as` or angle-bracket syntax. They’re useful when the developer knows more about a value’s type. Assertions should be used cautiously to avoid runtime errors.</p>
+                        <pre>
+const value: unknown = "hello";
+const str: string = value as string;
+console.log(str.toUpperCase());
+                        </pre>
+                        <div class="example">
+                            <p>Output: HELLO</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: Access Modifiers</summary>
+                    <div class="item-content">
+                        <h2>Access Modifiers</h2>
+                        <p>TypeScript’s access modifiers (`public`, `private`, `protected`) control class member visibility. They ensure encapsulation and type safety. Access modifiers are key for robust class design.</p>
+                        <pre>
+class BankAccount {
+    private balance: number;
+    constructor(balance: number) {
+        this.balance = balance;
+    }
+}
+const account = new BankAccount(100);
+console.log("Access restricted");
+                        </pre>
+                        <div class="example">
+                            <p>Output: Access restricted</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: File Writing</summary>
+                    <div class="item-content">
+                        <h2>File Writing</h2>
+                        <p>TypeScript uses Node.js’s `fs` module to write files with `writeFileSync`. It requires error handling with `try-catch`. File writing is essential for persistent data in server-side apps.</p>
+                        <pre>
+import * as fs from "fs";
+try {
+    fs.writeFileSync("output.txt", "Hello, World!", "utf8");
+    console.log("File written");
+} catch (e) {
+    console.log("Error");
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: File written</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: File Reading</summary>
+                    <div class="item-content">
+                        <h2>File Reading</h2>
+                        <p>TypeScript reads files using Node.js’s `fs` module with `readFileSync`. It throws errors for invalid paths, requiring `try-catch`. File reading retrieves persistent data in TypeScript.</p>
+                        <pre>
+import * as fs from "fs";
+try {
+    const content: string = fs.readFileSync("output.txt", "utf8");
+    console.log(content);
+} catch (e) {
+    console.log("Error");
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: JSON Serialization</summary>
+                    <div class="item-content">
+                        <h2>JSON Serialization</h2>
+                        <p>TypeScript uses `JSON.stringify` to serialize objects to JSON strings. Type annotations ensure correct data structures. JSON serialization is common for API communication.</p>
+                        <pre>
+interface User {
+    name: string;
+}
+const user: User = { name: "Alice" };
+const json: string = JSON.stringify(user);
+console.log(json);
+                        </pre>
+                        <div class="example">
+                            <p>Output: {"name":"Alice"}</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: JSON Deserialization</summary>
+                    <div class="item-content">
+                        <h2>JSON Deserialization</h2>
+                        <p>TypeScript uses `JSON.parse` to deserialize JSON strings to objects, with type assertions for safety. It throws errors for invalid JSON. JSON deserialization is vital for API data processing.</p>
+                        <pre>
+interface User {
+    name: string;
+}
+const json: string = '{"name":"Alice"}';
+const user: User = JSON.parse(json) as User;
+console.log(user.name);
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: Regular Expressions</summary>
+                    <div class="item-content">
+                        <h2>Regular Expressions</h2>
+                        <p>TypeScript’s `RegExp` object handles pattern matching with methods like `replace()`. Patterns use standard regex syntax. Regular expressions are powerful for text processing.</p>
+                        <pre>
+const text: string = "hello world";
+const newText: string = text.replace(/world/, "TypeScript");
+console.log(newText);
+                        </pre>
+                        <div class="example">
+                            <p>Output: hello TypeScript</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: Promises</summary>
+                    <div class="item-content">
+                        <h2>Promises</h2>
+                        <p>Promises in TypeScript handle asynchronous operations, typed with generics for results. They use `then` and `catch` for chaining. Promises are key for async programming.</p>
+                        <pre>
+const fetchData = (): Promise<string> => {
+    return new Promise(resolve => resolve("Data"));
+};
+fetchData().then(data => console.log(data));
+                        </pre>
+                        <div class="example">
+                            <p>Output: Data</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: Async/Await</summary>
+                    <div class="item-content">
+                        <h2>Async/Await</h2>
+                        <p>TypeScript’s `async`/`await` syntax simplifies asynchronous code, using `async` functions and `await` for promises. It requires `try-catch` for error handling. Async/await is modern TypeScript’s concurrency model.</p>
+                        <pre>
+async function fetchData(): Promise<string> {
+    return "Data";
+}
+(async () => {
+    const result = await fetchData();
+    console.log(result);
+})();
+                        </pre>
+                        <div class="example">
+                            <p>Output: Data</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: Decorators</summary>
+                    <div class="item-content">
+                        <h2>Decorators</h2>
+                        <p>Decorators in TypeScript are experimental features that modify classes, methods, or properties. They’re used with metadata in frameworks like Angular. Decorators enhance code modularity.</p>
+                        <pre>
+function log(target: any, key: string) {
+    console.log(`Calling ${key}`);
+}
+class Example {
+    @log
+    method() {}
+}
+const ex = new Example();
+ex.method();
+                        </pre>
+                        <div class="example">
+                            <p>Output: Calling method</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: Modules</summary>
+                    <div class="item-content">
+                        <h2>Modules</h2>
+                        <p>TypeScript’s modules use `import` and `export` to organize code, supporting ES modules or CommonJS. They ensure type safety across files. Modules promote scalable TypeScript projects.</p>
+                        <pre>
+// math.ts
+export function add(a: number, b: number): number {
+    return a + b;
+}
+// main.ts
+import { add } from "./math";
+console.log(add(2, 3));
+                        </pre>
+                        <div class="example">
+                            <p>Output: 5</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: Type Guards</summary>
+                    <div class="item-content">
+                        <h2>Type Guards</h2>
+                        <p>Type guards in TypeScript narrow types within a block using `typeof`, `instanceof`, or custom predicates. They ensure type-safe operations. Type guards are essential for handling union types.</p>
+                        <pre>
+function print(value: string | number): void {
+    if (typeof value === "string") {
+        console.log(value.toUpperCase());
+    } else {
+        console.log(value);
+    }
+}
+print("hello");
+                        </pre>
+                        <div class="example">
+                            <p>Output: HELLO</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: Networking with Fetch</summary>
+                    <div class="item-content">
+                        <h2>Networking with Fetch</h2>
+                        <p>TypeScript uses the `fetch` API for HTTP requests, with type annotations for responses. It supports async/await for clean syntax. Networking is crucial for web applications.</p>
+                        <pre>
+interface Todo {
+    title: string;
+}
+async function getTodo(): Promise<Todo> {
+    const res = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+    return res.json();
+}
+getTodo().then(todo => console.log(todo.title));
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Sample todo title, e.g., "delectus aut autem")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: React Introduction</summary>
+                    <div class="item-content">
+                        <h2>React Introduction</h2>
+                        <p>React with TypeScript builds type-safe UI components using JSX/TSX. Functional components use props with interface types. React is a leading framework for web development.</p>
+                        <pre>
+import React from "react";
+interface Props {
+    message: string;
+}
+const Greeting: React.FC<Props> = ({ message }) => {
+    return <div>{message}</div>;
+};
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Renders a div with the message prop)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: React State</summary>
+                    <div class="item-content">
+                        <h2>React State</h2>
+                        <p>TypeScript’s `useState` hook manages component state with type annotations. It triggers re-renders on state changes. State is fundamental to interactive React apps.</p>
+                        <pre>
+import React, { useState } from "react";
+const Counter: React.FC = () => {
+    const [count, setCount] = useState<number>(0);
+    return (
+        <button onClick={() => setCount(count + 1)}>
+            Count: {count}
+        </button>
+    );
+};
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Displays button with incrementing counter)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: React Lists</summary>
+                    <div class="item-content">
+                        <h2>React Lists</h2>
+                        <p>React with TypeScript renders lists using `map`, requiring a `key` prop for efficiency. Type annotations ensure data consistency. Lists are common for dynamic UIs.</p>
+                        <pre>
+import React from "react";
+const FruitList: React.FC = () => {
+    const fruits: string[] = ["Apple", "Banana", "Cherry"];
+    return (
+        <ul>
+            {fruits.map(fruit => (
+                <li key={fruit}>{fruit}</li>
+            ))}
+        </ul>
+    );
+};
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Displays a list of fruits)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: React Navigation</summary>
+                    <div class="item-content">
+                        <h2>React Navigation</h2>
+                        <p>React Router with TypeScript enables navigation with typed routes. It uses components like `Link` and `Route`. Navigation is key for single-page applications.</p>
+                        <pre>
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+const App: React.FC = () => (
+    <BrowserRouter>
+        <Routes>
+            <Route path="/" element={<div>Home</div>} />
+            <Route path="/detail" element={<div>Detail</div>} />
+        </Routes>
+    </BrowserRouter>
+);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Navigates between home and detail routes)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: Redux</summary>
+                    <div class="item-content">
+                        <h2>Redux</h2>
+                        <p>Redux with TypeScript manages global state with typed actions and reducers. It uses `createStore` for a single source of truth. Redux is powerful for complex React apps.</p>
+                        <pre>
+import { createStore } from "redux";
+interface State {
+    count: number;
+}
+const reducer = (state: State = { count: 0 }, action: { type: string }): State => {
+    if (action.type === "INCREMENT") return { count: state.count + 1 };
+    return state;
+};
+const store = createStore(reducer);
+store.dispatch({ type: "INCREMENT" });
+console.log(store.getState().count);
+                        </pre>
+                        <div class="example">
+                            <p>Output: 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: Node.js Server</summary>
+                    <div class="item-content">
+                        <h2>Node.js Server</h2>
+                        <p>TypeScript with Node.js builds servers using Express, with typed routes. It supports middleware for request handling. Node.js is ideal for scalable server-side apps.</p>
+                        <pre>
+import express from "express";
+const app = express();
+app.get("/", (req, res) => {
+    res.send("Hello, World!");
+});
+app.listen(3000, () => console.log("Server running"));
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Serves "Hello, World!" at http://localhost:3000)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: Express Routes</summary>
+                    <div class="item-content">
+                        <h2>Express Routes</h2>
+                        <p>Express with TypeScript defines typed routes for REST APIs, using middleware for validation. It supports async handlers with promises. Routes manage server-side logic efficiently.</p>
+                        <pre>
+import express, { Request, Response } from "express";
+const app = express();
+app.get("/api/user", async (req: Request, res: Response) => {
+    res.json({ name: "Alice" });
+});
+app.listen(3000);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Serves {"name":"Alice"} at /api/user)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Unit Testing</summary>
+                    <div class="item-content">
+                        <h2>Unit Testing</h2>
+                        <p>TypeScript uses Jest for unit testing, with typed test cases and assertions. Tests use `expect` for behavior verification. Unit testing ensures reliable TypeScript code.</p>
+                        <pre>
+import { describe, it, expect } from "@jest/globals";
+describe("Math", () => {
+    it("should add numbers", () => {
+        expect(2 + 2).toBe(4);
+    });
+});
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Test passes, no console output)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: TypeScript in Deno</summary>
+                    <div class="item-content">
+                        <h2>TypeScript in Deno</h2>
+                        <p>Deno is a secure runtime for TypeScript, running code without compilation. It supports ES modules and built-in utilities. Deno is an alternative to Node.js for TypeScript apps.</p>
+                        <pre>
+import { serve } from "https://deno.land/std/http/server.ts";
+serve(() => new Response("Hello, World!"), { port: 8000 });
+console.log("Server running on port 8000");
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Serves "Hello, World!" at http://localhost:8000)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
