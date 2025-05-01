@@ -1,0 +1,1571 @@
+<!-- COURSE BREAKDOWN 
+Lessons 1–10: Java basics (syntax, variables, data types, operators).
+Lessons 11–20: Control flow, loops, methods, arrays, strings.
+Lessons 21–30: Classes, objects, inheritance, interfaces, packages.
+Lessons 31–40: Collections, exceptions, file I/O, generics, lambda expressions.
+Lessons 41–50: Advanced topics (streams, multithreading, annotations, regex, unit testing). -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Java Learning Lessons - CODEXEDOC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #4169e1;
+            --light-blue: #41E169;
+            --white: #f0f2f0;
+            --black: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Audiowide', sans-serif;
+            color: #fff;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            background: #fff;
+            height: 3px;
+            width: 25px;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Audiowide', sans-serif;
+            font-size: 18px;
+        }
+
+        .nav-menu a:hover {
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+                width: 200px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+        }
+
+        main {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #A3BFFA, #c8e6c9);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .scripture {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 8px;
+            font-style: italic;
+            color: #fff;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .item {
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .item-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Audiowide', sans-serif;
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            border: none;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .item-button:hover {
+            background: linear-gradient(135deg, #2F4B9F, #2F9F4B);
+        }
+
+        .item-content {
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 0 0 5px 5px;
+            text-align: left;
+        }
+
+        .item-content h2 {
+            font-family: 'Audiowide', sans-serif;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .item-content pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .example {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid var(--dark-blue);
+            border-radius: 5px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>CODEXEDOC</h1>
+            </a>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bulletins.html">Bulletins</a></li>
+                <li><a href="discernment.html">Discernment</a></li>
+                <li><a href="guidance.html">Guidance</a></li>
+                <li><a href="scriptures.html">Scriptures</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p class="scripture">"Pay constant attention to yourself and to your teaching. Persevere in these things." —1 Timothy 4:16</p>
+            <p>Explore 50 progressive Java lessons to master programming. Each lesson provides clear explanations and examples to build your coding skills. Start your journey to creating robust Java applications today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is Java?</summary>
+                    <div class="item-content">
+                        <h2>Introduction to Java</h2>
+                        <p>Java is a high-level, object-oriented programming language known for its platform independence. It runs on the Java Virtual Machine (JVM), enabling "write once, run anywhere" functionality. Java is widely used in enterprise applications, Android development, and web servers.</p>
+                        <pre>
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: Variables</summary>
+                    <div class="item-content">
+                        <h2>Variables in Java</h2>
+                        <p>Variables in Java are declared with a specific type, such as int or String. They must be initialized before use, and their type cannot change. Variables are essential for storing and manipulating data.</p>
+                        <pre>
+public class Variables {
+    public static void main(String[] args) {
+        String name = "Alice";
+        int age = 25;
+        System.out.println(name + " is " + age);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice is 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: Data Types</summary>
+                    <div class="item-content">
+                        <h2>Java Data Types</h2>
+                        <p>Java has primitive types like int, double, and boolean, and reference types like String. Primitive types store values directly, while reference types store memory addresses. Understanding data types is crucial for efficient programming.</p>
+                        <pre>
+public class DataTypes {
+    public static void main(String[] args) {
+        int num = 42;
+        double pi = 3.14;
+        boolean flag = true;
+        System.out.println(num + ", " + pi + ", " + flag);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 42, 3.14, true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Arithmetic Operators</summary>
+                    <div class="item-content">
+                        <h2>Arithmetic Operations</h2>
+                        <p>Java supports operators like +, -, *, /, and % for arithmetic. The ++ and -- operators increment or decrement values. These operators are fundamental for calculations.</p>
+                        <pre>
+public class Arithmetic {
+    public static void main(String[] args) {
+        int a = 10;
+        int b = 3;
+        System.out.println(a + b + ", " + (a % b));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 13, 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Comparison Operators</summary>
+                    <div class="item-content">
+                        <h2>Comparison Operators</h2>
+                        <p>Comparison operators like ==, !=, >, and < return boolean values. They are used in conditional statements to compare values. Comparisons are key to decision-making in Java.</p>
+                        <pre>
+public class Comparison {
+    public static void main(String[] args) {
+        int x = 5;
+        int y = 10;
+        System.out.println(x < y + ", " + (x == y));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: true, false</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Logical Operators</summary>
+                    <div class="item-content">
+                        <h2>Logical Operators</h2>
+                        <p>Logical operators &&, ||, and ! combine or invert boolean expressions. They enable complex condition evaluations in control structures. Logical operators are essential for robust logic.</p>
+                        <pre>
+public class Logical {
+    public static void main(String[] args) {
+        boolean a = true;
+        boolean b = false;
+        System.out.println(a && b + ", " + (a || b));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: false, true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: Strings</summary>
+                    <div class="item-content">
+                        <h2>Working with Strings</h2>
+                        <p>Strings in Java are immutable objects created with double quotes. They support concatenation with + and methods like length(). Strings are widely used for text processing.</p>
+                        <pre>
+public class Strings {
+    public static void main(String[] args) {
+        String greeting = "Hello";
+        String name = "World";
+        System.out.println(greeting + ", " + name + "!");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: String Methods</summary>
+                    <div class="item-content">
+                        <h2>String Methods</h2>
+                        <p>Java’s String class provides methods like toUpperCase(), trim(), and substring(). These methods return new strings, preserving immutability. String methods simplify text manipulation tasks.</p>
+                        <pre>
+public class StringMethods {
+    public static void main(String[] args) {
+        String text = "  Java  ";
+        System.out.println(text.trim().toUpperCase());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: JAVA</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: Arrays</summary>
+                    <div class="item-content">
+                        <h2>Working with Arrays</h2>
+                        <p>Arrays in Java are fixed-size collections of the same type. They are declared with square brackets and accessed by index. Arrays are useful for storing multiple values.</p>
+                        <pre>
+public class Arrays {
+    public static void main(String[] args) {
+        String[] fruits = {"apple", "banana", "cherry"};
+        System.out.println(fruits[1]);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: Array Length</summary>
+                    <div class="item-content">
+                        <h2>Array Length</h2>
+                        <p>The length property returns an array’s size, which is fixed at creation. It’s used for iteration and bounds checking. Knowing array length prevents index errors.</p>
+                        <pre>
+public class ArrayLength {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4};
+        System.out.println(numbers.length);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 4</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: If Statements</summary>
+                    <div class="item-content">
+                        <h2>Conditional Statements</h2>
+                        <p>If statements execute code based on boolean conditions using if, else if, and else. They enable dynamic decision-making in programs. Conditionals are core to program logic.</p>
+                        <pre>
+public class IfStatement {
+    public static void main(String[] args) {
+        int age = 18;
+        if (age >= 18) {
+            System.out.println("Adult");
+        } else {
+            System.out.println("Minor");
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Adult</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: Switch Statements</summary>
+                    <div class="item-content">
+                        <h2>Switch Statements</h2>
+                        <p>Switch statements select code blocks based on a variable’s value. They use case labels and break to prevent fall-through. Switch is useful for multiple discrete conditions.</p>
+                        <pre>
+public class SwitchStatement {
+    public static void main(String[] args) {
+        int day = 1;
+        switch (day) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            default:
+                System.out.println("Other");
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Monday</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: For Loops</summary>
+                    <div class="item-content">
+                        <h2>For Loops</h2>
+                        <p>For loops iterate over a range or array with a counter variable. They’re ideal for known iteration counts. For loops are essential for repetitive tasks.</p>
+                        <pre>
+public class ForLoop {
+    public static void main(String[] args) {
+        for (int i = 0; i < 3; i++) {
+            System.out.println(i);
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: While Loops</summary>
+                    <div class="item-content">
+                        <h2>While Loops</h2>
+                        <p>While loops execute as long as a condition is true. They’re useful for unknown iteration counts. Use them carefully to avoid infinite loops.</p>
+                        <pre>
+public class WhileLoop {
+    public static void main(String[] args) {
+        int count = 1;
+        while (count <= 3) {
+            System.out.println(count);
+            count++;
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>1<br>2<br>3</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: Break and Continue</summary>
+                    <div class="item-content">
+                        <h2>Loop Control</h2>
+                        <p>The break statement exits a loop, while continue skips to the next iteration. They provide precise control over loop behavior. These statements handle special cases efficiently.</p>
+                        <pre>
+public class LoopControl {
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            if (i == 3) break;
+            System.out.println(i);
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: Methods</summary>
+                    <div class="item-content">
+                        <h2>Defining Methods</h2>
+                        <p>Methods in Java are reusable code blocks defined with a return type and parameters. They are declared inside classes and promote modularity. Methods are essential for structured programming.</p>
+                        <pre>
+public class Methods {
+    public static String greet(String name) {
+        return "Hello, " + name + "!";
+    }
+    public static void main(String[] args) {
+        System.out.println(greet("Alice"));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: Method Overloading</summary>
+                    <div class="item-content">
+                        <h2>Method Overloading</h2>
+                        <p>Method overloading allows multiple methods with the same name but different parameters. It enhances flexibility and readability. Overloading is common in Java APIs.</p>
+                        <pre>
+public class Overloading {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+    public static double add(double a, double b) {
+        return a + b;
+    }
+    public static void main(String[] args) {
+        System.out.println(add(2, 3) + ", " + add(2.5, 3.5));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 5, 6.0</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: Classes</summary>
+                    <div class="item-content">
+                        <h2>Classes and Objects</h2>
+                        <p>Classes are blueprints for objects, defining fields and methods. Objects are instances of classes, created with the new keyword. Classes are central to Java’s object-oriented programming.</p>
+                        <pre>
+public class Dog {
+    String name;
+    public Dog(String name) {
+        this.name = name;
+    }
+    public String bark() {
+        return name + " says Woof!";
+    }
+    public static void main(String[] args) {
+        Dog dog = new Dog("Buddy");
+        System.out.println(dog.bark());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy says Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: Constructors</summary>
+                    <div class="item-content">
+                        <h2>Constructors</h2>
+                        <p>Constructors initialize objects when they are created, sharing the class name. They can be overloaded for flexibility. Constructors ensure proper object setup.</p>
+                        <pre>
+public class Person {
+    String name;
+    int age;
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    public static void main(String[] args) {
+        Person p = new Person("Alice", 25);
+        System.out.println(p.name + ", " + p.age);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice, 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Inheritance</summary>
+                    <div class="item-content">
+                        <h2>Inheritance</h2>
+                        <p>Inheritance allows a class to inherit fields and methods from another using extends. It promotes code reuse and hierarchical modeling. The super keyword calls parent constructors or methods.</p>
+                        <pre>
+public class Animal {
+    String name;
+    public Animal(String name) {
+        this.name = name;
+    }
+}
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+    public String bark() {
+        return name + " barks!";
+    }
+    public static void main(String[] args) {
+        Dog dog = new Dog("Max");
+        System.out.println(dog.bark());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Max barks!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Method Overriding</summary>
+                    <div class="item-content">
+                        <h2>Method Overriding</h2>
+                        <p>Method overriding allows a subclass to provide a specific implementation of a parent method. It requires the same method signature. Overriding enables polymorphic behavior.</p>
+                        <pre>
+public class Animal {
+    public String sound() {
+        return "Some sound";
+    }
+}
+class Dog extends Animal {
+    @Override
+    public String sound() {
+        return "Woof!";
+    }
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        System.out.println(dog.sound());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Interfaces</summary>
+                    <div class="item-content">
+                        <h2>Interfaces</h2>
+                        <p>Interfaces define contracts with abstract methods that classes implement. They support multiple inheritance in Java. Interfaces are key for loose coupling and abstraction.</p>
+                        <pre>
+public interface Speakable {
+    String speak();
+}
+class Dog implements Speakable {
+    public String speak() {
+        return "Woof!";
+    }
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        System.out.println(dog.speak());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Abstract Classes</summary>
+                    <div class="item-content">
+                        <h2>Abstract Classes</h2>
+                        <p>Abstract classes cannot be instantiated and may contain abstract methods. They provide a base for subclasses to extend. Abstract classes balance flexibility and structure.</p>
+                        <pre>
+public abstract class Animal {
+    abstract String sound();
+}
+class Dog extends Animal {
+    String sound() {
+        return "Woof!";
+    }
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        System.out.println(dog.sound());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: Packages</summary>
+                    <div class="item-content">
+                        <h2>Packages</h2>
+                        <p>Packages organize classes into namespaces, preventing name conflicts. They are declared with the package keyword. Packages are essential for large-scale Java projects.</p>
+                        <pre>
+// com.example.MyClass.java
+   
+package com.example;
+
+public class MyClass {
+    public static void main(String[] args) {
+        System.out.println("Hello from package!");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello from package!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: Access Modifiers</summary>
+                    <div class="item-content">
+                        <h2>Access Modifiers</h2>
+                        <p>Access modifiers like public, private, and protected control visibility. Private restricts access to the class, while public allows universal access. Modifiers ensure encapsulation and security.</p>
+                        <pre>
+public class Access {
+    private String secret = "Hidden";
+    public String getSecret() {
+        return secret;
+    }
+    public static void main(String[] args) {
+        Access a = new Access();
+        System.out.println(a.getSecret());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hidden</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: Encapsulation</summary>
+                    <div class="item-content">
+                        <h2>Encapsulation</h2>
+                        <p>Encapsulation hides data using private fields and public methods. It protects object integrity and exposes only necessary interfaces. Encapsulation is a core OOP principle.</p>
+                        <pre>
+public class Person {
+    private String name;
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getName() {
+        return name;
+    }
+    public static void main(String[] args) {
+        Person p = new Person();
+        p.setName("Bob");
+        System.out.println(p.getName());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Bob</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: ArrayList</summary>
+                    <div class="item-content">
+                        <h2>ArrayList</h2>
+                        <p>ArrayList is a resizable array in the java.util package. It supports dynamic size changes and methods like add() and remove(). ArrayList is widely used for flexible collections.</p>
+                        <pre>
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+        ArrayList<String> fruits = new ArrayList<>();
+        fruits.add("apple");
+        fruits.add("banana");
+        System.out.println(fruits);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: [apple, banana]</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: HashMap</summary>
+                    <div class="item-content">
+                        <h2>HashMap</h2>
+                        <p>HashMap stores key-value pairs, allowing fast lookups. It’s part of java.util and supports methods like put() and get(). HashMap is ideal for associative data.</p>
+                        <pre>
+import java.util.HashMap;
+
+public class HashMapDemo {
+    public static void main(String[] args) {
+        HashMap<String, Integer> ages = new HashMap<>();
+        ages.put("Alice", 25);
+        System.out.println(ages.get("Alice"));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Exception Handling</summary>
+                    <div class="item-content">
+                        <h2>Exception Handling</h2>
+                        <p>Try-catch blocks handle exceptions, preventing program crashes. Java distinguishes between checked and unchecked exceptions. Exception handling ensures robust applications.</p>
+                        <pre>
+public class ExceptionDemo {
+    public static void main(String[] args) {
+        try {
+            int result = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("Cannot divide by zero");
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Cannot divide by zero</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: Throwing Exceptions</summary>
+                    <div class="item-content">
+                        <h2>Throwing Exceptions</h2>
+                        <p>The throw keyword triggers custom exceptions for error conditions. Methods declare thrown exceptions with throws. Throwing exceptions enhances error handling control.</p>
+                        <pre>
+public class ThrowDemo {
+    public static void checkAge(int age) throws Exception {
+        if (age < 0) throw new Exception("Age cannot be negative");
+        System.out.println("Age: " + age);
+    }
+    public static void main(String[] args) {
+        try {
+            checkAge(-5);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Age cannot be negative</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: File Reading</summary>
+                    <div class="item-content">
+                        <h2>File Reading</h2>
+                        <p>Java’s Files class in java.nio.file reads files efficiently. The readAllLines() method retrieves file contents as a list. File reading is crucial for data processing.</p>
+                        <pre>
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class FileRead {
+    public static void main(String[] args) {
+        try {
+            String content = Files.readString(Paths.get("example.txt"));
+            System.out.println(content);
+        } catch (Exception e) {
+            System.out.println("Error reading file");
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Contents of example.txt)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: File Writing</summary>
+                    <div class="item-content">
+                        <h2>File Writing</h2>
+                        <p>The Files.writeString() method writes text to a file. It simplifies file output compared to older APIs. File writing is essential for saving data.</p>
+                        <pre>
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public class FileWrite {
+    public static void main(String[] args) {
+        try {
+            Files.writeString(Paths.get("output.txt"), "Hello, World!");
+            System.out.println("File written");
+        } catch (Exception e) {
+            System.out.println("Error writing file");
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: File written</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: Generics</summary>
+                    <div class="item-content">
+                        <h2>Generics</h2>
+                        <p>Generics enable type-safe classes and methods with placeholder types. They eliminate casting and improve code safety. Generics are widely used in collections.</p>
+                        <pre>
+import java.util.ArrayList;
+
+public class GenericsDemo {
+    public static void main(String[] args) {
+        ArrayList<String> names = new ArrayList<>();
+        names.add("Alice");
+        System.out.println(names.get(0));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: Lambda Expressions</summary>
+                    <div class="item-content">
+                        <h2>Lambda Expressions</h2>
+                        <p>Lambda expressions, introduced in Java 8, provide concise syntax for functional interfaces. They use the -> operator and simplify event handling. Lambdas enhance functional programming in Java.</p>
+                        <pre>
+import java.util.Arrays;
+
+public class LambdaDemo {
+    public static void main(String[] args) {
+        String[] names = {"Bob", "Alice"};
+        Arrays.sort(names, (a, b) -> a.compareTo(b));
+        System.out.println(Arrays.toString(names));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: [Alice, Bob]</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: Stream API</summary>
+                    <div class="item-content">
+                        <h2>Stream API</h2>
+                        <p>The Stream API processes collections functionally with operations like filter() and map(). Streams are lazy, evaluating only when needed. Streams simplify complex data processing.</p>
+                        <pre>
+import java.util.Arrays;
+
+public class StreamDemo {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4};
+        int sum = Arrays.stream(numbers).filter(n -> n % 2 == 0).sum();
+        System.out.println(sum);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 6</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: Optional</summary>
+                    <div class="item-content">
+                        <h2>Optional Class</h2>
+                        <p>The Optional class, introduced in Java 8, handles nullable values to avoid NullPointerExceptions. Methods like orElse() provide default values. Optional improves code robustness.</p>
+                        <pre>
+import java.util.Optional;
+
+public class OptionalDemo {
+    public static void main(String[] args) {
+        Optional<String> name = Optional.of("Alice");
+        System.out.println(name.orElse("Unknown"));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: Multithreading</summary>
+                    <div class="item-content">
+                        <h2>Multithreading</h2>
+                        <p>Multithreading allows concurrent task execution using Thread or Runnable. The run() method defines thread behavior. Multithreading improves performance for parallel tasks.</p>
+                        <pre>
+public class ThreadDemo {
+    public static void main(String[] args) {
+        Thread t = new Thread(() -> System.out.println("Running"));
+        t.start();
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Running</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: Synchronized</summary>
+                    <div class="item-content">
+                        <h2>Synchronization</h2>
+                        <p>The synchronized keyword ensures thread-safe access to shared resources. It prevents race conditions in multithreaded programs. Synchronization is critical for concurrent programming.</p>
+                        <pre>
+public class Counter {
+    private int count = 0;
+    public synchronized void increment() {
+        count++;
+    }
+    public int getCount() {
+        return count;
+    }
+    public static void main(String[] args) {
+        Counter c = new Counter();
+        c.increment();
+        System.out.println(c.getCount());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: Annotations</summary>
+                    <div class="item-content">
+                        <h2>Annotations</h2>
+                        <p>Annotations provide metadata for classes, methods, or fields, using @ syntax. Built-in annotations like @Override ensure correctness. Annotations are widely used in frameworks like Spring.</p>
+                        <pre>
+public class AnnotationDemo {
+    @Override
+    public String toString() {
+        return "Custom toString";
+    }
+    public static void main(String[] args) {
+        AnnotationDemo demo = new AnnotationDemo();
+        System.out.println(demo);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Custom toString</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: Custom Annotations</summary>
+                    <div class="item-content">
+                        <h2>Custom Annotations</h2>
+                        <p>Custom annotations are defined with @interface and can include elements. They’re used for framework-specific metadata. Custom annotations enhance code configurability.</p>
+                        <pre>
+import java.lang.annotation.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@interface MyAnnotation {
+    String value();
+}
+@MyAnnotation("Test")
+public class CustomAnnotation {
+    public static void main(String[] args) {
+        MyAnnotation anno = CustomAnnotation.class.getAnnotation(MyAnnotation.class);
+        System.out.println(anno.value());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Test</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: Regular Expressions</summary>
+                    <div class="item-content">
+                        <h2>Regular Expressions</h2>
+                        <p>The java.util.regex package provides Pattern and Matcher for pattern matching. Regex validates or extracts data from strings. Regular expressions are powerful for text processing.</p>
+                        <pre>
+import java.util.regex.*;
+
+public class RegexDemo {
+    public static void main(String[] args) {
+        Pattern p = Pattern.compile("\\d+");
+        Matcher m = p.matcher("123");
+        if (m.matches()) {
+            System.out.println("Valid number");
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Valid number</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: Date and Time</summary>
+                    <div class="item-content">
+                        <h2>Date and Time API</h2>
+                        <p>Java’s java.time package, introduced in Java 8, handles dates and times. Classes like LocalDate provide robust time management. The Date/Time API is essential for modern applications.</p>
+                        <pre>
+import java.time.LocalDate;
+
+public class DateDemo {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        System.out.println(date);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 2025-05-01 (example date)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: Enums</summary>
+                    <div class="item-content">
+                        <h2>Enums</h2>
+                        <p>Enums define a fixed set of constants, declared with enum. They can include fields and methods for added functionality. Enums ensure type-safe constants.</p>
+                        <pre>
+public enum Day {
+    MONDAY, TUESDAY;
+    public String getMood() {
+        return this == MONDAY ? "Tough" : "Better";
+    }
+    public static void main(String[] args) {
+        System.out.println(Day.MONDAY.getMood());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Tough</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: Var Keyword</summary>
+                    <div class="item-content">
+                        <h2>Var Keyword</h2>
+                        <p>The var keyword, introduced in Java 10, infers local variable types. It reduces boilerplate while maintaining type safety. Var is useful for concise code.</p>
+                        <pre>
+import java.util.ArrayList;
+
+public class VarDemo {
+    public static void main(String[] args) {
+        var names = new ArrayList<String>();
+        names.add("Alice");
+        System.out.println(names);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: [Alice]</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: Record Classes</summary>
+                    <div class="item-content">
+                        <h2>Record Classes</h2>
+                        <p>Record classes, introduced in Java 16, provide concise syntax for immutable data carriers. They automatically generate constructors and getters. Records simplify data transfer objects.</p>
+                        <pre>
+public record Person(String name, int age) {
+    public static void main(String[] args) {
+        Person p = new Person("Alice", 25);
+        System.out.println(p.name() + ", " + p.age());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice, 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: Unit Testing</summary>
+                    <div class="item-content">
+                        <h2>Unit Testing with JUnit</h2>
+                        <p>JUnit is a framework for writing and running unit tests. Annotations like @Test mark test methods. Unit testing ensures code reliability.</p>
+                        <pre>
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class TestDemo {
+    @Test
+    void testAdd() {
+        assertEquals(4, 2 + 2);
+    }
+    public static void main(String[] args) {
+        System.out.println("Run with JUnit");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Test passes, no console output)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: Functional Interfaces</summary>
+                    <div class="item-content">
+                        <h2>Functional Interfaces</h2>
+                        <p>Functional interfaces have a single abstract method, marked with @FunctionalInterface. They’re used with lambdas for functional programming. Functional interfaces enhance Java’s expressiveness.</p>
+                        <pre>
+@FunctionalInterface
+interface MyFunction {
+    int apply(int x);
+}
+public class FunctionalDemo {
+    public static void main(String[] args) {
+        MyFunction square = x -> x * x;
+        System.out.println(square.apply(5));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: Fork/Join Framework</summary>
+                    <div class="item-content">
+                        <h2>Fork/Join Framework</h2>
+                        <p>The Fork/Join framework, in java.util.concurrent, parallelizes recursive tasks. It uses RecursiveTask for divide-and-conquer algorithms. Fork/Join optimizes multicore processing.</p>
+                        <pre>
+import java.util.concurrent.*;
+
+public class ForkJoinDemo extends RecursiveTask<Integer> {
+    private int[] numbers;
+    public ForkJoinDemo(int[] numbers) {
+        this.numbers = numbers;
+    }
+    protected Integer compute() {
+        return Arrays.stream(numbers).sum();
+    }
+    public static void main(String[] args) {
+        ForkJoinPool pool = new ForkJoinPool();
+        int[] nums = {1, 2, 3};
+        System.out.println(pool.invoke(new ForkJoinDemo(nums)));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 6</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Pattern Matching</summary>
+                    <div class="item-content">
+                        <h2>Pattern Matching</h2>
+                        <p>Pattern matching, enhanced in Java 17, simplifies type checking with instanceof. It combines testing and casting in one step. Pattern matching improves code clarity.</p>
+                        <pre>
+public class PatternMatching {
+    public static void main(String[] args) {
+        Object obj = "Hello";
+        if (obj instanceof String s) {
+            System.out.println(s.toUpperCase());
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: HELLO</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: Sealed Classes</summary>
+                    <div class="item-content">
+                        <h2>Sealed Classes</h2>
+                        <p>Sealed classes, introduced in Java 17, restrict which classes can extend them. They use the sealed and permits keywords. Sealed classes enhance type safety and design.</p>
+                        <pre>
+public sealed interface Shape permits Circle {
+    double area();
+}
+final class Circle implements Shape {
+    double radius;
+    Circle(double radius) { this.radius = radius; }
+    public double area() { return Math.PI * radius * radius; }
+    public static void main(String[] args) {
+        Shape circle = new Circle(2);
+        System.out.println(circle.area());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 12.566370614359172</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <ppretentious="true">© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
