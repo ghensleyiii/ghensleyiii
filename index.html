@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore programming languages and development resources through CODEXEDOC.">
+    <meta name="keywords" content="programming, coding, development, CODEXEDOC">
+    <title>CODEXEDOC</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --dark-blue: #4169e1;
+            --light-blue: #41E169;
+            --white: #f0f2f0;
+            --black: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo h1 {
+            font-family: 'Audiowide', sans-serif;
+            color: #fff;
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .hamburger {
+            display: block;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .nav-menu {
+            display: none;
+            position: absolute;
+            top: 80px;
+            right: 0;
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            width: 200px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .nav-menu.active {
+            display: block;
+        }
+
+        .nav-menu li {
+            list-style: none;
+            padding: 15px 20px;
+        }
+
+        .nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Audiowide', sans-serif;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu li a:hover {
+            color: var(--black);
+        }
+
+        main {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #A3BFFA, #c8e6c9);
+            padding: 20px 0;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .intro-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-family: 'Audiowide', sans-serif;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .categories-container {
+            margin: 40px 0;
+            padding: 0 20px;
+        }
+
+        .categories-container h2 {
+            font-family: 'Audiowide', sans-serif;
+            color: var(--dark-blue);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .categories {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        .category {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .category a {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .category i {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .category h3 {
+            font-family: 'Audiowide', sans-serif;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .category p {
+            font-size: 14px;
+            color: #f0f0f0;
+        }
+
+        .category[data-gradient="1"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="2"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="3"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="4"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="5"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="6"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="7"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="8"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="9"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="10"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="11"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="12"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="13"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="14"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="15"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="16"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+
+        .item {
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .item-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Audiowide', sans-serif;
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            border: none;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .item-button:hover {
+            background: linear-gradient(135deg, #2F4B9F, #2F9F4B);
+        }
+
+        .item-content {
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 0 0 5px 5px;
+            text-align: center;
+        }
+
+        .items-container .item-content h3 {
+            margin-top: 40px;
+            margin-bottom: 25px;
+            margin-left: 0;
+            margin-right: 0;
+            font-family: 'Audiowide', sans-serif !important;
+            color: var(--dark-blue);
+            font-size: 1.5em;
+            text-transform: uppercase;
+        }
+
+        .scripture {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 8px;
+            font-style: italic;
+            color: #fff;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        footer p {
+            margin: 10px 0 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>CODEXEDOC</h1>
+            </a>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bulletins.html">Bulletins</a></li>
+                <li><a href="discernment.html">Discernment</a></li>
+                <li><a href="guidance.html">Guidance</a></li>
+                <li><a href="scriptures.html">Scriptures</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <!-- Intro Article -->
+        <section class="intro">
+            <div class="intro-content">
+                <h2>Which Language Will You Master?</h2>
+                <div class="scripture">
+                    <p><em>“Choose your tools wisely, for the language you master shapes the solutions you build.”</em></p>
+                </div>
+                <details class="item">
+                    <summary class="item-button">Read More</summary>
+                    <div class="item-content">
+                        <p>The world of programming offers countless paths: will you master a language that powers the web, drives data science, or builds robust systems? Your choice of programming language defines your projects and career. Why choose wisely?</p>
+                        <p><strong>Web Development:</strong><br>Languages like JavaScript, HTML, and CSS create dynamic, interactive websites, powering frameworks like React and Vue for modern user experiences.</p>
+                        <div class="scripture">
+                            <p><em>The web thrives on the trinity of HTML, CSS, and JavaScript.</em></p>
+                        </div>
+                        <p><strong>Data & AI:</strong><br>Python and R dominate data science and machine learning, with libraries like TensorFlow and Pandas unlocking insights from data.</p>
+                        <div class="scripture">
+                            <p><em>Python and R reveal the secrets hidden in data.</em></p>
+                        </div>
+                        <p><strong>Systems & Performance:</strong><br>C++ and Rust deliver speed and safety, driving high-performance applications like games, operating systems, and blockchain.</p>
+                        <div class="scripture">
+                            <p><em>C++ and Rust forge the backbone of performance.</em></p>
+                        </div>
+                        <p><strong>Your Choice Shapes Your Future:</strong><br>Each language has strengths—web, data, systems, or mobile. Master one, learn its syntax, and build solutions that endure.</p>
+                        <div class="scripture">
+                            <p><em>Code today, create tomorrow—your language is your legacy.</em></p>
+                        </div>
+                        <p>The tech world evolves fast; your chosen language opens doors. Start coding and build your future!</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section class="categories-container">
+            <h2>Explore Programming Languages</h2>
+            <div class="categories">
+                <div class="category" data-gradient="14">
+                    <a href="html.html">
+                        <i class="fab fa-html5"></i>
+                        <h3>HTML</h3>
+                        <p>Structure the web with semantic markup.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="15">
+                    <a href="css.html">
+                        <i class="fab fa-css3-alt"></i>
+                        <h3>CSS</h3>
+                        <p>Style and design modern web interfaces.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="1">
+                    <a href="python.html">
+                        <i class="fab fa-python"></i>
+                        <h3>Python</h3>
+                        <p>Versatile language for AI, data science, and web.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="2">
+                    <a href="javascript.html">
+                        <i class="fab fa-js"></i>
+                        <h3>JavaScript</h3>
+                        <p>Power dynamic and interactive web applications.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="3">
+                    <a href="java.html">
+                        <i class="fab fa-java"></i>
+                        <h3>Java</h3>
+                        <p>Robust language for enterprise and Android apps.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="4">
+                    <a href="cpp.html">
+                        <i class="fas fa-code"></i>
+                        <h3>C++</h3>
+                        <p>High-performance for games and systems.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="5">
+                    <a href="rust.html">
+                        <i class="fab fa-rust"></i>
+                        <h3>Rust</h3>
+                        <p>Safe and fast for systems programming.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="6">
+                    <a href="go.html">
+                        <i class="fab fa-golang"></i>
+                        <h3>Go</h3>
+                        <p>Simple and scalable for cloud and backend.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="7">
+                    <a href="ruby.html">
+                        <i class="fas fa-gem"></i>
+                        <h3>Ruby</h3>
+                        <p>Elegant language for web development.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="8">
+                    <a href="php.html">
+                        <i class="fab fa-php"></i>
+                        <h3>PHP</h3>
+                        <p>Server-side scripting for dynamic websites.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="9">
+                    <a href="swift.html">
+                        <i class="fab fa-swift"></i>
+                        <h3>Swift</h3>
+                        <p>Powerful language for iOS and macOS apps.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="10">
+                    <a href="kotlin.html">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Kotlin</h3>
+                        <p>Modern language for Android development.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="11">
+                    <a href="typescript.html">
+                        <i class="fab fa-js-square"></i>
+                        <h3>TypeScript</h3>
+                        <p>Typed JavaScript for scalable web apps.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="12">
+                    <a href="csharp.html">
+                        <i class="fas fa-code-branch"></i>
+                        <h3>C#</h3>
+                        <p>Versatile for games, apps, and enterprise.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="13">
+                    <a href="r.html">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>R</h3>
+                        <p>Statistical computing and data visualization.</p>
+                    </a>
+                </div>
+                <div class="category" data-gradient="16">
+                    <a href="sql.html">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL</h3>
+                        <p>Manage and query databases efficiently.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Closing Article -->
+        <section class="intro">
+            <div class="intro-content">
+                <h2>Your Code, Your Future!</h2>
+                <div class="scripture">
+                    <p><em>“Write the code that shapes tomorrow, for the language you choose builds your legacy.”</em></p>
+                </div>
+                <details class="item">
+                    <summary class="item-button">Read More</summary>
+                    <div class="item-content">
+                        <p>Your choice of programming language today shapes your career and creations tomorrow. Will you build vibrant web apps, analyze data, or craft high-performance systems? The right language empowers you to solve problems and innovate. Why is this choice critical?</p>
+                        <p><strong>Web Innovation:</strong><br>JavaScript, HTML, and CSS drive the web, enabling frameworks like Angular and Svelte to create seamless user experiences.</p>
+                        <div class="scripture">
+                            <p><em>The web is alive with JavaScript, HTML, and CSS.</em></p>
+                        </div>
+                        <p><strong>Data-Driven Insights:</strong><br>Python and R excel in AI and analytics, with tools like NumPy and ggplot2 transforming raw data into actionable knowledge.</p>
+                        <div class="scripture">
+                            <p><em>Python and R illuminate the path to discovery.</em></p>
+                        </div>
+                        <p><strong>Robust Systems:</strong><br>C++ and Rust power critical applications, from game engines to secure blockchain platforms, with unmatched performance.</p>
+                        <div class="scripture">
+                            <p><em>C++ and Rust build the foundation of technology.</em></p>
+                        </div>
+                        <p><strong>Craft Your Path:</strong><br>Each language offers unique strengths. Learn one, master its ecosystem, and create solutions that stand the test of time.</p>
+                        <div class="scripture">
+                            <p><em>Your code is your craft—build with purpose.</em></p>
+                        </div>
+                        <p>The tech landscape is vast; your language is your tool. Choose wisely and code your future!</p>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <script async src="https://cse.google.com/cse.js?cx=002c5229ac7954ab7"></script>
+        <div class="gcse-search"></div>
+        <p>© CODEXEDOC</p>
+    </footer>
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
