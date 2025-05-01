@@ -1,0 +1,1490 @@
+<!-- COURSE BREAKDOWN
+Lessons 1–10: C# basics (syntax, variables, data types, operators).
+Lessons 11–20: Control flow, methods, nullability, collections, strings.
+Lessons 21–30: Classes, interfaces, inheritance, delegates, error handling.
+Lessons 31–40: Generics, LINQ, file I/O, JSON, async/await.
+Lessons 41–50: Advanced topics (ASP.NET Core, Entity Framework, Blazor, Unity, testing)-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C#</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>C#</h1>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Explore 50 progressive C# lessons to master strongly typed programming for desktop, web, and game development. Each lesson provides clear explanations and examples to build your coding skills. Start your journey to creating robust C# applications today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is C#?</summary>
+                    <div class="item-content">
+                        <h2>Introduction to C#</h2>
+                        <p>C# is a modern, object-oriented programming language developed by Microsoft, widely used for Windows applications, web services, and Unity games. It emphasizes type safety, simplicity, and versatility within the .NET ecosystem. C# supports robust frameworks like ASP.NET Core for scalable development.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: Variables and Constants</summary>
+                    <div class="item-content">
+                        <h2>Variables and Constants</h2>
+                        <p>C# uses `var` for implicitly typed variables and `const` for read-only constants, requiring explicit type declarations for most variables. Variables can be reassigned, while constants are fixed at compile time. Understanding variables and constants is foundational for C# programming.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string name = "Alice";
+        const int age = 25;
+        Console.WriteLine($"{name} is {age}");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice is 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: Data Types</summary>
+                    <div class="item-content">
+                        <h2>C# Data Types</h2>
+                        <p>C# supports value types like `int`, `double`, `bool`, and reference types like `string` and arrays. Types are explicitly declared, ensuring compile-time safety. Mastering data types is key to effective C# development.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int num = 42;
+        double pi = 3.14;
+        bool flag = true;
+        Console.WriteLine($"{num} {pi} {flag}");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 42 3.14 True</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Arithmetic Operators</summary>
+                    <div class="item-content">
+                        <h2>Arithmetic Operations</h2>
+                        <p>C# provides arithmetic operators like `+`, `-`, `*`, `/`, and `%` for numerical operations. Type safety prevents invalid operations, such as dividing incompatible types. These operators are essential for calculations in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int a = 10;
+        int b = 3;
+        Console.WriteLine($"{a + b} {a % b}");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 13 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Comparison Operators</summary>
+                    <div class="item-content">
+                        <h2>Comparison Operators</h2>
+                        <p>C#’s comparison operators (`==`, `!=`, `>`, `<`, `>=`, `<=`) return `bool` values. They work on compatible types like numbers and strings. Comparisons are critical for conditional logic in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int x = 5;
+        int y = 10;
+        Console.WriteLine($"{x < y} {x == y}");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: True False</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Logical Operators</summary>
+                    <div class="item-content">
+                        <h2>Logical Operators</h2>
+                        <p>C#’s logical operators `&&`, `||`, and `!` combine or invert boolean expressions. They use short-circuit evaluation for efficiency. Logical operators are vital for complex conditions in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        bool a = true;
+        bool b = false;
+        Console.WriteLine($"{a && b} {a || b}");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: False True</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: Strings</summary>
+                    <div class="item-content">
+                        <h2>Working with Strings</h2>
+                        <p>Strings in C# are immutable reference types, created with quotes and supporting interpolation with `$`. They handle Unicode and are thread-safe. Strings are central to text processing in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string greeting = "Hello";
+        string name = "World";
+        Console.WriteLine($"{greeting}, {name}!");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: String Methods</summary>
+                    <div class="item-content">
+                        <h2>String Methods</h2>
+                        <p>C#’s `string` class provides methods like `ToUpper()`, `StartsWith()`, and `Replace()`. These methods are efficient and type-safe. String methods enable robust text manipulation in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string text = "  csharp  ";
+        Console.WriteLine(text.Trim().ToUpper());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: CSHARP</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: Lists</summary>
+                    <div class="item-content">
+                        <h2>Working with Lists</h2>
+                        <p>C#’s `List<T>` is a dynamic, typed collection, supporting methods like `Add()` and `Remove()`. It’s part of `System.Collections.Generic`. Lists are versatile for managing ordered data in C#.</p>
+                        <pre>
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> fruits = new List<string> { "apple", "banana", "cherry" };
+        Console.WriteLine(fruits[1]);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: Dictionaries</summary>
+                    <div class="item-content">
+                        <h2>Dictionaries</h2>
+                        <p>C#’s `Dictionary<TKey, TValue>` is a key-value store, requiring unique, hashable keys. It provides fast lookups with `TryGetValue()`. Dictionaries are ideal for associative data in C#.</p>
+                        <pre>
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, int> ages = new Dictionary<string, int>
+        {
+            { "Alice", 25 },
+            { "Bob", 30 }
+        };
+        Console.WriteLine(ages["Alice"]);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: If Statements</summary>
+                    <div class="item-content">
+                        <h2>Conditional Statements</h2>
+                        <p>C#’s `if` statements evaluate boolean conditions, supporting `else if` and `else`. They ensure type-safe logic with compile-time checks. If statements are essential for decision-making in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int age = 18;
+        if (age >= 18)
+            Console.WriteLine("Adult");
+        else
+            Console.WriteLine("Minor");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Adult</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: Switch Statements</summary>
+                    <div class="item-content">
+                        <h2>Switch Statements</h2>
+                        <p>C#’s `switch` statement matches values against cases, requiring `break` or `goto`. Modern C# supports switch expressions for concise logic. Switch statements are useful for multi-way branching.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int day = 1;
+        switch (day)
+        {
+            case 1:
+                Console.WriteLine("Monday");
+                break;
+            default:
+                Console.WriteLine("Other");
+                break;
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Monday</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: For Loops</summary>
+                    <div class="item-content">
+                        <h2>For Loops</h2>
+                        <p>C#’s `for` loops iterate over ranges or collections with explicit counters. They’re type-safe, preventing index errors. For loops are common for iteration in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: Foreach Loops</summary>
+                    <div class="item-content">
+                        <h2>Foreach Loops</h2>
+                        <p>C#’s `foreach` loop iterates over collections like arrays or lists, using `IEnumerable<T>`. It’s concise and prevents out-of-bounds errors. Foreach loops are idiomatic for collection iteration.</p>
+                        <pre>
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 0, 1, 2 };
+        foreach (int i in numbers)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: While Loops</summary>
+                    <div class="item-content">
+                        <h2>While Loops</h2>
+                        <p>C#’s `while` and `do-while` loops execute while a condition is true. `do-while` guarantees at least one iteration. While loops are useful for dynamic iteration in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int i = 0;
+        while (i < 3)
+        {
+            Console.WriteLine(i);
+            i++;
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: Methods</summary>
+                    <div class="item-content">
+                        <h2>Defining Methods</h2>
+                        <p>Methods in C# are declared with return types and parameter types, supporting overloads. They can use `void` for no return value. Methods promote modular, reusable code in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static string Greet(string name)
+    {
+        return $"Hello, {name}!";
+    }
+
+    static void Main()
+    {
+        Console.WriteLine(Greet("Alice"));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: Nullable Types</summary>
+                    <div class="item-content">
+                        <h2>Nullable Types</h2>
+                        <p>C#’s nullable types use `?` for value types (e.g., `int?`) and reference types in nullable contexts. Nullable reference types prevent null reference exceptions. Nullable types enhance safety in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string? name = null;
+        Console.WriteLine(name?.Length ?? 0);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 0</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: Null Coalescing</summary>
+                    <div class="item-content">
+                        <h2>Null Coalescing</h2>
+                        <p>C#’s null-coalescing operator `??` provides a default value if a variable is null. The null-conditional operator `?.` safely accesses members. These operators simplify null handling in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string? name = null;
+        string result = name ?? "Unknown";
+        Console.WriteLine(result);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Unknown</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: Classes</summary>
+                    <div class="item-content">
+                        <h2>Classes</h2>
+                        <p>Classes in C# are reference types, defined with properties, methods, and constructors. They support encapsulation with access modifiers. Classes are fundamental to object-oriented C# programming.</p>
+                        <pre>
+using System;
+
+class Dog
+{
+    public string Name { get; set; }
+    public Dog(string name) => Name = name;
+    public string Bark() => $"{Name} says Woof!";
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog dog = new Dog("Buddy");
+        Console.WriteLine(dog.Bark());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy says Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Records</summary>
+                    <div class="item-content">
+                        <h2>Records</h2>
+                        <p>C#’s `record` types provide immutable data structures with value-based equality. They simplify data modeling with concise syntax. Records are ideal for data transfer objects in C#.</p>
+                        <pre>
+using System;
+
+record Person(string Name, int Age);
+
+class Program
+{
+    static void Main()
+    {
+        Person person = new Person("Alice", 25);
+        Console.WriteLine(person);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Person { Name = Alice, Age = 25 }</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Inheritance</summary>
+                    <div class="item-content">
+                        <h2>Inheritance</h2>
+                        <p>C# supports single inheritance with `:`, allowing subclasses to extend base classes. The `override` keyword customizes inherited methods. Inheritance organizes related classes hierarchically in C#.</p>
+                        <pre>
+using System;
+
+class Animal
+{
+    public virtual string Speak() => "Sound";
+}
+
+class Dog : Animal
+{
+    public override string Speak() => $"{base.Speak()}: Woof!";
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog dog = new Dog();
+        Console.WriteLine(dog.Speak());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Sound: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Interfaces</summary>
+                    <div class="item-content">
+                        <h2>Interfaces</h2>
+                        <p>Interfaces in C# define contracts with methods, properties, or events, implemented with `:`. They support multiple inheritance and default implementations. Interfaces enable polymorphism in C#.</p>
+                        <pre>
+using System;
+
+interface ISpeaker
+{
+    string Speak();
+}
+
+class Dog : ISpeaker
+{
+    public string Speak() => "Woof!";
+}
+
+class Program
+{
+    static void Main()
+    {
+        ISpeaker dog = new Dog();
+        Console.WriteLine(dog.Speak());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Error Handling</summary>
+                    <div class="item-content">
+                        <h2>Error Handling</h2>
+                        <p>C# uses `try-catch` for exception handling, with `throw` to raise exceptions. Specific exception types can be caught for precise handling. Error handling ensures robust C# applications.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            throw new Exception("Invalid");
+        }
+        catch (Exception e)
+        {
+            Console.WriteLine($"Error: {e.Message}");
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Error: Invalid</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: Delegates</summary>
+                    <div class="item-content">
+                        <h2>Delegates</h2>
+                        <p>Delegates in C# are type-safe function pointers, declared with `delegate`. They enable callbacks and event handling. Delegates are foundational for event-driven programming in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    delegate string GreetDelegate(string name);
+
+    static string Greet(string name) => $"Hello, {name}!";
+
+    static void Main()
+    {
+        GreetDelegate greet = Greet;
+        Console.WriteLine(greet("Alice"));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: Lambda Expressions</summary>
+                    <div class="item-content">
+                        <h2>Lambda Expressions</h2>
+                        <p>Lambda expressions in C# use `=>` for concise anonymous methods. They’re commonly used with delegates and LINQ queries. Lambdas enhance functional programming in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Func<string, string> greet = name => $"Hello, {name}!";
+        Console.WriteLine(greet("Alice"));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: Enums</summary>
+                    <div class="item-content">
+                        <h2>Enums</h2>
+                        <p>Enums in C# define a set of named constants, typically backed by `int`. They improve code readability and type safety. Enums are useful for fixed sets of values in C#.</p>
+                        <pre>
+using System;
+
+enum Direction
+{
+    North,
+    South,
+    East,
+    West
+}
+
+class Program
+{
+    static void Main()
+    {
+        Direction dir = Direction.North;
+        Console.WriteLine(dir);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: North</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: Structs</summary>
+                    <div class="item-content">
+                        <h2>Structs</h2>
+                        <p>Structs in C# are value types, ideal for lightweight data structures. Unlike classes, they’re copied by value, not reference. Structs are efficient for small, immutable data in C#.</p>
+                        <pre>
+using System;
+
+struct Point
+{
+    public int X { get; }
+    public int Y { get; }
+    public Point(int x, int y) => (X, Y) = (x, y);
+}
+
+class Program
+{
+    static void Main()
+    {
+        Point p = new Point(1, 2);
+        Console.WriteLine($"({p.X}, {p.Y})");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (1, 2)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: Generics</summary>
+                    <div class="item-content">
+                        <h2>Generics</h2>
+                        <p>Generics in C# allow type-safe, reusable code with `<T>`. They support constraints with `where` clauses. Generics enhance flexibility in collections and methods in C#.</p>
+                        <pre>
+using System;
+
+class Program
+{
+    static (T, T) Swap<T>(T a, T b) => (b, a);
+
+    static void Main()
+    {
+        var (x, y) = Swap(1, 2);
+        Console.WriteLine($"{x} {y}");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 2 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Properties</summary>
+                    <div class="item-content">
+                        <h2>Properties</h2>
+                        <p>C# properties encapsulate fields with `get` and `set` accessors, supporting auto-implemented properties. They provide controlled access to data. Properties are a cornerstone of C# encapsulation.</p>
+                        <pre>
+using System;
+
+class Circle
+{
+    public double Radius { get; set; }
+    public double Area => Math.PI * Radius * Radius;
+}
+
+class Program
+{
+    static void Main()
+    {
+        Circle circle = new Circle { Radius = 2.0 };
+        Console.WriteLine(circle.Area);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 12.566370614359172</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: Access Modifiers</summary>
+                    <div class="item-content">
+                        <h2>Access Modifiers</h2>
+                        <p>C#’s access modifiers (`public`, `private`, `protected`, `internal`) control visibility of class members. They ensure encapsulation and security. Access modifiers are critical for robust C# design.</p>
+                        <pre>
+using System;
+
+class BankAccount
+{
+    private double balance;
+    public BankAccount(double balance) => this.balance = balance;
+}
+
+class Program
+{
+    static void Main()
+    {
+        BankAccount account = new BankAccount(100);
+        Console.WriteLine("Access restricted");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Access restricted</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: File Writing</summary>
+                    <div class="item-content">
+                        <h2>File Writing</h2>
+                        <p>C#’s `System.IO` namespace provides `File.WriteAllText` for writing files. It supports error handling with `try-catch`. File writing is essential for persistent data in C#.</p>
+                        <pre>
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        File.WriteAllText("output.txt", "Hello, World!");
+        Console.WriteLine("File written");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: File written</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: File Reading</summary>
+                    <div class="item-content">
+                        <h2>File Reading</h2>
+                        <p>C#’s `File.ReadAllText` reads file contents as a string. It throws exceptions for invalid paths, requiring `try-catch`. File reading retrieves persistent data in C#.</p>
+                        <pre>
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        string content = File.ReadAllText("output.txt");
+        Console.WriteLine(content);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: JSON Serialization</summary>
+                    <div class="item-content">
+                        <h2>JSON Serialization</h2>
+                        <p>C# uses `System.Text.Json` to serialize objects to JSON with `JsonSerializer`. It supports type-safe data models. JSON serialization is common for API communication in C#.</p>
+                        <pre>
+using System;
+using System.Text.Json;
+
+class Program
+{
+    record User(string Name);
+    static void Main()
+    {
+        User user = new User("Alice");
+        string json = JsonSerializer.Serialize(user);
+        Console.WriteLine(json);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: {"Name":"Alice"}</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: JSON Deserialization</summary>
+                    <div class="item-content">
+                        <h2>JSON Deserialization</h2>
+                        <p>C#’s `JsonSerializer.Deserialize` converts JSON strings to objects, requiring type specification. It supports error handling for invalid JSON. JSON deserialization is vital for API data processing.</p>
+                        <pre>
+using System;
+using System.Text.Json;
+
+class Program
+{
+    record User(string Name);
+    static void Main()
+    {
+        string json = """{"Name":"Alice"}""";
+        User? user = JsonSerializer.Deserialize<User>(json);
+        Console.WriteLine(user?.Name);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: Regular Expressions</summary>
+                    <div class="item-content">
+                        <h2>Regular Expressions</h2>
+                        <p>C#’s `System.Text.RegularExpressions` provides `Regex` for pattern matching. Methods like `Replace` transform text based on patterns. Regular expressions are powerful for text processing in C#.</p>
+                        <pre>
+using System;
+using System.Text.RegularExpressions;
+
+class Program
+{
+    static void Main()
+    {
+        string text = "hello world";
+        string newText = Regex.Replace(text, "world", "C#");
+        Console.WriteLine(newText);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: hello C#</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: LINQ Queries</summary>
+                    <div class="item-content">
+                        <h2>LINQ Queries</h2>
+                        <p>C#’s LINQ (Language Integrated Query) queries collections with methods like `Where` and `Select`. It supports query syntax for readability. LINQ is powerful for data manipulation in C#.</p>
+                        <pre>
+using System;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        int[] numbers = { 1, 2, 3 };
+        var doubled = numbers.Select(n => n * 2);
+        Console.WriteLine(string.Join(", ", doubled));
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 2, 4, 6</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: Extension Methods</summary>
+                    <div class="item-content">
+                        <h2>Extension Methods</h2>
+                        <p>Extension methods in C# add functionality to existing types in static classes with `this`. They’re widely used in LINQ and custom APIs. Extension methods enhance code reuse in C#.</p>
+                        <pre>
+using System;
+
+static class StringExtensions
+{
+    public static string Shout(this string str) => str.ToUpper() + "!";
+}
+
+class Program
+{
+    static void Main()
+    {
+        string text = "hello";
+        Console.WriteLine(text.Shout());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: HELLO!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: Async/Await</summary>
+                    <div class="item-content">
+                        <h2>Async/Await</h2>
+                        <p>C#’s `async` and `await` keywords handle asynchronous operations with `Task`. They simplify concurrency while maintaining type safety. Async/await is central to modern C# programming.</p>
+                        <pre>
+using System;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        await Task.Delay(1000);
+        Console.WriteLine("World");
+        Console.WriteLine("Hello");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>World<br>Hello</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: Task Parallelism</summary>
+                    <div class="item-content">
+                        <h2>Task Parallelism</h2>
+                        <p>C#’s `Task` class supports parallel execution with `Task.Run` and `Task.WhenAll`. It integrates with async/await for concurrency. Task parallelism optimizes performance in C# applications.</p>
+                        <pre>
+using System;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        Task[] tasks = { Task.Run(() => Console.WriteLine("Task 1")), Task.Run(() => Console.WriteLine("Task 2")) };
+        await Task.WhenAll(tasks);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output (order may vary):<br>Task 1<br>Task 2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: Attributes</summary>
+                    <div class="item-content">
+                        <h2>Attributes</h2>
+                        <p>C# attributes add metadata to code elements, using square brackets `[ ]`. They’re used for serialization, validation, and frameworks like ASP.NET. Attributes enhance C#’s extensibility.</p>
+                        <pre>
+using System;
+
+[Obsolete("Use new method")]
+class OldClass
+{
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Obsolete attribute applied");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Obsolete attribute applied</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: HTTP Client</summary>
+                    <div class="item-content">
+                        <h2>HTTP Client</h2>
+                        <p>C#’s `HttpClient` makes HTTP requests, integrated with async/await for scalability. It supports JSON and error handling. HTTP clients are crucial for API interactions in C#.</p>
+                        <pre>
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        using HttpClient client = new HttpClient();
+        string response = await client.GetStringAsync("https://api.example.com/data");
+        Console.WriteLine(response);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Sample API response, e.g., JSON data)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: ASP.NET Core Introduction</summary>
+                    <div class="item-content">
+                        <h2>ASP.NET Core Introduction</h2>
+                        <p>ASP.NET Core is a cross-platform framework for building web APIs and applications in C#. It uses minimal APIs for simplicity. ASP.NET Core is widely used for scalable web services.</p>
+                        <pre>
+using Microsoft.AspNetCore.Builder;
+
+var builder = WebApplication.CreateBuilder();
+var app = builder.Build();
+app.MapGet("/", () => "Hello, World!");
+app.Run();
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Serves "Hello, World!" at http://localhost:5000)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: ASP.NET Core Controllers</summary>
+                    <div class="item-content">
+                        <h2>ASP.NET Core Controllers</h2>
+                        <p>ASP.NET Core controllers handle HTTP requests with attributes like `[HttpGet]`. They return typed responses, often JSON. Controllers are central to RESTful APIs in C#.</p>
+                        <pre>
+using Microsoft.AspNetCore.Mvc;
+
+[ApiController]
+[Route("api/[controller]")]
+public class UserController : ControllerBase
+{
+    [HttpGet]
+    public IActionResult Get() => Ok(new { Name = "Alice" });
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Serves {"Name":"Alice"} at /api/user)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: Entity Framework Core</summary>
+                    <div class="item-content">
+                        <h2>Entity Framework Core</h2>
+                        <p>Entity Framework Core is C#’s ORM for database access, mapping classes to tables. It uses `DbContext` for data operations. EF Core simplifies database interactions in C#.</p>
+                        <pre>
+using Microsoft.EntityFrameworkCore;
+
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = null!;
+}
+
+public class AppDbContext : DbContext
+{
+    public DbSet<User> Users { get; set; } = null!;
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Defines EF Core entity and context)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: EF Core Queries</summary>
+                    <div class="item-content">
+                        <h2>EF Core Queries</h2>
+                        <p>EF Core queries databases using LINQ, with async support via `ToListAsync`. It translates queries to SQL efficiently. Queries manage structured data in C# applications.</p>
+                        <pre>
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+
+public class User
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = null!;
+}
+
+public class AppDbContext : DbContext
+{
+    public DbSet<User> Users { get; set; } = null!;
+}
+
+class Program
+{
+    static async Task Main()
+    {
+        await using var context = new AppDbContext();
+        var user = await context.Users.FirstOrDefaultAsync(u => u.Id == 1);
+        Console.WriteLine(user?.Name);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Sample user name, e.g., "Alice")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: Blazor Introduction</summary>
+                    <div class="item-content">
+                        <h2>Blazor Introduction</h2>
+                        <p>Blazor is C#’s framework for building interactive web UIs, running in the browser via WebAssembly or server-side. It uses components with Razor syntax. Blazor simplifies client-side development in C#.</p>
+                        <pre>
+@page "/greeting"
+
+<h3>Hello, @Name!</h3>
+
+@code {
+    private string Name { get; set; } = "World";
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Renders "Hello, World!" in browser)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: Blazor State</summary>
+                    <div class="item-content">
+                        <h2>Blazor State</h2>
+                        <p>Blazor manages component state with properties and event handlers, triggering UI updates. State is scoped to components for safety. State is key for interactive Blazor apps.</p>
+                        <pre>
+@page "/counter"
+
+<button @onclick="Increment">Count: @Count</button>
+
+@code {
+    private int Count { get; set; }
+    private void Increment() => Count++;
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Displays button with incrementing counter)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: Unity Introduction</summary>
+                    <div class="item-content">
+                        <h2>Unity Introduction</h2>
+                        <p>Unity uses C# for scripting game logic, with `MonoBehaviour` as the base class. Scripts attach to GameObjects for behavior. Unity is a leading engine for game development in C#.</p>
+                        <pre>
+using UnityEngine;
+
+public class Player : MonoBehaviour
+{
+    void Start()
+    {
+        Debug.Log("Player started");
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Logs "Player started" in Unity console)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Unit Testing</summary>
+                    <div class="item-content">
+                        <h2>Unit Testing</h2>
+                        <p>C# uses MSTest or NUnit for unit testing, with attributes like `[TestMethod]`. Assertions like `Assert.AreEqual` verify behavior. Unit testing ensures reliable C# code.</p>
+                        <pre>
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+[TestClass]
+public class MathTests
+{
+    [TestMethod]
+    public void TestAdd()
+    {
+        Assert.AreEqual(4, 2 + 2);
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Test passes, no console output)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: Dependency Injection</summary>
+                    <div class="item-content">
+                        <h2>Dependency Injection</h2>
+                        <p>C#’s dependency injection (DI) in ASP.NET Core manages service lifetimes with `IServiceCollection`. It promotes loose coupling and testability. DI is a core pattern in modern C# applications.</p>
+                        <pre>
+using Microsoft.Extensions.DependencyInjection;
+
+interface IService
+{
+    string GetMessage();
+}
+
+class Service : IService
+{
+    public string GetMessage() => "Hello!";
+}
+
+class Program
+{
+    static void Main()
+    {
+        var services = new ServiceCollection();
+        services.AddSingleton<IService, Service>();
+        var provider = services.BuildServiceProvider();
+        var service = provider.GetService<IService>();
+        Console.WriteLine(service?.GetMessage());
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
