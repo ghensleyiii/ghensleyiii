@@ -1,0 +1,1739 @@
+<-- COURSE BREAKDOWN
+Lessons 1–10: Basics (syntax, variables, data types, operators).
+Lessons 11–20: Control flow, functions, arrays, slices, maps.
+Lessons 21–30: Structs, methods, interfaces, error handling, packages.
+Lessons 31–40: Goroutines, channels, select, mutexes, file I/O.
+Lessons 41–50: Context, generics, testing, reflection, HTTP servers.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Go Learning Lessons - CODEXEDOC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #4169e1;
+            --light-blue: #41E169;
+            --white: #f0f2f0;
+            --black: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Audiowide', sans-serif;
+            color: #fff;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            background: #fff;
+            height: 3px;
+            width: 25px;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Audiowide', sans-serif;
+            font-size: 18px;
+        }
+
+        .nav-menu a:hover {
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+                width: 200px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+        }
+
+        main {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #A3BFFA, #c8e6c9);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .scripture {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 8px;
+            font-style: italic;
+            color: #fff;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .item {
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .item-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Audiowide', sans-serif;
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            border: none;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .item-button:hover {
+            background: linear-gradient(135deg, #2F4B9F, #2F9F4B);
+        }
+
+        .item-content {
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 0 0 5px 5px;
+            text-align: left;
+        }
+
+        .item-content h2 {
+            font-family: 'Audiowide', sans-serif;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .item-content pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .example {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid var(--dark-blue);
+            border-radius: 5px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>CODEXEDOC</h1>
+            </a>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bulletins.html">Bulletins</a></li>
+                <li><a href="discernment.html">Discernment</a></li>
+                <li><a href="guidance.html">Guidance</a></li>
+                <li><a href="scriptures.html">Scriptures</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p class="scripture">"Pay constant attention to yourself and to your teaching. Persevere in these things." —1 Timothy 4:16</p>
+            <p>Explore 50 progressive Go lessons to master simple and concurrent programming. Each lesson provides clear explanations and examples to build your coding skills. Start your journey to creating efficient Go applications today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is Go?</summary>
+                    <div class="item-content">
+                        <h2>Introduction to Go</h2>
+                        <p>Go, also known as Golang, is a statically typed, compiled language designed for simplicity and performance. It excels in building concurrent, scalable applications like web servers and cloud services. Go’s built-in concurrency model and minimal syntax make it developer-friendly.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, World!")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: Variables</summary>
+                    <div class="item-content">
+                        <h2>Variables in Go</h2>
+                        <p>Variables in Go are declared using `var` or the `:=` shorthand, with types inferred or explicitly stated. Go is statically typed, so types cannot change after declaration. Variables must be used, or the compiler will report an error.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    var name string = "Alice"
+    age := 25
+    fmt.Println(name, "is", age)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice is 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: Data Types</summary>
+                    <div class="item-content">
+                        <h2>Go Data Types</h2>
+                        <p>Go supports basic types like `int`, `float64`, `bool`, and `string`, and composite types like arrays and structs. Types are explicitly defined or inferred, ensuring type safety. Understanding data types is essential for effective Go programming.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    num := 42
+    pi := 3.14
+    flag := true
+    fmt.Println(num, pi, flag)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 42 3.14 true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Arithmetic Operators</summary>
+                    <div class="item-content">
+                        <h2>Arithmetic Operations</h2>
+                        <p>Go provides arithmetic operators like `+`, `-`, `*`, `/`, and `%` for numeric types. Operators require matching types, with no implicit conversions. These operators are fundamental for calculations in Go.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    a := 10
+    b := 3
+    fmt.Println(a+b, a%b)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 13 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Comparison Operators</summary>
+                    <div class="item-content">
+                        <h2>Comparison Operators</h2>
+                        <p>Go’s comparison operators (`==`, `!=`, `>`, `<`, `>=`, `<=`) return boolean values. They work on comparable types like numbers and strings. Comparisons are crucial for conditional logic in Go.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    x := 5
+    y := 10
+    fmt.Println(x < y, x == y)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: true false</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Logical Operators</summary>
+                    <div class="item-content">
+                        <h2>Logical Operators</h2>
+                        <p>Go’s logical operators `&&`, `||`, and `!` combine or invert boolean expressions. They short-circuit, evaluating only as needed. Logical operators are essential for complex conditions.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    a := true
+    b := false
+    fmt.Println(a && b, a || b)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: false true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: Strings</summary>
+                    <div class="item-content">
+                        <h2>Working with Strings</h2>
+                        <p>Strings in Go are immutable sequences of UTF-8 bytes, declared with double quotes. The `strings` package provides functions like `Join` and `ToUpper`. Strings are fundamental for text processing in Go.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    greeting := "Hello"
+    name := "World"
+    fmt.Println(strings.Join([]string{greeting, name}, ", ") + "!")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: String Methods</summary>
+                    <div class="item-content">
+                        <h2>String Methods</h2>
+                        <p>The `strings` package offers functions like `Trim`, `Replace`, and `Contains` for string manipulation. These functions return new strings, preserving immutability. String operations are efficient and widely used in Go.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main() {
+    text := "  Go  "
+    trimmed := strings.TrimSpace(text)
+    fmt.Println(trimmed)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Go</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: Arrays</summary>
+                    <div class="item-content">
+                        <h2>Working with Arrays</h2>
+                        <p>Arrays in Go have a fixed length and uniform type, declared with `[N]T`. They are value types, copied on assignment. Arrays are less common than slices but useful for fixed-size data.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    fruits := [3]string{"apple", "banana", "cherry"}
+    fmt.Println(fruits[1])
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: Slices</summary>
+                    <div class="item-content">
+                        <h2>Slices</h2>
+                        <p>Slices are dynamic, flexible views into arrays, declared with `[]T`. They support operations like appending and slicing. Slices are the primary sequence type in Go.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    fruits := []string{"apple", "banana", "cherry"}
+    fmt.Println(fruits[1:3])
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: [banana cherry]</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: If Statements</summary>
+                    <div class="item-content">
+                        <h2>Conditional Statements</h2>
+                        <p>Go’s `if` statements evaluate boolean conditions, supporting `else if` and `else`. They can include an optional initialization statement. Conditionals are core to decision-making in Go.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    age := 18
+    if age >= 18 {
+        fmt.Println("Adult")
+    } else {
+        fmt.Println("Minor")
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Adult</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: Switch Statements</summary>
+                    <div class="item-content">
+                        <h2>Switch Statements</h2>
+                        <p>Go’s `switch` statements select a case based on a value, with implicit `break`. They support multiple values per case and an optional `default`. Switch is concise for multi-way branching.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    day := 1
+    switch day {
+    case 1:
+        fmt.Println("Monday")
+    default:
+        fmt.Println("Other")
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Monday</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: For Loops</summary>
+                    <div class="item-content">
+                        <h2>For Loops</h2>
+                        <p>Go’s `for` loop is the only looping construct, supporting counter-based, condition-based, and range-based forms. It’s versatile for iteration tasks. For loops are central to repetitive operations.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    for i := 0; i < 3; i++ {
+        fmt.Println(i)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: Range Loops</summary>
+                    <div class="item-content">
+                        <h2>Range Loops</h2>
+                        <p>The `range` keyword iterates over slices, arrays, maps, or strings, yielding indices and values. It simplifies iteration over collections. Range loops are idiomatic in Go.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    fruits := []string{"apple", "banana"}
+    for i, fruit := range fruits {
+        fmt.Println(i, fruit)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0 apple<br>1 banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: Break and Continue</summary>
+                    <div class="item-content">
+                        <h2>Loop Control</h2>
+                        <p>The `break` statement exits a loop, while `continue` skips to the next iteration. Go supports labeled loops for precise control. These keywords handle special loop cases.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    for i := 0; i < 5; i++ {
+        if i == 3 {
+            break
+        }
+        fmt.Println(i)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: Functions</summary>
+                    <div class="item-content">
+                        <h2>Defining Functions</h2>
+                        <p>Functions in Go are declared with `func`, specifying parameter and return types. They support multiple return values, a unique feature. Functions promote modularity and reusability.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func greet(name string) string {
+    return "Hello, " + name + "!"
+}
+
+func main() {
+    fmt.Println(greet("Alice"))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: Multiple Return Values</summary>
+                    <div class="item-content">
+                        <h2>Multiple Return Values</h2>
+                        <p>Go functions can return multiple values, often used for results and errors. This eliminates the need for exceptions. Multiple returns simplify error handling.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func swap(a, b int) (int, int) {
+    return b, a
+}
+
+func main() {
+    x, y := swap(1, 2)
+    fmt.Println(x, y)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 2 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: Structs</summary>
+                    <div class="item-content">
+                        <h2>Structs</h2>
+                        <p>Structs in Go define custom types with named fields, declared with `type` and `struct`. They are value types, copied on assignment. Structs are essential for structured data.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+type Dog struct {
+    Name string
+}
+
+func main() {
+    dog := Dog{Name: "Buddy"}
+    fmt.Println(dog.Name)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: Methods</summary>
+                    <div class="item-content">
+                        <h2>Methods</h2>
+                        <p>Methods in Go are functions with a receiver, declared with a type before the function name. They enable behavior on structs. Methods provide object-oriented-like functionality.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+type Dog struct {
+    Name string
+}
+
+func (d Dog) Bark() string {
+    return d.Name + " says Woof!"
+}
+
+func main() {
+    dog := Dog{Name: "Buddy"}
+    fmt.Println(dog.Bark())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy says Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Maps</summary>
+                    <div class="item-content">
+                        <h2>Maps</h2>
+                        <p>Maps in Go are key-value stores, declared with `map[K]V`. They must be initialized with `make` or a literal. Maps are ideal for associative data.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    ages := map[string]int{
+        "Alice": 25,
+    }
+    fmt.Println(ages["Alice"])
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Interfaces</summary>
+                    <div class="item-content">
+                        <h2>Interfaces</h2>
+                        <p>Interfaces in Go define method sets that types implicitly satisfy. They enable polymorphism without inheritance. Interfaces are central to Go’s type system.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+type Speaker interface {
+    Speak() string
+}
+
+type Dog struct {
+    Name string
+}
+
+func (d Dog) Speak() string {
+    return d.Name + " says Woof!"
+}
+
+func main() {
+    var s Speaker = Dog{Name: "Buddy"}
+    fmt.Println(s.Speak())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy says Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Empty Interface</summary>
+                    <div class="item-content">
+                        <h2>Empty Interface</h2>
+                        <p>The empty interface `interface{}` (or `any` in Go 1.18+) accepts any type. It’s used for generic data handling, like JSON parsing. The empty interface provides flexibility but requires type assertions.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    var i any = 42
+    fmt.Println(i)
+    i = "hello"
+    fmt.Println(i)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>42<br>hello</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Type Assertions</summary>
+                    <div class="item-content">
+                        <h2>Type Assertions</h2>
+                        <p>Type assertions extract a specific type from an interface, using `value.(T)`. They can include a boolean to check success safely. Type assertions are key for working with interfaces.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    var i any = 42
+    if num, ok := i.(int); ok {
+        fmt.Println(num)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 42</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: Error Handling</summary>
+                    <div class="item-content">
+                        <h2>Error Handling</h2>
+                        <p>Go handles errors with the `error` interface, returned by functions. Errors are checked explicitly, avoiding exceptions. This approach ensures robust error management.</p>
+                        <pre>
+package main
+
+import (
+    "errors"
+    "fmt"
+)
+
+func divide(a, b int) (int, error) {
+    if b == 0 {
+        return 0, errors.New("division by zero")
+    }
+    return a / b, nil
+}
+
+func main() {
+    result, err := divide(10, 2)
+    if err != nil {
+        fmt.Println(err)
+    } else {
+        fmt.Println(result)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 5</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: Custom Errors</summary>
+                    <div class="item-content">
+                        <h2>Custom Errors</h2>
+                        <p>Custom errors in Go are created by implementing the `error` interface or using `errors.New`. The `fmt.Errorf` function simplifies error creation with formatting. Custom errors provide detailed error context.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+)
+
+type MathError struct {
+    Message string
+}
+
+func (e *MathError) Error() string {
+    return e.Message
+}
+
+func main() {
+    err := &MathError{Message: "invalid operation"}
+    fmt.Println(err)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: invalid operation</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: Packages</summary>
+                    <div class="item-content">
+                        <h2>Packages</h2>
+                        <p>Go organizes code into packages, with `main` for executables and others for libraries. The `import` keyword accesses package functionality. Packages promote modularity and reuse.</p>
+                        <pre>
+// mypkg/mypkg.go
+package mypkg
+
+func Greet(name string) string {
+    return "Hello, " + name + "!"
+}
+
+// main.go
+package main
+
+import (
+    "fmt"
+    "mypkg"
+)
+
+func main() {
+    fmt.Println(mypkg.Greet("Alice"))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: Standard Library</summary>
+                    <div class="item-content">
+                        <h2>Standard Library</h2>
+                        <p>Go’s standard library provides packages like `fmt`, `strings`, and `time` for common tasks. It’s comprehensive, reducing external dependencies. The standard library is a cornerstone of Go development.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    fmt.Println(time.Now())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Current timestamp, e.g., 2025-05-01 12:34:56 +0000 UTC)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: Defer</summary>
+                    <div class="item-content">
+                        <h2>Defer</h2>
+                        <p>The `defer` keyword schedules a function call to run after the surrounding function returns. It’s commonly used for cleanup, like closing files. Defer ensures resource management.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    defer fmt.Println("Done")
+    fmt.Println("Working")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>Working<br>Done</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Panic and Recover</summary>
+                    <div class="item-content">
+                        <h2>Panic and Recover</h2>
+                        <p>The `panic` function stops execution with an error, while `recover` can catch panics in deferred functions. They’re used sparingly for critical errors. Panic and recover handle exceptional cases.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered:", r)
+        }
+    }()
+    panic("critical error")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Recovered: critical error</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: Pointers</summary>
+                    <div class="item-content">
+                        <h2>Pointers</h2>
+                        <p>Pointers in Go hold memory addresses, declared with `*T` and accessed with `&`. They enable pass-by-reference semantics. Pointers are used carefully to avoid complexity.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func increment(num *int) {
+    *num++
+}
+
+func main() {
+    x := 5
+    increment(&x)
+    fmt.Println(x)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 6</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: Goroutines</summary>
+                    <div class="item-content">
+                        <h2>Goroutines</h2>
+                        <p>Goroutines are lightweight threads managed by the Go runtime, launched with `go`. They enable concurrent execution with minimal overhead. Goroutines are central to Go’s concurrency model.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func task() {
+    fmt.Println("Running")
+}
+
+func main() {
+    go task()
+    time.Sleep(time.Millisecond)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Running</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: Channels</summary>
+                    <div class="item-content">
+                        <h2>Channels</h2>
+                        <p>Channels in Go enable communication between goroutines, declared with `chan T`. They support sending (`<-`) and receiving operations. Channels ensure safe concurrent data exchange.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    ch := make(chan string)
+    go func() {
+        ch <- "Hello"
+    }()
+    fmt.Println(<-ch)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: Buffered Channels</summary>
+                    <div class="item-content">
+                        <h2>Buffered Channels</h2>
+                        <p>Buffered channels, created with `make(chan T, N)`, store up to N values without blocking. They reduce synchronization needs in some cases. Buffered channels are useful for asynchronous tasks.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func main() {
+    ch := make(chan string, 1)
+    ch <- "Hello"
+    fmt.Println(<-ch)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: Select</summary>
+                    <div class="item-content">
+                        <h2>Select</h2>
+                        <p>The `select` statement chooses from multiple channel operations, proceeding with the first ready case. It supports a `default` case for non-blocking behavior. Select is key for managing multiple channels.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    ch1 := make(chan string)
+    go func() {
+        time.Sleep(time.Millisecond)
+        ch1 <- "Hello"
+    }()
+    select {
+    case msg := <-ch1:
+        fmt.Println(msg)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: Mutex</summary>
+                    <div class="item-content">
+                        <h2>Mutex</h2>
+                        <p>The `sync.Mutex` type ensures thread-safe access to shared data with `Lock` and `Unlock`. It prevents race conditions in concurrent programs. Mutexes are used when channels aren’t suitable.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+func main() {
+    var mu sync.Mutex
+    counter := 0
+    var wg sync.WaitGroup
+    wg.Add(1)
+    go func() {
+        mu.Lock()
+        counter++
+        mu.Unlock()
+        wg.Done()
+    }()
+    wg.Wait()
+    fmt.Println(counter)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: WaitGroup</summary>
+                    <div class="item-content">
+                        <h2>WaitGroup</h2>
+                        <p>The `sync.WaitGroup` synchronizes goroutines, waiting for a set to complete. Methods like `Add`, `Done`, and `Wait` manage the group. WaitGroup is essential for coordinating concurrent tasks.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "sync"
+)
+
+func main() {
+    var wg sync.WaitGroup
+    wg.Add(1)
+    go func() {
+        fmt.Println("Task done")
+        wg.Done()
+    }()
+    wg.Wait()
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Task done</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: File Writing</summary>
+                    <div class="item-content">
+                        <h2>File Writing</h2>
+                        <p>The `os` package provides functions like `WriteFile` for writing to files. Errors are returned for robust handling. File writing is crucial for persistent data storage.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    err := os.WriteFile("output.txt", []byte("Hello, World!"), 0644)
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    fmt.Println("File written")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: File written</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: File Reading</summary>
+                    <div class="item-content">
+                        <h2>File Reading</h2>
+                        <p>The `os` package’s `ReadFile` function reads entire files into memory. It returns a byte slice and an error. File reading is essential for data retrieval.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "os"
+)
+
+func main() {
+    data, err := os.ReadFile("output.txt")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    fmt.Println(string(data))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: JSON Encoding</summary>
+                    <div class="item-content">
+                        <h2>JSON Encoding</h2>
+                        <p>The `encoding/json` package marshals structs to JSON and unmarshals JSON to structs. Struct tags like `json:"name"` control field names. JSON encoding is common for APIs and data storage.</p>
+                        <pre>
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+)
+
+type Person struct {
+    Name string `json:"name"`
+}
+
+func main() {
+    p := Person{Name: "Alice"}
+    data, _ := json.Marshal(p)
+    fmt.Println(string(data))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: {"name":"Alice"}</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: JSON Decoding</summary>
+                    <div class="item-content">
+                        <h2>JSON Decoding</h2>
+                        <p>The `json.Unmarshal` function decodes JSON into Go structs or maps. It requires matching struct fields or dynamic types. JSON decoding is vital for processing external data.</p>
+                        <pre>
+package main
+
+import (
+    "encoding/json"
+    "fmt"
+)
+
+type Person struct {
+    Name string `json:"name"`
+}
+
+func main() {
+    data := []byte(`{"name":"Alice"}`)
+    var p Person
+    json.Unmarshal(data, &p)
+    fmt.Println(p.Name)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: Context</summary>
+                    <div class="item-content">
+                        <h2>Context</h2>
+                        <p>The `context` package manages request-scoped values, timeouts, and cancellations. Functions like `WithTimeout` create contexts with deadlines. Context is essential for concurrent and networked applications.</p>
+                        <pre>
+package main
+
+import (
+    "context"
+    "fmt"
+    "time"
+)
+
+func main() {
+    ctx, cancel := context.WithTimeout(context.Background(), time.Millisecond)
+    defer cancel()
+    select {
+    case <-ctx.Done():
+        fmt.Println(ctx.Err())
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: context deadline exceeded</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: Generics</summary>
+                    <div class="item-content">
+                        <h2>Generics</h2>
+                        <p>Introduced in Go 1.18, generics allow functions and types to work with any type using type parameters. They’re declared with `[T any]`. Generics reduce code duplication while maintaining type safety.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+func printValue[T any](value T) {
+    fmt.Println(value)
+}
+
+func main() {
+    printValue(42)
+    printValue("hello")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>42<br>hello</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: Generic Types</summary>
+                    <div class="item-content">
+                        <h2>Generic Types</h2>
+                        <p>Generic types, like structs or slices, use type parameters to generalize data structures. They’re defined with `type Name[T any]`. Generic types enhance flexibility in Go.</p>
+                        <pre>
+package main
+
+import "fmt"
+
+type Box[T any] struct {
+    Value T
+}
+
+func main() {
+    box := Box[int]{Value: 42}
+    fmt.Println(box.Value)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 42</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: Type Constraints</summary>
+                    <div class="item-content">
+                        <h2>Type Constraints</h2>
+                        <p>Type constraints limit generic type parameters to specific types or interfaces. The `constraints` package or custom interfaces define them. Constraints ensure type-safe generic code.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+)
+
+type Number interface {
+    ~int | ~float64
+}
+
+func add[T Number](a, b T) T {
+    return a + b
+}
+
+func main() {
+    fmt.Println(add(2, 3))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 5</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: Testing</summary>
+                    <div class="item-content">
+                        <h2>Testing</h2>
+                        <p>Go’s `testing` package supports unit tests with functions like `TestXxx`. Tests run with `go test`, ensuring code reliability. Testing is integral to Go’s development workflow.</p>
+                        <pre>
+// main_test.go
+package main
+
+import "testing"
+
+func TestAdd(t *testing.T) {
+    if 2+2 != 4 {
+        t.Error("Expected 4")
+    }
+}
+
+// main.go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Run with go test")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Test passes, no console output)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: Benchmarks</summary>
+                    <div class="item-content">
+                        <h2>Benchmarks</h2>
+                        <p>Go’s `testing` package supports benchmarks with `BenchmarkXxx` functions. They measure performance using `go test -bench`. Benchmarks help optimize code efficiency.</p>
+                        <pre>
+// main_test.go
+package main
+
+import "testing"
+
+func BenchmarkAdd(b *testing.B) {
+    for i := 0; i < b.N; i++ {
+        _ = 2 + 2
+    }
+}
+
+// main.go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Run with go test -bench .")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Benchmark results, e.g., ns/op)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: Reflection</summary>
+                    <div class="item-content">
+                        <h2>Reflection</h2>
+                        <p>The `reflect` package inspects types and values at runtime. It’s used for dynamic operations, like serialization. Reflection is powerful but complex, used sparingly.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "reflect"
+)
+
+func main() {
+    x := 42
+    fmt.Println(reflect.TypeOf(x))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: int</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: HTTP Server</summary>
+                    <div class="item-content">
+                        <h2>HTTP Server</h2>
+                        <p>The `net/http` package creates HTTP servers with `http.HandleFunc` and `http.ListenAndServe`. Handlers process requests and send responses. HTTP servers are a strength of Go for web development.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func main() {
+    http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprint(w, "Hello, World!")
+    })
+    http.ListenAndServe(":8080", nil)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Visit http://localhost:8080 to see "Hello, World!")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Middleware</summary>
+                    <div class="item-content">
+                        <h2>Middleware</h2>
+                        <p>Middleware in Go wraps HTTP handlers to add functionality like logging or authentication. It’s implemented as functions that return `http.Handler`. Middleware enhances server modularity.</p>
+                        <pre>
+package main
+
+import (
+    "fmt"
+    "net/http"
+)
+
+func logging(next http.Handler) http.Handler {
+    return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        fmt.Println("Request received")
+        next.ServeHTTP(w, r)
+    })
+}
+
+func main() {
+    http.Handle("/", logging(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+        fmt.Fprint(w, "Hello!")
+    })))
+    http.ListenAndServe(":8080", nil)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>Request received (in console)<br>Hello! (in browser)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: Database Access</summary>
+                    <div class="item-content">
+                        <h2>Database Access</h2>
+                        <p>The `database/sql` package provides a generic interface for SQL databases. It supports querying and data manipulation with drivers like `sqlite3`. Database access is critical for persistent applications.</p>
+                        <pre>
+package main
+
+import (
+    "database/sql"
+    "fmt"
+    _ "github.com/mattn/go-sqlite3"
+)
+
+func main() {
+    db, err := sql.Open("sqlite3", ":memory:")
+    if err != nil {
+        fmt.Println(err)
+        return
+    }
+    defer db.Close()
+    fmt.Println("Database opened")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Database opened</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
