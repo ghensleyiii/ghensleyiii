@@ -1,0 +1,1028 @@
+<!-- COURSE BREAKDOWN
+Lessons 1–10: SQL basics (SELECT, WHERE, data types, operators).
+Lessons 11–20: Filtering, sorting, joins, grouping, subqueries.
+Lessons 21–30: Schema design, constraints, indexes, views, transactions.
+Lessons 31–40: Advanced queries, window functions, CTEs, JSON, pivoting.
+Lessons 41–50: Stored procedures, triggers, performance tuning, security, NoSQL integration.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <h1>SQL</h1>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Explore 50 progressive SQL lessons to master querying and managing relational databases. Each lesson provides clear explanations and examples to build your skills in database design and optimization. Start your journey to creating efficient SQL solutions today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is SQL?</summary>
+                    <div class="item-content">
+                        <h2>Introduction to SQL</h2>
+                        <p>SQL (Structured Query Language) is used to manage and query relational databases, enabling data retrieval and manipulation. It’s supported by systems like PostgreSQL, MySQL, and SQL Server. SQL is essential for data analysis and backend development.</p>
+                        <pre>
+SELECT 'Hello, World!' AS greeting;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| greeting        |<br>|-----------------|<br>| Hello, World!   |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: Basic SELECT</summary>
+                    <div class="item-content">
+                        <h2>Selecting Data</h2>
+                        <p>The `SELECT` statement retrieves data from tables, specifying columns or expressions. It’s the foundation of SQL querying. Use `*` to select all columns from a table.</p>
+                        <pre>
+SELECT name, age
+FROM users
+WHERE age = 25;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | age |<br>|-------|-----|<br>| Alice | 25  |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: Data Types</summary>
+                    <div class="item-content">
+                        <h2>SQL Data Types</h2>
+                        <p>SQL supports data types like `VARCHAR`, `INT`, `DECIMAL`, `DATE`, and `BOOLEAN`. Types ensure data integrity and optimize storage. Understanding data types is key to schema design.</p>
+                        <pre>
+CREATE TABLE users (
+    name VARCHAR(50),
+    age INT
+);
+INSERT INTO users VALUES ('Alice', 25);
+SELECT * FROM users;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | age |<br>|-------|-----|<br>| Alice | 25  |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Arithmetic Operators</summary>
+                    <div class="item-content">
+                        <h2>Arithmetic Operations</h2>
+                        <p>SQL supports operators like `+`, `-`, `*`, `/`, and `%` for calculations. They work on numeric columns or literals. Arithmetic is useful for computed columns in queries.</p>
+                        <pre>
+SELECT price, price * 1.1 AS new_price
+FROM products;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| price | new_price |<br>|-------|-----------|<br>| 100   | 110       |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Comparison Operators</summary>
+                    <div class="item-content">
+                        <h2>Comparison Operators</h2>
+                        <p>SQL’s comparison operators (`=`, `!=`, `>`, `<`, `>=`, `<=`) filter rows in `WHERE` clauses. They work on numbers, strings, and dates. Comparisons drive conditional logic in queries.</p>
+                        <pre>
+SELECT name
+FROM users
+WHERE age > 20;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Logical Operators</summary>
+                    <div class="item-content">
+                        <h2>Logical Operators</h2>
+                        <p>SQL’s logical operators `AND`, `OR`, and `NOT` combine conditions in `WHERE` clauses. They evaluate to true or false. Logical operators enable complex filtering in queries.</p>
+                        <pre>
+SELECT name
+FROM users
+WHERE age > 20 AND name != 'Bob';
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: String Functions</summary>
+                    <div class="item-content">
+                        <h2>String Functions</h2>
+                        <p>SQL provides string functions like `UPPER()`, `CONCAT()`, and `SUBSTRING()`. They manipulate text data in queries. String functions are essential for formatting and filtering.</p>
+                        <pre>
+SELECT UPPER(name) AS upper_name
+FROM users;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| upper_name |<br>|------------|<br>| ALICE      |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: LIKE Operator</summary>
+                    <div class="item-content">
+                        <h2>LIKE Operator</h2>
+                        <p>The `LIKE` operator in SQL matches patterns in strings, using `%` for any characters and `_` for a single character. It’s case-sensitive in most databases. LIKE is useful for fuzzy text searches.</p>
+                        <pre>
+SELECT name
+FROM users
+WHERE name LIKE 'A%';
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: IN Operator</summary>
+                    <div class="item-content">
+                        <h2>IN Operator</h2>
+                        <p>The `IN` operator checks if a value matches any in a list or subquery. It simplifies multiple `OR` conditions. IN is efficient for filtering specific values.</p>
+                        <pre>
+SELECT name
+FROM users
+WHERE age IN (20, 25);
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: BETWEEN Operator</summary>
+                    <div class="item-content">
+                        <h2>BETWEEN Operator</h2>
+                        <p>The `BETWEEN` operator selects values within a range, inclusive of endpoints. It works with numbers, dates, and strings. BETWEEN simplifies range-based filtering in SQL.</p>
+                        <pre>
+SELECT name
+FROM users
+WHERE age BETWEEN 20 AND 30;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: ORDER BY</summary>
+                    <div class="item-content">
+                        <h2>Sorting Results</h2>
+                        <p>The `ORDER BY` clause sorts query results by one or more columns, using `ASC` or `DESC`. It’s applied after filtering. Sorting enhances data presentation in SQL.</p>
+                        <pre>
+SELECT name, age
+FROM users
+ORDER BY age DESC;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | age |<br>|-------|-----|<br>| Alice | 25  |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: LIMIT and OFFSET</summary>
+                    <div class="item-content">
+                        <h2>Limiting Results</h2>
+                        <p>`LIMIT` restricts the number of rows returned, and `OFFSET` skips rows (syntax varies: `TOP` in SQL Server, `FETCH FIRST` in others). They’re used for pagination. Limiting improves query performance and usability.</p>
+                        <pre>
+SELECT name
+FROM users
+LIMIT 2 OFFSET 1;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Bob   |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: INNER JOIN</summary>
+                    <div class="item-content">
+                        <h2>Inner Joins</h2>
+                        <p>`INNER JOIN` combines rows from two tables where the join condition is met. It returns only matching records. Joins are essential for relational data queries.</p>
+                        <pre>
+SELECT users.name, orders.order_id
+FROM users
+INNER JOIN orders ON users.id = orders.user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | order_id |<br>|-------|----------|<br>| Alice | 101      |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: LEFT JOIN</summary>
+                    <div class="item-content">
+                        <h2>Left Joins</h2>
+                        <p>`LEFT JOIN` returns all rows from the left table and matching rows from the right, with `NULL` for non-matches. It’s useful for including all records from one table. Left joins handle optional relationships in SQL.</p>
+                        <pre>
+SELECT users.name, orders.order_id
+FROM users
+LEFT JOIN orders ON users.id = orders.user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | order_id |<br>|-------|----------|<br>| Alice | 101      |<br>| Bob   | NULL     |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: RIGHT JOIN</summary>
+                    <div class="item-content">
+                        <h2>Right Joins</h2>
+                        <p>`RIGHT JOIN` returns all rows from the right table and matching rows from the left, with `NULL` for non-matches. It’s less common but useful for specific scenarios. Right joins complement left joins in SQL.</p>
+                        <pre>
+SELECT users.name, orders.order_id
+FROM users
+RIGHT JOIN orders ON users.id = orders.user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | order_id |<br>|-------|----------|<br>| Alice | 101      |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: FULL JOIN</summary>
+                    <div class="item-content">
+                        <h2>Full Joins</h2>
+                        <p>`FULL JOIN` returns all rows from both tables, with `NULL` for non-matches. It combines left and right join logic. Full joins are useful for complete data comparisons.</p>
+                        <pre>
+SELECT users.name, orders.order_id
+FROM users
+FULL JOIN orders ON users.id = orders.user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | order_id |<br>|-------|----------|<br>| Alice | 101      |<br>| Bob   | NULL     |<br>| NULL  | 102      |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: GROUP BY</summary>
+                    <div class="item-content">
+                        <h2>Grouping Data</h2>
+                        <p>The `GROUP BY` clause aggregates rows by unique values, used with functions like `COUNT`, `SUM`, or `AVG`. It summarizes data effectively. Grouping is key for reporting in SQL.</p>
+                        <pre>
+SELECT user_id, COUNT(*) AS order_count
+FROM orders
+GROUP BY user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| user_id | order_count |<br>|---------|-------------|<br>| 1       | 2           |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: HAVING Clause</summary>
+                    <div class="item-content">
+                        <h2>Filtering Groups</h2>
+                        <p>The `HAVING` clause filters `GROUP BY` results, applied after aggregation. It’s like `WHERE` for groups. HAVING refines aggregated data in SQL.</p>
+                        <pre>
+SELECT user_id, COUNT(*) AS order_count
+FROM orders
+GROUP BY user_id
+HAVING COUNT(*) > 1;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| user_id | order_count |<br>|---------|-------------|<br>| 1       | 2           |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: Subqueries</summary>
+                    <div class="item-content">
+                        <h2>Subqueries</h2>
+                        <p>Subqueries are nested queries in parentheses, used in `WHERE`, `SELECT`, or `FROM`. They return intermediate results for the outer query. Subqueries enable complex logic in SQL.</p>
+                        <pre>
+SELECT name
+FROM users
+WHERE id IN (SELECT user_id FROM orders);
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Correlated Subqueries</summary>
+                    <div class="item-content">
+                        <h2>Correlated Subqueries</h2>
+                        <p>Correlated subqueries reference outer query columns, executing per row. They’re useful for row-by-row comparisons. Correlated subqueries are powerful but can be slow.</p>
+                        <pre>
+SELECT name
+FROM users u
+WHERE EXISTS (
+    SELECT 1 FROM orders o WHERE o.user_id = u.id
+);
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Creating Tables</summary>
+                    <div class="item-content">
+                        <h2>Creating Tables</h2>
+                        <p>The `CREATE TABLE` statement defines a table’s structure with columns and data types. It supports constraints like `PRIMARY KEY`. Table creation is fundamental to schema design.</p>
+                        <pre>
+CREATE TABLE products (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    price DECIMAL(10, 2)
+);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a products table)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Primary Keys</summary>
+                    <div class="item-content">
+                        <h2>Primary Keys</h2>
+                        <p>A `PRIMARY KEY` uniquely identifies each row and enforces `NOT NULL`. It’s often an `INT` with auto-increment. Primary keys ensure data integrity in SQL.</p>
+                        <pre>
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50)
+);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a users table with auto-incrementing ID)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Foreign Keys</summary>
+                    <div class="item-content">
+                        <h2>Foreign Keys</h2>
+                        <p>`FOREIGN KEY` constraints link tables, referencing a primary key. They enforce referential integrity. Foreign keys model relationships in relational databases.</p>
+                        <pre>
+CREATE TABLE orders (
+    order_id INT PRIMARY KEY,
+    user_id INT,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates an orders table with a foreign key)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: INSERT Statement</summary>
+                    <div class="item-content">
+                        <h2>Inserting Data</h2>
+                        <p>The `INSERT` statement adds rows to a table, specifying columns and values. It supports multiple rows in one statement. Inserting is essential for populating databases.</p>
+                        <pre>
+INSERT INTO users (name, age)
+VALUES ('Alice', 25), ('Bob', 30);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Inserts two rows into users)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: UPDATE Statement</summary>
+                    <div class="item-content">
+                        <h2>Updating Data</h2>
+                        <p>The `UPDATE` statement modifies existing rows, using `SET` for new values and `WHERE` for conditions. It affects multiple rows if not filtered. Updating maintains data accuracy in SQL.</p>
+                        <pre>
+UPDATE users
+SET age = 26
+WHERE name = 'Alice';
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Updates Alice’s age to 26)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: DELETE Statement</summary>
+                    <div class="item-content">
+                        <h2>Deleting Data</h2>
+                        <p>The `DELETE` statement removes rows based on a `WHERE` condition. Without `WHERE`, it deletes all rows. Deleting manages data lifecycle in SQL.</p>
+                        <pre>
+DELETE FROM users
+WHERE age > 30;
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Deletes users older than 30)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: Indexes</summary>
+                    <div class="item-content">
+                        <h2>Creating Indexes</h2>
+                        <p>Indexes improve query performance by enabling faster lookups on columns. The `CREATE INDEX` statement defines them. Indexes are critical for large datasets in SQL.</p>
+                        <pre>
+CREATE INDEX idx_name ON users(name);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates an index on the name column)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: Views</summary>
+                    <div class="item-content">
+                        <h2>Creating Views</h2>
+                        <p>Views are virtual tables defined by a `SELECT` query, created with `CREATE VIEW`. They simplify complex queries and enhance security. Views are useful for reusable queries in SQL.</p>
+                        <pre>
+CREATE VIEW user_orders AS
+SELECT u.name, o.order_id
+FROM users u
+JOIN orders o ON u.id = o.user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a view of user orders)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Transactions</summary>
+                    <div class="item-content">
+                        <h2>Transactions</h2>
+                        <p>Transactions group SQL statements, ensuring atomicity with `BEGIN`, `COMMIT`, or `ROLLBACK`. They maintain data consistency. Transactions are vital for critical operations in SQL.</p>
+                        <pre>
+BEGIN;
+UPDATE users SET age = 27 WHERE name = 'Alice';
+COMMIT;
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Updates age and commits the transaction)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: Constraints</summary>
+                    <div class="item-content">
+                        <h2>Constraints</h2>
+                        <p>Constraints like `NOT NULL`, `UNIQUE`, and `CHECK` enforce data rules in tables. They ensure data quality at the schema level. Constraints are foundational for robust databases.</p>
+                        <pre>
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    salary DECIMAL(10, 2) CHECK (salary > 0)
+);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a table with constraints)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: Aggregate Functions</summary>
+                    <div class="item-content">
+                        <h2>Aggregate Functions</h2>
+                        <p>SQL’s aggregate functions like `COUNT`, `SUM`, `AVG`, `MIN`, and `MAX` summarize data. They’re used with `GROUP BY` or alone. Aggregates are key for analytics in SQL.</p>
+                        <pre>
+SELECT AVG(age) AS avg_age
+FROM users;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| avg_age |<br>|---------|<br>| 27.5    |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: Window Functions</summary>
+                    <div class="item-content">
+                        <h2>Window Functions</h2>
+                        <p>Window functions like `ROW_NUMBER()`, `RANK()`, and `SUM() OVER` compute values across rows without grouping. They use `OVER` with `PARTITION BY` or `ORDER BY`. Window functions are powerful for advanced analytics.</p>
+                        <pre>
+SELECT name, age,
+       ROW_NUMBER() OVER (ORDER BY age) AS row_num
+FROM users;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | age | row_num |<br>|-------|-----|---------|<br>| Alice | 25  | 1       |<br>| Bob   | 30  | 2       |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: Common Table Expressions</summary>
+                    <div class="item-content">
+                        <h2>Common Table Expressions</h2>
+                        <p>CTEs, defined with `WITH`, create temporary result sets for readable queries. They can be recursive for hierarchical data. CTEs simplify complex SQL logic.</p>
+                        <pre>
+WITH user_orders AS (
+    SELECT u.name, COUNT(o.order_id) AS order_count
+    FROM users u
+    LEFT JOIN orders o ON u.id = o.user_id
+    GROUP BY u.name
+)
+SELECT name, order_count
+FROM user_orders
+WHERE order_count > 0;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | order_count |<br>|-------|-------------|<br>| Alice | 2           |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: Recursive CTEs</summary>
+                    <div class="item-content">
+                        <h2>Recursive CTEs</h2>
+                        <p>Recursive CTEs use `UNION ALL` to iterate over hierarchical or graph data, like trees. They include a base case and recursive step. Recursive CTEs are advanced tools for complex relationships.</p>
+                        <pre>
+WITH RECURSIVE numbers AS (
+    SELECT 1 AS n
+    UNION ALL
+    SELECT n + 1 FROM numbers WHERE n < 3
+)
+SELECT n FROM numbers;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| n |<br>|---|<br>| 1 |<br>| 2 |<br>| 3 |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: CASE Statement</summary>
+                    <div class="item-content">
+                        <h2>CASE Statement</h2>
+                        <p>The `CASE` statement provides conditional logic in SQL, returning values based on conditions. It’s used in `SELECT` or `WHERE`. CASE enhances query flexibility.</p>
+                        <pre>
+SELECT name,
+       CASE
+           WHEN age < 18 THEN 'Minor'
+           ELSE 'Adult'
+       END AS status
+FROM users;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | status |<br>|-------|--------|<br>| Alice | Adult  |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: JSON Functions</summary>
+                    <div class="item-content">
+                        <h2>JSON Functions</h2>
+                        <p>SQL supports JSON with functions like `JSON_EXTRACT` or `->` (database-specific). They query and manipulate JSON columns. JSON functions bridge relational and NoSQL data in SQL.</p>
+                        <pre>
+SELECT data->>'name' AS name
+FROM documents
+WHERE data->>'type' = 'user';
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: Pivoting Data</summary>
+                    <div class="item-content">
+                        <h2>Pivoting Data</h2>
+                        <p>Pivoting transforms rows into columns, often using `CASE` or database-specific `PIVOT`. It’s useful for summary reports. Pivoting reshapes data for analysis in SQL.</p>
+                        <pre>
+SELECT user_id,
+       SUM(CASE WHEN product = 'A' THEN quantity END) AS A,
+       SUM(CASE WHEN product = 'B' THEN quantity END) AS B
+FROM sales
+GROUP BY user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| user_id | A | B |<br>|---------|---|-----|<br>| 1       | 10 | 20  |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: Unpivoting Data</summary>
+                    <div class="item-content">
+                        <h2>Unpivoting Data</h2>
+                        <p>Unpivoting converts columns into rows, often using `UNPIVOT` or `UNION`. It normalizes wide data formats. Unpivoting is useful for data transformation in SQL.</p>
+                        <pre>
+SELECT user_id, 'A' AS product, A AS quantity FROM sales
+WHERE A IS NOT NULL
+UNION
+SELECT user_id, 'B', B FROM sales
+WHERE B IS NOT NULL;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| user_id | product | quantity |<br>|---------|---------|----------|<br>| 1       | A       | 10       |<br>| 1       | B       | 20       |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: Date Functions</summary>
+                    <div class="item-content">
+                        <h2>Date Functions</h2>
+                        <p>SQL’s date functions like `CURRENT_DATE`, `DATEADD`, and `EXTRACT` manipulate dates and times. They vary by database (e.g., `DATE_PART` in PostgreSQL). Date functions are critical for temporal data.</p>
+                        <pre>
+SELECT name, DATE_PART('year', AGE(birth_date)) AS age
+FROM users;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | age |<br>|-------|-----|<br>| Alice | 25  |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: Temporary Tables</summary>
+                    <div class="item-content">
+                        <h2>Temporary Tables</h2>
+                        <p>Temporary tables store intermediate results for a session or transaction, created with `CREATE TEMPORARY TABLE`. They’re automatically dropped when the session ends. Temporary tables simplify complex queries in SQL.</p>
+                        <pre>
+CREATE TEMPORARY TABLE temp_users AS
+SELECT name, age FROM users WHERE age > 20;
+SELECT * FROM temp_users;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  | age |<br>|-------|-----|<br>| Alice | 25  |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: Stored Procedures</summary>
+                    <div class="item-content">
+                        <h2>Stored Procedures</h2>
+                        <p>Stored procedures are reusable SQL scripts stored in the database, defined with `CREATE PROCEDURE`. They accept parameters and encapsulate logic. Procedures enhance modularity and security in SQL.</p>
+                        <pre>
+CREATE PROCEDURE update_age(IN user_name VARCHAR(50), IN new_age INT)
+LANGUAGE SQL
+AS $$
+    UPDATE users SET age = new_age WHERE name = user_name;
+$$;
+CALL update_age('Alice', 26);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Updates Alice’s age to 26)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: Functions</summary>
+                    <div class="item-content">
+                        <h2>User-Defined Functions</h2>
+                        <p>User-defined functions (UDFs) return a single value or table, created with `CREATE FUNCTION`. They’re useful for reusable computations. UDFs extend SQL’s functionality.</p>
+                        <pre>
+CREATE FUNCTION get_full_name(first_name VARCHAR(50), last_name VARCHAR(50))
+RETURNS VARCHAR(100)
+LANGUAGE SQL
+AS $$
+    SELECT CONCAT(first_name, ' ', last_name);
+$$;
+SELECT get_full_name('Alice', 'Smith') AS full_name;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| full_name   |<br>|-------------|<br>| Alice Smith |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: Triggers</summary>
+                    <div class="item-content">
+                        <h2>Triggers</h2>
+                        <p>Triggers execute automatically on events like `INSERT`, `UPDATE`, or `DELETE`, defined with `CREATE TRIGGER`. They enforce rules or log changes. Triggers ensure data consistency in SQL.</p>
+                        <pre>
+CREATE TABLE audit_log (
+    log_id SERIAL PRIMARY KEY,
+    action VARCHAR(50),
+    log_time TIMESTAMP
+);
+CREATE TRIGGER log_update
+AFTER UPDATE ON users
+FOR EACH ROW
+EXECUTE FUNCTION (
+    INSERT INTO audit_log (action, log_time)
+    VALUES ('User updated', CURRENT_TIMESTAMP)
+);
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a trigger to log updates)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: Explain Plans</summary>
+                    <div class="item-content">
+                        <h2>Explain Plans</h2>
+                        <p>The `EXPLAIN` command shows a query’s execution plan, revealing steps like scans or joins. It helps optimize performance by identifying bottlenecks. Explain plans are critical for query tuning in SQL.</p>
+                        <pre>
+EXPLAIN SELECT name FROM users WHERE age > 20;
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Shows query plan, e.g., "Seq Scan on users")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: Query Optimization</summary>
+                    <div class="item-content">
+                        <h2>Query Optimization</h2>
+                        <p>Query optimization involves indexing, avoiding unnecessary joins, and using efficient conditions. Tools like `EXPLAIN` guide improvements. Optimization ensures fast queries in large databases.</p>
+                        <pre>
+CREATE INDEX idx_age ON users(age);
+SELECT name FROM users WHERE age = 25;
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: User Management</summary>
+                    <div class="item-content">
+                        <h2>User Management</h2>
+                        <p>SQL’s `CREATE USER` and `GRANT` manage database access and permissions. Roles group privileges for scalability. User management secures database access in SQL.</p>
+                        <pre>
+CREATE USER analyst WITH PASSWORD 'secure123';
+GRANT SELECT ON users TO analyst;
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a user with select privileges)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: Role-Based Security</summary>
+                    <div class="item-content">
+                        <h2>Role-Based Security</h2>
+                        <p>Roles in SQL group permissions, assigned with `GRANT` and managed with `CREATE ROLE`. They simplify access control. Role-based security is key for enterprise databases.</p>
+                        <pre>
+CREATE ROLE read_only;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO read_only;
+GRANT read_only TO analyst;
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Sets up a read-only role for analyst)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: Materialized Views</summary>
+                    <div class="item-content">
+                        <h2>Materialized Views</h2>
+                        <p>Materialized views store query results physically, updated with `REFRESH MATERIALIZED VIEW`. They improve performance for complex queries. Materialized views are useful for analytics in SQL.</p>
+                        <pre>
+CREATE MATERIALIZED VIEW user_summary AS
+SELECT user_id, COUNT(*) AS order_count
+FROM orders
+GROUP BY user_id;
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a materialized view of order counts)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Partitioning</summary>
+                    <div class="item-content">
+                        <h2>Table Partitioning</h2>
+                        <p>Partitioning splits large tables into smaller, manageable pieces based on ranges or lists. It improves query performance and maintenance. Partitioning is advanced for scalability in SQL.</p>
+                        <pre>
+CREATE TABLE sales (
+    sale_id INT,
+    sale_date DATE
+) PARTITION BY RANGE (sale_date);
+CREATE TABLE sales_2023 PARTITION OF sales
+FOR VALUES FROM ('2023-01-01') TO ('2024-01-01');
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Creates a partitioned sales table)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: NoSQL Integration</summary>
+                    <div class="item-content">
+                        <h2>NoSQL Integration</h2>
+                        <p>Modern SQL databases like PostgreSQL support NoSQL features, like JSONB or key-value stores. They combine relational and document data models. NoSQL integration bridges SQL and NoSQL workflows.</p>
+                        <pre>
+CREATE TABLE docs (
+    id INT PRIMARY KEY,
+    data JSONB
+);
+INSERT INTO docs VALUES (1, '{"name": "Alice", "type": "user"}');
+SELECT data->>'name' FROM docs WHERE data->>'type' = 'user';
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>| name  |<br>|-------|<br>| Alice |</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
