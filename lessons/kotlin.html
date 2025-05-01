@@ -1,0 +1,1162 @@
+<!-- COURSE BREAKDOWN
+Lessons 1–10: Kotlin basics (syntax, variables, constants, data types, operators).
+Lessons 11–20: Control flow, functions, null safety, collections, strings.
+Lessons 21–30: Classes, interfaces, data classes, lambdas, error handling.
+Lessons 31–40: Generics, extension functions, file handling, JSON, coroutines.
+Lessons 41–50: Advanced topics (Android basics, Room, Jetpack Compose, Ktor, testing).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kotlin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../index.html">
+                <h1>Kotlin</h1>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p>Explore 50 progressive Kotlin lessons to master concise and safe Android and server-side development. Each lesson provides clear explanations and examples to build your coding skills. Start your journey to creating powerful Kotlin applications today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is Kotlin?</summary>
+                    <div class="item-content">
+                        <h2>Introduction to Kotlin</h2>
+                        <p>Kotlin is a modern, open-source programming language developed by JetBrains, widely used for Android and server-side development. It emphasizes safety, conciseness, and interoperability with Java, powering apps like Pinterest. Kotlin’s null safety and expressive syntax make it ideal for robust applications.</p>
+                        <pre>
+fun main() {
+    println("Hello, World!")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: Variables and Constants</summary>
+                    <div class="item-content">
+                        <h2>Variables and Constants</h2>
+                        <p>Kotlin uses `var` for mutable variables and `val` for read-only constants, with type inference. Constants cannot be reassigned, enhancing safety. Variables and constants are foundational for storing data in Kotlin.</p>
+                        <pre>
+fun main() {
+    var name = "Alice"
+    val age = 25
+    println("$name is $age")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice is 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: Data Types</summary>
+                    <div class="item-content">
+                        <h2>Kotlin Data Types</h2>
+                        <p>Kotlin supports types like `Int`, `Double`, `String`, `Boolean`, lists, and maps. Type inference reduces boilerplate, but explicit types can be specified. Understanding data types is key to Kotlin’s type-safe programming.</p>
+                        <pre>
+fun main() {
+    val num: Int = 42
+    val pi: Double = 3.14
+    val flag = true
+    println("$num $pi $flag")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 42 3.14 true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Arithmetic Operators</summary>
+                    <div class="item-content">
+                        <h2>Arithmetic Operations</h2>
+                        <p>Kotlin provides arithmetic operators like `+`, `-`, `*`, `/`, and `%` for numbers. It ensures type safety, preventing mismatched types. These operators are essential for calculations.</p>
+                        <pre>
+fun main() {
+    val a = 10
+    val b = 3
+    println("${a + b} ${a % b}")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 13 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Comparison Operators</summary>
+                    <div class="item-content">
+                        <h2>Comparison Operators</h2>
+                        <p>Kotlin’s comparison operators (`==`, `!=`, `>`, `<`, `>=`, `<=`) return `Boolean` values. They work on comparable types like numbers and strings. Comparisons drive conditional logic in Kotlin.</p>
+                        <pre>
+fun main() {
+    val x = 5
+    val y = 10
+    println("${x < y} ${x == y}")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: true false</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Logical Operators</summary>
+                    <div class="item-content">
+                        <h2>Logical Operators</h2>
+                        <p>Kotlin’s logical operators `&&`, `||`, and `!` combine or invert boolean expressions. They short-circuit for efficiency, evaluating only as needed. Logical operators are crucial for complex conditions.</p>
+                        <pre>
+fun main() {
+    val a = true
+    val b = false
+    println("${a && b} ${a || b}")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: false true</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: Strings</summary>
+                    <div class="item-content">
+                        <h2>Working with Strings</h2>
+                        <p>Strings in Kotlin are created with quotes and support interpolation with `$`. They are immutable, ensuring thread safety. Strings are central to text handling in Kotlin.</p>
+                        <pre>
+fun main() {
+    val greeting = "Hello"
+    val name = "World"
+    println("$greeting, $name!")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: String Methods</summary>
+                    <div class="item-content">
+                        <h2>String Methods</h2>
+                        <p>Kotlin’s `String` class provides methods like `uppercase()`, `startsWith()`, and `replace()`. These methods are safe and efficient. String methods enable powerful text manipulation.</p>
+                        <pre>
+fun main() {
+    val text = "  kotlin  "
+    println(text.trim().uppercase())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: KOTLIN</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: Lists</summary>
+                    <div class="item-content">
+                        <h2>Working with Lists</h2>
+                        <p>Lists in Kotlin are ordered collections, created with `listOf()` or `mutableListOf()`. They support methods like `add()` and `remove()` for mutable lists. Lists are versatile for managing sequences.</p>
+                        <pre>
+fun main() {
+    val fruits = listOf("apple", "banana", "cherry")
+    println(fruits[1])
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: Maps</summary>
+                    <div class="item-content">
+                        <h2>Maps</h2>
+                        <p>Maps in Kotlin are key-value stores, created with `mapOf()` or `mutableMapOf()`. They require hashable keys and support safe lookups. Maps are ideal for associative data.</p>
+                        <pre>
+fun main() {
+    val ages = mapOf("Alice" to 25, "Bob" to 30)
+    println(ages["Alice"])
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: If Expressions</summary>
+                    <div class="item-content">
+                        <h2>Conditional Expressions</h2>
+                        <p>Kotlin’s `if` is an expression that can return values, supporting `else if` and `else`. It requires boolean conditions, ensuring clarity. If expressions are versatile for decision-making.</p>
+                        <pre>
+fun main() {
+    val age = 18
+    val status = if (age >= 18) "Adult" else "Minor"
+    println(status)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Adult</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: When Expressions</summary>
+                    <div class="item-content">
+                        <h2>When Expressions</h2>
+                        <p>Kotlin’s `when` expression matches values against branches, replacing `switch`. It supports ranges, types, and is exhaustive when used as an expression. When expressions are powerful for multi-way branching.</p>
+                        <pre>
+fun main() {
+    val day = 1
+    val result = when (day) {
+        1 -> "Monday"
+        else -> "Other"
+    }
+    println(result)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Monday</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: For Loops</summary>
+                    <div class="item-content">
+                        <h2>For Loops</h2>
+                        <p>Kotlin’s `for` loop iterates over iterables like lists or ranges using `in`. It’s concise and type-safe, avoiding index errors. For loops are idiomatic for collection iteration.</p>
+                        <pre>
+fun main() {
+    for (i in 0 until 3) {
+        println(i)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: While Loops</summary>
+                    <div class="item-content">
+                        <h2>While Loops</h2>
+                        <p>Kotlin’s `while` and `do-while` loops execute while a condition is true. `do-while` guarantees at least one iteration. While loops are useful for dynamic iteration.</p>
+                        <pre>
+fun main() {
+    var i = 0
+    while (i < 3) {
+        println(i)
+        i++
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: Break and Continue</summary>
+                    <div class="item-content">
+                        <h2>Loop Control</h2>
+                        <p>The `break` statement exits a loop, while `continue` skips to the next iteration. Both work in `for` and `while` loops. These controls manage iteration flow in Kotlin.</p>
+                        <pre>
+fun main() {
+    for (i in 0 until 5) {
+        if (i == 3) break
+        println(i)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: Functions</summary>
+                    <div class="item-content">
+                        <h2>Defining Functions</h2>
+                        <p>Functions in Kotlin are declared with `fun`, supporting parameters, return types, and default values. They can use single-expression syntax for conciseness. Functions promote modular, reusable code.</p>
+                        <pre>
+fun main() {
+    fun greet(name: String): String = "Hello, $name!"
+    println(greet("Alice"))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: Null Safety</summary>
+                    <div class="item-content">
+                        <h2>Null Safety</h2>
+                        <p>Kotlin’s null safety requires explicit nullable types with `?`, preventing null pointer exceptions. Safe calls (`?.`) and the Elvis operator (`?:`) handle nulls. Null safety is a cornerstone of Kotlin’s reliability.</p>
+                        <pre>
+fun main() {
+    var name: String? = "Alice"
+    println(name?.length ?: 0)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 5</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: Safe Calls and Let</summary>
+                    <div class="item-content">
+                        <h2>Safe Calls and Let</h2>
+                        <p>Kotlin’s safe call operator `?.` accesses properties on nullable types, returning `null` if the object is `null`. The `let` function scopes non-null values for safe operations. These features simplify null handling in Kotlin.</p>
+                        <pre>
+fun main() {
+    val name: String? = null
+    name?.let { println(it) } ?: println("No name")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: No name</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: Classes</summary>
+                    <div class="item-content">
+                        <h2>Classes</h2>
+                        <p>Classes in Kotlin are defined with `class`, supporting properties and methods. They use constructor syntax for initialization. Classes are essential for object-oriented programming in Kotlin.</p>
+                        <pre>
+fun main() {
+    class Dog(val name: String) {
+        fun bark() = "$name says Woof!"
+    }
+    val dog = Dog("Buddy")
+    println(dog.bark())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy says Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Data Classes</summary>
+                    <div class="item-content">
+                        <h2>Data Classes</h2>
+                        <p>Kotlin’s `data class` automatically provides `toString()`, `equals()`, and `copy()`. They’re ideal for holding data with minimal boilerplate. Data classes are widely used in Kotlin for models.</p>
+                        <pre>
+fun main() {
+    data class Person(val name: String, val age: Int)
+    val person = Person("Alice", 25)
+    println(person)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Person(name=Alice, age=25)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Inheritance</summary>
+                    <div class="item-content">
+                        <h2>Inheritance</h2>
+                        <p>Kotlin classes are `final` by default; `open` allows inheritance with `:`. The `override` keyword modifies parent behavior. Inheritance organizes related classes hierarchically.</p>
+                        <pre>
+fun main() {
+    open class Animal {
+        open fun speak() = "Sound"
+    }
+    class Dog : Animal() {
+        override fun speak() = "${super.speak()}: Woof!"
+    }
+    val dog = Dog()
+    println(dog.speak())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Sound: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Interfaces</summary>
+                    <div class="item-content">
+                        <h2>Interfaces</h2>
+                        <p>Interfaces in Kotlin define contracts with methods or properties, implemented with `:`. They support default implementations, unlike protocols in Swift. Interfaces enable polymorphism in Kotlin.</p>
+                        <pre>
+fun main() {
+    interface Speaker {
+        fun speak(): String
+    }
+    class Dog : Speaker {
+        override fun speak() = "Woof!"
+    }
+    val dog = Dog()
+    println(dog.speak())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Error Handling</summary>
+                    <div class="item-content">
+                        <h2>Error Handling</h2>
+                        <p>Kotlin uses `try-catch` for exceptions, with `throw` to raise them. Functions don’t need explicit `throws` declarations. Error handling ensures robust Kotlin programs.</p>
+                        <pre>
+fun main() {
+    try {
+        throw Exception("Invalid")
+    } catch (e: Exception) {
+        println("Error: ${e.message}")
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Error: Invalid</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: Lambdas</summary>
+                    <div class="item-content">
+                        <h2>Lambdas</h2>
+                        <p>Lambdas in Kotlin are anonymous functions defined with `{}`. They can capture variables and be passed as arguments. Lambdas are key for functional programming in Kotlin.</p>
+                        <pre>
+fun main() {
+    val greet: (String) -> String = { name -> "Hello, $name!" }
+    println(greet("Alice"))
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: Trailing Lambdas</summary>
+                    <div class="item-content">
+                        <h2>Trailing Lambdas</h2>
+                        <p>Trailing lambdas in Kotlin allow cleaner syntax for functions taking lambdas as last arguments. They’re common in APIs like `map` and `filter`. Trailing lambdas enhance readability.</p>
+                        <pre>
+fun main() {
+    val numbers = listOf(1, 2, 3)
+    val doubled = numbers.map { it * 2 }
+    println(doubled)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: [2, 4, 6]</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: Enums</summary>
+                    <div class="item-content">
+                        <h2>Enums</h2>
+                        <p>Enums in Kotlin define a type with a fixed set of constants, supporting properties and methods. They can have associated values via subclasses. Enums are powerful for modeling state.</p>
+                        <pre>
+fun main() {
+    enum class Direction {
+        NORTH, SOUTH, EAST, WEST
+    }
+    val dir = Direction.NORTH
+    println(dir)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: NORTH</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: Sealed Classes</summary>
+                    <div class="item-content">
+                        <h2>Sealed Classes</h2>
+                        <p>Sealed classes in Kotlin restrict inheritance to a fixed set of subclasses, ideal for modeling restricted hierarchies. They’re used with `when` for exhaustive checks. Sealed classes enhance type safety.</p>
+                        <pre>
+fun main() {
+    sealed class Barcode
+    class UPC(val number: Int) : Barcode()
+    class QR(val code: String) : Barcode()
+    val code = QR("xyz")
+    println(code.code)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: xyz</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: Generics</summary>
+                    <div class="item-content">
+                        <h2>Generics</h2>
+                        <p>Generics in Kotlin allow reusable code with type safety, using `<T>`. They support variance with `in` and `out`. Generics enhance flexibility in collections and functions.</p>
+                        <pre>
+fun main() {
+    fun <T> swap(a: T, b: T): Pair<T, T> = Pair(b, a)
+    val (x, y) = swap(1, 2)
+    println("$x $y")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 2 1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Properties</summary>
+                    <div class="item-content">
+                        <h2>Properties</h2>
+                        <p>Kotlin properties include `var` for mutable and `val` for read-only, with custom getters/setters. They can have observers via delegation. Properties manage state in Kotlin classes.</p>
+                        <pre>
+fun main() {
+    class Circle(var radius: Double) {
+        val area: Double
+            get() = Math.PI * radius * radius
+    }
+    val circle = Circle(2.0)
+    println(circle.area)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: 12.566370614359172</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: Access Control</summary>
+                    <div class="item-content">
+                        <h2>Access Control</h2>
+                        <p>Kotlin’s access modifiers include `private`, `protected`, `internal`, and `public`. They restrict access to properties, methods, and classes. Access control ensures encapsulation in Kotlin.</p>
+                        <pre>
+fun main() {
+    class BankAccount(private var balance: Double)
+    val account = BankAccount(100.0)
+    println("Access restricted")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Access restricted</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: File Writing</summary>
+                    <div class="item-content">
+                        <h2>File Writing</h2>
+                        <p>Kotlin’s `File` class provides methods like `writeText()` for file operations. It supports error handling with `try-catch`. File writing is essential for persistent data in Kotlin.</p>
+                        <pre>
+import java.io.File
+fun main() {
+    File("output.txt").writeText("Hello, World!")
+    println("File written")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: File written</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: File Reading</summary>
+                    <div class="item-content">
+                        <h2>File Reading</h2>
+                        <p>Kotlin’s `File` class reads files using `readText()` or `readLines()`. It throws exceptions for invalid paths, requiring `try-catch`. File reading retrieves persistent data in Kotlin.</p>
+                        <pre>
+import java.io.File
+fun main() {
+    val content = File("output.txt").readText()
+    println(content)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: JSON Serialization</summary>
+                    <div class="item-content">
+                        <h2>JSON Serialization</h2>
+                        <p>Kotlin uses libraries like `kotlinx.serialization` to serialize objects to JSON. The `@Serializable` annotation marks data classes. JSON serialization is common for API communication.</p>
+                        <pre>
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+@Serializable
+data class User(val name: String)
+fun main() {
+    val user = User("Alice")
+    val json = Json.encodeToString(user)
+    println(json)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: {"name":"Alice"}</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: JSON Deserialization</summary>
+                    <div class="item-content">
+                        <h2>JSON Deserialization</h2>
+                        <p>Kotlin’s `kotlinx.serialization` deserializes JSON to objects with `decodeFromString`. It supports error handling for invalid JSON. JSON deserialization is vital for API data processing.</p>
+                        <pre>
+import kotlinx.serialization.*
+import kotlinx.serialization.json.*
+@Serializable
+data class User(val name: String)
+fun main() {
+    val json = """{"name":"Alice"}"""
+    val user = Json.decodeFromString<User>(json)
+    println(user.name)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: Regular Expressions</summary>
+                    <div class="item-content">
+                        <h2>Regular Expressions</h2>
+                        <p>Kotlin’s `Regex` class handles pattern matching with methods like `replace()`. Patterns use standard regex syntax. Regular expressions are powerful for text processing in Kotlin.</p>
+                        <pre>
+fun main() {
+    val text = "hello world"
+    val newText = Regex("world").replace(text, "Kotlin")
+    println(newText)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: hello Kotlin</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: Higher-Order Functions</summary>
+                    <div class="item-content">
+                        <h2>Higher-Order Functions</h2>
+                        <p>Kotlin’s higher-order functions like `map`, `filter`, and `fold` process collections functionally. They take lambdas for custom logic. These functions promote concise, expressive code.</p>
+                        <pre>
+fun main() {
+    val numbers = listOf(1, 2, 3)
+    val squares = numbers.map { it * it }
+    println(squares)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: [1, 4, 9]</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: Extension Functions</summary>
+                    <div class="item-content">
+                        <h2>Extension Functions</h2>
+                        <p>Extension functions in Kotlin add functionality to existing types without modifying them. They’re defined with a receiver type. Extensions enhance code modularity and reuse.</p>
+                        <pre>
+fun main() {
+    fun String.shout() = this.uppercase() + "!"
+    println("hello".shout())
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: HELLO!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: Coroutines</summary>
+                    <div class="item-content">
+                        <h2>Coroutines</h2>
+                        <p>Kotlin’s coroutines handle asynchronous programming with `suspend` functions and `launch`. They simplify concurrency using `runBlocking` for testing. Coroutines are central to modern Kotlin apps.</p>
+                        <pre>
+import kotlinx.coroutines.*
+fun main() = runBlocking {
+    launch {
+        delay(1000)
+        println("World")
+    }
+    println("Hello")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>Hello<br>World</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: Flow</summary>
+                    <div class="item-content">
+                        <h2>Flow</h2>
+                        <p>Kotlin’s `Flow` API handles reactive streams with asynchronous data. It uses `collect` to process emitted values. Flow is powerful for reactive programming in Kotlin.</p>
+                        <pre>
+import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.*
+fun main() = runBlocking {
+    flowOf(1, 2, 3)
+        .collect { println(it) }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>1<br>2<br>3</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: Property Delegation</summary>
+                    <div class="item-content">
+                        <h2>Property Delegation</h2>
+                        <p>Kotlin’s property delegation uses `by` to delegate property behavior to objects like `lazy`. It simplifies patterns like lazy initialization. Property delegation enhances code reuse.</p>
+                        <pre>
+fun main() {
+    val value: String by lazy {
+        println("Initializing")
+        "Hello"
+    }
+    println(value)
+    println(value)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>Initializing<br>Hello<br>Hello</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: Networking</summary>
+                    <div class="item-content">
+                        <h2>Networking</h2>
+                        <p>Kotlin uses libraries like Ktor or Retrofit for HTTP requests, with coroutines for async calls. It handles JSON and errors safely. Networking is crucial for Android apps.</p>
+                        <pre>
+import io.ktor.client.*
+import io.ktor.client.request.*
+import io.ktor.client.statement.*
+import kotlinx.coroutines.*
+fun main() = runBlocking {
+    val client = HttpClient()
+    val response = client.get("https://api.example.com/data")
+    println(response.bodyAsText())
+    client.close()
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Sample API response, e.g., JSON data)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: Jetpack Compose Introduction</summary>
+                    <div class="item-content">
+                        <h2>Jetpack Compose Introduction</h2>
+                        <p>Jetpack Compose is Android’s modern UI toolkit, using composable functions. It’s declarative and integrates with Kotlin’s coroutines. Compose simplifies Android UI development.</p>
+                        <pre>
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+@Composable
+fun Greeting() {
+    Text("Hello, World!")
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Renders "Hello, World!" in Compose preview)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: Compose State</summary>
+                    <div class="item-content">
+                        <h2>Compose State</h2>
+                        <p>Jetpack Compose uses `mutableStateOf` for reactive state, triggering UI updates. State is scoped to composables for safety. State is fundamental to interactive Android apps.</p>
+                        <pre>
+import androidx.compose.material3.Button
+import androidx.compose.material3.Text
+import androidx.compose.runtime.*
+@Composable
+fun Counter() {
+    var count by remember { mutableStateOf(0) }
+    Button(onClick = { count++ }) {
+        Text("Count: $count")
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Displays button with incrementing counter)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: Compose Lists</summary>
+                    <div class="item-content">
+                        <h2>Compose Lists</h2>
+                        <p>Jetpack Compose’s `LazyColumn` displays scrollable lists, using `items` for dynamic data. It optimizes performance with lazy loading. Lists are common in Android apps.</p>
+                        <pre>
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+@Composable
+fun FruitList() {
+    val fruits = listOf("Apple", "Banana", "Cherry")
+    LazyColumn {
+        items(fruits) { fruit ->
+            Text(fruit)
+        }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Displays scrollable list of fruits)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: Compose Navigation</summary>
+                    <div class="item-content">
+                        <h2>Compose Navigation</h2>
+                        <p>Jetpack Compose’s `NavHost` and `composable` manage navigation between screens. They use a navigation controller for routing. Navigation is key for multi-screen Android apps.</p>
+                        <pre>
+import androidx.navigation.compose.*
+@Composable
+fun AppNavigation() {
+    val navController = rememberNavController()
+    NavHost(navController, "home") {
+        composable("home") { Text("Home") }
+        composable("detail") { Text("Detail") }
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Navigates between home and detail screens)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: Room Database</summary>
+                    <div class="item-content">
+                        <h2>Room Database</h2>
+                        <p>Room is Android’s persistence library, providing an SQLite abstraction. It uses annotations like `@Entity` and `@Dao`. Room is ideal for local storage in Android apps.</p>
+                        <pre>
+import androidx.room.*
+@Entity
+data class User(@PrimaryKey val id: Int, val name: String)
+@Dao
+interface UserDao {
+    @Insert
+    fun insert(user: User)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Defines Room entity and DAO)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: Room Queries</summary>
+                    <div class="item-content">
+                        <h2>Room Queries</h2>
+                        <p>Room’s `@Query` annotation defines SQL queries for data operations. It supports suspend functions for coroutines. Queries manage structured data in Android apps.</p>
+                        <pre>
+import androidx.room.*
+@Entity
+data class User(@PrimaryKey val id: Int, val name: String)
+@Dao
+interface UserDao {
+    @Query("SELECT * FROM user WHERE id = :id")
+    suspend fun getUser(id: Int): User
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Defines Room query for user retrieval)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: Ktor Server</summary>
+                    <div class="item-content">
+                        <h2>Ktor Server</h2>
+                        <p>Ktor is Kotlin’s framework for building asynchronous servers and clients. It uses coroutines for scalability. Ktor is powerful for server-side Kotlin applications.</p>
+                        <pre>
+import io.ktor.server.application.*
+import io.ktor.server.response.*
+import io.ktor.server.routing.*
+fun main() {
+    embeddedServer(Netty, port = 8080) {
+        routing {
+            get("/") {
+                call.respondText("Hello, World!")
+            }
+        }
+    }.start(wait = true)
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Serves "Hello, World!" at http://localhost:8080)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Unit Testing</summary>
+                    <div class="item-content">
+                        <h2>Unit Testing</h2>
+                        <p>Kotlin uses JUnit for unit testing, with annotations like `@Test`. Assertions like `assertEquals` verify behavior. Unit testing ensures reliable Kotlin code.</p>
+                        <pre>
+import org.junit.Test
+import kotlin.test.assertEquals
+class MathTests {
+    @Test
+    fun testAdd() {
+        assertEquals(4, 2 + 2)
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Test passes, no console output)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: Android Lifecycle</summary>
+                    <div class="item-content">
+                        <h2>Android Lifecycle</h2>
+                        <p>Android’s lifecycle manages activities with states like `onCreate` and `onDestroy`. ViewModels scope data to lifecycle events. Understanding the lifecycle is key for Android development.</p>
+                        <pre>
+import androidx.activity.ComponentActivity
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: android.os.Bundle?) {
+        super.onCreate(savedInstanceState)
+        println("Activity created")
+    }
+}
+                        </pre>
+                        <div class="example">
+                            <p>Output: Activity created</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
