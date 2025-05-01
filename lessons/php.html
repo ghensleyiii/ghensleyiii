@@ -1,0 +1,1419 @@
+<!-- COURSE BREAKDOWN
+Lessons 1–10: PHP basics (syntax, variables, data types, operators).
+Lessons 11–20: Control structures, functions, arrays, strings, superglobals.
+Lessons 21–30: Object-oriented programming, error handling, forms, sessions.
+Lessons 31–40: File handling, regular expressions, JSON, database access with PDO.
+Lessons 41–50: Advanced topics (traits, namespaces, closures, REST APIs, frameworks like Laravel).-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 PHP Learning Lessons - CODEXEDOC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #4169e1;
+            --light-blue: #41E169;
+            --white: #f0f2f0;
+            --black: #333333;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-family: 'Audiowide', sans-serif;
+            color: #fff;
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            background: #fff;
+            height: 3px;
+            width: 25px;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 20px;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Audiowide', sans-serif;
+            font-size: 18px;
+        }
+
+        .nav-menu a:hover {
+            color: #e0e0e0;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+                width: 200px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+        }
+
+        main {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .intro {
+            background: linear-gradient(135deg, #A3BFFA, #c8e6c9);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .scripture {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 8px;
+            font-style: italic;
+            color: #fff;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .item {
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .item-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Audiowide', sans-serif;
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            border: none;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .item-button:hover {
+            background: linear-gradient(135deg, #2F4B9F, #2F9F4B);
+        }
+
+        .item-content {
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 0 0 5px 5px;
+            text-align: left;
+        }
+
+        .item-content h2 {
+            font-family: 'Audiowide', sans-serif;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+
+        .item-content pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        .example {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid var(--dark-blue);
+            border-radius: 5px;
+        }
+
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>CODEXEDOC</h1>
+            </a>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bulletins.html">Bulletins</a></li>
+                <li><a href="discernment.html">Discernment</a></li>
+                <li><a href="guidance.html">Guidance</a></li>
+                <li><a href="scriptures.html">Scriptures</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <p class="scripture">"Pay constant attention to yourself and to your teaching. Persevere in these things." —1 Timothy 4:16</p>
+            <p>Explore 50 progressive PHP lessons to master dynamic web development and scripting. Each lesson provides clear explanations and examples to build your coding skills. Start your journey to creating robust PHP applications today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is PHP?</summary>
+                    <div class="item-content">
+                        <h2>Introduction to PHP</h2>
+                        <p>PHP is a server-side scripting language designed for web development, embedded in HTML. It powers platforms like WordPress and is known for its simplicity and database integration. PHP’s versatility makes it ideal for dynamic websites and APIs.</p>
+                        <pre>
+<?php
+echo "Hello, World!";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: Variables</summary>
+                    <div class="item-content">
+                        <h2>Variables in PHP</h2>
+                        <p>Variables in PHP are declared with `$` and are dynamically typed, requiring no type definition. They hold various data types, assigned by value or reference. PHP’s loose typing simplifies coding but demands careful validation.</p>
+                        <pre>
+<?php
+$name = "Alice";
+$age = 25;
+echo "$name is $age";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice is 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: Data Types</summary>
+                    <div class="item-content">
+                        <h2>PHP Data Types</h2>
+                        <p>PHP supports scalar types (int, float, string, bool), compound types (array, object), and special types (null, resource). Types are dynamically assigned, with automatic conversion in some contexts. Understanding data types is crucial for effective PHP programming.</p>
+                        <pre>
+<?php
+$num = 42;
+$pi = 3.14;
+$flag = true;
+var_dump($num, $pi, $flag);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>int(42)<br>float(3.14)<br>bool(true)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Arithmetic Operators</summary>
+                    <div class="item-content">
+                        <h2>Arithmetic Operations</h2>
+                        <p>PHP provides arithmetic operators like `+`, `-`, `*`, `/`, `%`, and `**` for exponentiation. They work on numeric types, with automatic type conversion. These operators are fundamental for calculations in PHP.</p>
+                        <pre>
+<?php
+$a = 10;
+$b = 3;
+echo $a + $b, "\n", $a % $b;
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>13<br>1</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Comparison Operators</summary>
+                    <div class="item-content">
+                        <h2>Comparison Operators</h2>
+                        <p>PHP’s comparison operators (`==`, `===`, `!=`, `!==`, `>`, `<`) return booleans. The `===` checks value and type, while `==` allows type coercion. Comparisons are essential for conditional logic.</p>
+                        <pre>
+<?php
+$x = 5;
+$y = "5";
+var_dump($x == $y, $x === $y);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>bool(true)<br>bool(false)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Logical Operators</summary>
+                    <div class="item-content">
+                        <h2>Logical Operators</h2>
+                        <p>PHP’s logical operators `&&`, `||`, `!`, `and`, `or` combine or invert boolean expressions. They short-circuit for efficiency, evaluating only as needed. Logical operators are key for complex conditions.</p>
+                        <pre>
+<?php
+$a = true;
+$b = false;
+var_dump($a && $b, $a || $b);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>bool(false)<br>bool(true)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: Strings</summary>
+                    <div class="item-content">
+                        <h2>Working with Strings</h2>
+                        <p>Strings in PHP are sequences of characters, defined with single or double quotes. Double-quoted strings support variable interpolation with `{}` or direct `$var`. Strings are central to web output and data processing.</p>
+                        <pre>
+<?php
+$greeting = "Hello";
+$name = "World";
+echo "$greeting, $name!";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: String Functions</summary>
+                    <div class="item-content">
+                        <h2>String Functions</h2>
+                        <p>PHP offers functions like `strlen`, `strtoupper`, and `str_replace` for string manipulation. These functions are efficient and widely used in web applications. String functions simplify text processing tasks.</p>
+                        <pre>
+<?php
+$text = "  php  ";
+echo trim(strtoupper($text));
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: PHP</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: Arrays</summary>
+                    <div class="item-content">
+                        <h2>Working with Arrays</h2>
+                        <p>Arrays in PHP are ordered maps, created with `[]` or `array()`. They support indexed and associative forms, with dynamic resizing. Arrays are versatile for storing and manipulating data.</p>
+                        <pre>
+<?php
+$fruits = ["apple", "banana", "cherry"];
+echo $fruits[1];
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: Associative Arrays</summary>
+                    <div class="item-content">
+                        <h2>Associative Arrays</h2>
+                        <p>Associative arrays in PHP use string or integer keys, defined with `=>`. They’re ideal for key-value data, like configurations. Associative arrays are a core feature of PHP.</p>
+                        <pre>
+<?php
+$ages = ["Alice" => 25, "Bob" => 30];
+echo $ages["Alice"];
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: 25</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: If Statements</summary>
+                    <div class="item-content">
+                        <h2>Conditional Statements</h2>
+                        <p>PHP’s `if` statements evaluate conditions, supporting `elseif` and `else`. They use curly braces or alternative syntax for templates. Conditionals are essential for dynamic web logic.</p>
+                        <pre>
+<?php
+$age = 18;
+if ($age >= 18) {
+    echo "Adult";
+} else {
+    echo "Minor";
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Adult</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: Switch Statements</summary>
+                    <div class="item-content">
+                        <h2>Switch Statements</h2>
+                        <p>PHP’s `switch` statement matches a value against cases, with explicit `break` to prevent fall-through. It supports a `default` case for unmatched values. Switch is useful for multi-way branching.</p>
+                        <pre>
+<?php
+$day = 1;
+switch ($day) {
+    case 1:
+        echo "Monday";
+        break;
+    default:
+        echo "Other";
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Monday</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: For Loops</summary>
+                    <div class="item-content">
+                        <h2>For Loops</h2>
+                        <p>PHP’s `for` loop iterates with a counter, using initialization, condition, and increment expressions. It’s ideal for known iteration counts. For loops are widely used in PHP scripting.</p>
+                        <pre>
+<?php
+for ($i = 0; $i < 3; $i++) {
+    echo $i . "\n";
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: Foreach Loops</summary>
+                    <div class="item-content">
+                        <h2>Foreach Loops</h2>
+                        <p>The `foreach` loop iterates over arrays, yielding keys and values. It supports both indexed and associative arrays. Foreach is idiomatic for array processing in PHP.</p>
+                        <pre>
+<?php
+$fruits = ["apple", "banana"];
+foreach ($fruits as $fruit) {
+    echo $fruit . "\n";
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>apple<br>banana</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: Break and Continue</summary>
+                    <div class="item-content">
+                        <h2>Loop Control</h2>
+                        <p>The `break` statement exits a loop, while `continue` skips to the next iteration. Both can take a number to affect nested loops. These controls manage loop execution in PHP.</p>
+                        <pre>
+<?php
+for ($i = 0; $i < 5; $i++) {
+    if ($i == 3) break;
+    echo $i . "\n";
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output:<br>0<br>1<br>2</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: Functions</summary>
+                    <div class="item-content">
+                        <h2>Defining Functions</h2>
+                        <p>Functions in PHP are declared with `function`, supporting parameters and return values. They can have default arguments and type hints. Functions promote reusable code in PHP.</p>
+                        <pre>
+<?php
+function greet($name) {
+    return "Hello, $name!";
+}
+echo greet("Alice");
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: Type Hints</summary>
+                    <div class="item-content">
+                        <h2>Type Hints</h2>
+                        <p>PHP supports type hints for function parameters and return types, enforcing types at runtime. They include scalar types, classes, and `void`. Type hints improve code reliability.</p>
+                        <pre>
+<?php
+function add(int $a, int $b): int {
+    return $a + $b;
+}
+echo add(2, 3);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: 5</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: Classes</summary>
+                    <div class="item-content">
+                        <h2>Classes</h2>
+                        <p>Classes in PHP define objects with properties and methods, declared with `class`. They support visibility modifiers like `public`, `private`. Classes are key to object-oriented PHP.</p>
+                        <pre>
+<?php
+class Dog {
+    public $name;
+    public function __construct($name) {
+        $this->name = $name;
+    }
+    public function bark() {
+        return "$this->name says Woof!";
+    }
+}
+$dog = new Dog("Buddy");
+echo $dog->bark();
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Buddy says Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: Inheritance</summary>
+                    <div class="item-content">
+                        <h2>Inheritance</h2>
+                        <p>PHP supports single inheritance with `extends`, allowing subclasses to inherit properties and methods. The `parent::` syntax calls parent methods. Inheritance organizes related classes hierarchically.</p>
+                        <pre>
+<?php
+class Animal {
+    public function speak() {
+        return "Sound";
+    }
+}
+class Dog extends Animal {
+    public function speak() {
+        return parent::speak() . ": Woof!";
+    }
+}
+$dog = new Dog();
+echo $dog->speak();
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Sound: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Interfaces</summary>
+                    <div class="item-content">
+                        <h2>Interfaces</h2>
+                        <p>Interfaces in PHP define method signatures that classes must implement, using `implements`. They enable polymorphism without inheritance. Interfaces are crucial for flexible designs.</p>
+                        <pre>
+<?php
+interface Speaker {
+    public function speak();
+}
+class Dog implements Speaker {
+    public function speak() {
+        return "Woof!";
+    }
+}
+$dog = new Dog();
+echo $dog->speak();
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Woof!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Error Handling</summary>
+                    <div class="item-content">
+                        <h2>Error Handling</h2>
+                        <p>PHP uses `try`, `catch`, and `throw` for exception handling, with `Exception` as the base class. Exceptions are caught by type, and `finally` ensures cleanup. Error handling ensures robust applications.</p>
+                        <pre>
+<?php
+try {
+    throw new Exception("Error!");
+} catch (Exception $e) {
+    echo "Caught: " . $e->getMessage();
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Caught: Error!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Custom Exceptions</summary>
+                    <div class="item-content">
+                        <h2>Custom Exceptions</h2>
+                        <p>Custom exceptions in PHP are created by extending `Exception`. They provide specific error context for better debugging. Custom exceptions enhance error handling clarity.</p>
+                        <pre>
+<?php
+class MyException extends Exception {}
+try {
+    throw new MyException("Custom error");
+} catch (MyException $e) {
+    echo $e->getMessage();
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Custom error</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Superglobals</summary>
+                    <div class="item-content">
+                        <h2>Superglobals</h2>
+                        <p>PHP’s superglobals like `$_GET`, `$_POST`, and `$_SERVER` provide access to request data and server info. They’re globally available in any scope. Superglobals are essential for web interactions.</p>
+                        <pre>
+<?php
+// Simulating $_GET data
+$_GET['name'] = "Alice";
+echo $_GET['name'];
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: Form Handling</summary>
+                    <div class="item-content">
+                        <h2>Form Handling</h2>
+                        <p>PHP handles form data via `$_POST` or `$_GET`, depending on the form’s method. Input validation prevents security issues like XSS. Form handling is a core feature of PHP web apps.</p>
+                        <pre>
+<!-- form.html -->
+<form method="post" action="index.php">
+    <input type="text" name="name">
+    <input type="submit">
+</form>
+
+<!-- index.php -->
+<?php
+if (isset($_POST['name'])) {
+    echo htmlspecialchars($_POST['name']);
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Submits form with "Alice" to see "Alice")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: Sessions</summary>
+                    <div class="item-content">
+                        <h2>Sessions</h2>
+                        <p>PHP sessions store user data across requests, started with `session_start()`. Data is stored in `$_SESSION`. Sessions are vital for user authentication and state management.</p>
+                        <pre>
+<?php
+session_start();
+$_SESSION['user'] = "Alice";
+echo $_SESSION['user'];
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: Cookies</summary>
+                    <div class="item-content">
+                        <h2>Cookies</h2>
+                        <p>PHP sets cookies with `setcookie()`, storing data in the browser. Cookies are accessed via `$_COOKIE`. Cookies are used for persistent client-side data.</p>
+                        <pre>
+<?php
+setcookie("user", "Alice", time() + 3600);
+echo $_COOKIE["user"] ?? "No cookie";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: File Writing</summary>
+                    <div class="item-content">
+                        <h2>File Writing</h2>
+                        <p>PHP’s `file_put_contents()` writes data to files, with error handling for failures. It’s atomic and simple for basic I/O. File writing is crucial for persistent storage.</p>
+                        <pre>
+<?php
+file_put_contents("output.txt", "Hello, World!");
+echo "File written";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: File written</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: File Reading</summary>
+                    <div class="item-content">
+                        <h2>File Reading</h2>
+                        <p>The `file_get_contents()` function reads entire files into strings. It throws warnings on failure, requiring error checks. File reading is essential for data retrieval.</p>
+                        <pre>
+<?php
+$content = file_get_contents("output.txt");
+echo $content;
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, World!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Regular Expressions</summary>
+                    <div class="item-content">
+                        <h2>Regular Expressions</h2>
+                        <p>PHP’s PCRE functions like `preg_match` and `preg_replace` handle regular expressions. Patterns are defined with delimiters (e.g., `/pattern/`). Regexes are powerful for text validation and manipulation.</p>
+                        <pre>
+<?php
+$text = "hello world";
+echo preg_replace("/world/", "PHP", $text);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: hello PHP</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: JSON Encoding</summary>
+                    <div class="item-content">
+                        <h2>JSON Encoding</h2>
+                        <p>PHP’s `json_encode()` converts arrays and objects to JSON strings. It handles nested structures and supports options like `JSON_PRETTY_PRINT`. JSON encoding is common for APIs.</p>
+                        <pre>
+<?php
+$data = ["name" => "Alice"];
+echo json_encode($data);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: {"name":"Alice"}</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: JSON Decoding</summary>
+                    <div class="item-content">
+                        <h2>JSON Decoding</h2>
+                        <p>The `json_decode()` function converts JSON to PHP arrays or objects. It supports an associative array option for flexibility. JSON decoding is vital for API data processing.</p>
+                        <pre>
+<?php
+$json = '{"name":"Alice"}';
+$data = json_decode($json, true);
+echo $data["name"];
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: PDO</summary>
+                    <div class="item-content">
+                        <h2>PDO</h2>
+                        <p>PHP’s PDO (PHP Data Objects) provides a consistent interface for database access. It supports prepared statements for security. PDO is preferred for modern database interactions.</p>
+                        <pre>
+<?php
+$pdo = new PDO("sqlite::memory:");
+echo "Database connected";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Database connected</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: PDO Queries</summary>
+                    <div class="item-content">
+                        <h2>PDO Queries</h2>
+                        <p>PDO’s `query` and `prepare` methods execute SQL, with `fetch` retrieving results. Prepared statements prevent SQL injection. PDO queries are secure and efficient for databases.</p>
+                        <pre>
+<?php
+$pdo = new PDO("sqlite::memory:");
+$pdo->exec("CREATE TABLE users (name TEXT)");
+$stmt = $pdo->prepare("INSERT INTO users (name) VALUES (?)");
+$stmt->execute(["Alice"]);
+echo $pdo->query("SELECT name FROM users")->fetchColumn();
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: Array Functions</summary>
+                    <div class="item-content">
+                        <h2>Array Functions</h2>
+                        <p>PHP provides functions like `array_map`, `array_filter`, and `array_reduce` for array manipulation. They support callbacks for custom logic. Array functions simplify complex data processing.</p>
+                        <pre>
+<?php
+$numbers = [1, 2, 3];
+$squares = array_map(fn($n) => $n * $n, $numbers);
+print_r($squares);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Array ( [0] => 1 [1] => 4 [2] => 9 )</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: Anonymous Functions</summary>
+                    <div class="item-content">
+                        <h2>Anonymous Functions</h2>
+                        <p>Anonymous functions, or closures, are defined with `function` or arrow syntax `fn`. They can capture variables with `use`. Closures are useful for callbacks and functional programming.</p>
+                        <pre>
+<?php
+$greet = fn($name) => "Hello, $name!";
+echo $greet("Alice");
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello, Alice!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: Traits</summary>
+                    <div class="item-content">
+                        <h2>Traits</h2>
+                        <p>Traits in PHP provide reusable methods for classes, included with `use`. They support method precedence and aliasing. Traits enhance code reuse without inheritance.</p>
+                        <pre>
+<?php
+trait Greetable {
+    public function greet() {
+        return "Hello!";
+    }
+}
+class Person {
+    use Greetable;
+}
+echo (new Person())->greet();
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: Namespaces</summary>
+                    <div class="item-content">
+                        <h2>Namespaces</h2>
+                        <p>Namespaces in PHP organize code, declared with `namespace` to avoid name collisions. They’re imported with `use` or fully qualified names. Namespaces are essential for large projects.</p>
+                        <pre>
+<?php
+namespace App;
+class Hello {
+    public function say() {
+        return "Hi!";
+    }
+}
+echo (new \App\Hello())->say();
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hi!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: Autoloading</summary>
+                    <div class="item-content">
+                        <h2>Autoloading</h2>
+                        <p>PHP’s autoloading loads classes dynamically with `spl_autoload_register`. It follows PSR-4 standards for modern projects. Autoloading simplifies class management in large applications.</p>
+                        <pre>
+<?php
+spl_autoload_register(function ($class) {
+    echo "Loading $class";
+});
+class User {}
+new User();
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Loading User</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: Date and Time</summary>
+                    <div class="item-content">
+                        <h2>Date and Time</h2>
+                        <p>PHP’s `DateTime` class handles dates and times, with methods like `format`. It supports time zones and intervals. DateTime is robust for temporal operations.</p>
+                        <pre>
+<?php
+$date = new DateTime();
+echo $date->format("Y-m-d");
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: 2025-05-01</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: HTTP Requests</summary>
+                    <div class="item-content">
+                        <h2>HTTP Requests</h2>
+                        <p>PHP’s `file_get_contents` or `cURL` makes HTTP requests to APIs. cURL offers advanced options for headers and methods. HTTP requests are key for integrating external services.</p>
+                        <pre>
+<?php
+$response = file_get_contents("https://jsonplaceholder.typicode.com/todos/1");
+echo json_decode($response)->title;
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Sample todo title, e.g., "delectus aut autem")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: REST APIs</summary>
+                    <div class="item-content">
+                        <h2>REST APIs</h2>
+                        <p>PHP can create REST APIs by handling HTTP methods and returning JSON. Routes are managed with conditionals or frameworks. REST APIs are standard for web services.</p>
+                        <pre>
+<?php
+header("Content-Type: application/json");
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
+    echo json_encode(["message" => "Hello, World!"]);
+}
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: {"message":"Hello, World!"}</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: Composer</summary>
+                    <div class="item-content">
+                        <h2>Composer</h2>
+                        <p>Composer is PHP’s dependency manager, installing libraries via `composer.json`. It supports autoloading and versioning. Composer is essential for modern PHP development.</p>
+                        <pre>
+<?php
+// composer.json: {"require": {"monolog/monolog": "^2.0"}}
+// After running `composer install`
+require "vendor/autoload.php";
+use Monolog\Logger;
+$log = new Logger("test");
+$log->info("Hello!");
+echo "Logged";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Logged</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: Unit Testing</summary>
+                    <div class="item-content">
+                        <h2>Unit Testing</h2>
+                        <p>PHPUnit is PHP’s standard testing framework, with classes extending `TestCase`. Tests use assertions to verify behavior. Unit testing ensures code reliability.</p>
+                        <pre>
+<?php
+// tests/MathTest.php
+use PHPUnit\Framework\TestCase;
+class MathTest extends TestCase {
+    public function testAdd() {
+        $this->assertEquals(4, 2 + 2);
+    }
+}
+// Run with `vendor/bin/phpunit`
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Test passes, no console output)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: Laravel Introduction</summary>
+                    <div class="item-content">
+                        <h2>Laravel Introduction</h2>
+                        <p>Laravel is a PHP framework for web development, emphasizing elegant syntax. It uses MVC and includes tools like Eloquent ORM. Laravel streamlines complex web applications.</p>
+                        <pre>
+<?php
+// Run `composer create-project laravel/laravel myapp`
+echo "Run `composer create-project laravel/laravel myapp`";
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Run `composer create-project laravel/laravel myapp`</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: Laravel Routes</summary>
+                    <div class="item-content">
+                        <h2>Laravel Routes</h2>
+                        <p>Laravel routes map URLs to controllers or closures, defined in `routes/web.php`. They support RESTful resources and middleware. Routes are central to Laravel’s request handling.</p>
+                        <pre>
+<?php
+// routes/web.php
+use Illuminate\Support\Facades\Route;
+Route::get("/hello", function () {
+    return "Hello, Laravel!";
+});
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Visit http://localhost:8000/hello to see "Hello, Laravel!")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: Laravel Controllers</summary>
+                    <div class="item-content">
+                        <h2>Laravel Controllers</h2>
+                        <p>Laravel controllers handle requests, defined in `app/Http/Controllers`. They return views or data, often using dependency injection. Controllers organize business logic in Laravel.</p>
+                        <pre>
+<?php
+// app/Http/Controllers/WelcomeController.php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+class WelcomeController extends Controller {
+    public function index() {
+        return "Hello, Laravel!";
+    }
+}
+// routes/web.php: Route::get("/welcome", [WelcomeController::class, "index"]);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Visit http://localhost:8000/welcome to see "Hello, Laravel!")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: Laravel Views</summary>
+                    <div class="item-content">
+                        <h2>Laravel Views</h2>
+                        <p>Laravel views render HTML using Blade templates in `resources/views`. Blade supports directives like `@if` and variable interpolation. Views complete Laravel’s MVC architecture.</p>
+                        <pre>
+<!-- resources/views/welcome.blade.php -->
+<h1>Hello, {{ $name }}!</h1>
+
+<?php
+// routes/web.php
+use Illuminate\Support\Facades\Route;
+Route::get("/welcome", function () {
+    return view("welcome", ["name" => "World"]);
+});
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: (Visit http://localhost:8000/welcome to see "<h1>Hello, World!</h1>")</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: Eloquent ORM</summary>
+                    <div class="item-content">
+                        <h2>Eloquent ORM</h2>
+                        <p>Laravel’s Eloquent ORM maps database tables to models, defined in `app/Models`. It supports queries, relationships, and validations. Eloquent simplifies database operations.</p>
+                        <pre>
+<?php
+// app/Models/User.php
+namespace App\Models;
+use Illuminate\Database\Eloquent\Model;
+class User extends Model {}
+// routes/web.php
+use App\Models\User;
+Route::get("/user", function () {
+    $user = new User;
+    $user->name = "Alice";
+    $user->save();
+    return $user->name;
+});
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Alice</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Laravel Middleware</summary>
+                    <div class="item-content">
+                        <h2>Laravel Middleware</h2>
+                        <p>Laravel middleware filters HTTP requests, defined in `app/Http/Middleware`. They handle tasks like authentication or logging. Middleware enhances request processing flexibility.</p>
+                        <pre>
+<?php
+// app/Http/Middleware/LogRequest.php
+namespace App\Http\Middleware;
+use Closure;
+class LogRequest {
+    public function handle($request, Closure $next) {
+        logger("Request received");
+        return $next($request);
+    }
+}
+// routes/web.php: Route::get("/", fn() => "Hello!")->middleware(LogRequest::class);
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Hello! (Logs "Request received" in logs)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: Laravel Authentication</summary>
+                    <div class="item-content">
+                        <h2>Laravel Authentication</h2>
+                        <p>Laravel provides built-in authentication with `artisan make:auth` or `Laravel Breeze`. It handles login, registration, and password resets. Authentication is critical for secure web apps.</p>
+                        <pre>
+<?php
+// routes/web.php
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+Route::get("/user", function () {
+    return Auth::check() ? Auth::user()->name : "Guest";
+});
+?>
+                        </pre>
+                        <div class="example">
+                            <p>Output: Guest (or user name if authenticated)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
