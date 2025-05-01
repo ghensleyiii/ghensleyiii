@@ -35,12 +35,13 @@ header {
     color: #fff !important;
     font-size: 36px !important;
     margin: 0 !important;
-    text-align: center;
+    text-align: center !important;
 }
 
 .logo a {
     text-decoration: none !important;
     color: #fff !important;
+    text-align: center !important;
 }
 
 main {
