@@ -1,0 +1,1280 @@
+<!-- COURSE BREAKDOWN
+Lessons 1–10: HTML basics (structure, tags, attributes, text, links).
+Lessons 11–20: Lists, images, tables, semantic elements.
+Lessons 21–30: Forms, inputs, accessibility.
+Lessons 31–40: Multimedia, iframes, metadata.
+Lessons 41–50: Advanced topics (data attributes, canvas, microdata, validation)-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 HTML Learning Lessons - CODEXEDOC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --dark-blue: #4169e1;
+            --light-blue: #41E169;
+            --white: #f0f2f0;
+            --black: #333333;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo h1 {
+            font-family: 'Audiowide', sans-serif;
+            color: #fff;
+            font-size: 36px;
+            margin: 0;
+        }
+        .logo a {
+            text-decoration: none;
+            color: #fff;
+        }
+        nav {
+            display: flex;
+            align-items: center;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger span {
+            background: #fff;
+            height: 3px;
+            width: 25px;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Audiowide', sans-serif;
+            font-size: 18px;
+        }
+        .nav-menu a:hover {
+            color: #e0e0e0;
+        }
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            .nav-menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+                width: 200px;
+                padding: 20px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-menu li {
+                margin: 10px 0;
+            }
+        }
+        main {
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .intro {
+            background: linear-gradient(135deg, #A3BFFA, #c8e6c9);
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .scripture {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            padding: 15px;
+            margin: 10px auto;
+            border-radius: 8px;
+            font-style: italic;
+            color: #fff;
+            max-width: 800px;
+            text-align: center;
+        }
+        .item {
+            margin-bottom: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .item-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-family: 'Audiowide', sans-serif;
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            border: none;
+            color: #fff;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .item-button:hover {
+            background: linear-gradient(135deg, #2F4B9F, #2F9F4B);
+        }
+        .item-content {
+            padding: 20px;
+            background: #e8f5e9;
+            border-radius: 0 0 5px 5px;
+            text-align: left;
+        }
+        .item-content h2 {
+            font-family: 'Audiowide', sans-serif;
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+        }
+        .item-content pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        .example {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid var(--dark-blue);
+            border-radius: 5px;
+        }
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            text-align: center;
+            padding: 20px;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+   <header>
+        <div class="logo">
+            <a href="index.html">
+                <h1>CODEXEDOC</h1>
+            </a>
+        </div>
+        <nav>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="bulletins.html">Bulletins</a></li>
+                <li><a href="discernment.html">Discernment</a></li>
+                <li><a href="guidance.html">Guidance</a></li>
+                <li><a href="scriptures.html">Scriptures</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="intro">
+            <p class="scripture">HYPERTEXT MARKUP LANGUAGE</p>
+            <p>Explore 50 progressive HTML lessons to master web development. Each lesson provides clear explanations and examples to build your skills. Start your journey to creating stunning web pages today!</p>
+        </section>
+
+        <section class="item">
+            <!-- Lesson 1 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 1: What is HTML?</summary>
+                    <div class="item-content">
+                        <h2>Understanding HTML</h2>
+                        <p>HTML, or HyperText Markup Language, is the foundation of web development, used to structure content on the internet. It consists of elements defined by tags that instruct browsers on how to display text, images, and other media. Learning HTML is the first step to creating your own websites.</p>
+                        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                        <div class="example">
+                            <h1>Hello, World!</h1>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 2 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 2: HTML Document Structure</summary>
+                    <div class="item-content">
+                        <h2>Basic Document Structure</h2>
+                        <p>An HTML document begins with a DOCTYPE declaration to inform browsers of the HTML version. The &lt;html&gt; element contains a &lt;head&gt; section for metadata and a &lt;body&gt; section for visible content. This structure ensures proper rendering and organization of web pages.</p>
+                        <pre>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;My Website&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;Welcome to my site!&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                        </pre>
+                        <div class="example">
+                            <p>Welcome to my site!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 3 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 3: HTML Elements and Tags</summary>
+                    <div class="item-content">
+                        <h2>Elements and Tags</h2>
+                        <p>HTML elements are the building blocks of web pages, defined by tags that usually come in pairs. Tags, such as &lt;p&gt; for paragraphs or &lt;h1&gt; for headings, surround content to apply structure or formatting. Understanding tags is essential for creating meaningful web content.</p>
+                        <pre>
+&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;h1&gt;This is a heading.&lt;/h1&gt;
+                        </pre>
+                        <div class="example">
+                            <p>This is a paragraph.</p>
+                            <h1>This is a heading.</h1>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 4 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 4: Attributes</summary>
+                    <div class="item-content">
+                        <h2>Using Attributes</h2>
+                        <p>Attributes provide additional information about HTML elements, included within the opening tag. Common attributes like id, class, or src enhance functionality, such as linking images or defining styles. They are crucial for customizing and controlling element behavior.</p>
+                        <pre>
+&lt;img src="image.jpg" alt="A description"&gt;
+&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+                        </pre>
+                        <div class="example">
+                            <a href="#">Visit Example</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 5 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 5: Headings</summary>
+                    <div class="item-content">
+                        <h2>Headings in HTML</h2>
+                        <p>HTML provides six levels of headings, from &lt;h1&gt; (most important) to &lt;h6&gt; (least important). Headings structure content hierarchically, improving readability and SEO. Proper use of headings ensures a clear content outline for users and browsers.</p>
+                        <pre>
+&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;h2&gt;Subheading&lt;/h2&gt;
+&lt;h3&gt;Smaller Heading&lt;/h3&gt;
+                        </pre>
+                        <div class="example">
+                            <h1>Main Heading</h1>
+                            <h2>Subheading</h2>
+                            <h3>Smaller Heading</h3>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 6 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 6: Paragraphs</summary>
+                    <div class="item-content">
+                        <h2>Paragraphs</h2>
+                        <p>The &lt;p&gt; tag defines a paragraph, organizing text into readable blocks. Paragraphs automatically include spacing before and after to separate content. They are fundamental for presenting text clearly on web pages.</p>
+                        <pre>
+&lt;p&gt;This is the first paragraph.&lt;/p&gt;
+&lt;p&gt;This is the second paragraph.&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <p>This is the first paragraph.</p>
+                            <p>This is the second paragraph.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 7 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 7: Links</summary>
+                    <div class="item-content">
+                        <h2>Hyperlinks</h2>
+                        <p>Hyperlinks, created with the &lt;a&gt; tag, connect web pages using the href attribute. They enable navigation to external sites or internal pages. Links are essential for creating interactive and connected web experiences.</p>
+                        <pre>
+&lt;a href="https://example.com"&gt;Go to Example&lt;/a&gt;
+&lt;a href="page.html"&gt;Local Page&lt;/a&gt;
+                        </pre>
+                        <div class="example">
+                            <a href="#">Go to Example</a><br>
+                            <a href="#">Local Page</a>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 8 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 8: Text Formatting</summary>
+                    <div class="item-content">
+                        <h2>Formatting Text</h2>
+                        <p>HTML provides tags like &lt;strong&gt; and &lt;em&gt; to emphasize text, making it bold or italic. The &lt;mark&gt; tag highlights text for visual distinction. These formatting options enhance the readability and impact of content.</p>
+                        <pre>
+&lt;p&gt;This is &lt;strong&gt;bold&lt;/strong&gt; and &lt;em&gt;italic&lt;/em&gt; text.&lt;/p&gt;
+&lt;p&gt;This is &lt;mark&gt;highlighted&lt;/mark&gt; text.&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <p>This is <strong>bold</strong> and <em>italic</em> text.</p>
+                            <p>This is <mark>highlighted</mark> text.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 9 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 9: Comments</summary>
+                    <div class="item-content">
+                        <h2>HTML Comments</h2>
+                        <p>Comments in HTML, written as &lt;!-- --&gt;, allow developers to add notes or hide content from rendering. They are invisible to users but useful for code organization. Comments help maintain clarity in complex projects.</p>
+                        <pre>
+&lt;!-- This is a comment --&gt;
+&lt;p&gt;Visible content&lt;/p&gt;
+&lt;!-- End of section --&gt;
+                        </pre>
+                        <div class="example">
+                            <p>Visible content</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 10 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 10: Line Breaks and Horizontal Rules</summary>
+                    <div class="item-content">
+                        <h2>Line Breaks and Rules</h2>
+                        <p>The &lt;br&gt; tag inserts a line break within text, useful for formatting without starting a new paragraph. The &lt;hr&gt; tag creates a horizontal rule to visually separate sections. These tags enhance content layout and readability.</p>
+                        <pre>
+&lt;p&gt;Line one&lt;br&gt;Line two&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;New section&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <p>Line one<br>Line two</p>
+                            <hr>
+                            <p>New section</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 11 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 11: Ordered Lists</summary>
+                    <div class="item-content">
+                        <h2>Ordered Lists</h2>
+                        <p>Ordered lists, created with the &lt;ol&gt; tag, display items in a numbered sequence. Each item is defined using the &lt;li&gt; tag. They are ideal for steps, rankings, or any content requiring a specific order.</p>
+                        <pre>
+&lt;ol&gt;
+    &lt;li&gt;First item&lt;/li&gt;
+    &lt;li&gt;Second item&lt;/li&gt;
+    &lt;li&gt;Third item&lt;/li&gt;
+&lt;/ol&gt;
+                        </pre>
+                        <div class="example">
+                            <ol>
+                                <li>First item</li>
+                                <li>Second item</li>
+                                <li>Third item</li>
+                            </ol>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 12 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 12: Unordered Lists</summary>
+                    <div class="item-content">
+                        <h2>Unordered Lists</h2>
+                        <p>Unordered lists, using the &lt;ul&gt; tag, present items with bullets instead of numbers. Each item is marked with the &lt;li&gt; tag. They are perfect for lists where order doesn’t matter, like shopping lists.</p>
+                        <pre>
+&lt;ul&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Banana&lt;/li&gt;
+    &lt;li&gt;Orange&lt;/li&gt;
+&lt;/ul&gt;
+                        </pre>
+                        <div class="example">
+                            <ul>
+                                <li>Apple</li>
+                                <li>Banana</li>
+                                <li>Orange</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 13 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 13: Nested Lists</summary>
+                    <div class="item-content">
+                        <h2>Nested Lists</h2>
+                        <p>Nested lists allow you to place one list inside another, creating a hierarchy. This is useful for outlining complex information, like categories with subcategories. Proper indentation improves code readability for nested structures.</p>
+                        <pre>
+&lt;ul&gt;
+    &lt;li&gt;Fruits
+        &lt;ul&gt;
+            &lt;li&gt;Apple&lt;/li&gt;
+            &lt;li&gt;Banana&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;Vegetables&lt;/li&gt;
+&lt;/ul&gt;
+                        </pre>
+                        <div class="example">
+                            <ul>
+                                <li>Fruits
+                                    <ul>
+                                        <li>Apple</li>
+                                        <li>Banana</li>
+                                    </ul>
+                                </li>
+                                <li>Vegetables</li>
+                            </ul>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 14 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 14: Images</summary>
+                    <div class="item-content">
+                        <h2>Adding Images</h2>
+                        <p>The &lt;img&gt; tag embeds images in web pages, requiring a src attribute for the file path. The alt attribute provides a text description for accessibility and SEO. Images enhance visual appeal and convey information effectively.</p>
+                        <pre>
+&lt;img src="photo.jpg" alt="A scenic view"&gt;
+                        </pre>
+                        <div class="example">
+                            <p>(Image placeholder: A scenic view)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 15 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 15: Image Attributes</summary>
+                    <div class="item-content">
+                        <h2>Image Attributes</h2>
+                        <p>Attributes like width and height control the display size of images, improving page layout. The alt attribute ensures accessibility for screen readers and when images fail to load. Proper use of attributes optimizes user experience and performance.</p>
+                        <pre>
+&lt;img src="photo.jpg" alt="A scenic view" width="200" height="150"&gt;
+                        </pre>
+                        <div class="example">
+                            <p>(Image placeholder: 200x150 scenic view)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 16 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 16: Tables</summary>
+                    <div class="item-content">
+                        <h2>Creating Tables</h2>
+                        <p>Tables, built with the &lt;table&gt; tag, organize data into rows (&lt;tr&gt;) and cells (&lt;td&gt;). The &lt;th&gt; tag defines header cells for clarity. Tables are useful for presenting structured data like schedules or comparisons.</p>
+                        <pre>
+&lt;table&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Name&lt;/th&gt;
+        &lt;th&gt;Age&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;John&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                        </pre>
+                        <div class="example">
+                            <table style="border: 1px solid black; border-collapse: collapse;">
+                                <tr>
+                                    <th style="border: 1px solid black; padding: 5px;">Name</th>
+                                    <th style="border: 1px solid black; padding: 5px;">Age</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid black; padding: 5px;">John</td>
+                                    <td style="border: 1px solid black; padding: 5px;">25</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 17 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 17: Semantic HTML</summary>
+                    <div class="item-content">
+                        <h2>Semantic Elements</h2>
+                        <p>Semantic HTML uses tags like &lt;header&gt;, &lt;footer&gt;, and &lt;article&gt; to describe their content’s purpose. These tags improve accessibility, SEO, and code clarity. They help browsers and developers understand the structure of a page.</p>
+                        <pre>
+&lt;header&gt;
+    &lt;h1&gt;Site Title&lt;/h1&gt;
+&lt;/header&gt;
+&lt;article&gt;
+    &lt;p&gt;Content here&lt;/p&gt;
+&lt;/article&gt;
+&lt;footer&gt;
+    &lt;p&gt;Copyright 2025&lt;/p&gt;
+&lt;/footer&gt;
+                        </pre>
+                        <div class="example">
+                            <header><h1>Site Title</h1></header>
+                            <article><p>Content here</p></article>
+                            <footer><p>Copyright 2025</p></footer>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 18 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 18: Div and Span</summary>
+                    <div class="item-content">
+                        <h2>Div and Span</h2>
+                        <p>The &lt;div&gt; tag groups block-level content, creating sections for styling or scripting. The &lt;span&gt; tag groups inline content, ideal for small text segments. Both are non-semantic but versatile for layout purposes.</p>
+                        <pre>
+&lt;div&gt;
+    &lt;p&gt;This is a block.&lt;/p&gt;
+&lt;/div&gt;
+&lt;p&gt;This is &lt;span&gt;inline&lt;/span&gt; text.&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <div><p>This is a block.</p></div>
+                            <p>This is <span>inline</span> text.</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 19 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 19: IDs and Classes</summary>
+                    <div class="item-content">
+                        <h2>IDs and Classes</h2>
+                        <p>The id attribute assigns a unique identifier to an element for specific styling or scripting. The class attribute applies to multiple elements for shared styles. Both are essential for organizing and targeting elements in web development.</p>
+                        <pre>
+&lt;div id="unique"&gt;Unique section&lt;/div&gt;
+&lt;p class="highlight"&gt;Highlighted text&lt;/p&gt;
+&lt;p class="highlight"&gt;Another highlighted text&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <div>Unique section</div>
+                            <p style="background: yellow;">Highlighted text</p>
+                            <p style="background: yellow;">Another highlighted text</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 20 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 20: Block vs. Inline Elements</summary>
+                    <div class="item-content">
+                        <h2>Block vs. Inline</h2>
+                        <p>Block elements, like &lt;div&gt; and &lt;p&gt;, start on a new line and take full width. Inline elements, like &lt;span&gt; and &lt;a&gt;, stay within the text flow without breaking lines. Understanding their behavior is key to effective page layout.</p>
+                        <pre>
+&lt;div&gt;Block element&lt;/div&gt;
+&lt;span&gt;Inline element&lt;/span&gt;&lt;span&gt;Another inline&lt;/span&gt;
+                        </pre>
+                        <div class="example">
+                            <div>Block element</div>
+                            <span>Inline element</span><span>Another inline</span>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 21 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 21: Introduction to Forms</summary>
+                    <div class="item-content">
+                        <h2>HTML Forms</h2>
+                        <p>Forms, created with the &lt;form&gt; tag, collect user input for tasks like registration or search. They include elements like &lt;input&gt; and &lt;button&gt; for data entry and submission. Forms are critical for interactive web applications.</p>
+                        <pre>
+&lt;form action="/submit"&gt;
+    &lt;input type="text" name="username"&gt;
+    &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+                        </pre>
+                        <div class="example">
+                            <form>
+                                <input type="text" placeholder="Username">
+                                <input type="submit" value="Submit">
+                            </form>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 22 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 22: Input Types</summary>
+                    <div class="item-content">
+                        <h2>Input Types</h2>
+                        <p>The &lt;input&gt; tag supports various types, such as text, password, and email, to suit different data needs. Each type provides specific functionality, like hiding passwords or validating emails. Choosing the right type improves user experience and data accuracy.</p>
+                        <pre>
+&lt;input type="text" placeholder="Name"&gt;
+&lt;input type="password" placeholder="Password"&gt;
+&lt;input type="email" placeholder="Email"&gt;
+                        </pre>
+                        <div class="example">
+                            <input type="text" placeholder="Name"><br>
+                            <input type="password" placeholder="Password"><br>
+                            <input type="email" placeholder="Email">
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 23 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 23: Labels</summary>
+                    <div class="item-content">
+                        <h2>Form Labels</h2>
+                        <p>Labels, created with the &lt;label&gt; tag, describe the purpose of form inputs, enhancing clarity. The for attribute links a label to an input’s id, improving accessibility. Labels ensure users and screen readers understand input fields.</p>
+                        <pre>
+&lt;label for="name"&gt;Name:&lt;/label&gt;
+&lt;input type="text" id="name"&gt;
+                        </pre>
+                        <div class="example">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name">
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 24 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 24: Checkboxes</summary>
+                    <div class="item-content">
+                        <h2>Checkboxes</h2>
+                        <p>Checkboxes, using type="checkbox", allow users to select multiple options. Each checkbox requires a unique id and name for form submission. They are ideal for choices like selecting hobbies or preferences.</p>
+                        <pre>
+&lt;input type="checkbox" id="option1" name="option1"&gt;
+&lt;label for="option1"&gt;Option 1&lt;/label&gt;
+&lt;input type="checkbox" id="option2" name="option2"&gt;
+&lt;label for="option2"&gt;Option 2&lt;/label&gt;
+                        </pre>
+                        <div class="example">
+                            <input type="checkbox" id="option1" name="option1">
+                            <label for="option1">Option 1</label><br>
+                            <input type="checkbox" id="option2" name="option2">
+                            <label for="option2">Option 2</label>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 25 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 25: Radio Buttons</summary>
+                    <div class="item-content">
+                        <h2>Radio Buttons</h2>
+                        <p>Radio buttons, using type="radio", allow a single selection from a group, sharing the same name attribute. They are useful for exclusive choices, like selecting a gender. Each button needs a unique id for labeling.</p>
+                        <pre>
+&lt;input type="radio" id="yes" name="choice" value="yes"&gt;
+&lt;label for="yes"&gt;Yes&lt;/label&gt;
+&lt;input type="radio" id="no" name="choice" value="no"&gt;
+&lt;label for="no"&gt;No&lt;/label&gt;
+                        </pre>
+                        <div class="example">
+                            <input type="radio" id="yes" name="choice" value="yes">
+                            <label for="yes">Yes</label><br>
+                            <input type="radio" id="no" name="choice" value="no">
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 26 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 26: Select Dropdowns</summary>
+                    <div class="item-content">
+                        <h2>Dropdown Menus</h2>
+                        <p>The &lt;select&gt; tag, with &lt;option&gt; tags, creates dropdown menus for single or multiple selections. Each option has a value attribute for form submission. Dropdowns are compact and user-friendly for choosing from predefined lists.</p>
+                        <pre>
+&lt;select name="color"&gt;
+    &lt;option value="red"&gt;Red&lt;/option&gt;
+    &lt;option value="blue"&gt;Blue&lt;/option&gt;
+    &lt;option value="green"&gt;Green&lt;/option&gt;
+&lt;/select&gt;
+                        </pre>
+                        <div class="example">
+                            <select name="color">
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                            </select>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 27 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 27: Textarea</summary>
+                    <div class="item-content">
+                        <h2>Textareas</h2>
+                        <p>The &lt;textarea&gt; tag allows multi-line text input, ideal for comments or messages. Attributes like rows and cols set its size. It provides a flexible way for users to enter longer text.</p>
+                        <pre>
+&lt;textarea rows="4" cols="50"&gt;Enter your message here...&lt;/textarea&gt;
+                        </pre>
+                        <div class="example">
+                            <textarea rows="4" cols="50">Enter your message here...</textarea>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 28 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 28: Form Attributes</summary>
+                    <div class="item-content">
+                        <h2>Form Attributes</h2>
+                        <p>Attributes like required, placeholder, and disabled enhance form usability and validation. Required ensures fields aren’t left empty, while placeholder provides input hints. Disabled prevents interaction with specific inputs, useful for conditional forms.</p>
+                        <pre>
+&lt;input type="text" required placeholder="Enter name"&gt;
+&lt;input type="submit" disabled value="Submit"&gt;
+                        </pre>
+                        <div class="example">
+                            <input type="text" required placeholder="Enter name"><br>
+                            <input type="submit" disabled value="Submit">
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 29 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 29: Accessibility in Forms</summary>
+                    <div class="item-content">
+                        <h2>Form Accessibility</h2>
+                        <p>Accessible forms use labels and ARIA attributes to support screen readers. The aria-label attribute provides descriptions for inputs without visible labels. Accessibility ensures all users can interact with your forms effectively.</p>
+                        <pre>
+&lt;label for="email"&gt;Email:&lt;/label&gt;
+&lt;input type="email" id="email" aria-label="Enter your email"&gt;
+                        </pre>
+                        <div class="example">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" aria-label="Enter your email">
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 30 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 30: Form Validation</summary>
+                    <div class="item-content">
+                        <h2>Basic Form Validation</h2>
+                        <p>HTML5 provides built-in validation with attributes like required and pattern. The pattern attribute uses regular expressions to enforce input formats, such as letters only. Validation improves data quality and user feedback.</p>
+                        <pre>
+&lt;input type="text" pattern="[A-Za-z]{3,}" required title="At least 3 letters"&gt;
+                        </pre>
+                        <div class="example">
+                            <input type="text" pattern="[A-Za-z]{3,}" required title="At least 3 letters">
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 31 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 31: Audio Element</summary>
+                    <div class="item-content">
+                        <h2>Embedding Audio</h2>
+                        <p>The &lt;audio&gt; tag embeds sound files, supporting formats like MP3. The controls attribute adds a user-friendly playback interface. Audio enhances web pages with music or narration.</p>
+                        <pre>
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+                        </pre>
+                        <div class="example">
+                            <p>(Audio placeholder)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 32 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 32: Video Element</summary>
+                    <div class="item-content">
+                        <h2>Embedding Video</h2>
+                        <p>The &lt;video&gt; tag embeds video files, supporting formats like MP4. Attributes like controls and poster add playback controls and a preview image. Videos enrich web content with dynamic visuals.</p>
+                        <pre>
+&lt;video controls poster="thumbnail.jpg"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+                        </pre>
+                        <div class="example">
+                            <p>(Video placeholder)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 33 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 33: Iframes</summary>
+                    <div class="item-content">
+                        <h2>Using Iframes</h2>
+                        <p>Iframes, created with the &lt;iframe&gt; tag, embed external content like websites or videos. Attributes like width and height control their size. They are useful for integrating third-party content seamlessly.</p>
+                        <pre>
+&lt;iframe src="https://example.com" width="300" height="200"&gt;&lt;/iframe&gt;
+                        </pre>
+                        <div class="example">
+                            <p>(Iframe placeholder)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 34 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 34: Meta Tags</summary>
+                    <div class="item-content">
+                        <h2>Meta Tags</h2>
+                        <p>Meta tags, placed in the &lt;head&gt;, provide metadata about the document, like character encoding. Tags like &lt;meta name="description"&gt; improve SEO by describing page content. They are invisible but critical for browser and search engine performance.</p>
+                        <pre>
+&lt;meta charset="UTF-8"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;meta name="description" content="My website description"&gt;
+                        </pre>
+                        <div class="example">
+                            <p>(Metadata not visible)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 35 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 35: Favicon</summary>
+                    <div class="item-content">
+                        <h2>Adding a Favicon</h2>
+                        <p>A favicon, set with the &lt;link&gt; tag, displays an icon in browser tabs and bookmarks. It enhances brand recognition and user experience. The rel="icon" attribute specifies the favicon’s role.</p>
+                        <pre>
+&lt;link rel="icon" type="image/x-icon" href="favicon.ico"&gt;
+                        </pre>
+                        <div class="example">
+                            <p>(Favicon placeholder)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 36 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 36: Figure and Figcaption</summary>
+                    <div class="item-content">
+                        <h2>Figure and Caption</h2>
+                        <p>The &lt;figure&gt; tag groups media like images with a &lt;figcaption&gt; for descriptions. This semantic structure clarifies the media’s context. It’s ideal for photos, diagrams, or illustrations with captions.</p>
+                        <pre>
+&lt;figure&gt;
+    &lt;img src="photo.jpg" alt="Scenery"&gt;
+    &lt;figcaption&gt;A beautiful landscape&lt;/figcaption&gt;
+&lt;/figure&gt;
+                        </pre>
+                        <div class="example">
+                            <figure>
+                                <p>(Image: Scenery)</p>
+                                <figcaption>A beautiful landscape</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 37 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 37: Details and Summary</summary>
+                    <div class="item-content">
+                        <h2>Collapsible Content</h2>
+                        <p>The &lt;details&gt; and &lt;summary&gt; tags create interactive collapsible sections. The summary is the clickable title, while details hold the hidden content. This feature enhances user experience by organizing information compactly.</p>
+                        <pre>
+&lt;details&gt;
+    &lt;summary&gt;Click to expand&lt;/summary&gt;
+    &lt;p&gt;Hidden content here.&lt;/p&gt;
+&lt;/details&gt;
+                        </pre>
+                        <div class="example">
+                            <details>
+                                <summary>Click to expand</summary>
+                                <p>Hidden content here.</p>
+                            </ dearth>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 38 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 38: Blockquote</summary>
+                    <div class="item-content">
+                        <h2>Quoting Text</h2>
+                        <p>The &lt;blockquote&gt; tag denotes long quotations, often indented for emphasis. The cite attribute can link to the quote’s source. It’s perfect for citing books, speeches, or articles.</p>
+                        <pre>
+&lt;blockquote cite="https://example.com"&gt;
+    This is a quoted text.
+&lt;/blockquote&gt;
+                        </pre>
+                        <div class="example">
+                            <blockquote>This is a quoted text.</blockquote>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 39 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 39: Abbreviation</summary>
+                    <div class="item-content">
+                        <h2>Abbreviations</h2>
+                        <p>The &lt;abbr&gt; tag marks abbreviations, with a title attribute explaining the full term. It improves accessibility and clarity for users unfamiliar with terms. Hovering over the abbreviation often displays the title in browsers.</p>
+                        <pre>
+&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;
+                        </pre>
+                        <div class="example">
+                            <abbr title="HyperText Markup Language">HTML</abbr>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 40 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 40: Address</summary>
+                    <div class="item-content">
+                        <h2>Contact Information</h2>
+                        <p>The &lt;address&gt; tag provides contact details, typically for a person or organization. It’s semantic, indicating its content’s purpose to browsers and search engines. Use it for emails, phone numbers, or physical addresses.</p>
+                        <pre>
+&lt;address&gt;
+    John Doe&lt;br&gt;
+    123 Main St&lt;br&gt;
+    City, Country
+&lt;/address&gt;
+                        </pre>
+                        <div class="example">
+                            <address>
+                                John Doe<br>
+                                123 Main St<br>
+                                City, Country
+                            </address>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 41 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 41: Data Attributes</summary>
+                    <div class="item-content">
+                        <h2>Custom Data Attributes</h2>
+                        <p>Data attributes, prefixed with data-*, store custom information in HTML elements. They are accessible via JavaScript for dynamic functionality. They’re useful for attaching metadata without affecting display.</p>
+                        <pre>
+&lt;div data-id="123" data-type="product"&gt;Item&lt;/div&gt;
+                        </pre>
+                        <div class="example">
+                            <div>Item</div>
+                            <p>(Data attributes not visible)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 42 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 42: Progress Bar</summary>
+                    <div class="item-content">
+                        <h2>Progress Bars</h2>
+                        <p>The &lt;progress&gt; tag visually represents task completion, like file uploads. Attributes value and max define the progress range. It’s a user-friendly way to show dynamic updates.</p>
+                        <pre>
+&lt;progress value="70" max="100"&gt;70%&lt;/progress&gt;
+                        </pre>
+                        <div class="example">
+                            <progress value="70" max="100">70%</progress>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 43 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 43: Meter Element</summary>
+                    <div class="item-content">
+                        <h2>Meter Element</h2>
+                        <p>The &lt;meter&gt; tag displays a value within a defined range, like battery levels. Attributes min, max, and value set its scale and current state. It’s useful for visualizing measurements or statuses.</p>
+                        <pre>
+&lt;meter min="0" max="100" value="75"&gt;75%&lt;/meter&gt;
+                        </pre>
+                        <div class="example">
+                            <meter min="0" max="100" value="75">75%</meter>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 44 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 44: HTML Entities</summary>
+                    <div class="item-content">
+                        <h2>HTML Entities</h2>
+                        <p>HTML entities display special characters, like &lt; for <, preventing code execution. They ensure proper rendering of symbols and reserved characters. Entities are essential for showing code snippets or special glyphs.</p>
+                        <pre>
+&lt;p&gt;Use &amp;lt; for &lt; and &amp;gt; for &gt;&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <p>Use &lt; for < and &gt; for ></p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 45 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 45: Superscript and Subscript</summary>
+                    <div class="item-content">
+                        <h2>Superscript and Subscript</h2>
+                        <p>The &lt;sup&gt; tag creates superscript text, useful for exponents or footnotes. The &lt;sub&gt; tag creates subscript text, common in chemical formulas. Both enhance the presentation of technical or scientific content.</p>
+                        <pre>
+&lt;p&gt;E=mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <p>E=mc<sup>2</sup></p>
+                            <p>H<sub>2</sub>O</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 46 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 46: Canvas Element</summary>
+                    <div class="item-content">
+                        <h2>HTML5 Canvas</h2>
+                        <p>The &lt;canvas&gt; tag provides a space for dynamic graphics, drawn via JavaScript. It’s used for games, animations, or data visualizations. Attributes like width and height define its size.</p>
+                        <pre>
+&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+                        </pre>
+                        <div class="example">
+                            <canvas id="myCanvas" width="200" height="100" style="border: 1px solid black;"></canvas>
+                            <p>(Requires JavaScript for rendering)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 47 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 47: SVG Element</summary>
+                    <div class="item-content">
+                        <h2>Scalable Vector Graphics</h2>
+                        <p>The &lt;svg&gt; tag creates scalable vector graphics, ideal for logos or icons. Unlike images, SVGs remain sharp at any size. They can be styled and animated with CSS or JavaScript.</p>
+                        <pre>
+&lt;svg width="100" height="100"&gt;
+    &lt;circle cx="50" cy="50" r="40" fill="blue" /&gt;
+&lt;/svg&gt;
+                        </pre>
+                        <div class="example">
+                            <svg width="100" height="100">
+                                <circle cx="50" cy="50" r="40" fill="blue" />
+                            </svg>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 48 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 48: Microdata</summary>
+                    <div class="item-content">
+                        <h2>Adding Microdata</h2>
+                        <p>Microdata enhances web content with machine-readable metadata using attributes like itemscope and itemprop. It helps search engines understand content, improving SEO. Common schemas include Person, Event, or Product.</p>
+                        <pre>
+&lt;div itemscope itemtype="http://schema.org/Person"&gt;
+    &lt;span itemprop="name"&gt;John Doe&lt;/span&gt;
+&lt;/div&gt;
+                        </pre>
+                        <div class="example">
+                            <div>John Doe</div>
+                            <p>(Microdata not visible)</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 49 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 49: Contenteditable</summary>
+                    <div class="item-content">
+                        <h2>Editable Content</h2>
+                        <p>The contenteditable attribute allows users to edit HTML elements directly in the browser. It’s useful for creating simple text editors or interactive forms. Set it to "true" to enable editing.</p>
+                        <pre>
+&lt;p contenteditable="true"&gt;Edit this text!&lt;/p&gt;
+                        </pre>
+                        <div class="example">
+                            <p contenteditable="true">Edit this text!</p>
+                        </div>
+                    </div>
+                </details>
+            </div>
+
+            <!-- Lesson 50 -->
+            <div class="item">
+                <details>
+                    <summary class="item-button">Lesson 50: Spellcheck Attribute</summary>
+                    <div class="item-content">
+                        <h2>Spellchecking</h2>
+                        <p>The spellcheck attribute enables or disables browser spellchecking for text inputs. Setting it to "true" highlights spelling errors in real-time. It’s useful for ensuring accurate user input in forms.</p>
+                        <pre>
+&lt;textarea spellcheck="true"&gt;Type here to check spelling&lt;/textarea&gt;
+&lt;textarea spellcheck="false"&gt;No spellcheck here&lt;/textarea&gt;
+                        </pre>
+                        <div class="example">
+                            <textarea spellcheck="true">Type here to check spelling</textarea><br>
+                            <textarea spellcheck="false">No spellcheck here</textarea>
+                        </div>
+                    </div>
+                </details>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close dropdown when clicking a link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
