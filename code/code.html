@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML</title>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>CODE-EXECUTE-DOCUMENT</title>
+    <style>
+        /** {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }*/
+    </style>
 </head>
 <body>
-   <header>
+    <header>
         <div class="logo">
-            <a href="../index.html">
-                <h1>HTML</h1>
-            </a>
+            <h1><a href="../index.html">CODE-EXECUTE-DOCUMENT</a></h1>
         </div>
     </header>
-    <main>
-        <section class="intro">
-            <p>Explore 50 progressive HTML lessons to master web development. Each lesson provides clear explanations and examples to build your skills. Start your journey to creating stunning web pages today!</p>
-        </section>
-          <section class="main-section">
+
+    <section class="main-section">
         <div class="code-editor">
             <div class="line-numbers" id="lineNumbers"><pre></pre></div>
             <textarea id="codeInput" placeholder="Enter your code here..."></textarea>
@@ -41,12 +44,12 @@
                 <iframe id="outputFrame"></iframe>
             </div>
         </div>
-          </section>
-    </main>
+    </section>
+
     <footer>
-        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+        <p>© 2025 CODEXEDOC</p>
     </footer>
-</body>
+
     <script>
         const textarea = document.getElementById('codeInput');
         const errorDiv = document.getElementById('errorMessages');
@@ -218,7 +221,7 @@
 
                 lines.forEach((line, i) => {
                     const trimmed = line.trim();
-                    if (trimmed.match(/for\s*\(\s*[a-zA-Z_$][a-zA-Z0-9_$]*\s*=/)) {
+                    if (trimmed.match(/for\s*\(\s*[a-zA-Z_$][a-zAZ0-9_$]*\s*=/)) {
                         const loopVarMatch = trimmed.match(/for\s*\(\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=/);
                         if (loopVarMatch && !declaredVars.has(loopVarMatch[1]) && !trimmed.match(/\b(let|const|var)\s+[a-zA-Z_$][a-zA-Z0-9_$]*\s*=/)) {
                             errors.push({
@@ -486,7 +489,7 @@
 
         function validateCode() {
             errorDiv.innerHTML = '';
-            errorDiv.style.color = '#909090';
+            errorDiv.style.color = '#999999'; /* Grayscale error color */
             const code = textarea.value.trim();
 
             if (!code) {
@@ -504,13 +507,13 @@
                         return error.line ? `Line ${error.line}: ${error.message}` : error.message;
                     })
                     .join('<br>');
-                errorDiv.style.color = '#909090';
+                errorDiv.style.color = '#999999';
             } else {
                 errorDiv.innerHTML = 'No Errors Detected';
                 errorDiv.style.color = '#333333';
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#909090';
+                    errorDiv.style.color = '#999999';
                 }, 2000);
             }
         }
@@ -541,7 +544,7 @@
                         outputFrame.srcdoc = '';
                         outputSection.style.display = 'none';
                         errorDiv.innerHTML = 'No visible output for this code. Only HTML content is displayed in the output section.';
-                        errorDiv.style.color = '#909090';
+                        errorDiv.style.color = '#999999';
                         return;
                     }
                 }
@@ -551,7 +554,7 @@
 
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#909090';
+                    errorDiv.style.color = '#999999';
                 }, 3000);
 
             } catch (e) {
@@ -655,7 +658,7 @@ ${code}
 
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#909090';
+                    errorDiv.style.color = '#999999';
                 }, 3000);
 
             } catch (e) {
@@ -670,4 +673,5 @@ ${code}
             }
         });
     </script>
+</body>
 </html>
