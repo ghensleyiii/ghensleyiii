@@ -25,32 +25,80 @@
                 <details>
                     <summary class="item-button">HTML</summary>
                     <div class="item-content">
-                        <h2>Tags</h2>
+                        <h2>Structural Tags</h2>
                         <details>
                             <summary class="item-button">&lt;html&gt;</summary>
                             <p>The &lt;html&gt; tag is the root element of an HTML document, containing all other elements.</p>
                         </details>
                         <details>
                             <summary class="item-button">&lt;head&gt;</summary>
-                            <p>The &lt;head&gt; tag contains metadata and links to resources like stylesheets for the HTML document.</p>
+                            <p>The &lt;head&gt; tag contains metadata, links to resources, and scripts for the HTML document.</p>
                         </details>
                         <details>
                             <summary class="item-button">&lt;body&gt;</summary>
-                            <p>The &lt;body&gt; tag holds the visible content of the web page, such as text and images.</p>
+                            <p>The &lt;body&gt; tag holds the visible content of the web page, such as text, images, and forms.</p>
                         </details>
                         <details>
-                            <summary class="item-button">&lt;div&gt;</summary>
-                            <p>The &lt;div&gt; tag is a block-level container used to group content for styling or scripting.</p>
+                            <summary class="item-button">&lt;title&gt;</summary>
+                            <p>The &lt;title&gt; tag sets the title of the web page, displayed in the browser tab.</p>
                         </details>
+
+                        <h2>Content Tags</h2>
                         <details>
                             <summary class="item-button">&lt;p&gt;</summary>
-                            <p>The &lt;p&gt; tag defines a paragraph, organizing text into readable blocks.</p>
+                            <p>The &lt;p&gt; tag defines a paragraph, organizing text into readable blocks with automatic spacing.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;h1&gt; to &lt;h6&gt;</summary>
+                            <p>The &lt;h1&gt; to &lt;h6&gt; tags define headings, with &lt;h1&gt; being the most important and &lt;h6&gt; the least.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;a&gt;</summary>
+                            <p>The &lt;a&gt; tag creates a hyperlink, enabling navigation to other pages or resources using the href attribute.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;img&gt;</summary>
+                            <p>The &lt;img&gt; tag embeds an image, requiring a src attribute for the file path and alt for accessibility.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;ul&gt;</summary>
+                            <p>The &lt;ul&gt; tag creates an unordered list, displaying items with bullets.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;ol&gt;</summary>
+                            <p>The &lt;ol&gt; tag creates an ordered list, displaying items in a numbered sequence.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;li&gt;</summary>
+                            <p>The &lt;li&gt; tag defines an item within a &lt;ul&gt; or &lt;ol&gt; list.</p>
+                        </details>
+
+                        <h2>Semantic Tags</h2>
+                        <details>
+                            <summary class="item-button">&lt;header&gt;</summary>
+                            <p>The &lt;header&gt; tag defines introductory content, typically containing logos or navigation.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;footer&gt;</summary>
+                            <p>The &lt;footer&gt; tag defines the bottom section of a page, often containing copyright or contact information.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;article&gt;</summary>
+                            <p>The &lt;article&gt; tag represents self-contained content, like a blog post or news story.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;section&gt;</summary>
+                            <p>The &lt;section&gt; tag groups related content, providing structure to a document.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;nav&gt;</summary>
+                            <p>The &lt;nav&gt; tag defines a set of navigation links, improving accessibility and structure.</p>
                         </details>
 
                         <h2>Attributes</h2>
                         <details>
                             <summary class="item-button">id</summary>
-                            <p>The id attribute assigns a unique identifier to an element for styling or scripting.</p>
+                            <p>The id attribute assigns a unique identifier to an element for styling or scripting purposes.</p>
                         </details>
                         <details>
                             <summary class="item-button">class</summary>
@@ -58,38 +106,135 @@
                         </details>
                         <details>
                             <summary class="item-button">src</summary>
-                            <p>The src attribute specifies the source file for elements like images or scripts.</p>
+                            <p>The src attribute specifies the source file for elements like &lt;img&gt; or &lt;script&gt;.</p>
                         </details>
                         <details>
                             <summary class="item-button">alt</summary>
-                            <p>The alt attribute provides a text description for images, enhancing accessibility.</p>
+                            <p>The alt attribute provides a text description for images, used by screen readers and when images fail to load.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">href</summary>
+                            <p>The href attribute specifies the URL destination for &lt;a&gt; tags or linked resources.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">style</summary>
+                            <p>The style attribute applies inline CSS styles directly to an element.</p>
+                        </details>
+
+                        <h2>Form Elements</h2>
+                        <details>
+                            <summary class="item-button">&lt;form&gt;</summary>
+                            <p>The &lt;form&gt; tag creates a container for user input elements, enabling data submission.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;input&gt;</summary>
+                            <p>The &lt;input&gt; tag creates an input field, with types like text, checkbox, or radio for various data.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;button&gt;</summary>
+                            <p>The &lt;button&gt; tag creates a clickable button, often used to submit forms.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;label&gt;</summary>
+                            <p>The &lt;label&gt; tag describes an &lt;input&gt; element, improving accessibility and usability.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;textarea&gt;</summary>
+                            <p>The &lt;textarea&gt; tag allows multi-line text input, ideal for comments or messages.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;select&gt;</summary>
+                            <p>The &lt;select&gt; tag creates a dropdown menu for selecting one or multiple options.</p>
+                        </details>
+
+                        <h2>Formatting Tags</h2>
+                        <details>
+                            <summary class="item-button">&lt;strong&gt;</summary>
+                            <p>The &lt;strong&gt; tag emphasizes text, typically rendering it bold to indicate importance.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;em&gt;</summary>
+                            <p>The &lt;em&gt; tag emphasizes text, typically rendering it italic to indicate stress.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;br&gt;</summary>
+                            <p>The &lt;br&gt; tag inserts a line break within text, useful for formatting.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;hr&gt;</summary>
+                            <p>The &lt;hr&gt; tag creates a horizontal rule to visually separate content sections.</p>
+                        </details>
+
+                        <h2>Table Elements</h2>
+                        <details>
+                            <summary class="item-button">&lt;table&gt;</summary>
+                            <p>The &lt;table&gt; tag defines a table to organize data into rows and columns.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;tr&gt;</summary>
+                            <p>The &lt;tr&gt; tag defines a row within a &lt;table&gt;.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;td&gt;</summary>
+                            <p>The &lt;td&gt; tag defines a data cell within a &lt;tr&gt; row.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;th&gt;</summary>
+                            <p>The &lt;th&gt; tag defines a header cell in a &lt;table&gt;, typically bold and centered.</p>
+                        </details>
+
+                        <h2>Multimedia Tags</h2>
+                        <details>
+                            <summary class="item-button">&lt;audio&gt;</summary>
+                            <p>The &lt;audio&gt; tag embeds sound files, supporting formats like MP3 with playback controls.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;video&gt;</summary>
+                            <p>The &lt;video&gt; tag embeds video files, supporting formats like MP4 with playback controls.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;iframe&gt;</summary>
+                            <p>The &lt;iframe&gt; tag embeds external content, such as websites or videos, within a page.</p>
+                        </details>
+
+                        <h2>Meta and Link Tags</h2>
+                        <details>
+                            <summary class="item-button">&lt;meta&gt;</summary>
+                            <p>The &lt;meta&gt; tag provides metadata, such as character encoding or page descriptions, for browsers and search engines.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;link&gt;</summary>
+                            <p>The &lt;link&gt; tag connects external resources, like stylesheets or favicons, to the document.</p>
+                        </details>
+
+                        <h2>Other Elements</h2>
+                        <details>
+                            <summary class="item-button">&lt;div&gt;</summary>
+                            <p>The &lt;div&gt; tag is a non-semantic block-level container for grouping content for styling or scripting.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;span&gt;</summary>
+                            <p>The &lt;span&gt; tag is a non-semantic inline container for styling or scripting small text segments.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;script&gt;</summary>
+                            <p>The &lt;script&gt; tag embeds or links to JavaScript code to add interactivity.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;style&gt;</summary>
+                            <p>The &lt;style&gt; tag defines internal CSS styles for the document.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&lt;!-- --&gt;</summary>
+                            <p>The &lt;!-- --&gt; syntax creates a comment, invisible to users but useful for code notes.</p>
                         </details>
                     </div>
                 </details>
             </div>
-
             <div class="item">
                 <details>
                     <summary class="item-button">CSS</summary>
                     <div class="item-content">
-                        <h2>Properties</h2>
-                        <details>
-                            <summary class="item-button">color</summary>
-                            <p>The color property sets the text color of an element.</p>
-                        </details>
-                        <details>
-                            <summary class="item-button">font-size</summary>
-                            <p>The font-size property defines the size of the text in an element.</p>
-                        </details>
-                        <details>
-                            <summary class="item-button">margin</summary>
-                            <p>The margin property controls the outer spacing around an element.</p>
-                        </details>
-                        <details>
-                            <summary class="item-button">display</summary>
-                            <p>The display property specifies how an element is rendered, such as block or inline.</p>
-                        </details>
-
                         <h2>Selectors</h2>
                         <details>
                             <summary class="item-button">.class</summary>
@@ -101,12 +246,169 @@
                         </details>
                         <details>
                             <summary class="item-button">element</summary>
-                            <p>The element selector targets all instances of a specific HTML tag.</p>
+                            <p>The element selector targets all instances of a specific HTML tag, like &lt;p&gt; or &lt;div&gt;.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">[attribute]</summary>
+                            <p>The [attribute] selector targets elements with a specific attribute or attribute value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">*</summary>
+                            <p>The * selector targets all elements in the document.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">element,element</summary>
+                            <p>The element,element selector groups multiple elements to apply the same styles.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">element element</summary>
+                            <p>The element element selector targets elements that are descendants of another element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">element&gt;element</summary>
+                            <p>The element&gt;element selector targets direct child elements of a specified parent.</p>
+                        </details>
+
+                        <h2>Properties</h2>
+                        <details>
+                            <summary class="item-button">color</summary>
+                            <p>The color property sets the text color of an element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">font-size</summary>
+                            <p>The font-size property defines the size of the text in an element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">font-family</summary>
+                            <p>The font-family property specifies the typeface for an element’s text.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">margin</summary>
+                            <p>The margin property controls the outer spacing around an element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">padding</summary>
+                            <p>The padding property sets the inner spacing within an element’s borders.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">border</summary>
+                            <p>The border property defines the style, width, and color of an element’s border.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">background-color</summary>
+                            <p>The background-color property sets the background color of an element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">display</summary>
+                            <p>The display property specifies how an element is rendered, such as block, inline, or flex.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">position</summary>
+                            <p>The position property controls the positioning method of an element, like static or absolute.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">width</summary>
+                            <p>The width property sets the width of an element’s content area.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">height</summary>
+                            <p>The height property sets the height of an element’s content area.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">text-align</summary>
+                            <p>The text-align property specifies the horizontal alignment of text within an element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">line-height</summary>
+                            <p>The line-height property sets the height of a line of text, affecting vertical spacing.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">opacity</summary>
+                            <p>The opacity property sets the transparency level of an element, from 0 to 1.</p>
+                        </details>
+
+                        <h2>Pseudo-Classes</h2>
+                        <details>
+                            <summary class="item-button">:hover</summary>
+                            <p>The :hover pseudo-class applies styles when a user’s cursor hovers over an element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">:active</summary>
+                            <p>The :active pseudo-class applies styles when an element is being clicked.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">:focus</summary>
+                            <p>The :focus pseudo-class applies styles when an element gains focus, like an input field.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">:first-child</summary>
+                            <p>The :first-child pseudo-class targets the first child element of its parent.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">:last-child</summary>
+                            <p>The :last-child pseudo-class targets the last child element of its parent.</p>
+                        </details>
+
+                        <h2>Pseudo-Elements</h2>
+                        <details>
+                            <summary class="item-button">::before</summary>
+                            <p>The ::before pseudo-element inserts content before an element’s content.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">::after</summary>
+                            <p>The ::after pseudo-element inserts content after an element’s content.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">::first-line</summary>
+                            <p>The ::first-line pseudo-element styles the first line of text in an element.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">::first-letter</summary>
+                            <p>The ::first-letter pseudo-element styles the first letter of an element’s text.</p>
+                        </details>
+
+                        <h2>Units</h2>
+                        <details>
+                            <summary class="item-button">px</summary>
+                            <p>The px unit represents a fixed pixel size for measurements like font-size or width.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">%</summary>
+                            <p>The % unit represents a percentage relative to the parent element’s size.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">rem</summary>
+                            <p>The rem unit is relative to the root element’s font size, ensuring consistent scaling.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">em</summary>
+                            <p>The em unit is relative to the font size of the current element or its parent.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">vw</summary>
+                            <p>The vw unit represents 1% of the viewport’s width.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">vh</summary>
+                            <p>The vh unit represents 1% of the viewport’s height.</p>
+                        </details>
+
+                        <h2>At-Rules</h2>
+                        <details>
+                            <summary class="item-button">@media</summary>
+                            <p>The @media rule applies styles based on device characteristics, like screen width.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">@import</summary>
+                            <p>The @import rule includes an external CSS file into the current stylesheet.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">@font-face</summary>
+                            <p>The @font-face rule defines a custom font for use in the stylesheet.</p>
                         </details>
                     </div>
                 </details>
             </div>
-
             <div class="item">
                 <details>
                     <summary class="item-button">Python</summary>
@@ -121,12 +423,56 @@
                             <p>The if keyword introduces a conditional statement to execute code based on a condition.</p>
                         </details>
                         <details>
+                            <summary class="item-button">elif</summary>
+                            <p>The elif keyword specifies an additional condition to check if the previous if condition is false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">else</summary>
+                            <p>The else keyword defines a block of code to execute if all preceding conditions are false.</p>
+                        </details>
+                        <details>
                             <summary class="item-button">for</summary>
-                            <p>The for keyword creates a loop to iterate over a sequence.</p>
+                            <p>The for keyword creates a loop to iterate over a sequence, like a list or range.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">while</summary>
+                            <p>The while keyword creates a loop that continues as long as a condition is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">break</summary>
+                            <p>The break keyword exits a loop prematurely, stopping further iterations.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">continue</summary>
+                            <p>The continue keyword skips the current loop iteration and proceeds to the next.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">return</summary>
+                            <p>The return keyword exits a function and optionally returns a value to the caller.</p>
                         </details>
                         <details>
                             <summary class="item-button">import</summary>
                             <p>The import keyword includes external modules or libraries in a Python program.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">from</summary>
+                            <p>The from keyword specifies the module or package to import specific components from.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">class</summary>
+                            <p>The class keyword defines a blueprint for creating objects with attributes and methods.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">try</summary>
+                            <p>The try keyword begins a block to attempt code that may raise an exception.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">except</summary>
+                            <p>The except keyword defines a block to handle specific exceptions raised in a try block.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">finally</summary>
+                            <p>The finally keyword specifies a block that executes regardless of whether an exception occurs.</p>
                         </details>
 
                         <h2>Built-in Functions</h2>
@@ -141,6 +487,114 @@
                         <details>
                             <summary class="item-button">range()</summary>
                             <p>The range() function generates a sequence of numbers for iteration.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">type()</summary>
+                            <p>The type() function returns the data type of a given object.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">int()</summary>
+                            <p>The int() function converts a value, like a string or float, to an integer.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">str()</summary>
+                            <p>The str() function converts a value to a string representation.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">float()</summary>
+                            <p>The float() function converts a value to a floating-point number.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">list()</summary>
+                            <p>The list() function creates a list from an iterable or converts an object to a list.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">dict()</summary>
+                            <p>The dict() function creates a dictionary from key-value pairs or converts an object to a dictionary.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">input()</summary>
+                            <p>The input() function prompts the user for input and returns it as a string.</p>
+                        </details>
+
+                        <h2>Data Types</h2>
+                        <details>
+                            <summary class="item-button">int</summary>
+                            <p>The int data type represents whole numbers, positive or negative, without decimals.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">float</summary>
+                            <p>The float data type represents numbers with decimal points.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">str</summary>
+                            <p>The str data type represents a sequence of characters, used for text.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">list</summary>
+                            <p>The list data type is an ordered, mutable collection of items, defined with square brackets.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">tuple</summary>
+                            <p>The tuple data type is an ordered, immutable collection of items, defined with parentheses.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">dict</summary>
+                            <p>The dict data type is an unordered collection of key-value pairs, defined with curly braces.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">set</summary>
+                            <p>The set data type is an unordered collection of unique items, defined with curly braces or set().</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">bool</summary>
+                            <p>The bool data type represents a boolean value, either True or False.</p>
+                        </details>
+
+                        <h2>Operators</h2>
+                        <details>
+                            <summary class="item-button">+</summary>
+                            <p>The + operator performs addition for numbers or concatenation for strings and lists.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">-</summary>
+                            <p>The - operator performs subtraction between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">*</summary>
+                            <p>The * operator performs multiplication for numbers or repetition for strings and lists.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">/</summary>
+                            <p>The / operator performs division, returning a float result.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">//</summary>
+                            <p>The // operator performs floor division, returning an integer result.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">%</summary>
+                            <p>The % operator returns the remainder of division between two numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">==</summary>
+                            <p>The == operator checks if two values are equal.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!=</summary>
+                            <p>The != operator checks if two values are not equal.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">and</summary>
+                            <p>The and operator evaluates to True if both operands are true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">or</summary>
+                            <p>The or operator evaluates to True if at least one operand is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">not</summary>
+                            <p>The not operator inverts the boolean value of an expression.</p>
                         </details>
                     </div>
                 </details>
