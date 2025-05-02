@@ -84,11 +84,6 @@ main {
     background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
 }
 
-details {
-    margin-top: 5px !important;
-    margin-bottom: 5px !important;
-}
-
 .item-content {
     padding: 20px !important;
     background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
@@ -106,6 +101,7 @@ details {
 .item-content p {
     text-align: center !important;
     font-weight: bold !important;
+    margin: 5px 0px !important;
 }
 
 footer {
