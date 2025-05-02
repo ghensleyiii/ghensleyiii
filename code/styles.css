@@ -55,39 +55,26 @@ footer {
 }
 
 /*CODE CSS*/
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background-color: #eee;
-            color: #333;
-            line-height: 1.6;
-        }
-
         .main-section {
-            background-color: #eee;
+            background-color: #e0e0e0; /* Match body background */
             padding: 50px 20px;
             text-align: center;
-            color: #333;
+            color: #333333;
         }
 
         .code-editor {
             position: relative;
             width: 100%;
             margin: 0 auto 20px auto;
-            background-color: #eee;
+            background-color: #e0e0e0; /* Match background */
             padding: 5px;
             border-radius: 5px;
         }
 
         .line-numbers {
             width: 48px;
-            background-color: #333333;
-            color: #1e90ff;
+            background-color: #333333; /* Keep dark background for contrast */
+            color: #999999; /* Grayscale replacement for blue */
             font-family: 'Courier New', Courier, 'Lucida Console', monospace;
             font-size: 16px;
             text-align: right;
@@ -114,12 +101,12 @@ footer {
         .code-editor textarea {
             width: 100%;
             height: 600px;
-            background-color: #eee;
-            color: #333;
+            background-color: #e0e0e0; /* Match background */
+            color: #333333; /* Dark gray text */
             font-family: 'Courier New', Courier, 'Lucida Console', monospace;
             font-size: 16px;
             padding: 10px 15px 10px 60px;
-            border: 2px solid #1e90ff;
+            border: 2px solid #666666; /* Grayscale border */
             border-radius: 5px;
             resize: none;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -129,7 +116,7 @@ footer {
         }
 
         .code-editor textarea::placeholder {
-            color: #1e90ff;
+            color: #999999; /* Grayscale placeholder */
         }
 
         .buttons {
@@ -141,9 +128,9 @@ footer {
         }
 
         .validate-btn {
-            background-color: #1e90ff;
-            color: #eee;
-            border: 2px solid #1e90ff;
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
             padding: 10px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
@@ -153,9 +140,9 @@ footer {
         }
 
         .test-btn {
-            background-color: #1e90ff;
-            color: #eee;
-            border: 2px solid #1e90ff;
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
             padding: 10px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
@@ -165,9 +152,9 @@ footer {
         }
 
         .document-btn {
-            background-color: #1e90ff;
-            color: #eee;
-            border: 2px solid #1e90ff;
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
             padding: 10px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
@@ -177,11 +164,11 @@ footer {
         }
 
         .validate-btn:hover, .test-btn:hover, .document-btn:hover {
-            background-color: #333333;
+            background-color: #b0b0b0; /* Match hover effect from homeschool.html */
         }
 
         .error-messages {
-            color: #909090;
+            color: #999999; /* Grayscale error messages */
             margin-top: 10px;
             text-align: center;
             max-width: 600px;
@@ -200,17 +187,17 @@ footer {
         .save-file-input {
             padding: 8px;
             font-size: 16px;
-            border: 2px solid #1e90ff;
+            border: 2px solid #666666; /* Grayscale border */
             border-radius: 5px;
             width: 300px;
-            background-color: #eee;
-            color: #333;
+            background-color: #e0e0e0; /* Match background */
+            color: #333333; /* Dark gray text */
         }
 
         .save-file-btn {
-            background-color: #1e90ff;
-            color: #eee;
-            border: 2px solid #1e90ff;
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
             padding: 8px 20px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 5px;
@@ -220,11 +207,11 @@ footer {
         }
 
         .save-file-btn:hover {
-            background-color: #333333;
+            background-color: #b0b0b0; /* Match hover effect */
         }
 
         .output-section {
-            background-color: #eee;
+            background-color: #e0e0e0; /* Match background */
             padding: 5px;
             margin-top: 20px;
             display: none; /* Hidden by default */
@@ -233,24 +220,24 @@ footer {
         .output-container {
             width: 100%;
             margin: 0 auto;
-            background-color: #eee;
+            background-color: #e0e0e0; /* Match background */
             border-radius: 0px;
             overflow: hidden;
-            border: 2px solid #333333;
+            border: 2px solid #333333; /* Dark gray border */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .output-header {
-            color: #333333;
+            color: #333333; /* Dark gray text */
             padding: 10px;
             font-size: 1rem;
             font-weight: bold;
-            background-color: #eee;
+            background-color: #e0e0e0; /* Match background */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         hr {
-            border: 1px solid #333333;
+            border: 1px solid #333333; /* Dark gray border */
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -258,7 +245,7 @@ footer {
             width: 100%;
             height: 600px;
             border: none;
-            background-color: #eee;
+            background-color: #e0e0e0; /* Match background */
         }
 
         @media (max-width: 768px) {
