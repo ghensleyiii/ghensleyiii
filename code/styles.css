@@ -55,8 +55,21 @@ footer {
 }
 
 /*CODE CSS*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #eee;
+            color: #333;
+            line-height: 1.6;
+        }
+
         .main-section {
-            background-color: var(white);
+            background-color: #eee;
             padding: 50px 20px;
             text-align: center;
             color: #333;
@@ -66,7 +79,7 @@ footer {
             position: relative;
             width: 100%;
             margin: 0 auto 20px auto;
-            background-color: #ff0000;
+            background-color: #eee;
             padding: 5px;
             border-radius: 5px;
         }
