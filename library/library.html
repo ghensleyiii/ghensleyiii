@@ -1001,30 +1001,178 @@
                         <h2>Keywords</h2>
                         <details>
                             <summary class="item-button">int</summary>
-                            <p>The int keyword declares an integer variable.</p>
+                            <p>The int keyword declares a variable to store integer values, typically 32 bits.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">double</summary>
+                            <p>The double keyword declares a variable for double-precision floating-point numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">float</summary>
+                            <p>The float keyword declares a variable for single-precision floating-point numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">char</summary>
+                            <p>The char keyword declares a variable to store a single character, typically 8 bits.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">bool</summary>
+                            <p>The bool keyword declares a variable to store true or false values.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">void</summary>
+                            <p>The void keyword indicates a function does not return a value or specifies a generic pointer.</p>
                         </details>
                         <details>
                             <summary class="item-button">class</summary>
-                            <p>The class keyword defines a user-defined data type with data and functions.</p>
+                            <p>The class keyword defines a user-defined type with data members and member functions.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">struct</summary>
+                            <p>The struct keyword defines a composite data type with public members by default.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">public</summary>
+                            <p>The public keyword makes class members accessible from outside the class.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">private</summary>
+                            <p>The private keyword restricts class member access to within the class.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">if</summary>
+                            <p>The if keyword introduces a conditional statement to execute code based on a condition.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">else</summary>
+                            <p>The else keyword specifies a block to execute if the preceding if condition is false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">for</summary>
+                            <p>The for keyword creates a loop with initialization, condition, and increment expressions.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">while</summary>
+                            <p>The while keyword creates a loop that continues as long as a condition is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">break</summary>
+                            <p>The break keyword exits a loop or switch statement prematurely.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">continue</summary>
+                            <p>The continue keyword skips the current loop iteration and proceeds to the next.</p>
                         </details>
                         <details>
                             <summary class="item-button">return</summary>
                             <p>The return keyword exits a function and optionally returns a value.</p>
                         </details>
 
-                        <h2>Standard Library Functions</h2>
+                        <h2>Operators</h2>
+                        <details>
+                            <summary class="item-button">+</summary>
+                            <p>The + operator performs addition for numbers or concatenates strings with certain types.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">-</summary>
+                            <p>The - operator performs subtraction between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">*</summary>
+                            <p>The * operator performs multiplication between numbers or dereferences a pointer.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">/</summary>
+                            <p>The / operator performs division, returning an integer or floating-point result based on types.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">%</summary>
+                            <p>The % operator returns the remainder of division between two integers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">==</summary>
+                            <p>The == operator checks if two values are equal.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!=</summary>
+                            <p>The != operator checks if two values are not equal.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&&</summary>
+                            <p>The && operator evaluates to true if both operands are true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">||</summary>
+                            <p>The || operator evaluates to true if at least one operand is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!</summary>
+                            <p>The ! operator inverts the boolean value of an expression.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&</summary>
+                            <p>The & operator performs a bitwise AND or retrieves the address of a variable.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">::</summary>
+                            <p>The :: operator accesses members or namespaces, like class or global scope.</p>
+                        </details>
+
+                        <h2>Standard Library Components</h2>
                         <details>
                             <summary class="item-button">cout</summary>
-                            <p>The cout object outputs data to the console.</p>
+                            <p>The cout object outputs data to the console, used with the << operator.</p>
                         </details>
                         <details>
                             <summary class="item-button">cin</summary>
-                            <p>The cin object reads input from the console.</p>
+                            <p>The cin object reads input from the console, used with the >> operator.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">endl</summary>
+                            <p>The endl manipulator inserts a newline and flushes the output buffer in cout.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">string</summary>
+                            <p>The string class provides a dynamic sequence of characters for text manipulation.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">vector</summary>
+                            <p>The vector class provides a dynamic array that can resize automatically.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">array</summary>
+                            <p>The array class provides a fixed-size sequence of elements with bounds checking.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">map</summary>
+                            <p>The map class provides an associative container storing key-value pairs, sorted by keys.</p>
+                        </details>
+
+                        <h2>Functions</h2>
+                        <details>
+                            <summary class="item-button">main()</summary>
+                            <p>The main() function serves as the entry point for a C++ program, returning an integer.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">size()</summary>
+                            <p>The size() method returns the number of elements in a container, like a vector or string.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">push_back()</summary>
+                            <p>The push_back() method adds an element to the end of a vector.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">begin()</summary>
+                            <p>The begin() method returns an iterator to the first element of a container.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">end()</summary>
+                            <p>The end() method returns an iterator to the position after the last element of a container.</p>
                         </details>
                     </div>
                 </details>
             </div>
-
+                                
             <div class="item">
                 <details>
                     <summary class="item-button">Rust</summary>
@@ -1032,15 +1180,93 @@
                         <h2>Keywords</h2>
                         <details>
                             <summary class="item-button">fn</summary>
-                            <p>The fn keyword defines a function in Rust.</p>
+                            <p>The fn keyword defines a function in Rust, specifying its name, parameters, and return type.</p>
                         </details>
                         <details>
                             <summary class="item-button">let</summary>
-                            <p>The let keyword declares a variable, immutable by default.</p>
+                            <p>The let keyword declares a variable, immutable by default, for storing values.</p>
                         </details>
                         <details>
                             <summary class="item-button">mut</summary>
-                            <p>The mut keyword makes a variable mutable, allowing changes.</p>
+                            <p>The mut keyword makes a variable mutable, allowing its value to be changed.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">if</summary>
+                            <p>The if keyword introduces a conditional statement to execute code based on a condition.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">else</summary>
+                            <p>The else keyword specifies a block to execute if the preceding if condition is false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">for</summary>
+                            <p>The for keyword creates a loop to iterate over an iterator, like a range or collection.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">while</summary>
+                            <p>The while keyword creates a loop that continues as long as a condition is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">loop</summary>
+                            <p>The loop keyword creates an infinite loop, typically used with break to exit.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">break</summary>
+                            <p>The break keyword exits a loop prematurely, optionally returning a value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">continue</summary>
+                            <p>The continue keyword skips the current loop iteration and proceeds to the next.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">return</summary>
+                            <p>The return keyword exits a function and optionally returns a value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">struct</summary>
+                            <p>The struct keyword defines a custom data type with named fields.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">enum</summary>
+                            <p>The enum keyword defines a type with a fixed set of variants, useful for modeling state.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">pub</summary>
+                            <p>The pub keyword makes items like functions or structs publicly accessible outside their module.</p>
+                        </details>
+
+                        <h2>Data Types</h2>
+                        <details>
+                            <summary class="item-button">i32</summary>
+                            <p>The i32 type represents a 32-bit signed integer, ranging from -2^31 to 2^31-1.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">u32</summary>
+                            <p>The u32 type represents a 32-bit unsigned integer, ranging from 0 to 2^32-1.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">f64</summary>
+                            <p>The f64 type represents a 64-bit floating-point number, used for high-precision decimals.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">bool</summary>
+                            <p>The bool type represents a boolean value, either true or false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">char</summary>
+                            <p>The char type represents a single Unicode scalar value, stored as 32 bits.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">String</summary>
+                            <p>The String type is a growable, heap-allocated string for dynamic text manipulation.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&str</summary>
+                            <p>The &str type is an immutable string slice, typically used for string literals.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">Vec<T></summary>
+                            <p>The Vec<T> type is a growable, heap-allocated vector for storing a dynamic list of elements.</p>
                         </details>
 
                         <h2>Macros</h2>
@@ -1051,6 +1277,86 @@
                         <details>
                             <summary class="item-button">vec!</summary>
                             <p>The vec! macro creates a new vector with specified elements.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">format!</summary>
+                            <p>The format! macro creates a formatted String without printing it.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">panic!</summary>
+                            <p>The panic! macro terminates the program with an error message when an unrecoverable error occurs.</p>
+                        </details>
+
+                        <h2>Operators</h2>
+                        <details>
+                            <summary class="item-button">+</summary>
+                            <p>The + operator performs addition for numbers or concatenates certain types with Add trait.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">-</summary>
+                            <p>The - operator performs subtraction between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">*</summary>
+                            <p>The * operator performs multiplication between numbers or dereferences a pointer.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">/</summary>
+                            <p>The / operator performs division, returning an integer or floating-point result based on types.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">%</summary>
+                            <p>The % operator returns the remainder of division between two numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">==</summary>
+                            <p>The == operator checks if two values are equal, requiring the PartialEq trait.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!=</summary>
+                            <p>The != operator checks if two values are not equal, requiring the PartialEq trait.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&&</summary>
+                            <p>The && operator evaluates to true if both operands are true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">||</summary>
+                            <p>The || operator evaluates to true if at least one operand is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!</summary>
+                            <p>The ! operator inverts the boolean value of an expression.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&</summary>
+                            <p>The & operator creates a reference to a value, enabling borrowing.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&mut</summary>
+                            <p>The &mut operator creates a mutable reference, allowing modification through borrowing.</p>
+                        </details>
+
+                        <h2>Standard Library Functions</h2>
+                        <details>
+                            <summary class="item-button">main()</summary>
+                            <p>The main() function serves as the entry point for a Rust program.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">len()</summary>
+                            <p>The len() method returns the number of elements in a collection, like a String or Vec.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">push()</summary>
+                            <p>The push() method adds an element to the end of a Vec or String.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">pop()</summary>
+                            <p>The pop() method removes and returns the last element from a Vec or String.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">is_empty()</summary>
+                            <p>The is_empty() method checks if a collection, like a Vec or String, contains no elements.</p>
                         </details>
                     </div>
                 </details>
@@ -1063,30 +1369,182 @@
                         <h2>Keywords</h2>
                         <details>
                             <summary class="item-button">func</summary>
-                            <p>The func keyword defines a function in Go.</p>
+                            <p>The func keyword defines a function with a name, parameters, and optional return types.</p>
                         </details>
                         <details>
                             <summary class="item-button">var</summary>
-                            <p>The var keyword declares a variable with an explicit type.</p>
+                            <p>The var keyword declares a variable with an explicit type or inferred type at package or function scope.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">const</summary>
+                            <p>The const keyword declares a constant value that cannot be changed after initialization.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">if</summary>
+                            <p>The if keyword introduces a conditional statement to execute code based on a condition.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">else</summary>
+                            <p>The else keyword specifies a block to execute if the preceding if condition is false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">for</summary>
+                            <p>The for keyword creates a loop, used for iteration or as a while loop with a condition.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">break</summary>
+                            <p>The break keyword exits a loop or switch statement prematurely.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">continue</summary>
+                            <p>The continue keyword skips the current loop iteration and proceeds to the next.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">return</summary>
+                            <p>The return keyword exits a function and optionally returns one or more values.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">struct</summary>
+                            <p>The struct keyword defines a custom data type with a collection of fields.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">interface</summary>
+                            <p>The interface keyword defines a set of method signatures that a type must implement.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">go</summary>
+                            <p>The go keyword launches a goroutine to execute a function concurrently.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">defer</summary>
+                            <p>The defer keyword schedules a function call to execute after the surrounding function returns.</p>
                         </details>
                         <details>
                             <summary class="item-button">package</summary>
-                            <p>The package keyword organizes code into reusable modules.</p>
+                            <p>The package keyword organizes code into a namespace for modularity and reuse.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">import</summary>
+                            <p>The import keyword includes external packages to use their functionality.</p>
                         </details>
 
-                        <h2>Standard Library Functions</h2>
+                        <h2>Data Types</h2>
                         <details>
-                            <summary class="item-button">fmt.Println</summary>
-                            <p>The fmt.Println function outputs text to the console with a newline.</p>
+                            <summary class="item-button">int</summary>
+                            <p>The int type represents a platform-dependent signed integer, typically 32 or 64 bits.</p>
                         </details>
                         <details>
-                            <summary class="item-button">len</summary>
-                            <p>The len function returns the length of a string, slice, or array.</p>
+                            <summary class="item-button">float64</summary>
+                            <p>The float64 type represents a 64-bit floating-point number for decimal values.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">bool</summary>
+                            <p>The bool type represents a boolean value, either true or false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">string</summary>
+                            <p>The string type represents an immutable sequence of UTF-8 encoded characters.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">slice</summary>
+                            <p>The slice type is a dynamically-sized view into an underlying array, supporting flexible resizing.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">array</summary>
+                            <p>The array type is a fixed-length sequence of elements of a specific type.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">map</summary>
+                            <p>The map type is an unordered collection of key-value pairs with fast lookup.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">chan</summary>
+                            <p>The chan type represents a channel for sending and receiving values between goroutines.</p>
+                        </details>
+
+                        <h2>Built-in Functions</h2>
+                        <details>
+                            <summary class="item-button">make()</summary>
+                            <p>The make() function allocates and initializes slices, maps, or channels.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">new()</summary>
+                            <p>The new() function allocates memory for a type and returns a pointer to it.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">len()</summary>
+                            <p>The len() function returns the length of a string, slice, array, map, or channel.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">cap()</summary>
+                            <p>The cap() function returns the capacity of a slice, array, or channel.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">append()</summary>
+                            <p>The append() function adds elements to a slice, resizing it if necessary.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">copy()</summary>
+                            <p>The copy() function copies elements from one slice to another, up to the smaller slice’s length.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">panic()</summary>
+                            <p>The panic() function stops normal execution and triggers a program crash with an error.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">recover()</summary>
+                            <p>The recover() function regains control of a panicking goroutine, often used with defer.</p>
+                        </details>
+
+                        <h2>Operators</h2>
+                        <details>
+                            <summary class="item-button">+</summary>
+                            <p>The + operator performs addition for numbers or concatenates strings.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">-</summary>
+                            <p>The - operator performs subtraction between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">*</summary>
+                            <p>The * operator performs multiplication between numbers or declares a pointer type.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">/</summary>
+                            <p>The / operator performs division, returning an integer or floating-point result based on types.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">%</summary>
+                            <p>The % operator returns the remainder of division between integers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">==</summary>
+                            <p>The == operator checks if two values are equal.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!=</summary>
+                            <p>The != operator checks if two values are not equal.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&&</summary>
+                            <p>The && operator evaluates to true if both operands are true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">||</summary>
+                            <p>The || operator evaluates to true if at least one operand is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!</summary>
+                            <p>The ! operator inverts the boolean value of an expression.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button"><-</summary>
+                            <p>The <- operator sends or receives a value through a channel for communication between goroutines.</p>
                         </details>
                     </div>
                 </details>
             </div>
-
+                                
             <div class="item">
                 <details>
                     <summary class="item-button">Ruby</summary>
