@@ -1,0 +1,101 @@
+:root {
+    --blue: #4169e1;
+    --green: #41E169;
+    --white: #f0f2f0;
+    --black: #333333;
+}
+
+* {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    font-family: Arial, sans-serif !important;
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+    line-height: 1.6 !important;
+}
+
+header {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.logo h1 {
+    font-family: 'Audiowide', sans-serif !important;
+    color: #fff !important;
+    font-size: 36px !important;
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+.logo a {
+    text-decoration: none !important;
+    color: #fff !important;
+    text-align: center !important;
+}
+
+main {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.intro {
+    background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
+    padding: 20px !important;
+    margin-bottom: 30px !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+    text-align: center !important;
+}
+
+.item {
+    margin-bottom: 20px !important;
+    max-width: 800px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.item-button {
+    display: block !important;
+    width: 100% !important;
+    padding: 15px !important;
+    font-family: 'Audiowide', sans-serif !important;
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    border: none !important;
+    color: #fff !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    border-radius: 5px !important;
+    transition: background 0.3s;
+}
+
+.item-button:hover {
+    background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
+}
+
+.example {
+    margin-top: 10px !important;
+    padding: 10px !important;
+    border: 1px solid var(--blue) !important;
+    border-radius: 5px !important;
+}
+
+footer {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    text-align: center !important;
+    padding: 20px !important;
+    color: #fff !important;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1) !important;
+    width: 100% !important;
+}
