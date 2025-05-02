@@ -68,7 +68,7 @@ header {
 
         .intro h2 {
             font-family: 'Audiowide', sans-serif;
-            color: var(--dark-blue);
+            color: var(--blue);
             margin-bottom: 10px;
             font-size: 40px;
         }
@@ -80,7 +80,7 @@ header {
 
         .categories-container h2 {
             font-family: 'Audiowide', sans-serif;
-            color: var(--dark-blue);
+            color: var(--blue);
             text-align: center;
             margin-bottom: 20px;
         }
@@ -144,22 +144,22 @@ header {
             color: #f0f0f0;
         }
 
-        .category[data-gradient="1"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="2"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="3"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="4"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="5"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="6"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="7"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="8"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="9"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="10"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="11"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="12"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="13"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="14"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="15"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
-        .category[data-gradient="16"] { background: linear-gradient(135deg, var(--dark-blue), var(--light-blue)); }
+        .category[data-gradient="1"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="2"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="3"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="4"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="5"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="6"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="7"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="8"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="9"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="10"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="11"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="12"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="13"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="14"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="15"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
+        .category[data-gradient="16"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
 
         .item {
             margin-bottom: 20px;
@@ -173,7 +173,7 @@ header {
             width: 100%;
             padding: 15px;
             font-family: 'Audiowide', sans-serif;
-            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            background: linear-gradient(135deg, var(--blue), var(--green));
             border: none;
             color: #fff;
             text-align: center;
@@ -199,13 +199,13 @@ header {
             margin-left: 0;
             margin-right: 0;
             font-family: 'Audiowide', sans-serif !important;
-            color: var(--dark-blue);
+            color: var(--blue);
             font-size: 1.5em;
             text-transform: uppercase;
         }
 
         footer {
-            background: linear-gradient(135deg, var(--dark-blue), var(--light-blue));
+            background: linear-gradient(135deg, var(--blue), var(--green));
             text-align: center;
             padding: 20px;
             color: #fff;
