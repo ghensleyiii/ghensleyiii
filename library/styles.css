@@ -78,6 +78,7 @@ main {
     cursor: pointer !important;
     border-radius: 5px !important;
     transition: background 0.3s;
+    margins: 15px 0px;
 }
 
 .item-button:hover {
