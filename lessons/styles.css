@@ -86,7 +86,7 @@ main {
 
 .item-content {
     padding: 20px !important;
-    background: #e8f5e9 !important;
+    background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
     border-radius: 0 0 5px 5px !important;
     text-align: left !important;
 }
