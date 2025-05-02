@@ -7,12 +7,331 @@
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
     <title>CODE-EXECUTE-DOCUMENT</title>
     <style>
-        /** {
+        /*MAIN CSS*/
+
+:root {
+    --blue: #4169e1;
+    --green: #41E169;
+    --white: #f0f2f0;
+    --black: #333333;
+}
+
+* {
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+body {
+    font-family: Arial, sans-serif !important;
+    background-color: var(--white) !important;
+    color: var(--black) !important;
+    line-height: 1.6 !important;
+}
+
+header {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    padding: 20px !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+}
+
+.logo h1 {
+    font-family: 'Audiowide', sans-serif !important;
+    color: #fff !important;
+    font-size: 36px !important;
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+.logo a {
+    text-decoration: none !important;
+    color: #fff !important;
+    text-align: center !important;
+}
+
+footer {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    text-align: center !important;
+    padding: 20px !important;
+    color: #fff !important;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1) !important;
+    width: 100% !important;
+}
+
+/*CODE CSS*/
+        .main-section {
+            background-color: #e0e0e0; /* Match body background */
+            padding: 50px 20px;
+            text-align: center;
+            color: #333333;
+        }
+
+        .code-editor {
+            position: relative;
+            width: 100%;
+            margin: 0 auto 20px auto;
+            background-color: #e0e0e0; /* Match background */
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .line-numbers {
+            width: 48px;
+            background-color: #333333; /* Keep dark background for contrast */
+            color: #999999; /* Grayscale replacement for blue */
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 16px;
+            text-align: right;
+            user-select: none;
+            line-height: 20px;
+            position: absolute;
+            top: 7px;
+            left: 7px;
+            height: calc(100% - 21.5px);
+            padding: 10px 5px 10px 0;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .line-numbers pre {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }*/
+            line-height: 20px;
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 16px;
+            display: block;
+        }
+
+        .code-editor textarea {
+            width: 100%;
+            height: 600px;
+            background-color: #e0e0e0; /* Match background */
+            color: #333333; /* Dark gray text */
+            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+            font-size: 16px;
+            padding: 10px 15px 10px 60px;
+            border: 2px solid #666666; /* Grayscale border */
+            border-radius: 5px;
+            resize: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            line-height: 20px;
+            position: relative;
+            z-index: 0;
+        }
+
+        .code-editor textarea::placeholder {
+            color: #999999; /* Grayscale placeholder */
+        }
+
+        .buttons {
+            margin: 20px auto;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            max-width: 600px;
+        }
+
+        .validate-btn {
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .test-btn {
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .document-btn {
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
+            padding: 10px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .validate-btn:hover, .test-btn:hover, .document-btn:hover {
+            background-color: #b0b0b0; /* Match hover effect from homeschool.html */
+        }
+
+        .error-messages {
+            color: #999999; /* Grayscale error messages */
+            margin-top: 10px;
+            text-align: center;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .save-file-container {
+            margin: 10px auto;
+            display: none;
+            justify-content: center;
+            gap: 10px;
+            max-width: 600px;
+        }
+
+        .save-file-input {
+            padding: 8px;
+            font-size: 16px;
+            border: 2px solid #666666; /* Grayscale border */
+            border-radius: 5px;
+            width: 300px;
+            background-color: #e0e0e0; /* Match background */
+            color: #333333; /* Dark gray text */
+        }
+
+        .save-file-btn {
+            background-color: #d0d0d0; /* Light gray button */
+            color: #333333; /* Dark gray text */
+            border: 2px solid #d0d0d0;
+            padding: 8px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .save-file-btn:hover {
+            background-color: #b0b0b0; /* Match hover effect */
+        }
+
+        .output-section {
+            background-color: #e0e0e0; /* Match background */
+            padding: 5px;
+            margin-top: 20px;
+            display: none; /* Hidden by default */
+        }
+
+        .output-container {
+            width: 100%;
+            margin: 0 auto;
+            background-color: #e0e0e0; /* Match background */
+            border-radius: 0px;
+            overflow: hidden;
+            border: 2px solid #333333; /* Dark gray border */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .output-header {
+            color: #333333; /* Dark gray text */
+            padding: 10px;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #e0e0e0; /* Match background */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        hr {
+            border: 1px solid #333333; /* Dark gray border */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        #outputFrame {
+            width: 100%;
+            height: 600px;
+            border: none;
+            background-color: #e0e0e0; /* Match background */
+        }
+
+        @media (max-width: 768px) {
+            .code-editor textarea {
+                height: 400px;
+            }
+
+            .buttons {
+                flex-direction: row;
+                gap: 10px;
+                max-width: 400px;
+            }
+
+            .validate-btn, .test-btn, .document-btn {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+
+            .save-file-input {
+                width: 200px;
+            }
+
+            #outputFrame {
+                height: 400px;
+            }
+
+            .output-section {
+                padding: 5px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .code-editor textarea {
+                height: 300px;
+                font-size: 14px;
+                line-height: 18px;
+                padding: 10px 15px 10px 50px;
+            }
+
+            .line-numbers {
+                font-size: 14px;
+                line-height: 18px;
+                width: 38px;
+                top: 7px;
+                left: 7px;
+                height: calc(100% - 21.5px);
+                padding: 10px 3px 10px 0;
+                background-color: #333333;
+                z-index: 10;
+            }
+
+            .line-numbers pre {
+                font-size: 14px;
+                line-height: 18px;
+            }
+
+            .buttons {
+                max-width: 300px;
+            }
+
+            .save-file-input {
+                width: 150px;
+                font-size: 14px;
+            }
+
+            .save-file-btn {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+
+            #outputFrame {
+                height: 300px;
+            }
+        }
+
     </style>
 </head>
 <body>
