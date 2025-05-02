@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Camper Cafe Survey</title>
+    <style>
+      body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+  color: #000000;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+.survey {
+  width: 80%;
+  background-color: burlywood;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  max-width: 500px;
+}
+
+hr {
+  height: .5px;
+  background-color: brown;
+  border: none;
+}
+
+h1 {
+  font-family: impact, serif;
+  font-size: 40px;
+  margin-bottom: 0;
+}
+
+h1, p {
+  text-align: center;
+}
+
+form {
+  width: 60vw;
+  max-width: 500px;
+  min-width: 300px;
+  margin: 0 auto;
+}
+
+input::placeholder, textarea::placeholder {
+  color: brown;
+  opacity: 0.5;
+}
+
+fieldset {
+  border: none;
+  padding: 2rem 0;
+}
+
+fieldset:last-of-type {
+  border-bottom: none;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+input,
+textarea,
+select {
+  margin: 3px 0 0 0;
+  width: 100%;
+  min-height: 2em;
+}
+
+input, textarea, select {
+  background-color: burlywood;
+  border: 1px solid brown;
+  color: #black;
+}
+
+.inline {
+  width: unset;
+  margin: 0 0.5em 0 0;
+  vertical-align: middle;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 60%;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: brown;
+  border-color: black;
+  min-width: 300px;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="survey">
+    <main>
+     <h1 id="title">Camper Cafe Survey</h1>
+     <p id="description">Let us know your thoughts on our cafe</p>
+  <hr>
+  <form id="survey-form">
+    <fieldset>
+      <label id="name-label" for="name">Name:<input id="name" name="name" type="text" placeholder="Enter name..."required /></label>
+      <label id="email-label" for="email">Email:<input id="email" name="email" type="email" placeholder="Enter email..." required /></label>
+      <label id="number-label" for="age">Age:<input id="number" name="age" type="number" min="0" max="1000" placeholder="Enter age..." /></label>
+      <label for="location">Cafe Location:
+        <select id="dropdown" name="location">
+          <option value="">(select one)</option>
+          <option value="1">California</option>
+          <option value="2">Florida</option>
+          <option value="3">Maryland</option>
+          <option value="4">Michigan</option>
+          <option value="5">New York</option>
+          <option value="6">Texas</option>
+        </select></label>
+      <label for="rating">How would you rate your experience?</label>
+      <label><input id="rating" type="radio" name="rating" class="inline" value="1" /> 1</label>
+      <label><input id="rating" type="radio" name="rating" class="inline" value="2" /> 2</label>
+      <label><input id="rating" type="radio" name="rating" class="inline" value="3" /> 3</label>
+      <label><input id="rating" type="radio" name="rating" class="inline" value="4" /> 4</label>
+      <label><input id="rating" type="radio" name="rating" class="inline" value="5" /> 5</label>
+      <label for="items">What did you order?<textarea name="items" placeholder="Enter item names..."></textarea>
+      <label for="experience">Overall were you satified with your experience?</label><label><input type="checkbox" name="experience" class="inline" value="yes" />Yes</label>
+      <label><input type="checkbox" name="experience" class="inline" value="no" />No</label>
+      <label><input type="checkbox" name="experience" class="inline" value="kinda" />Kinda</label>
+      <input type="submit" value="Submit" id="submit" />
+    </fieldset>
+  </form>
+  </main>
+</html>
