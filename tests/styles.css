@@ -78,7 +78,6 @@ main {
     cursor: pointer !important;
     border-radius: 5px !important;
     transition: background 0.3s;
-    margins: 15px 0px !important;
 }
 
 .item-button:hover {
@@ -89,20 +88,27 @@ main {
     padding: 20px !important;
     background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
     border-radius: 0 0 5px 5px !important;
-    text-align: center !important;
+    text-align: left !important;
 }
 
 .item-content h2 {
     font-family: 'Audiowide', sans-serif !important;
     color: var(--blue) !important;
-    margin: 15px 0px !important;
-    text-align: center !important;
+    margin-bottom: 10px !important;
 }
 
-.item-content p {
-    text-align: center !important;
-    font-weight: bold !important;
-    margin: 5px 0px !important;
+.item-content pre {
+    background: #f4f4f4 !important;
+    padding: 10px !important;
+    border-radius: 5px !important;
+    overflow-x: auto !important;
+}
+
+.example {
+    margin-top: 10px !important;
+    padding: 10px !important;
+    border: 1px solid var(--blue) !important;
+    border-radius: 5px !important;
 }
 
 footer {
