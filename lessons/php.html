@@ -37,9 +37,9 @@ Lessons 41–50: Advanced topics (traits, namespaces, closures, REST APIs, frame
                         <h2>Introduction to PHP</h2>
                         <p>PHP is a server-side scripting language designed for web development, embedded in HTML. It powers platforms like WordPress and is known for its simplicity and database integration. PHP’s versatility makes it ideal for dynamic websites and APIs.</p>
                         <pre>
-<?php
+&lt;?php
 echo "Hello, World!";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hello, World!</p>
@@ -56,11 +56,11 @@ echo "Hello, World!";
                         <h2>Variables in PHP</h2>
                         <p>Variables in PHP are declared with `$` and are dynamically typed, requiring no type definition. They hold various data types, assigned by value or reference. PHP’s loose typing simplifies coding but demands careful validation.</p>
                         <pre>
-<?php
+&lt;?php
 $name = "Alice";
 $age = 25;
 echo "$name is $age";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Alice is 25</p>
@@ -77,12 +77,12 @@ echo "$name is $age";
                         <h2>PHP Data Types</h2>
                         <p>PHP supports scalar types (int, float, string, bool), compound types (array, object), and special types (null, resource). Types are dynamically assigned, with automatic conversion in some contexts. Understanding data types is crucial for effective PHP programming.</p>
                         <pre>
-<?php
+&lt;?php
 $num = 42;
 $pi = 3.14;
 $flag = true;
 var_dump($num, $pi, $flag);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output:<br>int(42)<br>float(3.14)<br>bool(true)</p>
@@ -99,11 +99,11 @@ var_dump($num, $pi, $flag);
                         <h2>Arithmetic Operations</h2>
                         <p>PHP provides arithmetic operators like `+`, `-`, `*`, `/`, `%`, and `**` for exponentiation. They work on numeric types, with automatic type conversion. These operators are fundamental for calculations in PHP.</p>
                         <pre>
-<?php
+&lt;?php
 $a = 10;
 $b = 3;
 echo $a + $b, "\n", $a % $b;
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output:<br>13<br>1</p>
@@ -120,11 +120,11 @@ echo $a + $b, "\n", $a % $b;
                         <h2>Comparison Operators</h2>
                         <p>PHP’s comparison operators (`==`, `===`, `!=`, `!==`, `>`, `<`) return booleans. The `===` checks value and type, while `==` allows type coercion. Comparisons are essential for conditional logic.</p>
                         <pre>
-<?php
+&lt;?php
 $x = 5;
 $y = "5";
 var_dump($x == $y, $x === $y);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output:<br>bool(true)<br>bool(false)</p>
@@ -141,11 +141,11 @@ var_dump($x == $y, $x === $y);
                         <h2>Logical Operators</h2>
                         <p>PHP’s logical operators `&&`, `||`, `!`, `and`, `or` combine or invert boolean expressions. They short-circuit for efficiency, evaluating only as needed. Logical operators are key for complex conditions.</p>
                         <pre>
-<?php
+&lt;?php
 $a = true;
 $b = false;
 var_dump($a && $b, $a || $b);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output:<br>bool(false)<br>bool(true)</p>
@@ -162,11 +162,11 @@ var_dump($a && $b, $a || $b);
                         <h2>Working with Strings</h2>
                         <p>Strings in PHP are sequences of characters, defined with single or double quotes. Double-quoted strings support variable interpolation with `{}` or direct `$var`. Strings are central to web output and data processing.</p>
                         <pre>
-<?php
+&lt;?php
 $greeting = "Hello";
 $name = "World";
 echo "$greeting, $name!";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hello, World!</p>
@@ -183,10 +183,10 @@ echo "$greeting, $name!";
                         <h2>String Functions</h2>
                         <p>PHP offers functions like `strlen`, `strtoupper`, and `str_replace` for string manipulation. These functions are efficient and widely used in web applications. String functions simplify text processing tasks.</p>
                         <pre>
-<?php
+&lt;?php
 $text = "  php  ";
 echo trim(strtoupper($text));
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: PHP</p>
@@ -203,10 +203,10 @@ echo trim(strtoupper($text));
                         <h2>Working with Arrays</h2>
                         <p>Arrays in PHP are ordered maps, created with `[]` or `array()`. They support indexed and associative forms, with dynamic resizing. Arrays are versatile for storing and manipulating data.</p>
                         <pre>
-<?php
+&lt;?php
 $fruits = ["apple", "banana", "cherry"];
 echo $fruits[1];
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: banana</p>
@@ -223,10 +223,10 @@ echo $fruits[1];
                         <h2>Associative Arrays</h2>
                         <p>Associative arrays in PHP use string or integer keys, defined with `=>`. They’re ideal for key-value data, like configurations. Associative arrays are a core feature of PHP.</p>
                         <pre>
-<?php
+&lt;?php
 $ages = ["Alice" => 25, "Bob" => 30];
 echo $ages["Alice"];
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: 25</p>
@@ -243,14 +243,14 @@ echo $ages["Alice"];
                         <h2>Conditional Statements</h2>
                         <p>PHP’s `if` statements evaluate conditions, supporting `elseif` and `else`. They use curly braces or alternative syntax for templates. Conditionals are essential for dynamic web logic.</p>
                         <pre>
-<?php
+&lt;?php
 $age = 18;
 if ($age >= 18) {
     echo "Adult";
 } else {
     echo "Minor";
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Adult</p>
@@ -267,7 +267,7 @@ if ($age >= 18) {
                         <h2>Switch Statements</h2>
                         <p>PHP’s `switch` statement matches a value against cases, with explicit `break` to prevent fall-through. It supports a `default` case for unmatched values. Switch is useful for multi-way branching.</p>
                         <pre>
-<?php
+&lt;?php
 $day = 1;
 switch ($day) {
     case 1:
@@ -276,7 +276,7 @@ switch ($day) {
     default:
         echo "Other";
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Monday</p>
@@ -293,11 +293,11 @@ switch ($day) {
                         <h2>For Loops</h2>
                         <p>PHP’s `for` loop iterates with a counter, using initialization, condition, and increment expressions. It’s ideal for known iteration counts. For loops are widely used in PHP scripting.</p>
                         <pre>
-<?php
+&lt;?php
 for ($i = 0; $i < 3; $i++) {
     echo $i . "\n";
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output:<br>0<br>1<br>2</p>
@@ -314,12 +314,12 @@ for ($i = 0; $i < 3; $i++) {
                         <h2>Foreach Loops</h2>
                         <p>The `foreach` loop iterates over arrays, yielding keys and values. It supports both indexed and associative arrays. Foreach is idiomatic for array processing in PHP.</p>
                         <pre>
-<?php
+&lt;?php
 $fruits = ["apple", "banana"];
 foreach ($fruits as $fruit) {
     echo $fruit . "\n";
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output:<br>apple<br>banana</p>
@@ -336,12 +336,12 @@ foreach ($fruits as $fruit) {
                         <h2>Loop Control</h2>
                         <p>The `break` statement exits a loop, while `continue` skips to the next iteration. Both can take a number to affect nested loops. These controls manage loop execution in PHP.</p>
                         <pre>
-<?php
+&lt;?php
 for ($i = 0; $i < 5; $i++) {
     if ($i == 3) break;
     echo $i . "\n";
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output:<br>0<br>1<br>2</p>
@@ -358,12 +358,12 @@ for ($i = 0; $i < 5; $i++) {
                         <h2>Defining Functions</h2>
                         <p>Functions in PHP are declared with `function`, supporting parameters and return values. They can have default arguments and type hints. Functions promote reusable code in PHP.</p>
                         <pre>
-<?php
+&lt;?php
 function greet($name) {
     return "Hello, $name!";
 }
 echo greet("Alice");
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hello, Alice!</p>
@@ -380,12 +380,12 @@ echo greet("Alice");
                         <h2>Type Hints</h2>
                         <p>PHP supports type hints for function parameters and return types, enforcing types at runtime. They include scalar types, classes, and `void`. Type hints improve code reliability.</p>
                         <pre>
-<?php
+&lt;?php
 function add(int $a, int $b): int {
     return $a + $b;
 }
 echo add(2, 3);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: 5</p>
@@ -402,7 +402,7 @@ echo add(2, 3);
                         <h2>Classes</h2>
                         <p>Classes in PHP define objects with properties and methods, declared with `class`. They support visibility modifiers like `public`, `private`. Classes are key to object-oriented PHP.</p>
                         <pre>
-<?php
+&lt;?php
 class Dog {
     public $name;
     public function __construct($name) {
@@ -414,7 +414,7 @@ class Dog {
 }
 $dog = new Dog("Buddy");
 echo $dog->bark();
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Buddy says Woof!</p>
@@ -431,7 +431,7 @@ echo $dog->bark();
                         <h2>Inheritance</h2>
                         <p>PHP supports single inheritance with `extends`, allowing subclasses to inherit properties and methods. The `parent::` syntax calls parent methods. Inheritance organizes related classes hierarchically.</p>
                         <pre>
-<?php
+&lt;?php
 class Animal {
     public function speak() {
         return "Sound";
@@ -444,7 +444,7 @@ class Dog extends Animal {
 }
 $dog = new Dog();
 echo $dog->speak();
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Sound: Woof!</p>
@@ -461,7 +461,7 @@ echo $dog->speak();
                         <h2>Interfaces</h2>
                         <p>Interfaces in PHP define method signatures that classes must implement, using `implements`. They enable polymorphism without inheritance. Interfaces are crucial for flexible designs.</p>
                         <pre>
-<?php
+&lt;?php
 interface Speaker {
     public function speak();
 }
@@ -472,7 +472,7 @@ class Dog implements Speaker {
 }
 $dog = new Dog();
 echo $dog->speak();
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Woof!</p>
@@ -489,13 +489,13 @@ echo $dog->speak();
                         <h2>Error Handling</h2>
                         <p>PHP uses `try`, `catch`, and `throw` for exception handling, with `Exception` as the base class. Exceptions are caught by type, and `finally` ensures cleanup. Error handling ensures robust applications.</p>
                         <pre>
-<?php
+&lt;?php
 try {
     throw new Exception("Error!");
 } catch (Exception $e) {
     echo "Caught: " . $e->getMessage();
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Caught: Error!</p>
@@ -512,14 +512,14 @@ try {
                         <h2>Custom Exceptions</h2>
                         <p>Custom exceptions in PHP are created by extending `Exception`. They provide specific error context for better debugging. Custom exceptions enhance error handling clarity.</p>
                         <pre>
-<?php
+&lt;?php
 class MyException extends Exception {}
 try {
     throw new MyException("Custom error");
 } catch (MyException $e) {
     echo $e->getMessage();
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Custom error</p>
@@ -536,11 +536,11 @@ try {
                         <h2>Superglobals</h2>
                         <p>PHP’s superglobals like `$_GET`, `$_POST`, and `$_SERVER` provide access to request data and server info. They’re globally available in any scope. Superglobals are essential for web interactions.</p>
                         <pre>
-<?php
+&lt;?php
 // Simulating $_GET data
 $_GET['name'] = "Alice";
 echo $_GET['name'];
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Alice</p>
@@ -563,12 +563,11 @@ echo $_GET['name'];
     <input type="submit">
 </form>
 
-<!-- index.php -->
-<?php
+&lt;?php
 if (isset($_POST['name'])) {
     echo htmlspecialchars($_POST['name']);
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: (Submits form with "Alice" to see "Alice")</p>
@@ -585,11 +584,11 @@ if (isset($_POST['name'])) {
                         <h2>Sessions</h2>
                         <p>PHP sessions store user data across requests, started with `session_start()`. Data is stored in `$_SESSION`. Sessions are vital for user authentication and state management.</p>
                         <pre>
-<?php
+&lt;?php
 session_start();
 $_SESSION['user'] = "Alice";
 echo $_SESSION['user'];
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Alice</p>
@@ -606,10 +605,10 @@ echo $_SESSION['user'];
                         <h2>Cookies</h2>
                         <p>PHP sets cookies with `setcookie()`, storing data in the browser. Cookies are accessed via `$_COOKIE`. Cookies are used for persistent client-side data.</p>
                         <pre>
-<?php
+&lt;?php
 setcookie("user", "Alice", time() + 3600);
 echo $_COOKIE["user"] ?? "No cookie";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Alice</p>
@@ -626,10 +625,10 @@ echo $_COOKIE["user"] ?? "No cookie";
                         <h2>File Writing</h2>
                         <p>PHP’s `file_put_contents()` writes data to files, with error handling for failures. It’s atomic and simple for basic I/O. File writing is crucial for persistent storage.</p>
                         <pre>
-<?php
+&lt;?php
 file_put_contents("output.txt", "Hello, World!");
 echo "File written";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: File written</p>
@@ -646,10 +645,10 @@ echo "File written";
                         <h2>File Reading</h2>
                         <p>The `file_get_contents()` function reads entire files into strings. It throws warnings on failure, requiring error checks. File reading is essential for data retrieval.</p>
                         <pre>
-<?php
+&lt;?php
 $content = file_get_contents("output.txt");
 echo $content;
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hello, World!</p>
@@ -666,10 +665,10 @@ echo $content;
                         <h2>Regular Expressions</h2>
                         <p>PHP’s PCRE functions like `preg_match` and `preg_replace` handle regular expressions. Patterns are defined with delimiters (e.g., `/pattern/`). Regexes are powerful for text validation and manipulation.</p>
                         <pre>
-<?php
+&lt;?php
 $text = "hello world";
 echo preg_replace("/world/", "PHP", $text);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: hello PHP</p>
@@ -686,10 +685,10 @@ echo preg_replace("/world/", "PHP", $text);
                         <h2>JSON Encoding</h2>
                         <p>PHP’s `json_encode()` converts arrays and objects to JSON strings. It handles nested structures and supports options like `JSON_PRETTY_PRINT`. JSON encoding is common for APIs.</p>
                         <pre>
-<?php
+&lt;?php
 $data = ["name" => "Alice"];
 echo json_encode($data);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: {"name":"Alice"}</p>
@@ -706,11 +705,11 @@ echo json_encode($data);
                         <h2>JSON Decoding</h2>
                         <p>The `json_decode()` function converts JSON to PHP arrays or objects. It supports an associative array option for flexibility. JSON decoding is vital for API data processing.</p>
                         <pre>
-<?php
+&lt;?php
 $json = '{"name":"Alice"}';
 $data = json_decode($json, true);
 echo $data["name"];
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Alice</p>
@@ -727,10 +726,10 @@ echo $data["name"];
                         <h2>PDO</h2>
                         <p>PHP’s PDO (PHP Data Objects) provides a consistent interface for database access. It supports prepared statements for security. PDO is preferred for modern database interactions.</p>
                         <pre>
-<?php
+&lt;?php
 $pdo = new PDO("sqlite::memory:");
 echo "Database connected";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Database connected</p>
@@ -747,13 +746,13 @@ echo "Database connected";
                         <h2>PDO Queries</h2>
                         <p>PDO’s `query` and `prepare` methods execute SQL, with `fetch` retrieving results. Prepared statements prevent SQL injection. PDO queries are secure and efficient for databases.</p>
                         <pre>
-<?php
+&lt;?php
 $pdo = new PDO("sqlite::memory:");
 $pdo->exec("CREATE TABLE users (name TEXT)");
 $stmt = $pdo->prepare("INSERT INTO users (name) VALUES (?)");
 $stmt->execute(["Alice"]);
 echo $pdo->query("SELECT name FROM users")->fetchColumn();
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Alice</p>
@@ -770,11 +769,11 @@ echo $pdo->query("SELECT name FROM users")->fetchColumn();
                         <h2>Array Functions</h2>
                         <p>PHP provides functions like `array_map`, `array_filter`, and `array_reduce` for array manipulation. They support callbacks for custom logic. Array functions simplify complex data processing.</p>
                         <pre>
-<?php
+&lt;?php
 $numbers = [1, 2, 3];
 $squares = array_map(fn($n) => $n * $n, $numbers);
 print_r($squares);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Array ( [0] => 1 [1] => 4 [2] => 9 )</p>
@@ -791,10 +790,10 @@ print_r($squares);
                         <h2>Anonymous Functions</h2>
                         <p>Anonymous functions, or closures, are defined with `function` or arrow syntax `fn`. They can capture variables with `use`. Closures are useful for callbacks and functional programming.</p>
                         <pre>
-<?php
+&lt;?php
 $greet = fn($name) => "Hello, $name!";
 echo $greet("Alice");
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hello, Alice!</p>
@@ -811,7 +810,7 @@ echo $greet("Alice");
                         <h2>Traits</h2>
                         <p>Traits in PHP provide reusable methods for classes, included with `use`. They support method precedence and aliasing. Traits enhance code reuse without inheritance.</p>
                         <pre>
-<?php
+&lt;?php
 trait Greetable {
     public function greet() {
         return "Hello!";
@@ -821,7 +820,7 @@ class Person {
     use Greetable;
 }
 echo (new Person())->greet();
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hello!</p>
@@ -838,7 +837,7 @@ echo (new Person())->greet();
                         <h2>Namespaces</h2>
                         <p>Namespaces in PHP organize code, declared with `namespace` to avoid name collisions. They’re imported with `use` or fully qualified names. Namespaces are essential for large projects.</p>
                         <pre>
-<?php
+&lt;?php
 namespace App;
 class Hello {
     public function say() {
@@ -846,7 +845,7 @@ class Hello {
     }
 }
 echo (new \App\Hello())->say();
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hi!</p>
@@ -863,13 +862,13 @@ echo (new \App\Hello())->say();
                         <h2>Autoloading</h2>
                         <p>PHP’s autoloading loads classes dynamically with `spl_autoload_register`. It follows PSR-4 standards for modern projects. Autoloading simplifies class management in large applications.</p>
                         <pre>
-<?php
+&lt;?php
 spl_autoload_register(function ($class) {
     echo "Loading $class";
 });
 class User {}
 new User();
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Loading User</p>
@@ -886,10 +885,10 @@ new User();
                         <h2>Date and Time</h2>
                         <p>PHP’s `DateTime` class handles dates and times, with methods like `format`. It supports time zones and intervals. DateTime is robust for temporal operations.</p>
                         <pre>
-<?php
+&lt;?php
 $date = new DateTime();
 echo $date->format("Y-m-d");
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: 2025-05-01</p>
@@ -906,10 +905,10 @@ echo $date->format("Y-m-d");
                         <h2>HTTP Requests</h2>
                         <p>PHP’s `file_get_contents` or `cURL` makes HTTP requests to APIs. cURL offers advanced options for headers and methods. HTTP requests are key for integrating external services.</p>
                         <pre>
-<?php
+&lt;?php
 $response = file_get_contents("https://jsonplaceholder.typicode.com/todos/1");
 echo json_decode($response)->title;
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: (Sample todo title, e.g., "delectus aut autem")</p>
@@ -926,12 +925,12 @@ echo json_decode($response)->title;
                         <h2>REST APIs</h2>
                         <p>PHP can create REST APIs by handling HTTP methods and returning JSON. Routes are managed with conditionals or frameworks. REST APIs are standard for web services.</p>
                         <pre>
-<?php
+&lt;?php
 header("Content-Type: application/json");
 if ($_SERVER["REQUEST_METHOD"] === "GET") {
     echo json_encode(["message" => "Hello, World!"]);
 }
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: {"message":"Hello, World!"}</p>
@@ -948,7 +947,7 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
                         <h2>Composer</h2>
                         <p>Composer is PHP’s dependency manager, installing libraries via `composer.json`. It supports autoloading and versioning. Composer is essential for modern PHP development.</p>
                         <pre>
-<?php
+&lt;?php
 // composer.json: {"require": {"monolog/monolog": "^2.0"}}
 // After running `composer install`
 require "vendor/autoload.php";
@@ -956,7 +955,7 @@ use Monolog\Logger;
 $log = new Logger("test");
 $log->info("Hello!");
 echo "Logged";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Logged</p>
@@ -973,7 +972,7 @@ echo "Logged";
                         <h2>Unit Testing</h2>
                         <p>PHPUnit is PHP’s standard testing framework, with classes extending `TestCase`. Tests use assertions to verify behavior. Unit testing ensures code reliability.</p>
                         <pre>
-<?php
+&lt;?php
 // tests/MathTest.php
 use PHPUnit\Framework\TestCase;
 class MathTest extends TestCase {
@@ -982,7 +981,7 @@ class MathTest extends TestCase {
     }
 }
 // Run with `vendor/bin/phpunit`
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: (Test passes, no console output)</p>
@@ -999,10 +998,10 @@ class MathTest extends TestCase {
                         <h2>Laravel Introduction</h2>
                         <p>Laravel is a PHP framework for web development, emphasizing elegant syntax. It uses MVC and includes tools like Eloquent ORM. Laravel streamlines complex web applications.</p>
                         <pre>
-<?php
+&lt;?php
 // Run `composer create-project laravel/laravel myapp`
 echo "Run `composer create-project laravel/laravel myapp`";
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Run `composer create-project laravel/laravel myapp`</p>
@@ -1019,13 +1018,13 @@ echo "Run `composer create-project laravel/laravel myapp`";
                         <h2>Laravel Routes</h2>
                         <p>Laravel routes map URLs to controllers or closures, defined in `routes/web.php`. They support RESTful resources and middleware. Routes are central to Laravel’s request handling.</p>
                         <pre>
-<?php
+&lt;?php
 // routes/web.php
 use Illuminate\Support\Facades\Route;
 Route::get("/hello", function () {
     return "Hello, Laravel!";
 });
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: (Visit http://localhost:8000/hello to see "Hello, Laravel!")</p>
@@ -1042,7 +1041,7 @@ Route::get("/hello", function () {
                         <h2>Laravel Controllers</h2>
                         <p>Laravel controllers handle requests, defined in `app/Http/Controllers`. They return views or data, often using dependency injection. Controllers organize business logic in Laravel.</p>
                         <pre>
-<?php
+&lt;?php
 // app/Http/Controllers/WelcomeController.php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
@@ -1052,7 +1051,7 @@ class WelcomeController extends Controller {
     }
 }
 // routes/web.php: Route::get("/welcome", [WelcomeController::class, "index"]);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: (Visit http://localhost:8000/welcome to see "Hello, Laravel!")</p>
@@ -1072,13 +1071,13 @@ class WelcomeController extends Controller {
 <!-- resources/views/welcome.blade.php -->
 <h1>Hello, {{ $name }}!</h1>
 
-<?php
+&lt;?php
 // routes/web.php
 use Illuminate\Support\Facades\Route;
 Route::get("/welcome", function () {
     return view("welcome", ["name" => "World"]);
 });
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: (Visit http://localhost:8000/welcome to see "<h1>Hello, World!</h1>")</p>
@@ -1095,7 +1094,7 @@ Route::get("/welcome", function () {
                         <h2>Eloquent ORM</h2>
                         <p>Laravel’s Eloquent ORM maps database tables to models, defined in `app/Models`. It supports queries, relationships, and validations. Eloquent simplifies database operations.</p>
                         <pre>
-<?php
+&lt;?php
 // app/Models/User.php
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
@@ -1108,7 +1107,7 @@ Route::get("/user", function () {
     $user->save();
     return $user->name;
 });
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Alice</p>
@@ -1125,7 +1124,7 @@ Route::get("/user", function () {
                         <h2>Laravel Middleware</h2>
                         <p>Laravel middleware filters HTTP requests, defined in `app/Http/Middleware`. They handle tasks like authentication or logging. Middleware enhances request processing flexibility.</p>
                         <pre>
-<?php
+&lt;?php
 // app/Http/Middleware/LogRequest.php
 namespace App\Http\Middleware;
 use Closure;
@@ -1136,7 +1135,7 @@ class LogRequest {
     }
 }
 // routes/web.php: Route::get("/", fn() => "Hello!")->middleware(LogRequest::class);
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Hello! (Logs "Request received" in logs)</p>
@@ -1153,14 +1152,14 @@ class LogRequest {
                         <h2>Laravel Authentication</h2>
                         <p>Laravel provides built-in authentication with `artisan make:auth` or `Laravel Breeze`. It handles login, registration, and password resets. Authentication is critical for secure web apps.</p>
                         <pre>
-<?php
+&lt;?php
 // routes/web.php
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 Route::get("/user", function () {
     return Auth::check() ? Auth::user()->name : "Guest";
 });
-?>
+?&gt;
                         </pre>
                         <div class="example">
                             <p>Output: Guest (or user name if authenticated)</p>
