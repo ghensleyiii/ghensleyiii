@@ -607,29 +607,199 @@
                         <h2>Keywords</h2>
                         <details>
                             <summary class="item-button">function</summary>
-                            <p>The function keyword defines a reusable block of code.</p>
+                            <p>The function keyword defines a reusable block of code that can be invoked with arguments.</p>
                         </details>
                         <details>
                             <summary class="item-button">let</summary>
-                            <p>The let keyword declares a block-scoped variable.</p>
+                            <p>The let keyword declares a block-scoped variable that can be reassigned.</p>
                         </details>
                         <details>
                             <summary class="item-button">const</summary>
-                            <p>The const keyword declares a constant variable that cannot be reassigned.</p>
+                            <p>The const keyword declares a block-scoped variable that cannot be reassigned after initialization.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">var</summary>
+                            <p>The var keyword declares a variable with function or global scope, allowing reassignment.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">if</summary>
+                            <p>The if keyword introduces a conditional statement to execute code based on a condition.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">else</summary>
+                            <p>The else keyword specifies a block of code to execute if the preceding if condition is false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">for</summary>
+                            <p>The for keyword creates a loop with an initialization, condition, and increment expression.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">while</summary>
+                            <p>The while keyword creates a loop that continues as long as a condition is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">break</summary>
+                            <p>The break keyword exits a loop or switch statement prematurely.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">continue</summary>
+                            <p>The continue keyword skips the current loop iteration and proceeds to the next.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">return</summary>
+                            <p>The return keyword exits a function and optionally returns a value to the caller.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">try</summary>
+                            <p>The try keyword begins a block to attempt code that may throw an error.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">catch</summary>
+                            <p>The catch keyword defines a block to handle errors thrown in a try block.</p>
                         </details>
 
-                        <h2>Methods</h2>
+                        <h2>Built-in Methods</h2>
                         <details>
                             <summary class="item-button">addEventListener()</summary>
-                            <p>The addEventListener() method attaches an event handler to an element.</p>
+                            <p>The addEventListener() method attaches an event handler to a DOM element for events like clicks.</p>
                         </details>
                         <details>
                             <summary class="item-button">querySelector()</summary>
-                            <p>The querySelector() method selects the first element matching a CSS selector.</p>
+                            <p>The querySelector() method returns the first DOM element matching a specified CSS selector.</p>
                         </details>
                         <details>
                             <summary class="item-button">push()</summary>
-                            <p>The push() method adds an element to the end of an array.</p>
+                            <p>The push() method adds one or more elements to the end of an array.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">pop()</summary>
+                            <p>The pop() method removes and returns the last element from an array.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">slice()</summary>
+                            <p>The slice() method returns a shallow copy of a portion of an array or string.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">map()</summary>
+                            <p>The map() method creates a new array by applying a function to each element of an array.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">filter()</summary>
+                            <p>The filter() method creates a new array with elements that pass a test provided by a function.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">reduce()</summary>
+                            <p>The reduce() method applies a function to reduce an array to a single value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">toString()</summary>
+                            <p>The toString() method returns a string representation of an object or value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">setTimeout()</summary>
+                            <p>The setTimeout() method executes a function after a specified delay in milliseconds.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">setInterval()</summary>
+                            <p>The setInterval() method repeatedly executes a function at specified intervals.</p>
+                        </details>
+
+                        <h2>Data Types</h2>
+                        <details>
+                            <summary class="item-button">number</summary>
+                            <p>The number data type represents both integers and floating-point numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">string</summary>
+                            <p>The string data type represents a sequence of characters, enclosed in quotes.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">boolean</summary>
+                            <p>The boolean data type represents a logical value, either true or false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">object</summary>
+                            <p>The object data type represents a collection of key-value pairs or complex data.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">array</summary>
+                            <p>The array data type is a list-like object used to store multiple values.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">null</summary>
+                            <p>The null data type represents an intentional absence of any object value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">undefined</summary>
+                            <p>The undefined data type indicates a variable that has been declared but not assigned a value.</p>
+                        </details>
+
+                        <h2>Operators</h2>
+                        <details>
+                            <summary class="item-button">+</summary>
+                            <p>The + operator performs addition for numbers or concatenation for strings.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">-</summary>
+                            <p>The - operator performs subtraction between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">*</summary>
+                            <p>The * operator performs multiplication between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">/</summary>
+                            <p>The / operator performs division between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">%</summary>
+                            <p>The % operator returns the remainder of division between two numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">==</summary>
+                            <p>The == operator checks if two values are equal, performing type coercion if needed.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">===</summary>
+                            <p>The === operator checks if two values are equal in both value and type.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!=</summary>
+                            <p>The != operator checks if two values are not equal, performing type coercion.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!==</summary>
+                            <p>The !== operator checks if two values are not equal in value or type.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&&</summary>
+                            <p>The && operator evaluates to true if both operands are true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">||</summary>
+                            <p>The || operator evaluates to true if at least one operand is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!</summary>
+                            <p>The ! operator inverts the boolean value of an expression.</p>
+                        </details>
+
+                        <h2>Built-in Objects</h2>
+                        <details>
+                            <summary class="item-button">Math</summary>
+                            <p>The Math object provides methods and constants for mathematical operations, like Math.random().</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">Date</summary>
+                            <p>The Date object represents a specific moment in time, enabling date and time operations.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">Array</summary>
+                            <p>The Array object provides methods for manipulating arrays, like sort() and join().</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">String</summary>
+                            <p>The String object provides methods for manipulating strings, like substring() and toUpperCase().</p>
                         </details>
                     </div>
                 </details>
@@ -642,25 +812,183 @@
                         <h2>Keywords</h2>
                         <details>
                             <summary class="item-button">class</summary>
-                            <p>The class keyword defines a blueprint for creating objects.</p>
+                            <p>The class keyword defines a blueprint for creating objects with attributes and methods.</p>
                         </details>
                         <details>
                             <summary class="item-button">public</summary>
                             <p>The public keyword makes a class, method, or variable accessible from anywhere.</p>
                         </details>
                         <details>
+                            <summary class="item-button">private</summary>
+                            <p>The private keyword restricts access to a class, method, or variable to its own class.</p>
+                        </details>
+                        <details>
                             <summary class="item-button">static</summary>
                             <p>The static keyword indicates a method or variable belongs to the class, not instances.</p>
                         </details>
+                        <details>
+                            <summary class="item-button">void</summary>
+                            <p>The void keyword indicates a method does not return a value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">if</summary>
+                            <p>The if keyword introduces a conditional statement to execute code based on a condition.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">else</summary>
+                            <p>The else keyword specifies a block of code to execute if the preceding if condition is false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">for</summary>
+                            <p>The for keyword creates a loop with an initialization, condition, and increment expression.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">while</summary>
+                            <p>The while keyword creates a loop that continues as long as a condition is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">break</summary>
+                            <p>The break keyword exits a loop or switch statement prematurely.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">continue</summary>
+                            <p>The continue keyword skips the current loop iteration and proceeds to the next.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">return</summary>
+                            <p>The return keyword exits a method and optionally returns a value to the caller.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">try</summary>
+                            <p>The try keyword begins a block to attempt code that may throw an exception.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">catch</summary>
+                            <p>The catch keyword defines a block to handle exceptions thrown in a try block.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">finally</summary>
+                            <p>The finally keyword specifies a block that executes regardless of whether an exception occurs.</p>
+                        </details>
 
-                        <h2>Methods</h2>
+                        <h2>Data Types</h2>
+                        <details>
+                            <summary class="item-button">int</summary>
+                            <p>The int data type represents a 32-bit signed integer, ranging from -2^31 to 2^31-1.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">double</summary>
+                            <p>The double data type represents a 64-bit floating-point number for decimal values.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">float</summary>
+                            <p>The float data type represents a 32-bit floating-point number, less precise than double.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">boolean</summary>
+                            <p>The boolean data type represents a value of either true or false.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">char</summary>
+                            <p>The char data type represents a single 16-bit Unicode character.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">String</summary>
+                            <p>The String class represents a sequence of characters, used for text manipulation.</p>
+                        </details>
+
+                        <h2>Operators</h2>
+                        <details>
+                            <summary class="item-button">+</summary>
+                            <p>The + operator performs addition for numbers or concatenation for strings.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">-</summary>
+                            <p>The - operator performs subtraction between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">*</summary>
+                            <p>The * operator performs multiplication between numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">/</summary>
+                            <p>The / operator performs division between numbers, returning an integer or decimal result.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">%</summary>
+                            <p>The % operator returns the remainder of division between two numbers.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">==</summary>
+                            <p>The == operator checks if two values are equal in value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!=</summary>
+                            <p>The != operator checks if two values are not equal.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">&&</summary>
+                            <p>The && operator evaluates to true if both operands are true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">||</summary>
+                            <p>The || operator evaluates to true if at least one operand is true.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">!</summary>
+                            <p>The ! operator inverts the boolean value of an expression.</p>
+                        </details>
+
+                        <h2>Built-in Methods</h2>
                         <details>
                             <summary class="item-button">main()</summary>
-                            <p>The main() method is the entry point for a Java program.</p>
+                            <p>The main() method serves as the entry point for a Java program, executed when the program starts.</p>
                         </details>
                         <details>
                             <summary class="item-button">toString()</summary>
                             <p>The toString() method returns a string representation of an object.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">equals()</summary>
+                            <p>The equals() method compares two objects for equality based on their content.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">length()</summary>
+                            <p>The length() method returns the number of characters in a String object.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">substring()</summary>
+                            <p>The substring() method extracts a portion of a String based on specified indices.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">parseInt()</summary>
+                            <p>The parseInt() method converts a string to an integer value.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">parseDouble()</summary>
+                            <p>The parseDouble() method converts a string to a double value.</p>
+                        </details>
+
+                        <h2>Standard Classes</h2>
+                        <details>
+                            <summary class="item-button">System</summary>
+                            <p>The System class provides methods for system-level operations, like console output with System.out.println().</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">Math</summary>
+                            <p>The Math class provides methods for mathematical operations, like Math.sqrt() and Math.random().</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">ArrayList</summary>
+                            <p>The ArrayList class provides a resizable array for storing and manipulating a list of objects.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">HashMap</summary>
+                            <p>The HashMap class provides a key-value pair data structure for efficient data retrieval.</p>
+                        </details>
+                        <details>
+                            <summary class="item-button">Scanner</summary>
+                            <p>The Scanner class reads input from various sources, like the console, using methods like nextInt().</p>
                         </details>
                     </div>
                 </details>
