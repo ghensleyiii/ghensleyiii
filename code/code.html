@@ -77,7 +77,7 @@ footer {
     position: relative !important;
     width: 100% !important;
     margin: 0 auto 20px auto !important;
-    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    background-color: var(--white);
     padding: 5px !important;
     border-radius: 5px !important;
 }
@@ -117,7 +117,7 @@ footer {
     font-family: 'Courier New', Courier, 'Lucida Console', monospace !important;
     font-size: 16px !important;
     padding: 10px 15px 10px 60px !important;
-    border: 2px solid #666666 !important; /* Grayscale border */
+    border: 2px solid var(--black) !important;
     border-radius: 5px !important;
     resize: none !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
@@ -127,7 +127,7 @@ footer {
 }
 
 .code-editor textarea::placeholder {
-    color: #999999 !important; /* Grayscale placeholder */
+    color: #fff !important;
 }
 
 .buttons {
@@ -175,11 +175,11 @@ footer {
 }
 
 .validate-btn:hover, .test-btn:hover, .document-btn:hover {
-    background: linear-gradient(135deg, var(--green), var(--blue)) !important; /* Reversed gradient for hover effect */
+    background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
 }
 
 .error-messages {
-    color: #fff !important; /* Changed to white to match body */
+    color: var(--black) !important;
     margin-top: 10px !important;
     text-align: center !important;
     max-width: 600px !important;
@@ -198,17 +198,17 @@ footer {
 .save-file-input {
     padding: 8px !important;
     font-size: 16px !important;
-    border: 2px solid #666666 !important; /* Grayscale border */
+    border: 2px solid var(--black) !important;
     border-radius: 5px !important;
     width: 300px !important;
-    background-color: #e0e0e0 !important; /* Match background */
-    color: #fff !important; /* Changed to white to match body */
+    background-color: var(--white) !important;
+    color: var(--black) !important;
 }
 
 .save-file-btn {
     background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
     color: #fff !important; /* Changed to white to match body */
-    border: 2px solid #d0d0d0 !important;
+    border: 2px solid var(--black) !important;
     padding: 8px 20px !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     border-radius: 5px !important;
@@ -218,11 +218,11 @@ footer {
 }
 
 .save-file-btn:hover {
-    background: linear-gradient(135deg, var(--green), var(--blue)) !important; /* Reversed gradient for hover effect */
+    background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
 }
 
 .output-section {
-    background-color: #e0e0e0 !important; /* Match background */
+    background-color: var(--white) !important; /* Match background */
     padding: 5px !important;
     margin-top: 20px !important;
     display: none !important; /* Hidden by default */
@@ -231,24 +231,24 @@ footer {
 .output-container {
     width: 100% !important;
     margin: 0 auto !important;
-    background-color: #e0e0e0 !important; /* Match background */
+    background-color: var(--white) !important; /* Match background */
     border-radius: 0px !important;
     overflow: hidden !important;
-    border: 2px solid #333333 !important; /* Dark gray border */
+    border: 2px solid var(--black) !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
 .output-header {
-    color: #fff !important; /* Changed to white to match body */
+    color: #fff !important;
     padding: 10px !important;
     font-size: 1rem !important;
     font-weight: bold !important;
-    background-color: #e0e0e0 !important; /* Match background */
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
 hr {
-    border: 1px solid #333333 !important; /* Dark gray border */
+    border: 1px solid var(--black) !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
