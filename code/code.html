@@ -10,10 +10,10 @@
         /*MAIN CSS*/
 
 :root {
-    --blue: #4169e1;
-    --green: #41E169;
-    --white: #f0f2f0;
-    --black: #333333;
+    --blue: #4169e1 !important;
+    --green: #41E169 !important;
+    --white: #f0f2f0 !important;
+    --black: #333333 !important;
 }
 
 * {
@@ -25,7 +25,7 @@
 body {
     font-family: Arial, sans-serif !important;
     background-color: var(--white) !important;
-    color: var(--black) !important;
+    color: #fff !important; /* Changed to white as requested */
     line-height: 1.6 !important;
 }
 
@@ -66,272 +66,271 @@ footer {
 }
 
 /*CODE CSS*/
-        .main-section {
-            background-color: #e0e0e0; /* Match body background */
-            padding: 50px 20px;
-            text-align: center;
-            color: #333333;
-        }
+.main-section {
+    background-color: #e0e0e0 !important; /* Match body background */
+    padding: 50px 20px !important;
+    text-align: center !important;
+    color: #fff !important; /* Changed to white to match body */
+}
 
-        .code-editor {
-            position: relative;
-            width: 100%;
-            margin: 0 auto 20px auto;
-            background-color: #e0e0e0; /* Match background */
-            padding: 5px;
-            border-radius: 5px;
-        }
+.code-editor {
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 auto 20px auto !important;
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    padding: 5px !important;
+    border-radius: 5px !important;
+}
 
-        .line-numbers {
-            width: 48px;
-            background-color: #333333; /* Keep dark background for contrast */
-            color: #999999; /* Grayscale replacement for blue */
-            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
-            font-size: 16px;
-            text-align: right;
-            user-select: none;
-            line-height: 20px;
-            position: absolute;
-            top: 7px;
-            left: 7px;
-            height: calc(100% - 21.5px);
-            padding: 10px 5px 10px 0;
-            overflow: hidden;
-            z-index: 10;
-        }
+.line-numbers {
+    width: 48px !important;
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    color: #fff !important; /* Changed to white as requested */
+    font-family: 'Courier New', Courier, 'Lucida Console', monospace !important;
+    font-size: 16px !important;
+    text-align: right !important;
+    user-select: none !important;
+    line-height: 20px !important;
+    position: absolute !important;
+    top: 7px !important;
+    left: 7px !important;
+    height: calc(100% - 21.5px) !important;
+    padding: 10px 5px 10px 0 !important;
+    overflow: hidden !important;
+    z-index: 10 !important;
+}
 
-        .line-numbers pre {
-            margin: 0;
-            padding: 0;
-            line-height: 20px;
-            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
-            font-size: 16px;
-            display: block;
-        }
+.line-numbers pre {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 20px !important;
+    font-family: 'Courier New', Courier, 'Lucida Console', monospace !important;
+    font-size: 16px !important;
+    display: block !important;
+}
 
-        .code-editor textarea {
-            width: 100%;
-            height: 600px;
-            background-color: #e0e0e0; /* Match background */
-            color: #333333; /* Dark gray text */
-            font-family: 'Courier New', Courier, 'Lucida Console', monospace;
-            font-size: 16px;
-            padding: 10px 15px 10px 60px;
-            border: 2px solid #666666; /* Grayscale border */
-            border-radius: 5px;
-            resize: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            line-height: 20px;
-            position: relative;
-            z-index: 0;
-        }
+.code-editor textarea {
+    width: 100% !important;
+    height: 600px !important;
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    color: var(--white) !important; /* Changed to body background color */
+    font-family: 'Courier New', Courier, 'Lucida Console', monospace !important;
+    font-size: 16px !important;
+    padding: 10px 15px 10px 60px !important;
+    border: 2px solid #666666 !important; /* Grayscale border */
+    border-radius: 5px !important;
+    resize: none !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    line-height: 20px !important;
+    position: relative !important;
+    z-index: 0 !important;
+}
 
-        .code-editor textarea::placeholder {
-            color: #999999; /* Grayscale placeholder */
-        }
+.code-editor textarea::placeholder {
+    color: #999999 !important; /* Grayscale placeholder */
+}
 
-        .buttons {
-            margin: 20px auto;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            max-width: 600px;
-        }
+.buttons {
+    margin: 20px auto !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    max-width: 600px !important;
+}
 
-        .validate-btn {
-            background-color: #d0d0d0; /* Light gray button */
-            color: #333333; /* Dark gray text */
-            border: 2px solid #d0d0d0;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.validate-btn {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    color: #fff !important; /* Changed to white to match body */
+    border: 2px solid #d0d0d0 !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+}
 
-        .test-btn {
-            background-color: #d0d0d0; /* Light gray button */
-            color: #333333; /* Dark gray text */
-            border: 2px solid #d0d0d0;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.test-btn {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    color: #fff !important; /* Changed to white to match body */
+    border: 2px solid #d0d0d0 !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+}
 
-        .document-btn {
-            background-color: #d0d0d0; /* Light gray button */
-            color: #333333; /* Dark gray text */
-            border: 2px solid #d0d0d0;
-            padding: 10px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.document-btn {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    color: #fff !important; /* Changed to white to match body */
+    border: 2px solid #d0d0d0 !important;
+    padding: 10px 20px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+}
 
-        .validate-btn:hover, .test-btn:hover, .document-btn:hover {
-            background-color: #b0b0b0; /* Match hover effect from homeschool.html */
-        }
+.validate-btn:hover, .test-btn:hover, .document-btn:hover {
+    background: linear-gradient(135deg, var(--green), var(--blue)) !important; /* Reversed gradient for hover effect */
+}
 
-        .error-messages {
-            color: #999999; /* Grayscale error messages */
-            margin-top: 10px;
-            text-align: center;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.error-messages {
+    color: #fff !important; /* Changed to white to match body */
+    margin-top: 10px !important;
+    text-align: center !important;
+    max-width: 600px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
 
-        .save-file-container {
-            margin: 10px auto;
-            display: none;
-            justify-content: center;
-            gap: 10px;
-            max-width: 600px;
-        }
+.save-file-container {
+    margin: 10px auto !important;
+    display: none !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    max-width: 600px !important;
+}
 
-        .save-file-input {
-            padding: 8px;
-            font-size: 16px;
-            border: 2px solid #666666; /* Grayscale border */
-            border-radius: 5px;
-            width: 300px;
-            background-color: #e0e0e0; /* Match background */
-            color: #333333; /* Dark gray text */
-        }
+.save-file-input {
+    padding: 8px !important;
+    font-size: 16px !important;
+    border: 2px solid #666666 !important; /* Grayscale border */
+    border-radius: 5px !important;
+    width: 300px !important;
+    background-color: #e0e0e0 !important; /* Match background */
+    color: #fff !important; /* Changed to white to match body */
+}
 
-        .save-file-btn {
-            background-color: #d0d0d0; /* Light gray button */
-            color: #333333; /* Dark gray text */
-            border: 2px solid #d0d0d0;
-            padding: 8px 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
+.save-file-btn {
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+    color: #fff !important; /* Changed to white to match body */
+    border: 2px solid #d0d0d0 !important;
+    padding: 8px 20px !important;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 5px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    transition: background-color 0.3s !important;
+}
 
-        .save-file-btn:hover {
-            background-color: #b0b0b0; /* Match hover effect */
-        }
+.save-file-btn:hover {
+    background: linear-gradient(135deg, var(--green), var(--blue)) !important; /* Reversed gradient for hover effect */
+}
 
-        .output-section {
-            background-color: #e0e0e0; /* Match background */
-            padding: 5px;
-            margin-top: 20px;
-            display: none; /* Hidden by default */
-        }
+.output-section {
+    background-color: #e0e0e0 !important; /* Match background */
+    padding: 5px !important;
+    margin-top: 20px !important;
+    display: none !important; /* Hidden by default */
+}
 
-        .output-container {
-            width: 100%;
-            margin: 0 auto;
-            background-color: #e0e0e0; /* Match background */
-            border-radius: 0px;
-            overflow: hidden;
-            border: 2px solid #333333; /* Dark gray border */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.output-container {
+    width: 100% !important;
+    margin: 0 auto !important;
+    background-color: #e0e0e0 !important; /* Match background */
+    border-radius: 0px !important;
+    overflow: hidden !important;
+    border: 2px solid #333333 !important; /* Dark gray border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
 
-        .output-header {
-            color: #333333; /* Dark gray text */
-            padding: 10px;
-            font-size: 1rem;
-            font-weight: bold;
-            background-color: #e0e0e0; /* Match background */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+.output-header {
+    color: #fff !important; /* Changed to white to match body */
+    padding: 10px !important;
+    font-size: 1rem !important;
+    font-weight: bold !important;
+    background-color: #e0e0e0 !important; /* Match background */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
 
-        hr {
-            border: 1px solid #333333; /* Dark gray border */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+hr {
+    border: 1px solid #333333 !important; /* Dark gray border */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+}
 
-        #outputFrame {
-            width: 100%;
-            height: 600px;
-            border: none;
-            background-color: #e0e0e0; /* Match background */
-        }
+#outputFrame {
+    width: 100% !important;
+    height: 600px !important;
+    border: none !important;
+    background-color: #e0e0e0 !important; /* Match background */
+}
 
-        @media (max-width: 768px) {
-            .code-editor textarea {
-                height: 400px;
-            }
+@media (max-width: 768px) {
+    .code-editor textarea {
+        height: 400px !important;
+    }
 
-            .buttons {
-                flex-direction: row;
-                gap: 10px;
-                max-width: 400px;
-            }
+    .buttons {
+        flex-direction: row !important;
+        gap: 10px !important;
+        max-width: 400px !important;
+    }
 
-            .validate-btn, .test-btn, .document-btn {
-                padding: 8px 15px;
-                font-size: 0.9rem;
-            }
+    .validate-btn, .test-btn, .document-btn {
+        padding: 8px 15px !important;
+        font-size: 0.9rem !important;
+    }
 
-            .save-file-input {
-                width: 200px;
-            }
+    .save-file-input {
+        width: 200px !important;
+    }
 
-            #outputFrame {
-                height: 400px;
-            }
+    #outputFrame {
+        height: 400px !important;
+    }
 
-            .output-section {
-                padding: 5px;
-            }
-        }
+    .output-section {
+        padding: 5px !important;
+    }
+}
 
-        @media (max-width: 480px) {
-            .code-editor textarea {
-                height: 300px;
-                font-size: 14px;
-                line-height: 18px;
-                padding: 10px 15px 10px 50px;
-            }
+@media (max-width: 480px) {
+    .code-editor textarea {
+        height: 300px !important;
+        font-size: 14px !important;
+        line-height: 18px !important;
+        padding: 10px 15px 10px 50px !important;
+    }
 
-            .line-numbers {
-                font-size: 14px;
-                line-height: 18px;
-                width: 38px;
-                top: 7px;
-                left: 7px;
-                height: calc(100% - 21.5px);
-                padding: 10px 3px 10px 0;
-                background-color: #333333;
-                z-index: 10;
-            }
+    .line-numbers {
+        font-size: 14px !important;
+        line-height: 18px !important;
+        width: 38px !important;
+        top: 7px !important;
+        left: 7px !important;
+        height: calc(100% - 21.5px) !important;
+        padding: 10px 3px 10px 0 !important;
+        background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
+        z-index: 10 !important;
+    }
 
-            .line-numbers pre {
-                font-size: 14px;
-                line-height: 18px;
-            }
+    .line-numbers pre {
+        font-size: 14px !important;
+        line-height: 18px !important;
+    }
 
-            .buttons {
-                max-width: 300px;
-            }
+    .buttons {
+        max-width: 300px !important;
+    }
 
-            .save-file-input {
-                width: 150px;
-                font-size: 14px;
-            }
+    .save-file-input {
+        width: 150px !important;
+        font-size: 14px !important;
+    }
 
-            .save-file-btn {
-                padding: 6px 15px;
-                font-size: 0.9rem;
-            }
+    .save-file-btn {
+        padding: 6px 15px !important;
+        font-size: 0.9rem !important;
+    }
 
-            #outputFrame {
-                height: 300px;
-            }
-        }
-
+    #outputFrame {
+        height: 300px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -808,7 +807,7 @@ footer {
 
         function validateCode() {
             errorDiv.innerHTML = '';
-            errorDiv.style.color = '#999999'; /* Grayscale error color */
+            errorDiv.style.color = '#fff'; /* Changed to white to match body */
             const code = textarea.value.trim();
 
             if (!code) {
@@ -826,13 +825,13 @@ footer {
                         return error.line ? `Line ${error.line}: ${error.message}` : error.message;
                     })
                     .join('<br>');
-                errorDiv.style.color = '#999999';
+                errorDiv.style.color = '#fff';
             } else {
                 errorDiv.innerHTML = 'No Errors Detected';
-                errorDiv.style.color = '#333333';
+                errorDiv.style.color = '#fff';
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#999999';
+                    errorDiv.style.color = '#fff';
                 }, 2000);
             }
         }
@@ -863,17 +862,17 @@ footer {
                         outputFrame.srcdoc = '';
                         outputSection.style.display = 'none';
                         errorDiv.innerHTML = 'No visible output for this code. Only HTML content is displayed in the output section.';
-                        errorDiv.style.color = '#999999';
+                        errorDiv.style.color = '#fff';
                         return;
                     }
                 }
 
                 errorDiv.innerHTML = 'No Errors Detected';
-                errorDiv.style.color = '#333333';
+                errorDiv.style.color = '#fff';
 
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#999999';
+                    errorDiv.style.color = '#fff';
                 }, 3000);
 
             } catch (e) {
@@ -971,13 +970,13 @@ ${code}
                 }
 
                 errorDiv.innerHTML = 'File saved successfully';
-                errorDiv.style.color = '#333333';
+                errorDiv.style.color = '#fff';
                 saveFileContainer.style.display = 'none';
                 saveFileInput.value = '';
 
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#999999';
+                    errorDiv.style.color = '#fff';
                 }, 3000);
 
             } catch (e) {
