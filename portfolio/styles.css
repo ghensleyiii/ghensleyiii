@@ -116,7 +116,7 @@ main {
     flex-direction: column;
     justify-content: center !important;
     align-items: center;
-    background: linear-gradient(135deg, var(--blue), var(--green));
+    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
 }
 
 .category:hover {
