@@ -95,6 +95,11 @@ main {
     font-family: 'Audiowide', sans-serif !important;
     color: var(--blue) !important;
     margin-bottom: 10px !important;
+    text-align: center;
+}
+
+.item-content p {
+    text-align: center;
 }
 
 footer {
