@@ -259,17 +259,6 @@
             text-transform: uppercase;
         }
 
-        .scripture {
-            background: linear-gradient(135deg, var(--blue), var(--green));
-            padding: 15px;
-            margin: 10px auto;
-            border-radius: 8px;
-            font-style: italic;
-            color: #fff;
-            max-width: 800px;
-            text-align: center;
-        }
-
         footer {
             background: linear-gradient(135deg, var(--blue), var(--green));
             text-align: center;
