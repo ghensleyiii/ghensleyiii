@@ -85,8 +85,8 @@ main {
 }
 
 details {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
 }
 
 .item-content {
@@ -100,12 +100,12 @@ details {
     font-family: 'Audiowide', sans-serif !important;
     color: var(--blue) !important;
     margin-bottom: 10px !important;
-    text-align: center;
+    text-align: center !important;
 }
 
 .item-content p {
-    text-align: center;
-    font-weight: bold;
+    text-align: center !important;
+    font-weight: bold !important;
 }
 
 footer {
