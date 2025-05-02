@@ -130,7 +130,7 @@ footer {
 .validate-btn {
     background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
     color: #fff !important; /* Changed to white to match body */
-    border: 2px solid #d0d0d0 !important;
+    border: 2px solid var(--black) !important;
     padding: 10px 20px !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     border-radius: 5px !important;
@@ -142,7 +142,7 @@ footer {
 .test-btn {
     background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
     color: #fff !important; /* Changed to white to match body */
-    border: 2px solid #d0d0d0 !important;
+    border: 2px solid var(--black) !important;
     padding: 10px 20px !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     border-radius: 5px !important;
@@ -154,7 +154,7 @@ footer {
 .document-btn {
     background: linear-gradient(135deg, var(--blue), var(--green)) !important; /* Changed to gradient */
     color: #fff !important; /* Changed to white to match body */
-    border: 2px solid #d0d0d0 !important;
+    border: 2px solid var(--black) !important;
     padding: 10px 20px !important;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
     border-radius: 5px !important;
