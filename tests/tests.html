@@ -329,8 +329,8 @@
                     <summary class="item-button">R</summary>
                     <div class="item-content">
                         <h2>Operators</h2>
-                        <p>The <- operator assigns a value to a variable.</p>
-                        <p>The %>% operator pipes data through a series of functions.</p>
+                        <p>The &lt;- operator assigns a value to a variable.</p>
+                        <p>The %&gt;% operator pipes data through a series of functions.</p>
 
                         <h2>Functions</h2>
                         <p>The c() function combines values into a vector.</p>
@@ -359,7 +359,7 @@
     </main>
 
     <footer>
-        <p>© 2025 CODEXEDOC. All rights reserved.</p>
+        <p>&copy; 2025 CODEXEDOC. All rights reserved.</p>
     </footer>
 
     <script>
@@ -378,55 +378,55 @@
             document.head.appendChild(jspdfScript);
         };
 
-        // Define questions
+        // Define questions with HTML entities
         const questions = [
             { question: "What does HTML stand for?", options: ["HyperText Markup Language", "HighText Machine Language", "HyperTool Multi Language", "HyperText Model Language"], correct: 0 },
-            { question: "What is the purpose of the <!DOCTYPE html> declaration?", options: ["Defines the document title", "Specifies the HTML version", "Links to a stylesheet", "Closes the document"], correct: 1 },
-            { question: "Which tag is the root element of an HTML document?", options: ["<body>", "<html>", "<head>", "<title>"], correct: 1 },
-            { question: "Where is metadata typically placed in an HTML document?", options: ["<body>", "<footer>", "<head>", "<main>"], correct: 2 },
-            { question: "What does the <body> tag contain?", options: ["Metadata", "Visible content", "CSS styles", "JavaScript code"], correct: 1 },
-            { question: "Which tag defines a paragraph?", options: ["<div>", "<p>", "<span>", "<section>"], correct: 1 },
+            { question: "What is the purpose of the &lt;!DOCTYPE html&gt; declaration?", options: ["Defines the document title", "Specifies the HTML version", "Links to a stylesheet", "Closes the document"], correct: 1 },
+            { question: "Which tag is the root element of an HTML document?", options: ["&lt;body&gt;", "&lt;html&gt;", "&lt;head&gt;", "&lt;title&gt;"], correct: 1 },
+            { question: "Where is metadata typically placed in an HTML document?", options: ["&lt;body&gt;", "&lt;footer&gt;", "&lt;head&gt;", "&lt;main&gt;"], correct: 2 },
+            { question: "What does the &lt;body&gt; tag contain?", options: ["Metadata", "Visible content", "CSS styles", "JavaScript code"], correct: 1 },
+            { question: "Which tag defines a paragraph?", options: ["&lt;div&gt;", "&lt;p&gt;", "&lt;span&gt;", "&lt;section&gt;"], correct: 1 },
             { question: "What is the purpose of the id attribute?", options: ["Applies styles to multiple elements", "Links to an external file", "Assigns a unique identifier", "Defines a group of elements"], correct: 2 },
             { question: "Which attribute provides a text description for images?", options: ["src", "alt", "title", "class"], correct: 1 },
-            { question: "Which tag creates a hyperlink?", options: ["<link>", "<a>", "<href>", "<url>"], correct: 1 },
+            { question: "Which tag creates a hyperlink?", options: ["&lt;link&gt;", "&lt;a&gt;", "&lt;href&gt;", "&lt;url&gt;"], correct: 1 },
             { question: "Which attribute specifies the destination of a link?", options: ["src", "href", "alt", "target"], correct: 1 },
-            { question: "Which tag creates an ordered list?", options: ["<ul>", "<ol>", "<li>", "<dl>"], correct: 1 },
-            { question: "What tag is used for list items in both ordered and unordered lists?", options: ["<item>", "<li>", "<list>", "<elem>"], correct: 1 },
-            { question: "Which tag creates an unordered list with bullets?", options: ["<ol>", "<ul>", "<dl>", "<li>"], correct: 1 },
-            { question: "Which tag embeds an image in a web page?", options: ["<img>", "<picture>", "<figure>", "<media>"], correct: 0 },
+            { question: "Which tag creates an ordered list?", options: ["&lt;ul&gt;", "&lt;ol&gt;", "&lt;li&gt;", "&lt;dl&gt;"], correct: 1 },
+            { question: "What tag is used for list items in both ordered and unordered lists?", options: ["&lt;item&gt;", "&lt;li&gt;", "&lt;list&gt;", "&lt;elem&gt;"], correct: 1 },
+            { question: "Which tag creates an unordered list with bullets?", options: ["&lt;ol&gt;", "&lt;ul&gt;", "&lt;dl&gt;", "&lt;li&gt;"], correct: 1 },
+            { question: "Which tag embeds an image in a web page?", options: ["&lt;img&gt;", "&lt;picture&gt;", "&lt;figure&gt;", "&lt;media&gt;"], correct: 0 },
             { question: "Which attribute specifies the image file path?", options: ["alt", "src", "href", "path"], correct: 1 },
-            { question: "Which tag defines a table in HTML?", options: ["<table>", "<grid>", "<tr>", "<td>"], correct: 0 },
-            { question: "What does the <th> tag represent in a table?", options: ["Table row", "Table data", "Table header", "Table footer"], correct: 2 },
-            { question: "Which tag is a semantic element for a page header?", options: ["<div>", "<header>", "<section>", "<block>"], correct: 1 },
-            { question: "What is the purpose of the <article> tag?", options: ["Defines navigation links", "Groups independent content", "Specifies metadata", "Creates a footer"], correct: 1 },
-            { question: "Which tag is non-semantic and used for grouping content?", options: ["<section>", "<article>", "<div>", "<main>"], correct: 2 },
-            { question: "Which tag creates a form in HTML?", options: ["<input>", "<form>", "<label>", "<button>"], correct: 1 },
+            { question: "Which tag defines a table in HTML?", options: ["&lt;table&gt;", "&lt;grid&gt;", "&lt;tr&gt;", "&lt;td&gt;"], correct: 0 },
+            { question: "What does the &lt;th&gt; tag represent in a table?", options: ["Table row", "Table data", "Table header", "Table footer"], correct: 2 },
+            { question: "Which tag is a semantic element for a page header?", options: ["&lt;div&gt;", "&lt;header&gt;", "&lt;section&gt;", "&lt;block&gt;"], correct: 1 },
+            { question: "What is the purpose of the &lt;article&gt; tag?", options: ["Defines navigation links", "Groups independent content", "Specifies metadata", "Creates a footer"], correct: 1 },
+            { question: "Which tag is non-semantic and used for grouping content?", options: ["&lt;section&gt;", "&lt;article&gt;", "&lt;div&gt;", "&lt;main&gt;"], correct: 2 },
+            { question: "Which tag creates a form in HTML?", options: ["&lt;input&gt;", "&lt;form&gt;", "&lt;label&gt;", "&lt;button&gt;"], correct: 1 },
             { question: "Which input type is used for single-line text?", options: ["text", "password", "email", "submit"], correct: 0 },
-            { question: "What does the <label> tag improve in forms?", options: ["Styling", "Validation", "Accessibility", "Submission"], correct: 2 },
+            { question: "What does the &lt;label&gt; tag improve in forms?", options: ["Styling", "Validation", "Accessibility", "Submission"], correct: 2 },
             { question: "Which input type allows multiple selections?", options: ["radio", "checkbox", "text", "submit"], correct: 1 },
             { question: "How are radio buttons grouped to allow only one selection?", options: ["Same id", "Same class", "Same name", "Same value"], correct: 2 },
-            { question: "Which tag creates a dropdown menu?", options: ["<select>", "<option>", "<dropdown>", "<menu>"], correct: 0 },
-            { question: "Which tag allows multi-line text input?", options: ["<input>", "<textarea>", "<text>", "<field>"], correct: 1 },
+            { question: "Which tag creates a dropdown menu?", options: ["&lt;select&gt;", "&lt;option&gt;", "&lt;dropdown&gt;", "&lt;menu&gt;"], correct: 0 },
+            { question: "Which tag allows multi-line text input?", options: ["&lt;input&gt;", "&lt;textarea&gt;", "&lt;text&gt;", "&lt;field&gt;"], correct: 1 },
             { question: "Which attribute ensures a form field is not empty?", options: ["disabled", "placeholder", "required", "readonly"], correct: 2 },
             { question: "What does the aria-label attribute provide?", options: ["Visual styling", "Accessibility description", "Form validation", "Data storage"], correct: 1 },
             { question: "Which attribute uses regular expressions for input validation?", options: ["required", "pattern", "type", "value"], correct: 1 },
-            { question: "Which tag embeds audio files?", options: ["<video>", "<audio>", "<media>", "<sound>"], correct: 1 },
+            { question: "Which tag embeds audio files?", options: ["&lt;video&gt;", "&lt;audio&gt;", "&lt;media&gt;", "&lt;sound&gt;"], correct: 1 },
             { question: "What attribute adds playback controls to audio or video?", options: ["play", "controls", "src", "loop"], correct: 1 },
-            { question: "Which tag embeds video files?", options: ["<audio>", "<video>", "<media>", "<movie>"], correct: 1 },
-            { question: "Which tag embeds external content like a website?", options: ["<iframe>", "<embed>", "<object>", "<frame>"], correct: 0 },
-            { question: "Where are meta tags typically placed?", options: ["<body>", "<head>", "<footer>", "<main>"], correct: 1 },
-            { question: "Which meta tag sets the character encoding?", options: ["<meta name=\"description\">", "<meta charset=\"UTF-8\">", "<meta name=\"viewport\">", "<meta name=\"keywords\">"], correct: 1 },
-            { question: "Which tag links a favicon to a webpage?", options: ["<img>", "<link>", "<meta>", "<icon>"], correct: 1 },
-            { question: "Which tag groups an image with a caption?", options: ["<figure>", "<caption>", "<img>", "<picture>"], correct: 0 },
-            { question: "Which tag creates collapsible content?", options: ["<details>", "<summary>", "<toggle>", "<collapse>"], correct: 0 },
-            { question: "Which tag denotes a long quotation?", options: ["<q>", "<blockquote>", "<cite>", "<quote>"], correct: 1 },
+            { question: "Which tag embeds video files?", options: ["&lt;audio&gt;", "&lt;video&gt;", "&lt;media&gt;", "&lt;movie&gt;"], correct: 1 },
+            { question: "Which tag embeds external content like a website?", options: ["&lt;iframe&gt;", "&lt;embed&gt;", "&lt;object&gt;", "&lt;frame&gt;"], correct: 0 },
+            { question: "Where are meta tags typically placed?", options: ["&lt;body&gt;", "&lt;head&gt;", "&lt;footer&gt;", "&lt;main&gt;"], correct: 1 },
+            { question: "Which meta tag sets the character encoding?", options: ["&lt;meta name=&quot;description&quot;&gt;", "&lt;meta charset=&quot;UTF-8&quot;&gt;", "&lt;meta name=&quot;viewport&quot;&gt;", "&lt;meta name=&quot;keywords&quot;&gt;"], correct: 1 },
+            { question: "Which tag links a favicon to a webpage?", options: ["&lt;img&gt;", "&lt;link&gt;", "&lt;meta&gt;", "&lt;icon&gt;"], correct: 1 },
+            { question: "Which tag groups an image with a caption?", options: ["&lt;figure&gt;", "&lt;caption&gt;", "&lt;img&gt;", "&lt;picture&gt;"], correct: 0 },
+            { question: "Which tag creates collapsible content?", options: ["&lt;details&gt;", "&lt;summary&gt;", "&lt;toggle&gt;", "&lt;collapse&gt;"], correct: 0 },
+            { question: "Which tag denotes a long quotation?", options: ["&lt;q&gt;", "&lt;blockquote&gt;", "&lt;cite&gt;", "&lt;quote&gt;"], correct: 1 },
             { question: "What prefix is used for custom data attributes?", options: ["custom-", "data-", "attr-", "meta-"], correct: 1 },
-            { question: "Which tag shows task completion, like a file upload?", options: ["<meter>", "<progress>", "<range>", "<status>"], correct: 1 },
-            { question: "Which tag displays a value within a range, like battery level?", options: ["<progress>", "<meter>", "<range>", "<value>"], correct: 1 },
-            { question: "How is the less-than symbol (<) displayed in HTML?", options: ["&lt;", "&gt;", "&amp;", "&quot;"], correct: 0 },
-            { question: "Which tag creates superscript text, like for exponents?", options: ["<sub>", "<sup>", "<exp>", "<sci>"], correct: 1 },
-            { question: "Which tag is used for dynamic graphics via JavaScript?", options: ["<svg>", "<canvas>", "<draw>", "<graphic>"], correct: 1 },
-            { question: "Which tag creates scalable vector graphics?", options: ["<canvas>", "<svg>", "<vector>", "<image>"], correct: 1 },
+            { question: "Which tag shows task completion, like a file upload?", options: ["&lt;meter&gt;", "&lt;progress&gt;", "&lt;range&gt;", "&lt;status&gt;"], correct: 1 },
+            { question: "Which tag displays a value within a range, like battery level?", options: ["&lt;progress&gt;", "&lt;meter&gt;", "&lt;range&gt;", "&lt;value&gt;"], correct: 1 },
+            { question: "How is the less-than symbol (&lt;) displayed in HTML?", options: ["&amp;lt;", "&amp;gt;", "&amp;amp;", "&amp;quot;"], correct: 0 },
+            { question: "Which tag creates superscript text, like for exponents?", options: ["&lt;sub&gt;", "&lt;sup&gt;", "&lt;exp&gt;", "&lt;sci&gt;"], correct: 1 },
+            { question: "Which tag is used for dynamic graphics via JavaScript?", options: ["&lt;svg&gt;", "&lt;canvas&gt;", "&lt;draw&gt;", "&lt;graphic&gt;"], correct: 1 },
+            { question: "Which tag creates scalable vector graphics?", options: ["&lt;canvas&gt;", "&lt;svg&gt;", "&lt;vector&gt;", "&lt;image&gt;"], correct: 1 },
             { question: "What attribute adds machine-readable metadata for SEO?", options: ["data", "itemprop", "aria", "meta"], correct: 1 },
             { question: "Which attribute allows users to edit content in the browser?", options: ["editable", "contenteditable", "modify", "write"], correct: 1 },
             { question: "Which attribute enables browser spellchecking?", options: ["spellcheck", "grammar", "check", "validate"], correct: 0 }
