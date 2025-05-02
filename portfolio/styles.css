@@ -108,13 +108,14 @@ main {
 .category {
     padding: 20px;
     border-radius: 10px;
-    text-align: center;
+    text-align: center !important;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     min-height: 180px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center !important;
+    align-items: center;
     background: linear-gradient(135deg, var(--blue), var(--green));
 }
 
