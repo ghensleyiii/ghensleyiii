@@ -20,7 +20,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--blue), var(--green));
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue);
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -84,12 +84,12 @@
 
 .nav-menu-left {
     left: 20px;
-    background: linear-gradient(90deg, #2a6626, #6b9e31);
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
 }
 
 .nav-menu-right {
     right: 20px;
-    background: linear-gradient(90deg, #6b9e31, #2a6626);
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
     text-align: right;
 }
 
@@ -111,7 +111,7 @@
 }
 
 .nav-menu-left li a:hover, .nav-menu-right li a:hover {
-    color: #d4af37;
+    color: var(--black);
 }
 
         main {
