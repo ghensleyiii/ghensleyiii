@@ -120,28 +120,6 @@
             padding: 0;
         }
 
-        .intro {
-            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
-            padding: 20px 0;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-        }
-
-        .intro-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .intro h2 {
-            font-family: 'Audiowide', sans-serif;
-            color: var(--blue);
-            margin-bottom: 10px;
-            font-size: 40px;
-        }
-
         .categories-container {
             margin: 40px 0;
             padding: 0 20px;
