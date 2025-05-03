@@ -521,6 +521,7 @@ const textarea = document.getElementById('codeInput');
             saveFileContainer.style.display = 'flex';
             saveFileInput.focus();
             errorDiv.innerHTML = '';
+            console.log('showSaveFileInput called');
         }
 
         function saveCode() {
