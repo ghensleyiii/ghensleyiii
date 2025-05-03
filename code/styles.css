@@ -19,7 +19,7 @@
         }
 
         header {
-            background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             padding: 20px !important;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
             position: sticky !important;
@@ -46,7 +46,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             text-align: center !important;
             padding: 20px !important;
             color: #fff !important;
@@ -73,7 +73,7 @@
 
         .line-numbers {
             width: 48px !important;
-            background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             color: #fff !important;
             font-family: 'Courier New', Courier, 'Lucida Console', monospace !important;
             font-size: 16px !important;
@@ -128,7 +128,7 @@
         }
 
         .validate-btn {
-            background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             color: #fff !important;
             border: 2px solid var(--black) !important;
             padding: 10px 20px !important;
@@ -140,7 +140,7 @@
         }
 
         .test-btn {
-            background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             color: #fff !important;
             border: 2px solid var(--black) !important;
             padding: 10px 20px !important;
@@ -152,7 +152,7 @@
         }
 
         .document-btn {
-            background: linear-gradient(135deg, var(--blue), var(--green));
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             color: #fff;
             border: 2px solid var(--black);
             padding: 10px 20px !important;
@@ -164,7 +164,7 @@
         }
 
         .validate-btn:hover, .test-btn:hover, .document-btn:hover {
-            background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
+            background: linear-gradient(90deg, #2F4B9F, #2F9F4B, #2f4b9f) !important;
         }
 
         .error-messages {
@@ -195,7 +195,7 @@
         }
 
         .save-file-btn {
-            background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             color: #fff !important;
             border: 2px solid var(--black) !important;
             padding: 8px 20px !important;
@@ -207,7 +207,7 @@
         }
 
         .save-file-btn:hover {
-            background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
+            background: linear-gradient(90deg, #2F4B9F, #2F9F4B, #2f4b9f) !important;
         }
 
         .output-section {
@@ -232,7 +232,7 @@
             padding: 10px !important;
             font-size: 1rem !important;
             font-weight: bold !important;
-            background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
         }
 
@@ -293,7 +293,7 @@
                 left: 7px !important;
                 height: calc(100% - 21.5px) !important;
                 padding: 10px 3px 10px 0 !important;
-                background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+                background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
                 z-index: 10 !important;
             }
 
