@@ -1,121 +1,194 @@
 :root {
-    --blue: #4169e1;
-    --green: #41E169;
-    --white: #f0f2f0;
-    --black: #333333;
-}
+            --blue: #4169e1;
+            --green: #41E169;
+            --white: #f0f2f0;
+            --black: #333333;
+        }
 
-* {
-    box-sizing: border-box !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
+        * {
+            box-sizing: border-box !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-body {
-    font-family: Arial, sans-serif !important;
-    background-color: var(--white) !important;
-    color: var(--black) !important;
-    line-height: 1.6 !important;
-}
+        body {
+            font-family: Arial, sans-serif !important;
+            background-color: var(--white) !important;
+            color: var(--black) !important;
+            line-height: 1.6 !important;
+        }
 
-header {
-    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
-    padding: 20px !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-    position: sticky !important;
-    top: 0 !important;
-    z-index: 100 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-}
+        header {
+            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue)) !important;
+            padding: 20px !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+            position: sticky !important;
+            top: 0 !important;
+            z-index: 100 !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            text-align: center !important;
+        }
 
-.logo h1 {
-    font-family: 'Audiowide', sans-serif !important;
-    color: #fff !important;
-    font-size: 36px !important;
-    margin: 0 !important;
-    text-align: center !important;
-}
+        .logo h1 {
+            font-family: 'Audiowide', sans-serif !important;
+            color: #fff !important;
+            font-size: 36px !important;
+            margin: 0 !important;
+            text-align: center !important;
+        }
 
-.logo a {
-    text-decoration: none !important;
-    color: #fff !important;
-    text-align: center !important;
-}
+        .logo a {
+            text-decoration: none !important;
+            color: #fff !important;
+            text-align: center !important;
+        }
 
-main {
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
+        main {
+            max-width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-.intro {
-    background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
-    padding: 20px !important;
-    margin-bottom: 30px !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
-    text-align: center !important;
-}
+        .intro {
+            background: linear-gradient(90deg, #A3BFFA, #c8e6c9, #a3bffa) !important;
+            padding: 20px !important;
+            margin-bottom: 30px !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+            text-align: center !important;
+        }
 
-.item {
-    margin-bottom: 20px !important;
-    max-width: 800px !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-}
+        .item {
+            margin-bottom: 20px !important;
+            max-width: 800px !important;
+            margin-left: auto !important;
+            margin-right: auto !important;
+        }
 
-.item-button {
-    display: block !important;
-    width: 100% !important;
-    padding: 15px !important;
-    font-family: 'Audiowide', sans-serif !important;
-    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
-    border: none !important;
-    color: #fff !important;
-    text-align: center !important;
-    cursor: pointer !important;
-    border-radius: 5px !important;
-    transition: background 0.3s;
-}
+        .item-button {
+            display: block !important;
+            width: 100% !important;
+            padding: 15px !important;
+            font-family: 'Audiowide', sans-serif !important;
+            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue)) !important;
+            border: none !important;
+            color: #fff !important;
+            text-align: center !important;
+            cursor: pointer !important;
+            border-radius: 5px !important;
+            transition: background 0.3s !important;
+        }
 
-.item-button:hover {
-    background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
-}
+        .item-button:hover {
+            background: linear-gradient(90deg, #2F4B9F, #2F9F4B, #2f4b9f) !important;
+        }
 
-.item-content {
-    padding: 20px !important;
-    background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
-    border-radius: 0 0 5px 5px !important;
-    text-align: left !important;
-}
+        .item-content {
+            padding: 20px !important;
+            background: linear-gradient(90deg, #A3BFFA, #c8e6c9, #a3bffa) !important;
+            border-radius: 0 0 5px 5px !important;
+            text-align: left !important;
+        }
 
-.item-content h2 {
-    font-family: 'Audiowide', sans-serif !important;
-    color: var(--blue) !important;
-    margin-bottom: 10px !important;
-}
+        .item-content h2 {
+            font-family: 'Audiowide', sans-serif !important;
+            color: var(--blue) !important;
+            margin-bottom: 10px !important;
+        }
 
-.item-content pre {
-    background: #f4f4f4 !important;
-    padding: 10px !important;
-    border-radius: 5px !important;
-    overflow-x: auto !important;
-}
+        footer {
+            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue)) !important;
+            text-align: center !important;
+            padding: 20px !important;
+            color: #fff !important;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1) !important;
+            width: 100% !important;
+        }
 
-.example {
-    margin-top: 10px !important;
-    padding: 10px !important;
-    border: 1px solid var(--blue) !important;
-    border-radius: 5px !important;
-}
+        .quiz-form {
+            margin-top: 20px !important;
+        }
 
-footer {
-    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
-    text-align: center !important;
-    padding: 20px !important;
-    color: #fff !important;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1) !important;
-    width: 100% !important;
-}
+        .question {
+            margin-bottom: 20px !important;
+        }
+
+        .question h4 {
+            margin-bottom: 10px !important;
+        }
+
+        .question label {
+            display: block !important;
+            margin-bottom: 5px !important;
+        }
+
+        .submit-btn {
+            padding: 10px 20px !important;
+            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue)) !important;
+            color: var(--white) !important;
+            border: none !important;
+            cursor: pointer !important;
+            font-size: 16px !important;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(90deg, #2F4B9F, #2F9F4B, #2f4b9f) !important;
+        }
+
+        .results {
+            margin-top: 20px !important;
+            padding: 10px !important;
+            border: 1px solid var(--black) !important;
+        }
+
+        #certificateModal {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0, 0, 0, 0.5) !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            z-index: 1000 !important;
+        }
+
+        .modal-content {
+            background: var(--white) !important;
+            padding: 20px !important;
+            border-radius: 5px !important;
+            max-width: 400px !important;
+            width: 90% !important;
+            text-align: center !important;
+        }
+
+        .modal-content input {
+            width: 100% !important;
+            padding: 10px !important;
+            margin: 10px 0 !important;
+            border: 1px solid var(--black) !important;
+        }
+
+        .modal-content button {
+            padding: 10px 20px !important;
+            margin: 5px !important;
+            border: none !important;
+            cursor: pointer !important;
+        }
+
+        .modal-content .generate-btn {
+            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue)) !important;
+            color: white !important;
+        }
+
+        .modal-content .close-btn {
+            background-color: var(--white) !important;
+        }
+
+        #nameError {
+            color: red !important;
+            display: none !important;
+            font-size: 14px !important;
+        }
