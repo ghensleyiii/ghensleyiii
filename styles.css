@@ -121,7 +121,7 @@
         }
 
         .intro {
-            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue);
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
             padding: 20px 0;
             margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -184,7 +184,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue);
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
         }
 
         .category:hover {
@@ -226,7 +226,7 @@
             width: 100%;
             padding: 15px;
             font-family: 'Audiowide', sans-serif;
-            background: linear-gradient(135deg, var(--blue), var(--green));
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             border: none;
             color: #fff;
             text-align: center;
@@ -236,7 +236,7 @@
         }
 
         .item-button:hover {
-            background: linear-gradient(135deg, #2F4B9F, #2F9F4B);
+            background: linear-gradient(90deg, #2F4B9F, #2F9F4B, #2f4b9f);
         }
 
         .item-content {
@@ -258,7 +258,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, var(--blue), var(--green));
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
             text-align: center;
             padding: 20px;
             color: #fff;
