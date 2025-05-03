@@ -19,7 +19,7 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
     padding: 20px !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
     position: sticky !important;
@@ -52,7 +52,7 @@ main {
 }
 
 .intro {
-    background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
+    background: linear-gradient(90deg, #A3BFFA, #c8e6c9, #a3bffa) !important;
     padding: 20px !important;
     margin-bottom: 30px !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
@@ -71,7 +71,7 @@ main {
     width: 100% !important;
     padding: 15px !important;
     font-family: 'Audiowide', sans-serif !important;
-    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
     border: none !important;
     color: #fff !important;
     text-align: center !important;
@@ -82,12 +82,12 @@ main {
 }
 
 .item-button:hover {
-    background: linear-gradient(135deg, #2F4B9F, #2F9F4B) !important;
+    background: linear-gradient(90deg, #2F4B9F, #2F9F4B, #2f4b9f) !important;
 }
 
 .item-content {
     padding: 20px !important;
-    background: linear-gradient(135deg, #A3BFFA, #c8e6c9) !important;
+    background: linear-gradient(90deg, #A3BFFA, #c8e6c9, #a3bffa) !important;
     border-radius: 0 0 5px 5px !important;
     text-align: center !important;
 }
@@ -106,7 +106,7 @@ main {
 }
 
 footer {
-    background: linear-gradient(135deg, var(--blue), var(--green)) !important;
+    background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
     text-align: center !important;
     padding: 20px !important;
     color: #fff !important;
