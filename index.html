@@ -15,23 +15,33 @@
 </head>
 <body>
     <header>
+        <nav class="nav-left">
+            <button class="hamburger-left" aria-expanded="false" aria-controls="nav-menu-left" aria-label="Toggle left navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-menu-left" class="nav-menu-left">
+                <li><a href="about/about.html">About</a></li>
+                <li><a href="mailto:contact@codexedoc.com">Contact</a></li>
+            </ul>
+        </nav>
         <div class="logo">
             <a href="index.html">
                 <h1>CODEXEDOC</h1>
             </a>
         </div>
-        <nav>
-            <div class="hamburger">
+        <nav class="nav-right">
+            <button class="hamburger-right" aria-expanded="false" aria-controls="nav-menu-right" aria-label="Toggle right navigation">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
-            <ul class="nav-menu">
+            </button>
+            <ul id="nav-menu-right" class="nav-menu-right">
                 <li><a href="tests/tests.html">Tests</a></li>
                 <li><a href="code/code.html">Code</a></li>
                 <li><a href="library/library.html">Library</a></li>
                 <li><a href="portfolio/portfolio.html">Portfolio</a></li>
-                <li><a href="mailto:contact@codexedoc.com">Contact</a></li>
             </ul>
         </nav>
     </header>
