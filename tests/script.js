@@ -1281,22 +1281,22 @@ const renderSqlQuestions = () => {
                     format: 'letter',
                 });
 
-                doc.setFillColor(238, 238, 238);
+                doc.setFillColor(255, 255, 255); // white
                 doc.rect(0, 0, 792, 612, 'F');
                 doc.setLineWidth(4);
-                doc.setDrawColor(30, 144, 255);
+                doc.setDrawColor(65, 105, 225); // royal blue
                 doc.rect(30, 30, 732, 552);
                 doc.setLineWidth(2);
-                doc.setDrawColor(51, 51, 51);
+                doc.setDrawColor(65, 225, 105); // emerald green
                 doc.rect(40, 40, 712, 532);
 
                 doc.setFont('times', 'bold');
                 doc.setFontSize(50);
-                doc.setTextColor(30, 144, 255);
+                doc.setTextColor(65, 105, 225); // royal blue
                 doc.text('CERTIFICATE', 396, 150, { align: 'center' });
 
                 doc.setFontSize(30);
-                doc.setTextColor(51, 51, 51);
+                doc.setTextColor(51, 51, 51); // black gray
                 doc.text('OF COMPLETION', 396, 190, { align: 'center' });
 
                 doc.setFont('times', 'normal');
@@ -1320,7 +1320,7 @@ const renderSqlQuestions = () => {
 
                 doc.setFont('times', 'bold');
                 doc.setFontSize(30);
-                doc.setTextColor(30, 144, 255);
+                doc.setTextColor(65, 105, 225); // royal blue
                 doc.text('CODEXEDOC', 396, 540, { align: 'center' });
 
                 doc.save(`${nameInput}_${quizType}_certificate.pdf`);
