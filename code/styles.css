@@ -155,14 +155,12 @@ footer {
     background: linear-gradient(135deg, var(--blue), var(--green));
     color: #fff;
     border: 2px solid var(--black);
-    padding: 10px 20px !important;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px 20px;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s;
-    position: relative; /* Ensure it’s not overlapped */
-    z-index: 10; /* Above other content */
+    z-index: 20; /* Higher than other elements */
+    position: relative;
 }
 
 .validate-btn:hover, .test-btn:hover, .document-btn:hover {
