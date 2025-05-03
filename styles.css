@@ -121,7 +121,7 @@
         }
 
         .intro {
-            background: linear-gradient(135deg, #A3BFFA, #c8e6c9);
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue);
             padding: 20px 0;
             margin-bottom: 30px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -184,6 +184,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue);
         }
 
         .category:hover {
@@ -212,23 +213,6 @@
             font-size: 14px;
             color: #f0f0f0;
         }
-
-        .category[data-gradient="1"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="2"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="3"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="4"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="5"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="6"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="7"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="8"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="9"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="10"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="11"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="12"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="13"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="14"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="15"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
-        .category[data-gradient="16"] { background: linear-gradient(135deg, var(--blue), var(--green)); }
 
         .item {
             margin-bottom: 20px;
