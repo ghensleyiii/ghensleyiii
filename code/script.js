@@ -135,7 +135,6 @@ const textarea = document.getElementById('codeInput');
                 const cleanCode = removeComments(code, 'javascript');
                 const lines = cleanCode.split('\n');
 
-                // Check for syntax errors using Function constructor
                 try {
                     new Function(cleanCode);
                 } catch (e) {
@@ -147,7 +146,6 @@ const textarea = document.getElementById('codeInput');
                     });
                 }
 
-                // Check for missing parentheses in function declarations
                 lines.forEach((line, i) => {
                     const trimmed = line.trim();
                     if (trimmed.startsWith('function ') && !trimmed.includes('(')) {
@@ -158,7 +156,6 @@ const textarea = document.getElementById('codeInput');
                     }
                 });
 
-                // Check for undeclared variables in loops and assignments
                 const varRegex = /\b(let|const|var)\s+([a-zA-Z_$][a-zA-Z0-9_$]*)\b/g;
                 const declaredVars = new Set();
                 let match;
@@ -168,7 +165,7 @@ const textarea = document.getElementById('codeInput');
 
                 lines.forEach((line, i) => {
                     const trimmed = line.trim();
-                    if (trimmed.match(/for\s*\(\s*[a-zA-Z_$][a-zAZ0-9_$]*\s*=/)) {
+                    if (trimmed.match(/for\s*\(\s*[a-zA-Z_$][a-zA-Z0-9_$]*\s*=/)) {
                         const loopVarMatch = trimmed.match(/for\s*\(\s*([a-zA-Z_$][a-zA-Z0-9_$]*)\s*=/);
                         if (loopVarMatch && !declaredVars.has(loopVarMatch[1]) && !trimmed.match(/\b(let|const|var)\s+[a-zA-Z_$][a-zA-Z0-9_$]*\s*=/)) {
                             errors.push({
@@ -436,7 +433,7 @@ const textarea = document.getElementById('codeInput');
 
         function validateCode() {
             errorDiv.innerHTML = '';
-            errorDiv.style.color = '#fff'; /* Changed to white to match body */
+            errorDiv.style.color = 'red';
             const code = textarea.value.trim();
 
             if (!code) {
@@ -454,13 +451,13 @@ const textarea = document.getElementById('codeInput');
                         return error.line ? `Line ${error.line}: ${error.message}` : error.message;
                     })
                     .join('<br>');
-                errorDiv.style.color = '#fff';
+                errorDiv.style.color = 'red';
             } else {
                 errorDiv.innerHTML = 'No Errors Detected';
-                errorDiv.style.color = '#fff';
+                errorDiv.style.color = 'red';
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#fff';
+                    errorDiv.style.color = 'red';
                 }, 2000);
             }
         }
@@ -471,6 +468,7 @@ const textarea = document.getElementById('codeInput');
             try {
                 if (!code) {
                     errorDiv.innerHTML = 'No code entered';
+                    errorDiv.style.color = 'red';
                     outputFrame.srcdoc = '';
                     outputSection.style.display = 'none';
                     return;
@@ -482,7 +480,6 @@ const textarea = document.getElementById('codeInput');
                     outputFrame.srcdoc = code;
                     outputSection.style.display = 'block';
                 } else {
-                    // For non-HTML, check if code contains HTML tags for potential rendering
                     const hasHtmlTags = /<[a-z][\s\S]*>/i.test(code);
                     if (hasHtmlTags) {
                         outputFrame.srcdoc = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Output</title></head><body>${code}</body></html>`;
@@ -491,55 +488,69 @@ const textarea = document.getElementById('codeInput');
                         outputFrame.srcdoc = '';
                         outputSection.style.display = 'none';
                         errorDiv.innerHTML = 'No visible output for this code. Only HTML content is displayed in the output section.';
-                        errorDiv.style.color = '#fff';
+                        errorDiv.style.color = 'red';
                         return;
                     }
                 }
 
                 errorDiv.innerHTML = 'No Errors Detected';
-                errorDiv.style.color = '#fff';
-
+                errorDiv.style.color = 'red';
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#fff';
+                    errorDiv.style.color = 'red';
                 }, 3000);
 
             } catch (e) {
                 errorDiv.innerHTML = 'Execution error';
+                errorDiv.style.color = 'red';
                 outputFrame.srcdoc = '';
                 outputSection.style.display = 'none';
             }
         }
 
         function showSaveFileInput() {
-            const code = textarea.value.trim();
-            if (!code) {
-                errorDiv.innerHTML = 'No code entered';
-                outputSection.style.display = 'none';
-                return;
-            }
-            saveFileContainer.style.display = 'flex';
-            saveFileInput.focus();
-            errorDiv.innerHTML = '';
             console.log('showSaveFileInput called');
+            try {
+                const code = textarea.value.trim();
+                if (!code) {
+                    errorDiv.innerHTML = 'Please enter some code to save';
+                    errorDiv.style.color = 'red';
+                    outputSection.style.display = 'none';
+                    setTimeout(() => {
+                        errorDiv.innerHTML = '';
+                        errorDiv.style.color = 'red';
+                    }, 5000);
+                    return;
+                }
+                saveFileContainer.style.display = 'flex';
+                console.log('saveFileContainer display set to flex');
+                saveFileInput.focus();
+                errorDiv.innerHTML = '';
+            } catch (e) {
+                console.error('Error in showSaveFileInput:', e);
+                errorDiv.innerHTML = 'Error displaying save input';
+                errorDiv.style.color = 'red';
+            }
         }
 
         function saveCode() {
+            console.log('saveCode called');
             const code = textarea.value.trim();
             const fileName = saveFileInput.value.trim();
 
             try {
                 if (!code) {
                     errorDiv.innerHTML = 'No code entered';
+                    errorDiv.style.color = 'red';
                     return;
                 }
 
                 if (!fileName) {
                     errorDiv.innerHTML = 'Please enter a file name';
+                    errorDiv.style.color = 'red';
                     return;
                 }
 
-                // Determine MIME type based on file extension
                 const extension = fileName.split('.').pop().toLowerCase();
                 let mimeType = 'text/plain';
                 switch (extension) {
@@ -566,7 +577,6 @@ const textarea = document.getElementById('codeInput');
                         break;
                 }
 
-                // For HTML, wrap code in a full document if it looks like HTML
                 let content = code;
                 if (['html', 'htm'].includes(extension) && (code.includes('<html') || code.includes('<!DOCTYPE'))) {
                     content = code;
@@ -594,27 +604,29 @@ ${code}
                     link.click();
                     document.body.removeChild(link);
                 } else {
+                    console.log('Download attribute not supported, using fallback');
                     const url = URL.createObjectURL(blob);
                     window.location.href = url;
                     setTimeout(() => URL.revokeObjectURL(url), 1000);
                 }
 
                 errorDiv.innerHTML = 'File saved successfully';
-                errorDiv.style.color = '#fff';
+                errorDiv.style.color = 'red';
                 saveFileContainer.style.display = 'none';
                 saveFileInput.value = '';
 
                 setTimeout(() => {
                     errorDiv.innerHTML = '';
-                    errorDiv.style.color = '#fff';
+                    errorDiv.style.color = 'red';
                 }, 3000);
 
             } catch (e) {
+                console.error('Error in saveCode:', e);
                 errorDiv.innerHTML = 'Error saving file';
+                errorDiv.style.color = 'red';
             }
         }
 
-        // Allow Enter key to trigger save
         saveFileInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 saveCode();
