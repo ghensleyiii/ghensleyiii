@@ -107,7 +107,7 @@
             flex-direction: column;
             justify-content: center !important;
             align-items: center !important;
-            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue)) !important;
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue)) !important;
         }
 
         @media (min-width: 768px) {
@@ -163,7 +163,7 @@
             width: 100%;
             padding: 15px;
             font-family: 'Audiowide', sans-serif;
-            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue));
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
             border: none;
             color: #fff;
             text-align: center;
@@ -173,7 +173,7 @@
         }
 
         .item-button:hover {
-            background: linear-gradient(135deg, #2F4B9F, #2F9F4B, #2f4b9f);
+            background: linear-gradient(90deg, #2F4B9F, #2F9F4B, #2f4b9f);
         }
 
         .item-content {
@@ -195,7 +195,7 @@
         }
 
         footer {
-            background: linear-gradient(135deg, var(--blue), var(--green), var(--blue));
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
             text-align: center;
             padding: 20px;
             color: #fff;
