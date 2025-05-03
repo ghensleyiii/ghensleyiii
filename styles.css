@@ -20,7 +20,7 @@
         }
 
         header {
-            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue);
+            background: linear-gradient(90deg, var(--blue), var(--green), var(--blue));
             padding: 20px;
             display: flex;
             justify-content: space-between;
