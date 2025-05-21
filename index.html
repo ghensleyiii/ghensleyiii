@@ -40,10 +40,9 @@
         }
         header .logo-container img {
             width: 30px;
-            height: auto;
-	    object-fit: contain;
+			height: auto;
+	        object-fit: contain;
         }
-
         header .logo-container div {
             font-size: 1.5rem;
             font-weight: normal;
@@ -262,7 +261,7 @@
         footer {
             padding: 1.5rem 1.5rem;
             background-color: var(--primary-blue);
-            border-top: 1px solid var(--gold);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
         .footer-content {
             max-width: 64rem;
@@ -272,18 +271,31 @@
             align-items: flex-start;
             gap: 0.5rem;
         }
-        .footer-content img {
+        .footer-logo-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .footer-logo-container img {
             width: 30px;
             height: auto;
-	    object-fit: contain;
+	        object-fit: contain;
+            vertical-align: middle;
         }
-        .footer-content div:nth-child(2) {
+        .footer-logo-container div {
             font-size: 1rem;
             color: var(--gold);
+            line-height: 1;
         }
         .footer-content p {
             font-size: 1rem;
             font-style: italic;
+            margin: 0;
+        }
+        .footer-content div:last-child {
+            font-size: 1rem;
+            color: var(--white);
         }
         @media (max-width: 767px) {
             .hamburger {
@@ -319,11 +331,10 @@
             }
         }
         @media (min-width: 1024px) {
-			.hero-content {
-				max-width: 800px;
-			}
-		
-            .how-it-works, .curriculum, {
+            .hero-content {
+                max-width: 800px;
+            }
+            .how-it-works, .curriculum {
                 padding: 5rem 2rem;
             }
             .how-it-works h2, .curriculum h2 {
@@ -390,7 +401,7 @@
                 </div>
                 <div class="how-it-works-item">
                     <i class="fas fa-graduation-cap"></i>
-                    <h3>Focused Skill Building</h3>
+                    <h3>Skill Building</h3>
                     <p>Develop core programming skills through in-depth lessons tailored for full-stack development.</p>
                 </div>
             </div>
@@ -437,7 +448,10 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <img src="codex.png" alt="CODEXEDOC Logo"><div>CODEXEDOC</div>
+            <div class="footer-logo-container">
+                <img src="codex.png" alt="CODEXEDOC Logo">
+                <div>CODEXEDOC</div>
+            </div>
             <p>Shearing Away the Complexity of Coding!</p>
             <div>© 2025 CODEXEDOC. All rights reserved.</div>
         </div>
