@@ -138,7 +138,7 @@
             color: var(--gold);
         }
 
-        .article-container .byline {
+        .article-container .course-section {
             font-size: 1rem;
             color: var(--white);
             text-align: center;
@@ -146,7 +146,7 @@
             font-style: italic;
         }
 
-        .article-container .pub-date {
+        .article-container .lesson {
             font-size: 0.875rem;
             color: var(--white);
             text-align: center;
@@ -355,8 +355,8 @@
     <section class="article-section">
         <div class="article-container">
             <h1>Article</h1>
-            <div class="byline">By CODEXEDOC Team</div>
-            <div class="pub-date">Published on May 21, 2025</div>
+            <div class="course-section">Introduction</div>
+            <div class="lesson">Introduction to Full-Stack Development</div>
             <div id="content">Loading article content...</div>
         </div>
     </section>
@@ -375,7 +375,7 @@
 
     <script>
         if (typeof marked !== "undefined") {
-            fetch('test.md')
+            fetch('../lessonone.md')
                 .then(response => response.text())
                 .then(md => {
                     document.getElementById('content').innerHTML = marked.parse(md);
