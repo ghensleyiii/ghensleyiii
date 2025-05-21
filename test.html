@@ -3,15 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Markdown Example</title>
-    <!-- Updated: Added an alternative CDN for Marked.js -->
+    <title>Markdown & Extra Content Test</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        h1, h2 { color: #2C3E50; }
+        pre { background-color: #F4F4F4; padding: 10px; border-left: 3px solid #3498DB; }
+        code { font-family: monospace; }
+        .extra-content { background: #e3f2fd; padding: 15px; margin-top: 20px; border-radius: 5px; }
+    </style>
 </head>
 <body>
+
+    <h1>Markdown Example with Extra Content</h1>
+
     <div id="content">Loading Markdown...</div>
 
+    <!-- Extra Static Content -->
+    <div class="extra-content">
+        <h2>Additional Information</h2>
+        <p>This section is NOT in the Markdown file. We're testing mixed content display.</p>
+        <ul>
+            <li>Static HTML Element 1</li>
+            <li>Static HTML Element 2</li>
+            <li>Dynamic Markdown Content Below ⬇️</li>
+        </ul>
+    </div>
+
     <script>
-        // Check if Marked.js is loaded properly
         if (typeof marked !== "undefined") {
             fetch('test.md') // Load Markdown file
                 .then(response => response.text())
@@ -27,5 +46,6 @@
             console.error("Marked.js not found.");
         }
     </script>
+
 </body>
 </html>
