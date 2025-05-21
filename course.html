@@ -394,150 +394,6 @@
             }
         }
     </style>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const lessons = document.querySelectorAll('.lesson');
-            const contents = document.querySelectorAll('.lesson-content, .exam-content');
-            const prevArrow = document.querySelector('.nav-arrow.prev');
-            const nextArrow = document.querySelector('.nav-arrow.next');
-            let currentLesson = 0;
-
-            // Question arrays for each section (25 questions each)
-            const htmlCssQuestions = [
-                // Placeholder for questions
-                { question: "Sample HTML/CSS question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
-                // Add 24 more questions here
-                // { question: "Sample HTML/CSS question 2", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 1 },
-                // ...
-            ];
-            const jsQuestions = [
-                { question: "Sample JavaScript question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
-                // Add 24 more questions here
-            ];
-            const nodeJsQuestions = [
-                { question: "Sample Node.js question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
-                // Add 24 more questions here
-            ];
-            const pythonQuestions = [
-                { question: "Sample Python question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
-                // Add 24 more questions here
-            ];
-            const sqlQuestions = [
-                { question: "Sample SQL question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
-                // Add 24 more questions here
-            ];
-
-            // Combine questions for mid-term and final exams
-            const frontEndQuestions = [...htmlCssQuestions, ...jsQuestions]; // 50 questions
-            const backEndQuestions = [...nodeJsQuestions, ...pythonQuestions]; // 50 questions
-            const finalExamQuestions = [...frontEndQuestions, ...backEndQuestions, ...sqlQuestions]; // 125 questions
-
-            // Function to shuffle array (Fisher-Yates algorithm)
-            function shuffle(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [array[i], array[j]] = [array[j], array[i]];
-                }
-                return array;
-            }
-
-            // Function to display exam questions
-            function displayExamQuestions(examId, questions) {
-                const examContent = document.getElementById(examId);
-                const questionContainer = examContent.querySelector('.questions');
-                questionContainer.innerHTML = '';
-                const shuffledQuestions = shuffle([...questions]);
-
-                shuffledQuestions.forEach((q, index) => {
-                    const questionDiv = document.createElement('div');
-                    questionDiv.classList.add('question');
-                    questionDiv.innerHTML = `
-                        <p>${index + 1}. ${q.question}</p>
-                        ${q.options.map((option, i) => `
-                            <label>
-                                <input type="radio" name="q${index}" value="${i}">
-                                ${option}
-                            </label>
-                        `).join('')}
-                    `;
-                    questionContainer.appendChild(questionDiv);
-                });
-
-                const submitButton = examContent.querySelector('button');
-                submitButton.addEventListener('click', () => {
-                    let score = 0;
-                    shuffledQuestions.forEach((q, index) => {
-                        const selected = examContent.querySelector(`input[name="q${index}"]:checked`);
-                        if (selected && parseInt(selected.value) === q.correct) {
-                            score++;
-                        }
-                    });
-                    const percentage = (score / shuffledQuestions.length) * 100;
-                    examContent.querySelector('.score').textContent = `Your Score: ${score}/${shuffledQuestions.length} (${percentage.toFixed(2)}%)`;
-
-                    if (percentage >= 90) {
-                        const popup = document.querySelector('.certificate-popup');
-                        popup.classList.add('active');
-                        popup.querySelector('button').onclick = () => {
-                            const name = popup.querySelector('input').value || 'Student';
-                            popup.innerHTML = `
-                                <div class="certificate">
-                                    <h3>Certificate of Achievement</h3>
-                                    <p>This certifies that <strong>${name}</strong> has successfully completed the ${examContent.querySelector('h2').textContent} with a score of ${percentage.toFixed(2)}% on May 21, 2025.</p>
-                                    <p>Issued by CODEXEDOC</p>
-                                </div>
-                            `;
-                        };
-                    }
-                });
-            }
-
-            // Initialize exams with shuffled questions
-            displayExamQuestions('exam-html-css', htmlCssQuestions);
-            displayExamQuestions('exam-javascript-core', jsQuestions);
-            displayExamQuestions('exam-javascript-advanced', jsQuestions);
-            displayExamQuestions('exam-nodejs', nodeJsQuestions);
-            displayExamQuestions('exam-python', pythonQuestions);
-            displayExamQuestions('exam-sql', sqlQuestions);
-            displayExamQuestions('exam-front-end', frontEndQuestions);
-            displayExamQuestions('exam-back-end', backEndQuestions);
-            displayExamQuestions('exam-final', finalExamQuestions);
-
-            // Navigation logic
-            function updateLessonDisplay() {
-                contents.forEach(content => content.classList.remove('active'));
-                contents[currentLesson].classList.add('active');
-                prevArrow.classList.toggle('disabled', currentLesson === 0);
-                nextArrow.classList.toggle('disabled', currentLesson === contents.length - 1);
-                lessons.forEach(lesson => lesson.style.background = 'var(--primary-blue)');
-                lessons[currentLesson].style.background = '#003a80';
-                document.querySelector('.content-area').scrollTop = 0;
-            }
-
-            lessons.forEach((lesson, index) => {
-                lesson.addEventListener('click', () => {
-                    currentLesson = index;
-                    updateLessonDisplay();
-                });
-            });
-
-            prevArrow.addEventListener('click', () => {
-                if (currentLesson > 0) {
-                    currentLesson--;
-                    updateLessonDisplay();
-                }
-            });
-
-            nextArrow.addEventListener('click', () => {
-                if (currentLesson < contents.length - 1) {
-                    currentLesson++;
-                    updateLessonDisplay();
-                }
-            });
-
-            updateLessonDisplay();
-        });
-    </script>
 </head>
 <body>
     <!-- Header -->
@@ -558,6 +414,7 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Curriculum</a></li>
+                <li><a href="code.html">Code</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Portfolio</a></li>
                 <li><a href="#">Contact</a></li>
@@ -1418,5 +1275,149 @@
             <div>© 2025 CODEXEDOC. All rights reserved.</div>
         </div>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lessons = document.querySelectorAll('.lesson');
+            const contents = document.querySelectorAll('.lesson-content, .exam-content');
+            const prevArrow = document.querySelector('.nav-arrow.prev');
+            const nextArrow = document.querySelector('.nav-arrow.next');
+            let currentLesson = 0;
+
+            // Question arrays for each section (25 questions each)
+            const htmlCssQuestions = [
+                // Placeholder for questions
+                { question: "Sample HTML/CSS question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
+                // Add 24 more questions here
+                // { question: "Sample HTML/CSS question 2", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 1 },
+                // ...
+            ];
+            const jsQuestions = [
+                { question: "Sample JavaScript question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
+                // Add 24 more questions here
+            ];
+            const nodeJsQuestions = [
+                { question: "Sample Node.js question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
+                // Add 24 more questions here
+            ];
+            const pythonQuestions = [
+                { question: "Sample Python question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
+                // Add 24 more questions here
+            ];
+            const sqlQuestions = [
+                { question: "Sample SQL question 1", options: ["Option 1", "Option 2", "Option 3", "Option 4"], correct: 0 },
+                // Add 24 more questions here
+            ];
+
+            // Combine questions for mid-term and final exams
+            const frontEndQuestions = [...htmlCssQuestions, ...jsQuestions]; // 50 questions
+            const backEndQuestions = [...nodeJsQuestions, ...pythonQuestions]; // 50 questions
+            const finalExamQuestions = [...frontEndQuestions, ...backEndQuestions, ...sqlQuestions]; // 125 questions
+
+            // Function to shuffle array (Fisher-Yates algorithm)
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            // Function to display exam questions
+            function displayExamQuestions(examId, questions) {
+                const examContent = document.getElementById(examId);
+                const questionContainer = examContent.querySelector('.questions');
+                questionContainer.innerHTML = '';
+                const shuffledQuestions = shuffle([...questions]);
+
+                shuffledQuestions.forEach((q, index) => {
+                    const questionDiv = document.createElement('div');
+                    questionDiv.classList.add('question');
+                    questionDiv.innerHTML = `
+                        <p>${index + 1}. ${q.question}</p>
+                        ${q.options.map((option, i) => `
+                            <label>
+                                <input type="radio" name="q${index}" value="${i}">
+                                ${option}
+                            </label>
+                        `).join('')}
+                    `;
+                    questionContainer.appendChild(questionDiv);
+                });
+
+                const submitButton = examContent.querySelector('button');
+                submitButton.addEventListener('click', () => {
+                    let score = 0;
+                    shuffledQuestions.forEach((q, index) => {
+                        const selected = examContent.querySelector(`input[name="q${index}"]:checked`);
+                        if (selected && parseInt(selected.value) === q.correct) {
+                            score++;
+                        }
+                    });
+                    const percentage = (score / shuffledQuestions.length) * 100;
+                    examContent.querySelector('.score').textContent = `Your Score: ${score}/${shuffledQuestions.length} (${percentage.toFixed(2)}%)`;
+
+                    if (percentage >= 90) {
+                        const popup = document.querySelector('.certificate-popup');
+                        popup.classList.add('active');
+                        popup.querySelector('button').onclick = () => {
+                            const name = popup.querySelector('input').value || 'Student';
+                            popup.innerHTML = `
+                                <div class="certificate">
+                                    <h3>Certificate of Achievement</h3>
+                                    <p>This certifies that <strong>${name}</strong> has successfully completed the ${examContent.querySelector('h2').textContent} with a score of ${percentage.toFixed(2)}% on May 21, 2025.</p>
+                                    <p>Issued by CODEXEDOC</p>
+                                </div>
+                            `;
+                        };
+                    }
+                });
+            }
+
+            // Initialize exams with shuffled questions
+            displayExamQuestions('exam-html-css', htmlCssQuestions);
+            displayExamQuestions('exam-javascript-core', jsQuestions);
+            displayExamQuestions('exam-javascript-advanced', jsQuestions);
+            displayExamQuestions('exam-nodejs', nodeJsQuestions);
+            displayExamQuestions('exam-python', pythonQuestions);
+            displayExamQuestions('exam-sql', sqlQuestions);
+            displayExamQuestions('exam-front-end', frontEndQuestions);
+            displayExamQuestions('exam-back-end', backEndQuestions);
+            displayExamQuestions('exam-final', finalExamQuestions);
+
+            // Navigation logic
+            function updateLessonDisplay() {
+                contents.forEach(content => content.classList.remove('active'));
+                contents[currentLesson].classList.add('active');
+                prevArrow.classList.toggle('disabled', currentLesson === 0);
+                nextArrow.classList.toggle('disabled', currentLesson === contents.length - 1);
+                lessons.forEach(lesson => lesson.style.background = 'var(--primary-blue)');
+                lessons[currentLesson].style.background = '#003a80';
+                document.querySelector('.content-area').scrollTop = 0;
+            }
+
+            lessons.forEach((lesson, index) => {
+                lesson.addEventListener('click', () => {
+                    currentLesson = index;
+                    updateLessonDisplay();
+                });
+            });
+
+            prevArrow.addEventListener('click', () => {
+                if (currentLesson > 0) {
+                    currentLesson--;
+                    updateLessonDisplay();
+                }
+            });
+
+            nextArrow.addEventListener('click', () => {
+                if (currentLesson < contents.length - 1) {
+                    currentLesson++;
+                    updateLessonDisplay();
+                }
+            });
+
+            updateLessonDisplay();
+        });
+    </script>
 </body>
 </html>
