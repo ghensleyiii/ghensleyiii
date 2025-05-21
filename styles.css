@@ -148,7 +148,7 @@ header nav a:hover {
 }
 
 .hero-content a:hover {
-    background-color: var(--gold);
+    background-color: var(--blue);
 }
 
 .image-section {
@@ -179,7 +179,7 @@ header nav a:hover {
     font-weight: 700 !important;
     text-align: center !important;
     margin-bottom: 1.5rem !important;
-    color: var(--white);
+    color: var(--gold);
 }
 
 .how-it-works-content {
@@ -190,7 +190,7 @@ header nav a:hover {
 
 .how-it-works-content p.intro {
     font-size: 1.125rem !important;
-    color: var(--dark-gold);
+    color: var(--white);
     margin-bottom: 2rem !important;
     max-width: 48rem !important;
     margin-left: auto !important;
@@ -226,7 +226,7 @@ header nav a:hover {
 
 .how-it-works-item p {
     font-size: 1rem !important;
-    color: var(--dark-gold);
+    color: var(--white);
 }
 
 .curriculum {
@@ -265,18 +265,18 @@ header nav a:hover {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
     margin-bottom: 1rem !important;
-    color: var(--white);
+    color: var(--gold);
     text-align: center !important;
 }
 
 .curriculum-item p {
     font-size: 1rem !important;
-    color: var(--dark-gold);
+    color: var(--white);
     margin-bottom: 1.5rem !important;
     text-align: center !important;
 }
 
-.curriculum-item a {
+/*.curriculum-item a {
     display: inline-block;
     background-color: var(--gold);
     color: var(--dark-blue);
@@ -289,7 +289,7 @@ header nav a:hover {
 
 .curriculum-item a:hover {
     background-color: var(--dark-gold);
-}
+}*/
 
 .course-section {
     padding: 4rem 1.5rem !important;
@@ -312,7 +312,7 @@ header nav a:hover {
 
 .course-section p {
     font-size: 1.125rem !important;
-    color: var(--dark-gold);
+    color: var(--white);
     text-align: center !important;
     margin-bottom: 3rem !important;
     max-width: 48rem !important;
