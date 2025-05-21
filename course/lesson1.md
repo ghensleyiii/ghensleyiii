@@ -1,5 +1,3 @@
-## Introduction
-
 ### Introduction to Full-Stack Development
 
 Full-stack development is an approach to web development where a developer is proficient in both front-end and back-end technologies. A full-stack developer works on everything that makes a web application function, from user interfaces to databases and server logic.
