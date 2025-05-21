@@ -1,5 +1,3 @@
-# Full-Stack Development Course
-
 ## Introduction
 
 ### Introduction to Full-Stack Development
