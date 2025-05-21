@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.10/marked.min.js"></script>
+</head>
+<body>
+    <div id="content"></div>
+    <script>
+        fetch('test.md')  // Load Markdown file
+            .then(response => response.text())
+            .then(md => {
+                document.getElementById('content').innerHTML = marked.parse(md);
+            });
+    </script>
+</body>
+</html>
