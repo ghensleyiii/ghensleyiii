@@ -32,7 +32,7 @@ header .logo-container {
     gap: 0.75rem;
 }
 
-header .logo-container img {
+header .logo-container imgSACTION
     width: 35px !important;
     height: auto !important;
     object-fit: contain;
@@ -122,7 +122,286 @@ header nav a:hover {
     max-width: 32rem !important;
 }
 
-/* Media Queries Example */
+.hero-content img {
+    margin: 0 auto 1.5rem !important;
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.hero-content h1 {
+    font-size: 2.25rem !important;
+    font-weight: bold !important;
+    margin-bottom: 1rem !important;
+    color: var(--gold) !important;
+}
+
+.hero-content p {
+    font-size: 1.125rem !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.hero-content a {
+    background-color: var(--white) !important;
+    color: var(--primary-blue) !important;
+    padding: 0.75rem 1.5rem !important;
+    border-radius: 0.5rem !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+}
+
+.hero-content a:hover {
+    background-color: var(--light-gray) !important;
+}
+
+.image-section {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 20px 20px !important;
+    background-color: var(--primary-blue) !important;
+    height: 300px !important;
+}
+
+.image-section img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    height: auto !important;
+    object-fit: contain;
+    display: block;
+}
+
+.how-it-works {
+    padding: 20px !important;
+    background-color: var(--secondary-blue) !important;
+}
+
+.how-it-works h2 {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 1.5rem !important;
+    color: var(--white) !important;
+}
+
+.how-it-works-content {
+    max-width: 80rem !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+}
+
+.how-it-works-content p.intro {
+    font-size: 1.125rem !important;
+    color: var(--gray) !important;
+    margin-bottom: 2rem !important;
+    max-width: 48rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 80rem !important;
+    margin: 0 auto !important;
+}
+
+.how-it-works-item {
+    padding: 2rem !important;
+    background-color: var(--secondary-blue) !important;
+    border-radius: 0.75rem !important;
+}
+
+.how-it-works-item i {
+    font-size: 2.5rem !important;
+    color: var(--gold) !important;
+    margin-bottom: 1rem !important;
+}
+
+.how-it-works-item h3 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 0.75rem !important;
+    color: var(--white) !important;
+}
+
+.how-it-works-item p {
+    font-size: 1rem !important;
+    color: var(--gray) !important;
+}
+
+.curriculum {
+    padding: 4rem 1.5rem !important;
+    background-color: var(--primary-blue) !important;
+}
+
+.curriculum h2 {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+    color: var(--gold) !important;
+}
+
+.curriculum-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 80rem !important;
+    margin: 0 auto !important;
+}
+
+.curriculum-item {
+    padding: 2rem !important;
+    background-color: var(--secondary-blue) !important;
+    border-radius: 0.75rem !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.curriculum-item:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+}
+
+.curriculum-item h3 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 1rem !important;
+    color: var(--white) !important;
+    text-align: center !important;
+}
+
+.curriculum-item p {
+    font-size: 1rem !important;
+    color: var(--gray) !important;
+    margin-bottom: 1.5rem !important;
+    text-align: center !important;
+}
+
+.curriculum-item a {
+    display: inline-block;
+    background-color: var(--gold) !important;
+    color: var(--primary-blue) !important;
+    padding: 0.5rem 1rem !important;
+    border-radius: 0.375rem !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+}
+
+.curriculum-item a:hover {
+    background-color: var(--dark-gold) !important;
+}
+
+.course-section {
+    padding: 4rem 1.5rem !important;
+    background-color: var(--primary-blue) !important;
+    flex-grow: 1;
+}
+
+.course-container {
+    max-width: 80rem !important;
+    margin: 0 auto !important;
+}
+
+.course-section h1 {
+    font-size: 2.25rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+    color: var(--gold) !important;
+}
+
+.course-section p {
+    font-size: 1.125rem !important;
+    color: var(--gray) !important;
+    text-align: center !important;
+    margin-bottom: 3rem !important;
+    max-width: 48rem !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.course-section .section {
+    background: var(--secondary-blue) !important;
+    margin: 10px 0 !important;
+    padding: 15px !important;
+    border-radius: 0.75rem !important;
+}
+
+.course-section .section h2 {
+    color: var(--gold) !important;
+    margin-top: 0 !important;
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+}
+
+.course-section .lesson {
+    margin: 5px 0 !important;
+    padding: 10px !important;
+    background: var(--primary-blue) !important;
+    border-left: 4px solid var(--gold) !important;
+    display: flex;
+    align-items: center;
+    border-radius: 0.375rem !important;
+}
+
+.course-section .lesson i {
+    margin-right: 10px !important;
+    color: var(--gold) !important;
+}
+
+.course-section .lesson span {
+    color: var(--white) !important;
+}
+
+footer {
+    padding: 1.5rem 1.5rem !important;
+    background-color: var(--primary-blue) !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.footer-content {
+    max-width: 64rem !important;
+    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center !important;
+    gap: 0.5rem;
+}
+
+.footer-logo-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo-container img {
+    width: 35px !important;
+    height: auto !important;
+    object-fit: contain;
+    vertical-align: middle !important;
+}
+
+.footer-logo-container div {
+    font-size: 1rem !important;
+    color: var(--gold) !important;
+    line-height: 1 !important;
+}
+
+.footer-content p {
+    font-size: 1rem !important;
+    font-style: italic !important;
+    margin: 0 !important;
+}
+
+.footer-content div:last-child {
+    font-size: 1rem !important;
+    color: var(--white) !important;
+}
+
 @media (max-width: 767px) {
     .hamburger {
         display: block;
@@ -162,5 +441,19 @@ header nav a:hover {
 
     .course-section h1 {
         font-size: 3rem !important;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        max-width: 800px !important;
+    }
+
+    .how-it-works h2, .curriculum h2, .course-section h1 {
+        font-size: 2.5rem !important;
+    }
+
+    .course-container {
+        max-width: 800px !important;
     }
 }
