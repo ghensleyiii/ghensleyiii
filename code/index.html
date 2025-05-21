@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore programming languages, development resources, and learn through CODEXEDOC.">
+    <meta name="keywords" content="programming, coding, development, CODEXEDOC">
+    <title>CODEXEDOC</title>
+    <link rel="icon" type="image/x-icon" href="../icons/favicon.ico">
+    <link rel="apple-touch-icon" href="../icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+.main-section {
+  background-color: var(--primary-blue);
+  padding: 50px 20px;
+  text-align: center;
+  color: var(--white);
+}
+
+.code-editor {
+  position: relative;
+  width: 100%;
+  margin: 0 auto 20px auto;
+  background-color: var(--primary-blue);
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--white)
+}
+
+.line-numbers {
+  width: 48px;
+  background-color: var(--secondary-blue);
+  color: var(--gold);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  text-align: right;
+  user-select: none;
+  line-height: 20px;
+  position: absolute;
+  top: 7px;
+  left: 7px;
+  height: calc(100% - 21.5px);
+  padding: 10px 5px 10px 0;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.line-numbers pre {
+  margin: 0;
+  padding: 0;
+  line-height: 20px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  display: block;
+}
+
+.code-editor textarea {
+  width: 100%;
+  height: 600px;
+  background: var(--secondary-blue);
+  color: var(--white);
+  font-family: 'Roboto Mono', monospace;
+  font-size: 16px;
+  padding: 10px 15px 10px 60px;
+  border: 2px solid var(--gold);
+  border-radius: 5px;
+  resize: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  line-height: 20px;
+  position: relative;
+  z-index: 0;
+}
+
+.code-editor textarea::placeholder {
+  color: var(--steel);
+}
+
+.buttons {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  max-width: 600px;
+}
+
+.validate-btn {
+  background-color: var(--secondary-blue);
+  color: var(--gold);
+  border: none;
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.test-btn {
+  background-color: var(--secondary-blue);
+  color: var(--gold);
+  border: none;
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-weight: bold;
+  border: pointer;
+  transition: background-color 0.3s;
+}
+
+.document-btn {
+  background-color: var(--secondary-blue);
+  color: var(--gold);
+  border: none;
+  padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 0;
+  position: relative;
+}
+
+.validate-btn:hover, .test-btn:hover, .document-btn:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.error-messages {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.save-file-container {
+  margin: 10px auto;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.save-file-input {
+  padding: 8px;
+  font-size: 16px;
+  border: 2px solid var(--gold);
+  border-radius: 5px;
+  flex: 0 1 300px;
+  background-color: var(--black);
+  color: var(--white);
+  box-sizing: border-box;
+}
+
+.save-file-btn {
+  background-color: var(--secondary-blue);
+  color: var(--gold);
+  border: 2px solid var(--gold);
+  padding: 8px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 0 0 auto;
+}
+
+.save-file-btn:hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.output-section, .console-section {
+  background-color: var(--primary-blue);
+  padding: 5px;
+  margin-top: 20px;
+  display: none;
+}
+
+.output-container, .console-container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: var(--primary-blue);
+  border-radius: 0px;
+  overflow: hidden;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.output-header, .console-header {
+  color: var(--black);
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--secondary-blue);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+hr {
+  border: 1px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+#outputFrame {
+  width: 100%;
+  height: 600px;
+  border: none;
+  background-color: var(--primary-blue);
+}
+
+#consoleOutput {
+  width: 100%;
+  height: 200px;
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  padding: 10px;
+  white-space: pre-wrap;
+  overflow-y: auto;
+}
+
+@media (max-width: 768px) {
+  .code-editor textarea {
+    height: 400px;
+  }
+
+  .buttons {
+    flex-direction: row;
+    gap: 10px;
+    max-width: 400px;
+  }
+
+  .validate-btn, .test-btn, .document-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+
+  .save-file-input {
+    width: 200px;
+  }
+
+  #outputFrame {
+    height: 400px;
+  }
+
+  #consoleOutput {
+    height: 150px;
+  }
+
+  .output-section, .console-section {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .code-editor textarea {
+    height: 300px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 10px 15px 10px 50px;
+  }
+
+  .line-numbers {
+    font-size: 14px;
+    line-height: 18px;
+    width: 38px;
+    top: 7px;
+    left: 7px;
+    height: calc(100% - 21.5px);
+    padding: 10px 3px 10px 0;
+    z-index: 10;
+  }
+
+  .line-numbers pre {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .buttons {
+    max-width: 300px;
+  }
+
+  .save-file-input {
+    width: 150px;
+    font-size: 14px;
+  }
+
+  .save-file-btn {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
+
+  #outputFrame {
+    height: 300px;
+  }
+
+  #consoleOutput {
+    height: 100px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+        <div class="logo-container">
+            <img src="codex.PNG" alt="CODEXEDOC Logo">
+            <div>CODEXEDOC</div>
+        </div>
+        <input type="checkbox" id="hamburger-toggle">
+        <label class="hamburger" for="hamburger-toggle">
+            <div class="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/">Home</a></li>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/curriculum/">Curriculum</a></li>
+                <li><a href="">Code</a></li>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/about/">About</a></li>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/portfolio/">Portfolio</a></li>
+                <li><a href="mailto:contact@codexedoc.com">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="main-section">
+      <div class="code-editor">
+        <div class="line-numbers" id="lineNumbers"><pre></pre></div>
+        <textarea id="codeInput" placeholder="Enter your code here..."></textarea>
+      </div>
+      <div class="buttons">
+        <button class="validate-btn" onclick="validateCode()">Test Code</button>
+        <button class="test-btn" onclick="executeCode()">Run Execute</button>
+        <button class="document-btn" onclick="showSaveFileInput()">Save Document</button>
+      </div>
+      <div class="save-file-container" id="saveFileContainer">
+        <input type="text" id="saveFileInput" class="save-file-input" placeholder="Enter file name (e.g., code.txt)">
+        <button class="save-file-btn" onclick="saveCode()">Save</button>
+      </div>
+      <div id="errorMessages" class="error-messages"></div>
+      <div class="output-section" id="outputSection">
+        <div class="output-container">
+          <div class="output-header">OUTPUT</div>
+          <hr>
+          <iframe id="outputFrame"></iframe>
+        </div>
+      </div>
+      <div class="console-section" id="consoleSection">
+        <div class="console-container">
+          <div class="console-header">CONSOLE</div>
+          <hr>
+          <pre id="consoleOutput"></pre>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo-container">
+                <img src="codex.PNG" alt="CODEXEDOC Logo">
+                <div>CODEXEDOC</div>
+            </div>
+            <p>Shearing Away the Complexity of Coding!</p>
+            <div>© 2025 CODEXEDOC. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+      try {
+  console.log('Line 1: Script started'); // Line 1
+  console.log('Line 5: Variables'); // Line 5
+  const textarea = document.getElementById('codeInput');
+  const errorDiv = document.getElementById('errorMessages');
+  const outputFrame = document.getElementById('outputFrame');
+  const outputSection = document.getElementById('outputSection');
+  const consoleSection = document.getElementById('consoleSection');
+  const consoleOutput = document.getElementById('consoleOutput');
+  const lineNumbers = document.getElementById('lineNumbers');
+  const lineNumbersPre = lineNumbers.querySelector('pre');
+  const saveFileContainer = document.getElementById('saveFileContainer');
+  const saveFileInput = document.getElementById('saveFileInput');
+  const MAX_LINES = 9999;
+
+  console.log('Line 18: Event listeners'); // Line 18
+  textarea.addEventListener('input', function() {
+    updateLineNumbers();
+  });
+  textarea.addEventListener('scroll', function() {
+    updateLineNumbers();
+  });
+  window.addEventListener('resize', function() {
+    updateLineNumbers();
+  });
+
+  textarea.addEventListener('keydown', (e) => {
+    if (e.key === 'Tab') {
+      e.preventDefault();
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      textarea.value = textarea.value.substring(0, start) + '  ' + textarea.value.substring(end);
+      textarea.selectionStart = textarea.selectionEnd = start + 2;
+      updateLineNumbers();
+    }
+  });
+
+  textarea.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      const start = textarea.selectionStart;
+      const end = textarea.selectionEnd;
+      const value = textarea.value;
+      const lineStart = value.lastIndexOf('\n', start - 1) + 1;
+      const currentLine = value.substring(lineStart, start);
+      const indentMatch = currentLine.match(/^\s*/);
+      let indent = indentMatch ? indentMatch[0] : '';
+      if (currentLine.trim().endsWith(':')) {
+        indent += '  ';
+      }
+      textarea.value = value.substring(0, start) + '\n' + indent + value.substring(end);
+      textarea.selectionStart = textarea.selectionEnd = start + indent.length + 1;
+      updateLineNumbers();
+    }
+  });
+
+  console.log('Line 28: updateLineNumbers'); // Line 28
+  function updateLineNumbers() {
+    try {
+      console.log('updateLineNumbers called');
+      const lines = textarea.value.split('\n');
+      const numberOfLines = Math.min(lines.length, MAX_LINES);
+      const lineHeight = parseFloat(getComputedStyle(textarea).lineHeight) || 20;
+      const visibleHeight = textarea.clientHeight - 24;
+      const visibleLines = Math.ceil(visibleHeight / lineHeight);
+      const scrollTop = textarea.scrollTop;
+      const firstVisibleLine = Math.floor(scrollTop / lineHeight);
+
+      const allNumbers = Array.from(
+        { length: Math.max(numberOfLines, firstVisibleLine + visibleLines) },
+        function(_, i) { return i + 1; }
+      );
+
+      let visibleNumbers = allNumbers.slice(firstVisibleLine, firstVisibleLine + visibleLines);
+      while (visibleNumbers.length < visibleLines) {
+        visibleNumbers.push('');
+      }
+
+      lineNumbersPre.innerHTML = visibleNumbers.join('\n');
+
+      if (lines.length > MAX_LINES) {
+        textarea.value = lines.slice(0, MAX_LINES).join('\n');
+      }
+
+      requestAnimationFrame(function() {
+        lineNumbers.scrollTop = scrollTop;
+      });
+    } catch (e) {
+      console.error('Error in updateLineNumbers:', e.message);
+    }
+  }
+
+  console.log('Line 60: Initial call'); // Line 60
+  updateLineNumbers();
+
+  console.log('Line 63: languageValidators'); // Line 63
+  const languageValidators = {
+    html: function(code) {
+      try {
+        console.log('Validating HTML');
+        const errors = [];
+        const lines = code.split('\n');
+        if (!code.match(/^<!DOCTYPE\s+html>/i)) {
+          errors.push({ message: 'Missing DOCTYPE declaration', line: 1 });
+        }
+        let openTags = [];
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const tags = line.match(/<(\/)?[a-zA-Z]+[^>]*>/g) || [];
+          tags.forEach(tag => {
+            if (tag.startsWith('</')) {
+              if (!openTags.length) {
+                errors.push({ message: `Unexpected closing tag ${tag}`, line: i + 1 });
+              } else {
+                openTags.pop();
+              }
+            } else if (!tag.match(/\/>$/)) {
+              openTags.push(tag);
+            }
+          });
+        });
+        if (openTags.length) {
+          errors.push({ message: 'Unclosed HTML tags detected', line: null });
+        }
+        return errors;
+      } catch (e) {
+        console.error('Error in html validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    javascript: function(code) {
+      try {
+        console.log('Validating JavaScript');
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, i) => {
+          if (!line.trim() || line.match(/^\s*\/\//) || line.match(/^\s*\/\*/)) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(var|let|const)\s+\w+\s*(=\s*[^;{}]*)?$|^return\s+[^;{}]*/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in statement', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in javascript validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    python: function(code) {
+      try {
+        console.log('Validating Python');
+        const errors = [];
+        const lines = code.split('\n');
+        let indentLevel = 0;
+        let expectIndent = false;
+        lines.forEach((line, i) => {
+          if (!line.trim() || line.match(/^\s*#/)) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(if|elif|else|for|while|def|class|try|except|with)\b.*[^:]$/)) {
+            errors.push({ message: `Missing colon after ${trimmed.split(' ')[0]} statement`, line: i + 1 });
+            expectIndent = false;
+          } else if (trimmed.match(/^(if|for|while|def|class|try|with)\b.*:$|^(elif|else|except):$/)) {
+            expectIndent = true;
+            indentLevel = 4;
+          } else {
+            expectIndent = false;
+          }
+          if (expectIndent && line.match(/^\s+[^\s]/) && i > 0) {
+            const spaces = line.match(/^\s+/)[0].length;
+            if (spaces !== indentLevel && trimmed && !trimmed.match(/^\s*#/)) {
+              errors.push({ message: `Incorrect indentation level (expected ${indentLevel} spaces, found ${spaces})`, line: i + 1 });
+            }
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in python validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    css: function(code) {
+      try {
+        console.log('Validating CSS');
+        const errors = [];
+        const lines = code.split('\n');
+        let braceCount = 0;
+        let inRule = false;
+        lines.forEach((line, i) => {
+          if (!line.trim() || line.match(/^\s*\/\*/)) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/\{$/)) {
+            braceCount++;
+            inRule = true;
+          }
+          if (trimmed.match(/\}$/)) {
+            braceCount--;
+            inRule = false;
+          }
+          if (inRule && trimmed.match(/^[a-z-]+:\s*[^;{}]+$/)) {
+            errors.push({ message: 'Missing semicolon in property', line: i + 1 });
+          }
+          if (braceCount < 0) {
+            errors.push({ message: 'Unexpected closing brace', line: i + 1 });
+          }
+        });
+        if (braceCount > 0) {
+          errors.push({ message: 'Unclosed brace in CSS rule', line: lines.length });
+        }
+        return errors;
+      } catch (e) {
+        console.error('Error in css validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    java: function(code) {
+      try {
+        console.log('Validating Java');
+        const errors = [];
+        const lines = code.split('\n');
+        if (!code.match(/^\s*public\s+class\s+\w+/m)) {
+          errors.push({ message: 'Missing or invalid class declaration', line: 1 });
+        }
+        lines.forEach((line, i) => {
+          if (!line.trim() || line.match(/^\s*\/\//)) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(int|float|double|String|boolean|[A-Z][\w$]*)\s+[a-zA-Z_$][\w$]*\s*(=\s*[^;{}]*)?$|^[a-zA-Z_$][\w$]*\s*\([^)]*\)|^return\s+[^;{}]*/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in statement', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in java validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    cpp: function(code) {
+      try {
+        console.log('Validating C++');
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, i) => {
+          if (!line.trim() || line.match(/^\s*\/\//)) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^\s*#include\s+[^\<"']/) || trimmed.match(/^\s*#include\s*$/)) {
+            errors.push({ message: 'Invalid #include directive', line: i + 1 });
+          }
+          if (trimmed.match(/^(int|float|double|char|string|[A-Z][\w$]*)\s+[a-zA-Z_$][\w$]*\s*(=\s*[^;{}]*)?$|^[a-zA-Z_$][\w$]*\s*\([^)]*\)|return\s+[^;{}]*/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in statement', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in cpp validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    rust: function(code) {
+      try {
+        console.log('Validating Rust');
+        const errors = [];
+        const lines = code.split('\n');
+        if (!code.match(/fn\s+main\s*\(/)) {
+          errors.push({ message: 'Missing fn main', line: null });
+        }
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^let\s+\w+(\s*:\s*\w+)?\s*(=\s*[^;{}]*)?$|^fn\s+\w+\s*\([^)]*\)/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in statement', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in rust validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    go: function(code) {
+      try {
+        console.log('Validating Go');
+        const errors = [];
+        const lines = code.split('\n');
+        if (!code.match(/^\s*package\s+\w+/m)) {
+          errors.push({ message: 'Missing package declaration', line: 1 });
+        }
+        if (code.match(/package\s+main/) && !code.match(/func\s+main\s*\(/)) {
+          errors.push({ message: 'Missing func main', line: null });
+        }
+        if (code.match(/\bprintln\b/) && !code.match(/^\s*import\s+"fmt"/m)) {
+          errors.push({ message: 'Missing import "fmt" for println', line: null });
+        }
+        return errors;
+      } catch (e) {
+        console.error('Error in go validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    ruby: function(code) {
+      try {
+        console.log('Validating Ruby');
+        const errors = [];
+        const lines = code.split('\n');
+        let openBlocks = 0;
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(def|class|module|if|unless|for|while|begin)\s+/)) {
+            openBlocks++;
+          }
+          if (trimmed.match(/^\s*end\s*$/)) {
+            openBlocks--;
+          }
+          if (openBlocks < 0) {
+            errors.push({ message: 'Unexpected end keyword', line: i + 1 });
+          }
+        });
+        if (openBlocks > 0) {
+          errors.push({ message: 'Missing end keyword for block', line: lines.length });
+        }
+        return errors;
+      } catch (e) {
+        console.error('Error in ruby validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    php: function(code) {
+      try {
+        console.log('Validating PHP');
+        const errors = [];
+        const lines = code.split('\n');
+        if (!code.match(/^\s*<\?php/i)) {
+          errors.push({ message: 'Missing PHP opening tag', line: 1 });
+        }
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^\s*function\s+\w+\s*\([^)]*\)[^{]*$/)) {
+            errors.push({ message: 'Missing opening brace in function', line: i + 1 });
+          }
+          if (trimmed.match(/^echo\s+[^;{}]*/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in statement', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in php validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    swift: function(code) {
+      try {
+        console.log('Validating Swift');
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(let|var)\s+\w+\s*(:\s*\w+)?\s*(=\s*[^;{}]*)?$/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in declaration', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in swift validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    kotlin: function(code) {
+      try {
+        console.log('Validating Kotlin');
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^\s*fun\s+\w+\s*\([^)]*\)\s*[^;{]*$/)) {
+            errors.push({ message: 'Missing opening brace in function', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in kotlin validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    typescript: function(code) {
+      try {
+        console.log('Validating TypeScript');
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, i) => {
+          if (!line.trim() || line.match(/^\s*\/\//)) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(let|const|var)\s+\w+\s*:\s*\w+\s*(=\s*[^;{}]*)?$/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in declaration', line: i + 1 });
+          }
+          if (trimmed.match(/^\s*(let|const|var)\s+\w+\s*:\s*$/)) {
+            errors.push({ message: 'Incomplete type annotation', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in typescript validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    csharp: function(code) {
+      try {
+        console.log('Validating C#');
+        const errors = [];
+        const lines = code.split('\n');
+        if (!code.match(/^\s*public\s+class\s+\w+/m)) {
+          errors.push({ message: 'Missing or invalid class declaration', line: 1 });
+        }
+        lines.forEach((line, i) => {
+          if (!line.trim() || line.match(/^\s*\/\//)) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(int|float|double|string|bool|[A-Z][\w$]*)\s+[a-zA-Z_$][\w$]*\s*(=\s*[^;{}]*)?$|^[a-zA-Z_$][\w$]*\s*\([^)]*\)|return\s+[^;{}]*/i) && !trimmed.endsWith(';') && !trimmed.match(/[{}]$/)) {
+            errors.push({ message: 'Missing semicolon in statement', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in csharp validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    r: function(code) {
+      try {
+        console.log('Validating R');
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^\s*\w+\s*=\s*[^-].*$/) && !trimmed.match(/<-\s*/)) {
+            errors.push({ message: 'Use <- for assignment instead of =', line: i + 1 });
+          }
+          if (trimmed.match(/^\s*function\s*\(/)) {
+            errors.push({ message: 'Use `<- function()` for function definitions', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in r validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    },
+
+    sql: function(code) {
+      try {
+        console.log('Validating SQL');
+        const errors = [];
+        const lines = code.split('\n');
+        lines.forEach((line, i) => {
+          if (!line.trim()) return;
+          const trimmed = line.trim();
+          if (trimmed.match(/^(SELECT|INSERT|UPDATE|DELETE|CREATE|DROP)\s+.*[^;]$/i) && !trimmed.match(/^\s*$/)) {
+            errors.push({ message: 'Missing semicolon after statement', line: i + 1 });
+          }
+          if (trimmed.match(/^\s*SELECT\s*$/i)) {
+            errors.push({ message: 'SELECT missing columns', line: i + 1 });
+          }
+        });
+        return errors;
+      } catch (e) {
+        console.error('Error in sql validator:', e.message);
+        return [{ message: 'Validation failed', line: null }];
+      }
+    }
+  };
+
+  console.log('Line 110: detectLanguage'); // Line 110
+  function detectLanguage(code) {
+    try {
+      console.log('Detecting language');
+      code = code.trim();
+      if (code.match(/^\s*(let|var)\s+\w+\s*(:\s*\w+)?\s*(=\s*[^;{}]*)?(;)?$/i)) return 'swift';
+      if (code.match(/^\s*(let|const)\s+\w+\s*:\s*\w+/)) return 'typescript';
+      if (code.match(/^\s*\w+\s*(<-|=)\s*/)) return 'r';
+      if (code.match(/^\s*public\s+class\s+\w+/)) return 'csharp';
+      if (code.match(/^\s*public\s+class\s+\w+/)) return 'java';
+      if (code.match(/^<!DOCTYPE\s+html>/i) || code.match(/^\s*<html\b/i)) return 'html';
+      if (code.match(/^\s*#include/) || code.match(/^\s*int\s+main\(/)) return 'cpp';
+      if (code.match(/^\s*fn\s+main\(/)) return 'rust';
+      if (code.match(/^\s*package\s+\w+/)) return 'go';
+      if (code.match(/^\s*(def|class)\s+\w+/)) return 'ruby';
+      if (code.match(/^\s*<\?php/i)) return 'php';
+      if (code.match(/^\s*fun\s+\w+\(/)) return 'kotlin';
+      if (code.match(/^\s*(SELECT|INSERT|UPDATE|DELETE|CREATE|DROP)/i)) return 'sql';
+      if (code.match(/^\s*(print\(|if|for|while|def|class)\b/)) return 'python';
+      if (code.match(/^\s*[a-zA-Z.#][^{]*\{[^}]*\}/)) return 'css';
+      return 'javascript';
+    } catch (e) {
+      console.error('Error in detectLanguage:', e.message);
+      return 'javascript';
+    }
+  }
+
+  console.log('Line 123: validateCode'); // Line 123
+  function validateCode() {
+    try {
+      console.log('validateCode called');
+      errorDiv.innerHTML = '';
+      errorDiv.style.display = 'block';
+      errorDiv.style.color = 'red';
+      const code = textarea.value.trim();
+
+      if (!code) {
+        errorDiv.innerHTML = 'No code entered';
+        outputSection.style.display = 'none';
+        consoleSection.style.display = 'none';
+        return;
+      }
+
+      const language = detectLanguage(code);
+      console.log('Detected language:', language);
+      const errors = languageValidators[language](code);
+
+      if (errors.length > 0) {
+        errorDiv.innerHTML = errors
+          .map(function(error) {
+            return error.line ? 'Line ' + error.line + ': ' + error.message : error.message;
+          })
+          .join('<br>');
+      } else {
+        errorDiv.innerHTML = 'No syntax errors detected';
+        setTimeout(function() {
+          errorDiv.innerHTML = '';
+          errorDiv.style.display = 'none';
+        }, 2000);
+      }
+    } catch (e) {
+      console.error('Error in validateCode:', e.message);
+      errorDiv.innerHTML = 'Validation error: ' + e.message;
+    }
+  }
+
+  console.log('Line 160: executeCode'); // Line 160
+  function executeCode() {
+    try {
+      console.log('executeCode: Start');
+      const code = textarea.value.trim();
+      console.log('executeCode: Got code');
+      errorDiv.innerHTML = '';
+      console.log('executeCode: Cleared errorDiv');
+      outputSection.style.display = 'none';
+      consoleSection.style.display = 'none';
+      console.log('executeCode: Hid sections');
+
+      if (!code) {
+        errorDiv.innerHTML = 'No code to execute';
+        errorDiv.style.display = 'block';
+        console.log('executeCode: No code');
+        return;
+      }
+
+      const language = detectLanguage(code);
+      console.log('executeCode: Language = ' + language);
+
+      if (language === 'html') {
+        console.log('executeCode: Showing HTML output');
+        outputSection.style.display = 'block';
+        outputFrame.srcdoc = code;
+        consoleOutput.textContent = '';
+      } else if (language === 'javascript') {
+        console.log('executeCode: Showing JS console');
+        consoleSection.style.display = 'block';
+        try {
+          let consoleLog = [];
+          const originalConsoleLog = console.log;
+          console.log = function() {
+            consoleLog.push(Array.prototype.join.call(arguments, ' '));
+          };
+          new Function(code)();
+          console.log = originalConsoleLog;
+          consoleOutput.textContent = consoleLog.join('\n') || 'No console output';
+        } catch (e) {
+          consoleOutput.textContent = 'Error: ' + e.message;
+        }
+        outputFrame.srcdoc = '';
+      } else if (language === 'python') {
+        console.log('executeCode: Showing Python console');
+        consoleSection.style.display = 'block';
+        const lines = code.split('\n');
+        const output = [];
+        lines.forEach(function(line, i) {
+          const printMatch = line.match(/^\s*print\s*\((.*)\)\s*$/);
+          if (printMatch) {
+            let content = printMatch[1].trim();
+            content = content.replace(/^['"](.*)['"]$/, '$1');
+            output.push(content);
+          }
+        });
+        consoleOutput.textContent = output.join('\n') || 'No console output';
+        outputFrame.srcdoc = '';
+      } else {
+        console.log('executeCode: Showing console for ' + language);
+        consoleSection.style.display = 'block';
+        consoleOutput.textContent = 'Execution not supported for ' + language;
+        outputFrame.srcdoc = '';
+      }
+
+      console.log('executeCode: End');
+    } catch (e) {
+      console.error('Error in executeCode:', e.message);
+      errorDiv.innerHTML = 'Execution error: ' + e.message;
+    }
+  }
+
+  console.log('Line 210: showSaveFileInput'); // Line 210
+  function showSaveFileInput() {
+    try {
+      console.log('showSaveFileInput called');
+      saveFileContainer.style.display = 'flex';
+      saveFileInput.focus();
+      errorDiv.innerHTML = '';
+    } catch (e) {
+      console.error('Error in showSaveFileInput:', e.message);
+      errorDiv.innerHTML = 'Save error: ' + e.message;
+    }
+  }
+
+  console.log('Line 222: saveCode'); // Line 222
+  function saveCode() {
+    try {
+      console.log('saveCode called');
+      const fileName = saveFileInput.value.trim();
+      if (!fileName) {
+        errorDiv.innerHTML = 'Please enter a file name';
+        errorDiv.style.display = 'block';
+        return;
+      }
+
+      const code = textarea.value;
+      const blob = new Blob([code], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = fileName;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      saveFileContainer.style.display = 'none';
+      saveFileInput.value = '';
+    } catch (e) {
+      console.error('Error in saveCode:', e.message);
+      errorDiv.innerHTML = 'Save error: ' + e.message;
+    }
+  }
+
+  console.log('Line 250: Script completed'); // Line 250
+} catch (e) {
+  console.error('Script error:', e.message);
+  console.trace();
+}
+    </script>
+  </body>
+</html>
