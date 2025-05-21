@@ -231,46 +231,28 @@
         }
 
         /* Arrow Navigation Styles */
+        .arrow-nav-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 48rem;
+            margin: 2rem auto 0;
+            padding: 0 1rem;
+        }
+
         .arrow-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
+            padding: 0.75rem 1.5rem !important;
             background-color: var(--gold);
             color: var(--dark-blue);
             border: none;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            border-radius: 0.5rem !important;
             cursor: pointer;
             font-size: 1.5rem;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            z-index: 10;
         }
 
         .arrow-nav:hover {
             background-color: var(--dark-gold);
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .arrow-left {
-            left: -70px;
-        }
-
-        .arrow-right {
-            right: -70px;
-        }
-
-        @media (max-width: 900px) {
-            .arrow-left {
-                left: 10px;
-            }
-
-            .arrow-right {
-                right: 10px;
-            }
+            transform: scale(1.1);
         }
 
         footer {
@@ -393,11 +375,13 @@
 
     <section class="article-section">
         <div class="article-container">
-            <button class="arrow-nav arrow-left"><i class="fas fa-arrow-left"></i></button>
-            <button class="arrow-nav arrow-right"><i class="fas fa-arrow-right"></i></button>
             <div class="course-section">Introduction</div>
             <div class="lesson">Introduction to Full-Stack Development</div>
             <div id="content">Loading article content...</div>
+            <div class="arrow-nav-container">
+                <button class="arrow-nav arrow-left"><i class="fas fa-arrow-left"></i></button>
+                <button class="arrow-nav arrow-right"><i class="fas fa-arrow-right"></i></button>
+            </div>
         </div>
     </section>
 
