@@ -11,7 +11,6 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../android-chrome-192x192.png">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Add marked.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/marked@4.0.18/marked.min.js"></script>
     <style>
         :root {
@@ -79,7 +78,6 @@
             text-decoration: underline;
         }
 
-        /* Hamburger Menu */
         #hamburger-toggle {
             display: none;
         }
@@ -118,16 +116,17 @@
             visibility: visible;
         }
 
-        /* Article Section */
         .article-section {
             padding: 4rem 1.5rem;
             background-color: var(--dark-blue);
             flex-grow: 1;
+            position: relative;
         }
 
         .article-container {
             max-width: 80rem;
             margin: 0 auto;
+            position: relative;
         }
 
         .article-container h1 {
@@ -160,7 +159,6 @@
             color: var(--white);
         }
 
-        /* Markdown-rendered content styles */
         .article-container #content h1,
         .article-container #content h2,
         .article-container #content h3 {
@@ -230,6 +228,49 @@
             color: var(--gold);
             text-align: center;
             font-style: italic;
+        }
+
+        /* Arrow Navigation Styles */
+        .arrow-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 50px;
+            height: 50px;
+            background-color: var(--gold);
+            color: var(--dark-blue);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            z-index: 10;
+        }
+
+        .arrow-nav:hover {
+            background-color: var(--dark-gold);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .arrow-left {
+            left: -70px;
+        }
+
+        .arrow-right {
+            right: -70px;
+        }
+
+        @media (max-width: 900px) {
+            .arrow-left {
+                left: 10px;
+            }
+
+            .arrow-right {
+                right: 10px;
+            }
         }
 
         footer {
@@ -325,7 +366,6 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="logo-container">
             <img src="../codex.PNG" alt="CODEXEDOC Logo">
@@ -351,16 +391,16 @@
         </nav>
     </header>
 
-    <!-- Article Content -->
     <section class="article-section">
         <div class="article-container">
+            <button class="arrow-nav arrow-left"><i class="fas fa-arrow-left"></i></button>
+            <button class="arrow-nav arrow-right"><i class="fas fa-arrow-right"></i></button>
             <div class="course-section">Introduction</div>
             <div class="lesson">Introduction to Full-Stack Development</div>
             <div id="content">Loading article content...</div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-logo-container">
@@ -387,6 +427,19 @@
             document.getElementById('content').innerHTML = '<p class="error-message">Error: Markdown parser not loaded.</p>';
             console.error("Marked.js not found.");
         }
+
+        // Arrow navigation functionality
+        document.querySelector('.arrow-left').addEventListener('click', () => {
+            // Placeholder for previous article navigation
+            console.log('Navigate to previous article');
+            // Add actual navigation logic here (e.g., fetch previous article)
+        });
+
+        document.querySelector('.arrow-right').addEventListener('click', () => {
+            // Placeholder for next article navigation
+            console.log('Navigate to next article');
+            // Add actual navigation logic here (e.g., fetch next article)
+        });
     </script>
 </body>
 </html>
