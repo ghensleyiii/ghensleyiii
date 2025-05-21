@@ -13,77 +13,78 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../styles.css">
     <style>
+<style>
 .main-section {
-  background-color: var(--primary-blue);
-  padding: 50px 20px;
-  text-align: center;
-  color: var(--white);
+  background-color: var(--primary-blue) !important;
+  padding: 50px 20px !important;
+  text-align: center !important;
+  color: var(--white) !important;
 }
 
 .code-editor {
-  position: relative;
-  width: 100%;
-  margin: 0 auto 20px auto;
-  background-color: var(--primary-blue);
-  padding: 5px;
-  border-radius: 5px;
-  color: var(--white)
+  position: relative !important;
+  width: 100% !important;
+  margin: 0 auto 20px auto !important;
+  background-color: var(--primary-blue) !important;
+  padding: 5px !important;
+  border-radius: 5px !important;
+  color: var(--white) !important;
 }
 
 .line-numbers {
-  width: 48px;
-  background-color: var(--secondary-blue);
-  color: var(--gold);
-  font-family: 'Roboto Mono', monospace;
-  font-size: 16px;
-  text-align: right;
-  user-select: none;
-  line-height: 20px;
-  position: absolute;
-  top: 7px;
-  left: 7px;
-  height: calc(100% - 21.5px);
-  padding: 10px 5px 10px 0;
-  overflow: hidden;
-  z-index: 10;
+  width: 48px !important;
+  background-color: var(--secondary-blue) !important;
+  color: var(--gold) !important;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 16px !important;
+  text-align: right !important;
+  user-select: none !important;
+  line-height: 20px !important;
+  position: absolute !important;
+  top: 7px !important;
+  left: 7px !important;
+  height: calc(100% - 21.5px) !important;
+  padding: 10px 5px 10px 0 !important;
+  overflow: hidden !important;
+  z-index: 10 !important;
 }
 
 .line-numbers pre {
-  margin: 0;
-  padding: 0;
-  line-height: 20px;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 16px;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 20px !important;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 16px !important;
   display: block;
 }
 
 .code-editor textarea {
-  width: 100%;
-  height: 600px;
-  background: var(--secondary-blue);
-  color: var(--white);
-  font-family: 'Roboto Mono', monospace;
-  font-size: 16px;
-  padding: 10px 15px 10px 60px;
-  border: 2px solid var(--gold);
-  border-radius: 5px;
-  resize: none;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  line-height: 20px;
-  position: relative;
-  z-index: 0;
+  width: 100% !important;
+  height: 600px !important;
+  background: var(--secondary-blue) !important;
+  color: var(--white) !important;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 16px !important;
+  padding: 10px 15px 10px 60px !important;
+  border: 2px solid var(--gold) !important;
+  border-radius: 5px !important;
+  resize: none !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+  line-height: 20px !important;
+  position: relative !important;
+  z-index: 0 !important;
 }
 
 .code-editor textarea::placeholder {
-  color: var(--steel);
+  color: var(--steel) !important;
 }
 
 .buttons {
-  margin: 20px auto;
+  margin: 20px auto !important;
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  max-width: 600px;
+  justify-content: center !important;
+  gap: 15px !important;
+  max-width: 600px !important;
 }
 
 .validate-btn {
@@ -106,7 +107,7 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   font-weight: bold;
-  border: pointer;
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
@@ -129,35 +130,35 @@
 }
 
 .error-messages {
-  color: red;
-  margin-top: 10px;
-  text-align: center;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  color: red !important;
+  margin-top: 10px !important;
+  text-align: center !important;
+  max-width: 600px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .save-file-container {
-  margin: 10px auto;
+  margin: 10px auto !important;
   display: none;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  max-width: 600px;
-  width: 100%;
-  text-align: center;
-  box-sizing: border-box;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 10px !important;
+  max-width: 600px !important;
+  width: 100% !important;
+  text-align: center !important;
+  box-sizing: border-box !important;
 }
 
 .save-file-input {
-  padding: 8px;
-  font-size: 16px;
-  border: 2px solid var(--gold);
-  border-radius: 5px;
-  flex: 0 1 300px;
-  background-color: var(--black);
-  color: var(--white);
-  box-sizing: border-box;
+  padding: 8px !important;
+  font-size: 16px !important;
+  border: 2px solid var(--gold) !important;
+  border-radius: 5px !important;
+  flex: 0 1 300px !important;
+  background-color: var(--black) !important;
+  color: var(--white) !important;
+  box-sizing: border-box !important;
 }
 
 .save-file-btn {
@@ -178,64 +179,64 @@
 }
 
 .output-section, .console-section {
-  background-color: var(--primary-blue);
-  padding: 5px;
-  margin-top: 20px;
+  background-color: var(--primary-blue) !important;
+  padding: 5px !important;
+  margin-top: 20px !important;
   display: none;
 }
 
 .output-container, .console-container {
-  width: 100%;
-  margin: 0 auto;
-  background-color: var(--primary-blue);
-  border-radius: 0px;
-  overflow: hidden;
-  border: 2px solid var(--gold);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 100% !important;
+  margin: 0 auto !important;
+  background-color: var(--primary-blue) !important;
+  border-radius: 0px !important;
+  overflow: hidden !important;
+  border: 2px solid var(--gold) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 .output-header, .console-header {
-  color: var(--black);
-  padding: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: var(--secondary-blue);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  color: var(--black) !important;
+  padding: 10px !important;
+  font-size: 1rem !important;
+  font-weight: bold !important;
+  background-color: var(--secondary-blue) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 hr {
-  border: 1px solid var(--gold);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--gold) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
 }
 
 #outputFrame {
-  width: 100%;
-  height: 600px;
-  border: none;
-  background-color: var(--primary-blue);
+  width: 100% !important;
+  height: 600px !important;
+  border: none !important;
+  background-color: var(--primary-blue) !important;
 }
 
 #consoleOutput {
-  width: 100%;
-  height: 200px;
-  background-color: var(--primary-blue);
-  color: var(--white);
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 14px;
-  padding: 10px;
-  white-space: pre-wrap;
-  overflow-y: auto;
+  width: 100% !important;
+  height: 200px !important;
+  background-color: var(--primary-blue) !important;
+  color: var(--white) !important;
+  font-family: 'Roboto Mono', monospace !important;
+  font-size: 14px !important;
+  padding: 10px !important;
+  white-space: pre-wrap !important;
+  overflow-y: auto !important;
 }
 
 @media (max-width: 768px) {
   .code-editor textarea {
-    height: 400px;
+    height: 400px !important;
   }
 
   .buttons {
-    flex-direction: row;
-    gap: 10px;
-    max-width: 400px;
+    flex-direction: row !important;
+    gap: 10px !important;
+    max-width: 400px !important;
   }
 
   .validate-btn, .test-btn, .document-btn {
@@ -244,53 +245,53 @@ hr {
   }
 
   .save-file-input {
-    width: 200px;
+    width: 200px !important;
   }
 
   #outputFrame {
-    height: 400px;
+    height: 400px !important;
   }
 
   #consoleOutput {
-    height: 150px;
+    height: 150px !important;
   }
 
   .output-section, .console-section {
-    padding: 5px;
+    padding: 5px !important;
   }
 }
 
 @media (max-width: 480px) {
   .code-editor textarea {
-    height: 300px;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 10px 15px 10px 50px;
+    height: 300px !important;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    padding: 10px 15px 10px 50px !important;
   }
 
   .line-numbers {
-    font-size: 14px;
-    line-height: 18px;
-    width: 38px;
-    top: 7px;
-    left: 7px;
-    height: calc(100% - 21.5px);
-    padding: 10px 3px 10px 0;
-    z-index: 10;
+    font-size: 14px !important;
+    line-height: 18px !important;
+    width: 38px !important;
+    top: 7px !important;
+    left: 7px !important;
+    height: calc(100% - 21.5px) !important;
+    padding: 10px 3px 10px 0 !important;
+    z-index: 10 !important;
   }
 
   .line-numbers pre {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 14px !important;
+    line-height: 18px !important;
   }
 
   .buttons {
-    max-width: 300px;
+    max-width: 300px !important;
   }
 
   .save-file-input {
-    width: 150px;
-    font-size: 14px;
+    width: 150px !important;
+    font-size: 14px !important;
   }
 
   .save-file-btn {
@@ -299,13 +300,14 @@ hr {
   }
 
   #outputFrame {
-    height: 300px;
+    height: 300px !important;
   }
 
   #consoleOutput {
-    height: 100px;
+    height: 100px !important;
   }
 }
+</style>
     </style>
   </head>
   <body>
