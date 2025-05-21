@@ -7,13 +7,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.0.10/marked.min.js"></script>
 </head>
 <body>
-    <div id="content"></div>
+    <div id="content">Loading Markdown...</div>
+
     <script>
-        fetch('test.md')  // Load Markdown file
-            .then(response => response.text())
-            .then(md => {
-                document.getElementById('content').innerHTML = marked.parse(md);
-            });
+        // Ensure Marked.js is defined
+        if (typeof marked !== "undefined") {
+            fetch('test.md') // Load Markdown file
+                .then(response => response.text())
+                .then(md => {
+                    document.getElementById('content').innerHTML = marked.parse(md);
+                })
+                .catch(error => {
+                    document.getElementById('content').innerHTML = "Error loading Markdown file.";
+                    console.error("Markdown fetch error:", error);
+                });
+        } else {
+            document.getElementById('content').innerHTML = "Error: Marked.js not loaded.";
+            console.error("Marked.js not found.");
+        }
     </script>
 </body>
 </html>
