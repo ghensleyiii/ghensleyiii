@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="styles.css">
     <style>
 .main-section {
-  background-color: var(--black);
+  background-color: var(--primary-blue);
   padding: 50px 20px;
   text-align: center;
   color: var(--white);
@@ -24,17 +24,17 @@
   position: relative;
   width: 100%;
   margin: 0 auto 20px auto;
-  background-color: var(--black);
+  background-color: var(--primary-blue);
   padding: 5px;
   border-radius: 5px;
-  color: var(--steel)
+  color: var(--white)
 }
 
 .line-numbers {
   width: 48px;
-  background: linear-gradient(90deg, var(--dark-steel), var(--steel), var(--dark-steel));
-  color: var(--black);
-  font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+  background-color: var(--secondary-blue);
+  color: var(--gold);
+  font-family: 'Roboto Mono', monospace;
   font-size: 16px;
   text-align: right;
   user-select: none;
@@ -52,7 +52,7 @@
   margin: 0;
   padding: 0;
   line-height: 20px;
-  font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+  font-family: 'Roboto Mono', monospace;
   font-size: 16px;
   display: block;
 }
@@ -60,15 +60,15 @@
 .code-editor textarea {
   width: 100%;
   height: 600px;
-  background: var(--black);
-  color: var(--steel);
-  font-family: 'Courier New', Courier, 'Lucida Console', monospace;
+  background: var(--secondary-blue);
+  color: var(--white);
+  font-family: 'Roboto Mono', monospace;
   font-size: 16px;
   padding: 10px 15px 10px 60px;
-  border: 2px solid var(--dark-steel);
+  border: 2px solid var(--gold);
   border-radius: 5px;
   resize: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   line-height: 20px;
   position: relative;
   z-index: 0;
@@ -87,11 +87,11 @@
 }
 
 .validate-btn {
-  background: linear-gradient(90deg, var(--dark-steel), var(--steel), var(--dark-steel));
-  color: var(--black);
+  background-color: var(--secondary-blue);
+  color: var(--gold);
   border: none;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -99,11 +99,11 @@
 }
 
 .test-btn {
-  background: linear-gradient(90deg, var(--dark-steel), var(--steel), var(--dark-steel));
-  color: var(--black);
+  background-color: var(--secondary-blue);
+  color: var(--gold);
   border: none;
   padding: 10px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   font-weight: bold;
   border: pointer;
@@ -111,10 +111,11 @@
 }
 
 .document-btn {
-  background: linear-gradient(90deg, var(--dark-steel), var(--steel), var(--dark-steel));
-  color: var(--black);
+  background-color: var(--secondary-blue);
+  color: var(--gold);
   border: none;
   padding: 10px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -123,7 +124,8 @@
 }
 
 .validate-btn:hover, .test-btn:hover, .document-btn:hover {
-  background: linear-gradient(90deg, var(--steel));
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .error-messages {
@@ -150,7 +152,7 @@
 .save-file-input {
   padding: 8px;
   font-size: 16px;
-  border: 2px solid var(--white);
+  border: 2px solid var(--gold);
   border-radius: 5px;
   flex: 0 1 300px;
   background-color: var(--black);
@@ -159,11 +161,11 @@
 }
 
 .save-file-btn {
-  background: linear-gradient(90deg, var(--dark-steel), var(--steel), var(--dark-steel));
-  color: var(--black);
-  border: 2px solid var(--white);
+  background-color: var(--secondary-blue);
+  color: var(--gold);
+  border: 2px solid var(--gold);
   padding: 8px 20px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
@@ -172,11 +174,11 @@
 }
 
 .save-file-btn:hover {
-  background: linear-gradient(90deg, var(--steel));
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .output-section, .console-section {
-  background-color: var(--black);
+  background-color: var(--primary-blue);
   padding: 5px;
   margin-top: 20px;
   display: none;
@@ -185,11 +187,11 @@
 .output-container, .console-container {
   width: 100%;
   margin: 0 auto;
-  background-color: var(--black);
+  background-color: var(--primary-blue);
   border-radius: 0px;
   overflow: hidden;
-  border: 2px solid var(--white);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .output-header, .console-header {
@@ -197,27 +199,27 @@
   padding: 10px;
   font-size: 1rem;
   font-weight: bold;
-  background: linear-gradient(90deg, var(--dark-steel), var(--steel), var(--dark-steel));
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--secondary-blue);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 hr {
-  border: 1px solid var(--white);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 #outputFrame {
   width: 100%;
   height: 600px;
   border: none;
-  background-color: var(--black);
+  background-color: var(--primary-blue);
 }
 
 #consoleOutput {
   width: 100%;
   height: 200px;
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--primary-blue);
+  color: var(--white);
   font-family: 'Courier New', Courier, monospace;
   font-size: 14px;
   padding: 10px;
@@ -274,7 +276,6 @@ hr {
     left: 7px;
     height: calc(100% - 21.5px);
     padding: 10px 3px 10px 0;
-    background: linear-gradient(90deg, var(--dark-steel), var(--steel), var(--dark-steel));
     z-index: 10;
   }
 
