@@ -1,16 +1,14 @@
 :root {
-    --primary-blue: #001F47 !important;
-    --secondary-blue: #002966 !important;
-    --gold: #FFC107 !important;
-    --white: #FFFFFF !important;
-    --gray: #d1d5db !important;
-    --light-gray: #e5e7eb !important;
-    --dark-gold: #e0a800 !important;
+    --dark-blue: #001F47;
+    --light-blue: #002966;
+    --gold: #FFC107;
+    --white: #FFFFFF;
+    --dark-gold: #e0a800;
 }
 
 body {
-    background-color: var(--primary-blue) !important;
-    color: var(--white) !important;
+    background-color: var(--dark-blue);
+    color: var(--white);
     font-family: 'Roboto Mono', monospace !important;
     min-height: 100vh !important;
     display: flex;
@@ -41,7 +39,7 @@ header .logo-container img {
 header .logo-container div {
     font-size: 1.5rem !important;
     font-weight: normal !important;
-    color: var(--gold) !important;
+    color: var(--gold);
 }
 
 header nav {
@@ -57,7 +55,7 @@ header nav ul {
 }
 
 header nav a {
-    color: var(--white) !important;
+    color: var(--white);
     text-decoration: none !important;
 }
 
@@ -91,7 +89,7 @@ header nav a:hover {
     display: block;
     width: 1.5rem !important;
     height: 0.2rem !important;
-    background: var(--white) !important;
+    background: var(--white);
     margin-bottom: 0.3rem !important;
 }
 
@@ -114,7 +112,7 @@ header nav a:hover {
     align-items: center;
     justify-content: center;
     padding: 20px !important;
-    background-color: var(--primary-blue) !important;
+    background-color: var(--dark-blue);
 }
 
 .hero-content {
@@ -132,7 +130,7 @@ header nav a:hover {
     font-size: 2.25rem !important;
     font-weight: bold !important;
     margin-bottom: 1rem !important;
-    color: var(--gold) !important;
+    color: var(--gold);
 }
 
 .hero-content p {
@@ -141,8 +139,8 @@ header nav a:hover {
 }
 
 .hero-content a {
-    background-color: var(--white) !important;
-    color: var(--primary-blue) !important;
+    background-color: var(--white);
+    color: var(--dark-blue);
     padding: 0.75rem 1.5rem !important;
     border-radius: 0.5rem !important;
     font-weight: 600 !important;
@@ -150,7 +148,7 @@ header nav a:hover {
 }
 
 .hero-content a:hover {
-    background-color: var(--light-gray) !important;
+    background-color: var(--gold);
 }
 
 .image-section {
@@ -159,7 +157,7 @@ header nav a:hover {
     align-items: center;
     justify-content: center;
     padding: 0 0 20px 20px !important;
-    background-color: var(--primary-blue) !important;
+    background-color: var(--dark-blue);
     height: 300px !important;
 }
 
@@ -173,7 +171,7 @@ header nav a:hover {
 
 .how-it-works {
     padding: 20px !important;
-    background-color: var(--secondary-blue) !important;
+    background-color: var(--light-blue);
 }
 
 .how-it-works h2 {
@@ -181,7 +179,7 @@ header nav a:hover {
     font-weight: 700 !important;
     text-align: center !important;
     margin-bottom: 1.5rem !important;
-    color: var(--white) !important;
+    color: var(--white);
 }
 
 .how-it-works-content {
@@ -192,7 +190,7 @@ header nav a:hover {
 
 .how-it-works-content p.intro {
     font-size: 1.125rem !important;
-    color: var(--gray) !important;
+    color: var(--dark-gold);
     margin-bottom: 2rem !important;
     max-width: 48rem !important;
     margin-left: auto !important;
@@ -209,13 +207,13 @@ header nav a:hover {
 
 .how-it-works-item {
     padding: 2rem !important;
-    background-color: var(--secondary-blue) !important;
+    background-color: var(--light-blue);
     border-radius: 0.75rem !important;
 }
 
 .how-it-works-item i {
     font-size: 2.5rem !important;
-    color: var(--gold) !important;
+    color: var(--gold);
     margin-bottom: 1rem !important;
 }
 
@@ -223,17 +221,17 @@ header nav a:hover {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
     margin-bottom: 0.75rem !important;
-    color: var(--white) !important;
+    color: var(--white);
 }
 
 .how-it-works-item p {
     font-size: 1rem !important;
-    color: var(--gray) !important;
+    color: var(--dark-gold);
 }
 
 .curriculum {
     padding: 4rem 1.5rem !important;
-    background-color: var(--primary-blue) !important;
+    background-color: var(--dark-blue);
 }
 
 .curriculum h2 {
@@ -241,7 +239,7 @@ header nav a:hover {
     font-weight: 700 !important;
     text-align: center !important;
     margin-bottom: 3rem !important;
-    color: var(--gold) !important;
+    color: var(--gold);
 }
 
 .curriculum-grid {
@@ -254,34 +252,34 @@ header nav a:hover {
 
 .curriculum-item {
     padding: 2rem !important;
-    background-color: var(--secondary-blue) !important;
+    background-color: var(--light-blue);
     border-radius: 0.75rem !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .curriculum-item:hover {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .curriculum-item h3 {
     font-size: 1.5rem !important;
     font-weight: 600 !important;
     margin-bottom: 1rem !important;
-    color: var(--white) !important;
+    color: var(--white);
     text-align: center !important;
 }
 
 .curriculum-item p {
     font-size: 1rem !important;
-    color: var(--gray) !important;
+    color: var(--dark-gold);
     margin-bottom: 1.5rem !important;
     text-align: center !important;
 }
 
 .curriculum-item a {
     display: inline-block;
-    background-color: var(--gold) !important;
-    color: var(--primary-blue) !important;
+    background-color: var(--gold);
+    color: var(--dark-blue);
     padding: 0.5rem 1rem !important;
     border-radius: 0.375rem !important;
     text-decoration: none !important;
@@ -290,12 +288,12 @@ header nav a:hover {
 }
 
 .curriculum-item a:hover {
-    background-color: var(--dark-gold) !important;
+    background-color: var(--dark-gold);
 }
 
 .course-section {
     padding: 4rem 1.5rem !important;
-    background-color: var(--primary-blue) !important;
+    background-color: var(--dark-blue);
     flex-grow: 1;
 }
 
@@ -309,12 +307,12 @@ header nav a:hover {
     font-weight: 700 !important;
     text-align: center !important;
     margin-bottom: 1rem !important;
-    color: var(--gold) !important;
+    color: var(--gold);
 }
 
 .course-section p {
     font-size: 1.125rem !important;
-    color: var(--gray) !important;
+    color: var(--dark-gold);
     text-align: center !important;
     margin-bottom: 3rem !important;
     max-width: 48rem !important;
@@ -323,14 +321,14 @@ header nav a:hover {
 }
 
 .course-section .section {
-    background: var(--secondary-blue) !important;
+    background: var(--light-blue);
     margin: 10px 0 !important;
     padding: 15px !important;
     border-radius: 0.75rem !important;
 }
 
 .course-section .section h2 {
-    color: var(--gold) !important;
+    color: var(--gold);
     margin-top: 0 !important;
     font-size: 1.5rem !important;
     font-weight: 600 !important;
@@ -339,8 +337,8 @@ header nav a:hover {
 .course-section .lesson {
     margin: 5px 0 !important;
     padding: 10px !important;
-    background: var(--primary-blue) !important;
-    border-left: 4px solid var(--gold) !important;
+    background: var(--dark-blue);
+    border-left: 4px solid var(--gold);
     display: flex;
     align-items: center;
     border-radius: 0.375rem !important;
@@ -357,8 +355,8 @@ header nav a:hover {
 
 footer {
     padding: 1.5rem 1.5rem !important;
-    background-color: var(--primary-blue) !important;
-    border-top: 1px solid rgba(0, 0, 0, 0.3) !important;
+    background-color: var(--dark-blue);
+    border-top: 1px solid rgba(0, 0, 0, 0.3);
 }
 
 .footer-content {
@@ -413,14 +411,14 @@ footer {
         right: 0 !important;
         width: 50% !important;
         max-width: 12rem !important;
-        background-color: var(--secondary-blue) !important;
+        background-color: var(--light-blue);
         transform: translateY(-100%);
         transition: transform 0.3s ease, visibility 0.3s ease !important;
         visibility: hidden;
         padding: 1.5rem !important;
         border-bottom-left-radius: 0.5rem !important;
         border-bottom-right-radius: 0.5rem !important;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         z-index: 99 !important;
     }
 
