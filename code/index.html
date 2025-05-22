@@ -39,93 +39,93 @@ body {
 }
 
 header {
-  padding: 1rem 1.5rem !important;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: var(--light-blue);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
+            padding: 1rem 1.5rem !important;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-header .logo-container {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
 
-header .logo-container img {
-  width: 35px;
-  height: auto;
-  object-fit: contain;
-}
+        header .logo-container img {
+            width: 35px;
+            height: auto;
+            object-fit: contain;
+        }
 
-header .logo-container div {
-  font-size: 1.5rem !important;
-  font-weight: normal !important;
-  color: var(--gold);
-}
+        header .logo-container div {
+            font-size: 1.5rem !important;
+            font-weight: normal !important;
+            color: var(--gold);
+        }
 
-header nav {
-  display: flex;
-}
+        header nav {
+            display: flex;
+        }
 
-header nav ul {
-  display: flex;
-  gap: 1.5rem;
-  list-style: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+        header nav ul {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
 
-header nav a {
-  color: var(--white);
-  text-decoration: none !important;
-}
+        header nav a {
+            color: var(--white);
+            text-decoration: none !important;
+        }
 
-header nav a:hover {
-  text-decoration: underline !important;
-}
+        header nav a:hover {
+            text-decoration: underline !important;
+        }
 
-#hamburger-toggle {
-  display: none;
-}
+        /* Hamburger Menu */
+        #hamburger-toggle {
+            display: none;
+        }
 
-.hamburger {
-  display: none;
-  cursor: pointer !important;
-  position: relative !important;
-  z-index: 100 !important;
-}
+        .hamburger {
+            display: none;
+            cursor: pointer !important;
+            position: relative !important;
+            z-index: 100 !important;
+        }
 
-.hamburger .lines {
-  display: inline-block;
-  transform-origin: center !important;
-  transition: transform 0.3s ease !important;
-}
+        .hamburger input {
+            display: none;
+        }
 
-.hamburger span {
-  display: block;
-  width: 1.5rem !important;
-  height: 0.2rem !important;
-  background: var(--white);
-  margin-bottom: 0.3rem !important;
-}
+        .hamburger .lines {
+            display: inline-block;
+            transform-origin: center !important;
+            transition: transform 0.3s ease !important;
+        }
 
-.hamburger span:last-child {
-  margin-bottom: 0 !important;
-}
+        .hamburger span {
+            display: block;
+            width: 1.5rem !important;
+            height: 0.2rem !important;
+            background: var(--white);
+            margin-bottom: 0.3rem !important;
+        }
 
-#hamburger-toggle:checked + .hamburger .lines {
-  transform: rotate(90deg) !important;
-}
+        .hamburger span:last-child {
+            margin-bottom: 0 !important;
+        }
 
-#hamburger-toggle:checked ~ nav {
-  transform: translateY(0);
-  visibility: visible;
-}
+        #hamburger-toggle:checked + .hamburger .lines {
+            transform: rotate(90deg) !important;
+        }
+
+        #hamburger-toggle:checked ~ nav {
+            transform: translateY(0);
+            visibility: visible;
+        }
 
 .main-section {
   flex-grow: 1;
@@ -471,29 +471,30 @@ footer {
     </style>
   </head>
   <body>
+    
     <header>
-      <div class="logo-container">
-        <img src="../codex.PNG" alt="CODEXEDOC Logo">
-        <div>CODEXEDOC</div>
-      </div>
-      <input type="checkbox" id="hamburger-toggle">
-      <label class="hamburger" for="hamburger-toggle">
-        <div class="lines">
-          <span></span>
-          <span></span>
-          <span></span>
+        <div class="logo-container">
+            <img src="../codex.PNG" alt="CODEXEDOC Logo">
+            <div>CODEXEDOC</div>
         </div>
-      </label>
-      <nav>
-        <ul>
-          <li><a href="https://ghensleyiii.github.io/ghensleyiii/">Home</a></li>
-          <li><a href="https://ghensleyiii.github.io/ghensleyiii/curriculum/">Curriculum</a></li>
-          <li><a href="">Code</a></li>
-          <li><a href="https://ghensleyiii.github.io/ghensleyiii/about/">About</a></li>
-          <li><a href="https://ghensleyiii.github.io/ghensleyiii/portfolio/">Portfolio</a></li>
-          <li><a href="mailto:contact@codexedoc.com">Contact</a></li>
-        </ul>
-      </nav>
+        <input type="checkbox" id="hamburger-toggle">
+        <label class="hamburger" for="hamburger-toggle">
+            <div class="lines">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </label>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/curriculum/">Curriculum</a></li>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/code/">Code</a></li>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/about/">About</a></li>
+                <li><a href="https://ghensleyiii.github.io/ghensleyiii/portfolio/">Portfolio</a></li>
+                <li><a href="mailto:contact@codexedoc.com">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
     <section class="main-section">
